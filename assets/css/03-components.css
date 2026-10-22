@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* BUTTON: <a class="lv-btn [lv-btn--dark|--sm|--block]"><span class="lv-btn__icon">arrow</span><span class="lv-btn__label">Text</span></a> */
-.lv-btn { --btn-a: var(--lv-blue-deep); --btn-b: var(--lv-blue); --btn-icon-w: 3.1rem; position: relative; overflow: hidden; isolation: isolate; display: inline-flex; align-items: stretch; color: #fff; text-decoration: none; font-weight: 500; font-size: 1.0625rem; line-height: 1; background: var(--btn-b); }
+.lv-btn { --btn-a: var(--lv-blue-deep); --btn-b: var(--lv-blue); --btn-icon-w: 3.1rem; position: relative; overflow: hidden; isolation: isolate; display: inline-flex; align-items: stretch; color: #fff; text-decoration: none; font-family: var(--lv-font-display); font-weight: 500; font-size: 1.0625rem; line-height: 1; background: var(--btn-b); }
 .lv-btn::before { content: ""; position: absolute; z-index: -1; left: 0; top: 0; bottom: 0; width: var(--btn-icon-w); background: var(--btn-a); transition: width .45s var(--lv-ease); }   /* the arrow box; grows across the button on hover */
 .lv-btn:hover::before, .lv-btn:focus-visible::before { width: 100%; }
 .lv-btn__icon { display: grid; place-items: center; width: var(--btn-icon-w); font-size: 1.3rem; }

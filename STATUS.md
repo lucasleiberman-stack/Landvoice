@@ -23,7 +23,7 @@ Hero / homepage
 - [x] Hero animation: FRBO pin added (pink), FSBO orange, Expired green, cards larger (done)
 - [ ] Logo slider: Keller Williams, RE/MAX, Century 21, Compass, Sotheby's, Howard Hanna and Douglas Elliman now use real white logo files; still text stand-ins (Redfin, Realty ONE Group, ERA): swap each `.lv-wordmark` for the real logo file (4 real logos already in `assets/img/brokerages/`)
 - [ ] Coaches strip: add MFO (Mike Ferry Organization), then "all of REDX" for coaches. NEEDS CLARIFYING: which coaches/logos does "all of REDX" mean?
-- [ ] Add an FRBO blurb (currently "Coming soon" in the products section) and make the product buttons bigger (drop `lv-btn--sm` on the services buttons)
+- [ ] Add an FRBO blurb (currently "Coming soon" in the products section) (product buttons are now full size: done)
 - [ ] Lead Manager filters: move "Canceled" to second (it is baked into `assets/img/lm-filters.png`; needs a new image or a rebuilt HTML mockup)
 - [ ] Lead Manager DNC card: add "DNC" text next to the toggle (baked into `assets/img/lm-dnc.png`; same note)
 - [ ] Integrations: Brivity first, plus an "and more" tile (currently one image, `integrations-cluster.webp`; needs a new image or individual logo tiles)
