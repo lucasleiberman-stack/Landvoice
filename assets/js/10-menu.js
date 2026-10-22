@@ -9,3 +9,15 @@ LV.ready(function () {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
   });
 });
+
+/* lv-mega: the hover/focus mega menu is pure CSS; this adds tap-to-open on touch screens and Escape to close.
+   Markup: <li data-lv-mega> <a>Products</a> <div class="lv-mega">...</div> </li> */
+LV.ready(function () {
+  var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  LV.$$('[data-lv-mega]').forEach(function (item) {
+    var link = item.querySelector('a');
+    if (touch) link.addEventListener('click', function (e) { if (!item.classList.contains('is-open')) { e.preventDefault(); item.classList.add('is-open'); } });
+    document.addEventListener('click', function (e) { if (!item.contains(e.target)) item.classList.remove('is-open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { item.classList.remove('is-open'); if (item.contains(document.activeElement)) document.activeElement.blur(); } });
+  });
+});
