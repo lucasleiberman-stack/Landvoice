@@ -490,7 +490,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-ai__row { display: flex; justify-content: center; flex-wrap: wrap; gap: clamp(20px, 3vw, 48px); }
 .lv-ai__link { display: grid; place-items: center; width: 64px; height: 64px; transition: transform .3s var(--lv-ease); }
 .lv-ai__link:hover { transform: translateY(-4px) scale(1.06); }
-.lv-ai__link svg { width: 100%; height: 100%; }
+.lv-ai__link svg, .lv-ai__link img { width: 100%; height: 100%; object-fit: contain; }
 .lv-ai__note { margin-top: 1rem; font-size: .85rem; color: var(--lv-fg-muted); }
 /* SERVICES: a road drawn down the page with a junction + straight arms at each row. JS: lv-road.js
    Tweak: --lv-arm (arm length), --lv-arm-y (arm height from row top), --lv-road-w (line thickness) */
