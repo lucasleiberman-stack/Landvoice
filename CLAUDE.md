@@ -2,6 +2,13 @@
 
 Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later be lifted into WordPress as theme template parts. `README.md` has the full conventions, JS hook table, WordPress steps and the list of unfilled placeholders; read it before larger changes.
 
+@STATUS.md
+
+## Keeping context small (follow every session)
+- Never read all of `index.html`. Grep for the section's `<!-- ===== NAME` comment and read only that range (offset/limit). `/section <name>` does this.
+- Don't read `dist/` or `assets/img/` (denied in `.claude/settings.json`). Edit source files, then run `./bundle.sh`.
+- One section or task per session. At the end run `/wrap` (updates `STATUS.md`, commits, no push).
+
 ## Layout
 - `index.html`: the whole page (~570 lines). Each section is wrapped in a `<!-- ===== NAME (WP: template-parts/x.php) ===== -->` comment; find a section by grepping for that comment.
 - `assets/css/00-tokens.css` (all colours/fonts/sizes), `01-base`, `02-layout`, `03-components`, plus one file per section in `assets/css/sections/`.

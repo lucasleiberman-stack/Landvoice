@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./dist/**)",
+      "Read(./assets/img/**)",
+      "Read(./**/.DS_Store)"
+    ]
+  }
+}
