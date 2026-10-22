@@ -421,14 +421,13 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-band--dark .lv-tag { color: var(--lv-blue-on-dark); border-color: var(--lv-blue-on-dark); }
 
 /* several blocks sharing one band: even spacing between them */
-.lv-pg-block + .lv-pg-block, .lv-fields, .lv-fields + .lv-pg-block, .lv-pg-block--hero { margin-top: clamp(72px, 9vw, 140px); }
+.lv-pg-block, .lv-pg-block--hero { margin-top: clamp(72px, 9vw, 140px); }
 .lv-pg-block--hero { width: min(100% - 2 * var(--lv-gutter), var(--lv-max-wide)); margin-inline: auto; }
 .lv-section--joined { padding-top: 0; }   /* sits directly under the testimonial's own bottom padding */
 
-/* data fields: the focal row, big pills centred under the split */
-.lv-fields { display: grid; justify-items: center; gap: 1.6rem; text-align: center; }
-.lv-fields .lv-tags { justify-content: center; gap: .9rem; }
-.lv-fields .lv-tag { font-family: var(--lv-font-display); font-size: clamp(1.1rem, 1.9vw, 1.7rem); font-weight: 500; letter-spacing: -.01em; padding: .6em 1.3em; border-width: 1.5px; background: rgba(106,163,255,.1); }
+/* data fields: tags under the paragraph, 20% smaller than the first big version, wrapping */
+.lv-pg__stack .lv-tags { gap: .72rem; }
+.lv-pg__stack .lv-tag { font-family: var(--lv-font-display); font-size: clamp(.88rem, 1.52vw, 1.36rem); font-weight: 500; letter-spacing: -.01em; padding: .6em 1.3em; border-width: 1.5px; background: rgba(106,163,255,.1); }
 
 /* product mockup frames (swap the .lv-ph placeholder for an <img>) */
 .lv-mock { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
@@ -436,8 +435,11 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-mock img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .lv-split > .lv-mock { padding-top: 0; }
 .lv-pg__stack { display: grid; gap: 1.4rem; justify-items: start; }
-.lv-pg__stack .lv-tags { margin-top: .4rem; }
-.lv-pg__stack .lv-fact { margin-top: .6rem; width: 100%; }
+.lv-pg__center { display: grid; justify-items: center; gap: 1.6rem; text-align: center; max-width: 62rem; }
+.lv-pg__center .lv-pg__sub { max-width: 52ch; }
+.lv-fact.lv-fact--bare { display: grid; justify-items: center; padding: 0; border: 0; }
+.lv-fact--bare .lv-fact__label { max-width: 30ch; }
+.lv-mock--sm { width: min(100%, 520px); margin-top: .8rem; }
 
 /* big-number facts */
 .lv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: clamp(40px, 5vw, 72px); }
@@ -447,7 +449,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 /* numbered reasons */
 .lv-reasons { display: grid; gap: 14px; counter-reset: reason; }
-.lv-reason { counter-increment: reason; display: flex; align-items: center; gap: 1.2rem; padding: 1.3rem 1.5rem; border: 1px solid var(--lv-hairline); border-radius: var(--lv-radius-card); font-family: var(--lv-font-display); font-size: clamp(1.15rem, 1.6vw, 1.45rem); font-weight: 500; letter-spacing: -.02em; }
+.lv-reason { background: var(--lv-paper-2); counter-increment: reason; display: flex; align-items: center; gap: 1.2rem; padding: 1.3rem 1.5rem; border: 1px solid var(--lv-hairline); border-radius: var(--lv-radius-card); font-family: var(--lv-font-display); font-size: clamp(1.15rem, 1.6vw, 1.45rem); font-weight: 500; letter-spacing: -.02em; }
 .lv-reason::before { content: "0" counter(reason); font: 500 .85rem var(--lv-font-mono); letter-spacing: .08em; color: var(--lv-link); }
 
 /* steps without images */
@@ -455,7 +457,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-steps__list--text .lv-step__title { max-width: 22ch; }
 
 /* price card */
-.lv-price { display: grid; justify-items: center; gap: 1.6rem; max-width: 34rem; margin: clamp(32px, 4vw, 56px) auto 0; padding: clamp(32px, 4vw, 56px); border-radius: 22px; background: #fff; color: var(--lv-ink); text-align: center; box-shadow: 0 0 0 2px var(--lv-blue), 0 0 38px rgba(10,102,255,.28); }
+.lv-price { display: grid; justify-items: center; gap: 1.6rem; max-width: 34rem; margin: 0 auto; padding: clamp(32px, 4vw, 56px); border-radius: 22px; background: #fff; color: var(--lv-ink); text-align: center; box-shadow: 0 0 0 2px var(--lv-blue), 0 0 38px rgba(10,102,255,.28); }
 .lv-price__amount { font-family: var(--lv-font-display); font-size: clamp(4rem, 8vw, 6.5rem); font-weight: 600; letter-spacing: -.05em; line-height: 1; }
 .lv-price__amount small { font-size: 1.4rem; font-weight: 400; letter-spacing: 0; }
 
