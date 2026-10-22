@@ -1,0 +1,49 @@
+/* PRODUCT PAGE: shared layout for every product page (expired-listings.html is the template).
+   Reuses bands, type, buttons, tags, steps and the FAQ accordion; only the pieces below are new. */
+.lv-pg-hero { overflow: hidden; padding-block: clamp(64px, 9vw, 140px); }
+.lv-pg-hero__stage { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(32px, 5vw, 96px); align-items: center; width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin-inline: auto; }
+.lv-pg-hero .lv-eyebrow { margin-bottom: 1.6rem; }
+.lv-pg-hero .lv-h1 { margin-bottom: 1.6rem; }
+.lv-pg-hero__media { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
+
+/* the H3 under a section heading: long supporting sentence, body face, not a display heading */
+.lv-pg__sub { font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: 0; color: var(--lv-fg-muted); max-width: 62ch; }
+.lv-pg-hero .lv-pg__sub { font-size: clamp(1.15rem, 1.5vw, 1.4rem); color: var(--lv-fg); }
+.lv-pg__body { font-size: var(--lv-fs-lede); line-height: 1.65; color: var(--lv-fg-muted); max-width: 62ch; }
+.lv-pg__head { display: grid; gap: 1.4rem; max-width: 62rem; }
+.lv-pg__head--center { justify-items: center; text-align: center; margin-inline: auto; }
+
+/* two columns: heading left, text right */
+.lv-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 120px); align-items: start; }
+.lv-split > :last-child { padding-top: .6rem; }
+.lv-split .lv-tags { margin-top: 1.8rem; }
+.lv-split .lv-tag { font-size: .9rem; }
+.lv-band--dark .lv-tag { color: var(--lv-blue-on-dark); border-color: var(--lv-blue-on-dark); }
+
+/* big-number facts */
+.lv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: clamp(40px, 5vw, 72px); }
+.lv-fact { padding: clamp(24px, 3vw, 40px); border: 1px solid var(--lv-hairline); border-radius: var(--lv-radius-card); }
+.lv-fact__value { font-family: var(--lv-font-display); font-size: clamp(4rem, 8vw, 7.5rem); font-weight: 500; letter-spacing: -.05em; line-height: 1; color: var(--lv-link); }
+.lv-fact__label { margin-top: 1rem; font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.3; letter-spacing: -.01em; max-width: 22ch; }
+
+/* numbered reasons */
+.lv-reasons { display: grid; gap: 14px; counter-reset: reason; }
+.lv-reason { counter-increment: reason; display: flex; align-items: center; gap: 1.2rem; padding: 1.3rem 1.5rem; border: 1px solid var(--lv-hairline); border-radius: var(--lv-radius-card); font-family: var(--lv-font-display); font-size: clamp(1.15rem, 1.6vw, 1.45rem); font-weight: 500; letter-spacing: -.02em; }
+.lv-reason::before { content: "0" counter(reason); font: 500 .85rem var(--lv-font-mono); letter-spacing: .08em; color: var(--lv-link); }
+
+/* steps without images */
+.lv-steps__list--text .lv-step { align-content: start; }
+.lv-steps__list--text .lv-step__title { max-width: 22ch; }
+
+/* price card */
+.lv-price { display: grid; justify-items: center; gap: 1.6rem; max-width: 34rem; margin: clamp(32px, 4vw, 56px) auto 0; padding: clamp(32px, 4vw, 56px); border-radius: 22px; background: #fff; color: var(--lv-ink); text-align: center; box-shadow: 0 0 0 2px var(--lv-blue), 0 0 38px rgba(10,102,255,.28); }
+.lv-price__amount { font-family: var(--lv-font-display); font-size: clamp(4rem, 8vw, 6.5rem); font-weight: 600; letter-spacing: -.05em; line-height: 1; }
+.lv-price__amount small { font-size: 1.4rem; font-weight: 400; letter-spacing: 0; }
+
+/* closing call to action */
+.lv-cta { display: grid; justify-items: center; gap: 2rem; text-align: center; }
+
+@media (max-width: 900px) {
+  .lv-pg-hero__stage, .lv-split { grid-template-columns: 1fr; }
+  .lv-split > :last-child { padding-top: 0; }
+}

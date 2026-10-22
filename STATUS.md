@@ -11,6 +11,7 @@ Homepage prototype is built end to end; remaining work is filling placeholders a
 - FAQ section added below pricing (`#faq`, `sections/faq.css`, native details/summary, no JS)
 
 ## Next up
+- Expired Listings product page built (`expired-listings.html`, `sections/product.css`) as the template for other product pages; needs: hero image, 18 FAQ questions + answers, checkout link (`#checkout-expired`)
 - Enable GitHub Pages for a live preview
 - Fill placeholders listed in README.md (logos, screenshots, stats, video URLs)
 - Write the 22 FAQ answers (each is a `TODO copy` placeholder in index.html)
