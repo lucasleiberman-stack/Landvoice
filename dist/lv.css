@@ -390,7 +390,7 @@ h2 { font-size: var(--lv-fs-h2); }
 @media (max-width: 900px) { .lv-proof { grid-template-columns: 1fr; } }
 
 .lv-ai { margin-top: clamp(64px, 8vw, 110px); text-align: center; }
-.lv-ai__title { font-family: var(--lv-font-display); font-size: var(--lv-fs-h2); font-weight: 500; letter-spacing: -.03em; margin-bottom: 2rem; }
+.lv-ai__title { margin-bottom: 2rem; }   /* type comes from .lv-h2 */
 .lv-ai__row { display: flex; justify-content: center; flex-wrap: wrap; gap: clamp(20px, 3vw, 48px); }
 .lv-ai__link { display: grid; place-items: center; width: 64px; height: 64px; transition: transform .3s var(--lv-ease); }
 .lv-ai__link:hover { transform: translateY(-4px) scale(1.06); }
