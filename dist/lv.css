@@ -346,13 +346,16 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-prop-foot--dist { fill: rgba(193,171,249,.69); }
 .lv-prop-foot--exp  { fill: rgba(182,255,182,.38); stroke: #073D13; }
 .lv-prop-foot--frbo { fill: rgba(255,150,196,.45); stroke: #5C1239; }
-.lv-prop-card { --tag-bg: #C9E9D3; --tag-ink: #073D13;
-  position: absolute; left: calc(var(--x) / 525 * 100%); top: calc(var(--y) / 414 * 100%); width: calc(var(--w) / 525 * 100%); height: calc(var(--h) / 414 * 100%);
-  display: flex; flex-direction: column; gap: calc(var(--gap) * var(--u)); padding: calc(var(--pt) * var(--u)) calc(9 * var(--u)) 0 calc(var(--pt) * var(--u) + 2 * var(--u));
-  border-radius: calc(8 * var(--u)); background: rgba(255,255,255,.92); box-shadow: 0 calc(8 * var(--u)) calc(22 * var(--u)) rgba(13,17,23,.24), 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.7);
-  scale: 1.28; transform-origin: var(--o, 50% 50%);   /* cards are scaled up so they read at a glance; --o picks the side they grow from */ -webkit-backdrop-filter: blur(calc(11.55 * var(--u))); backdrop-filter: blur(calc(11.55 * var(--u)));
+.lv-prop-card { --tag-bg: #C9E9D3; --tag-ink: #073D13; --pill-h: 28;
+  /* one-line pill: tag + address. Its bottom edge stays where the old tall card ended (--y + --h), so it still sits on its footprint. */
+  position: absolute; left: calc(var(--x) / 525 * 100%); top: calc((var(--y) + var(--h) - var(--pill-h)) / 414 * 100%); width: max-content; height: calc(var(--pill-h) * var(--u));
+  display: flex; flex-direction: row; align-items: center; gap: calc(7 * var(--u)); padding: 0 calc(13 * var(--u)) 0 calc(5 * var(--u));
+  border-radius: 999px; background: rgba(255,255,255,.94); -webkit-backdrop-filter: blur(calc(11.55 * var(--u))); backdrop-filter: blur(calc(11.55 * var(--u)));
+  box-shadow: 0 calc(8 * var(--u)) calc(22 * var(--u)) rgba(13,17,23,.24), 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.7);
+  scale: 1.28; transform-origin: var(--o, 50% 50%);   /* scaled up so they read at a glance; --o picks the side they grow from */
   animation: lv-card-in .8s var(--lv-ease) both; animation-delay: calc(var(--start) + var(--i) * var(--step) + .3s); }
-.lv-prop-card__tag { display: grid; place-items: center; width: calc(var(--tw) * var(--u)); height: calc(18 * var(--u)); border-radius: calc(9 * var(--u)); background: var(--tag-bg); color: var(--tag-ink); font-size: calc(10.4 * var(--u)); font-weight: 700; letter-spacing: .02em; line-height: 1; white-space: nowrap; }
+.lv-prop-card--dist { left: auto; right: calc((525 - var(--x) - var(--w)) / 525 * 100%); }   /* right-hand pill grows leftwards */
+.lv-prop-card__tag { display: grid; place-items: center; flex: none; width: calc(var(--tw) * var(--u)); height: calc(20 * var(--u)); border-radius: 999px; background: var(--tag-bg); color: var(--tag-ink); font-size: calc(10.4 * var(--u)); font-weight: 700; letter-spacing: .02em; line-height: 1; white-space: nowrap; }
 .lv-prop-card__addr { font-size: calc(13.3 * var(--u)); font-weight: 700; line-height: 1; color: var(--lv-ink); white-space: nowrap; }
 .lv-prop-card--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59; --o: 50% 0; }
 .lv-prop-card--dist { --tag-bg: #B79CFA; --tag-ink: #2A1A52; --o: 100% 50%; }
