@@ -21,7 +21,7 @@ Homepage prototype is built end to end; remaining work is filling placeholders a
 ## Backlog: round of edits to do next (from the user; none started)
 Hero / homepage
 - [ ] Hero animation: add an FRBO pin with a new colour; recolour FSBO to orange and Expired to green (pins live in `index.html` hero + `sections/hero.css`; the previous attempt used pink for FRBO, footprint `128,100..217,150`, card at `--x:115;--y:58`)
-- [ ] Logo slider: 10 big-brokerage names were added as text stand-ins (Keller Williams, RE/MAX, Century 21, Compass, Sotheby's, Howard Hanna, Redfin, Douglas Elliman, Realty ONE Group, ERA); swap each `.lv-wordmark` for the real logo file (4 real logos already in `assets/img/brokerages/`)
+- [ ] Logo slider: Keller Williams, RE/MAX and Century 21 now use real white logo files; still text stand-ins (Compass, Sotheby's, Howard Hanna, Redfin, Douglas Elliman, Realty ONE Group, ERA): swap each `.lv-wordmark` for the real logo file (4 real logos already in `assets/img/brokerages/`)
 - [ ] Coaches strip: add MFO (Mike Ferry Organization), then "all of REDX" for coaches. NEEDS CLARIFYING: which coaches/logos does "all of REDX" mean?
 - [ ] Add an FRBO blurb (currently "Coming soon" in the products section) and make the product buttons bigger (drop `lv-btn--sm` on the services buttons)
 - [ ] Lead Manager filters: move "Canceled" to second (it is baked into `assets/img/lm-filters.png`; needs a new image or a rebuilt HTML mockup)

@@ -621,6 +621,10 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @keyframes lv-marquee { to { transform: translateX(-50%); } }
 /* brokerage logos: white PNGs on transparent, shown slightly muted */
 .lv-logo-img { display: block; height: clamp(34px, 3.6vw, 50px); width: auto; opacity: .7; }
+/* logos with different proportions get their own height so they look the same weight */
+.lv-logo-img--kw { height: clamp(40px, 4.2vw, 58px); }
+.lv-logo-img--remax { height: clamp(26px, 2.8vw, 40px); }
+.lv-logo-img--century { height: clamp(17px, 1.9vw, 26px); }
 /* text stand-ins for logos we don't have files for yet: replace each .lv-wordmark with an <img class="lv-logo-img"> */
 .lv-wordmark { font-family: var(--lv-font-display); font-weight: 800; font-size: clamp(1.4rem, 2.4vw, 2.2rem); letter-spacing: -.02em; color: rgba(241,240,237,.7); white-space: nowrap; }
 /* WHO WE ARE: sticky two-column block. When it reaches the middle of the screen the right column scrolls. JS: lv-story.js */
