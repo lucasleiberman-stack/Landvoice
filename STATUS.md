@@ -8,10 +8,12 @@ Homepage prototype is built end to end; remaining work is filling placeholders a
 ## Done recently
 - Git set up, pushed to github.com/lucasleiberman-stack/Landvoice
 - CLAUDE.md and low-context workflow (`/wrap`, `/section`) added
+- FAQ section added below pricing (`#faq`, `sections/faq.css`, native details/summary, no JS)
 
 ## Next up
 - Enable GitHub Pages for a live preview
 - Fill placeholders listed in README.md (logos, screenshots, stats, video URLs)
+- Write the 22 FAQ answers (each is a `TODO copy` placeholder in index.html)
 - Confirm flagged copy (see `TODO copy` comments in index.html)
 
 ## Decisions / gotchas

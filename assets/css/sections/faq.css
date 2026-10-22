@@ -1,0 +1,14 @@
+/* FAQ: two columns of native <details> accordions (no JS needed) */
+.lv-faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(40px, 6vw, 96px); margin-top: clamp(40px, 5vw, 72px); }
+.lv-faq__col { display: grid; align-content: start; }
+.lv-faq__item { border-bottom: 1px solid var(--lv-hairline); }
+.lv-faq__q { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 1.35rem; cursor: pointer; list-style: none; font-family: var(--lv-font-display); font-size: 1.0625rem; font-weight: 500; letter-spacing: -.01em; color: var(--lv-fg); }
+.lv-faq__q::-webkit-details-marker { display: none; }
+.lv-faq__q:focus-visible { outline: 2px solid var(--lv-blue); outline-offset: 2px; border-radius: 4px; }
+.lv-faq__icon { position: relative; flex: none; width: 14px; height: 14px; }
+.lv-faq__icon::before, .lv-faq__icon::after { content: ""; position: absolute; inset: 50% 0 auto; height: 2px; margin-top: -1px; background: currentColor; transition: transform .25s var(--lv-ease); }
+.lv-faq__icon::after { transform: rotate(90deg); }
+.lv-faq__item[open] .lv-faq__icon::after { transform: rotate(0); }
+.lv-faq__a { padding-bottom: 1.35rem; color: var(--lv-fg-muted); line-height: 1.6; max-width: 56ch; }
+@media (max-width: 800px) { .lv-faq { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .lv-faq__icon::before, .lv-faq__icon::after { transition: none; } }
