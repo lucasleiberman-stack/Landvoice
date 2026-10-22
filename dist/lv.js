@@ -34,6 +34,15 @@ LV.ready(function () {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { item.classList.remove('is-open'); if (item.contains(document.activeElement)) document.activeElement.blur(); } });
   });
 });
+
+/* lv-header: adds .is-stuck once the page has scrolled, so the bar floats (see header.css). */
+LV.ready(function () {
+  var header = LV.$('.lv-header');
+  if (!header) return;
+  var update = LV.raf(function () { header.classList.toggle('is-stuck', window.scrollY > 40); });
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+});
 /* lv-reveal: fades elements up when they scroll into view.
    Markup: data-lv-reveal  (optional style="--lv-delay:.2s")
    Uses IntersectionObserver, plus a scroll-position fallback so content can never stay hidden. */
