@@ -255,8 +255,8 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-footer__legal a[href^="tel"] { color: inherit; text-decoration: underline; text-underline-offset: .2em; }  /* keeps phone links the surrounding colour */
 .lv-footer__copy { margin-top: 1.4rem; }
 /* HEADER: sticky bar, logo, nav, menu panel. JS: lv-menu.js */
-.lv-header { position: sticky; top: 0; z-index: 100; background: rgba(241,240,237,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lv-line); color: var(--lv-ink); }
-.lv-header__inner { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 40px); width: min(100% - 2 * var(--lv-gutter), 1400px); height: 68px; margin-inline: auto; }
+.lv-header { position: sticky; top: 0; z-index: 100; background: var(--lv-paper); border-bottom: 1px solid var(--lv-line); color: var(--lv-ink); }
+.lv-header__inner { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 40px); width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); height: 68px; margin-inline: auto; }
 .lv-logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
 .lv-logo__mark { width: 34px; height: 34px; }
 .lv-logo__word { font-size: 1.6rem; font-weight: 300; letter-spacing: .24em; line-height: 1; font-family: var(--lv-font-display); }
@@ -271,7 +271,7 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .lv-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 .lv-menu { border-top: 1px solid var(--lv-line); background: var(--lv-paper); }
-.lv-menu ul { display: grid; width: min(100% - 2 * var(--lv-gutter), 1400px); margin: 0 auto; padding-block: 1rem 1.6rem; }
+.lv-menu ul { display: grid; width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin: 0 auto; padding-block: 1rem 1.6rem; }
 .lv-menu a { display: block; padding: .8rem 0; font-family: var(--lv-font-display); font-size: 1.5rem; letter-spacing: -.02em; text-decoration: none; border-bottom: 1px solid var(--lv-line); }
 @media (max-width: 900px) { .lv-nav { display: none; } .lv-header__inner > .lv-btn { margin-left: auto; } }
 @media (max-width: 480px) { .lv-header__inner > .lv-btn { display: none; } .lv-burger { margin-left: auto; } }
@@ -522,6 +522,8 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-stat { padding-block: clamp(28px, 4vw, 52px); border-bottom: 1px solid var(--lv-hairline); }
 .lv-stat__value { font-family: var(--lv-font-display); font-size: var(--lv-fs-stat); font-weight: 500; letter-spacing: -.05em; line-height: var(--lv-lh-stat); }
 .lv-stat__label { margin-top: calc(var(--lv-fs-stat) * -.3); font-size: clamp(1.4rem, 2.2vw, 2.1rem); line-height: 1.3; letter-spacing: -.01em; max-width: 24ch; }   /* pulled up into the stat's tall line box */
+/* medium screens (e.g. 16" MacBook): a bit more room between the trust strip and the story */
+@media (min-width: 901px) and (max-width: 1800px) { .lv-who { margin-top: clamp(40px, 6vh, 90px); } }
 @media (max-width: 900px) {
   .lv-who__sticky { position: static; min-height: 0; padding-block: var(--lv-section-y) 0; }
   .lv-who__grid { grid-template-columns: 1fr; }
