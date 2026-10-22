@@ -6,5 +6,7 @@
 .lv-marquee:hover .lv-marquee__track { animation-play-state: paused; }
 .lv-marquee__item { flex: none; margin-right: clamp(56px, 7vw, 110px); display: flex; align-items: center; }
 @keyframes lv-marquee { to { transform: translateX(-50%); } }
-/* text stand-ins for logos: replace each .lv-wordmark with an <img> */
+/* brokerage logos: white PNGs on transparent, shown slightly muted */
+.lv-logo-img { display: block; height: clamp(34px, 3.6vw, 50px); width: auto; opacity: .7; }
+/* text stand-in (unused now, kept for new placeholders) */
 .lv-wordmark { font-family: var(--lv-font-display); font-weight: 800; font-size: clamp(1.4rem, 2.4vw, 2.2rem); letter-spacing: -.02em; color: rgba(241,240,237,.4); white-space: nowrap; }
