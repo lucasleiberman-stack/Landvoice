@@ -558,7 +558,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-services__end { margin-top: clamp(40px, 6vw, 90px); text-align: center; display: grid; gap: .6rem; justify-items: center; }
 .lv-services__end .lv-svc__icon { margin-bottom: .4rem; }
 .lv-services__end .lv-svc__text { margin-bottom: 0; max-width: 34rem; }
-.lv-services__soon { padding: .55em 1.1em; border-radius: 999px; background: var(--lv-orange); color: #fff; font: 600 .7rem/1 var(--lv-font-mono); letter-spacing: .1em; text-transform: uppercase; }   /* orange "coming soon" pill under the title */
+.lv-services__soon { padding: .55em 1.1em; border-radius: 999px; background: var(--lv-orange); color: #fff; font: 600 .85rem/1 var(--lv-font-body); text-transform: lowercase; }   /* orange "coming soon" pill under the title */
 
 @media (max-width: 860px) {
   .lv-road__line { left: 14px; }
