@@ -21,4 +21,4 @@
 .lv-ai__link { display: grid; place-items: center; width: 64px; height: 64px; transition: transform .3s var(--lv-ease); }
 .lv-ai__link:hover { transform: translateY(-4px) scale(1.06); }
 .lv-ai__link svg, .lv-ai__link img { width: 100%; height: 100%; object-fit: contain; }
-.lv-ai__note { margin-top: 1rem; font-size: .85rem; color: var(--lv-fg-muted); }
+.lv-ai__note { margin-top: 1.75rem; font-size: .85rem; color: var(--lv-fg-muted); }
