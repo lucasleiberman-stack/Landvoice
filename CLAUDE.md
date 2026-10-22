@@ -32,7 +32,7 @@ Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later 
 ## Open items
 - Placeholders (logos, screenshots, headshots, `[X]+` stats, video URLs) are listed in `README.md`; they are dashed orange or marked `lv-ph`.
 - `TODO copy` comments in `index.html` flag duplicated text awaiting real copy; leave them until the copy is confirmed.
-- Not built yet: FAQ section, pricing billing toggle.
+- Not built yet: pricing billing toggle. FAQ answers are placeholders.
 
 ## Git
 - Remote: `origin` = github.com/lucasleiberman-stack/Landvoice, branch `main`.
