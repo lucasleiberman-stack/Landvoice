@@ -1,0 +1,21 @@
+/* HEADER: sticky bar, logo, nav, menu panel. JS: lv-menu.js */
+.lv-header { position: sticky; top: 0; z-index: 100; background: rgba(241,240,237,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--lv-line); color: var(--lv-ink); }
+.lv-header__inner { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 40px); width: min(100% - 2 * var(--lv-gutter), 1400px); height: 68px; margin-inline: auto; }
+.lv-logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
+.lv-logo__mark { width: 34px; height: 34px; }
+.lv-logo__word { font-size: 1.6rem; font-weight: 300; letter-spacing: .24em; line-height: 1; font-family: var(--lv-font-display); }
+.lv-logo__word b { font-weight: 800; }
+.lv-nav { margin-left: auto; }
+.lv-nav ul { display: flex; gap: clamp(18px, 2.4vw, 36px); }
+.lv-nav a { text-decoration: none; font-size: 1.05rem; padding-block: .4rem; border-bottom: 2px solid transparent; transition: border-color .2s; }
+.lv-nav a:hover { border-color: var(--lv-orange); }
+.lv-burger { display: grid; gap: 5px; width: 28px; padding: 6px 2px; }
+.lv-burger span { height: 1.5px; background: currentColor; transition: transform .3s var(--lv-ease), opacity .2s; }
+.lv-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.lv-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.lv-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.lv-menu { border-top: 1px solid var(--lv-line); background: var(--lv-paper); }
+.lv-menu ul { display: grid; width: min(100% - 2 * var(--lv-gutter), 1400px); margin: 0 auto; padding-block: 1rem 1.6rem; }
+.lv-menu a { display: block; padding: .8rem 0; font-family: var(--lv-font-display); font-size: 1.5rem; letter-spacing: -.02em; text-decoration: none; border-bottom: 1px solid var(--lv-line); }
+@media (max-width: 900px) { .lv-nav { display: none; } .lv-header__inner > .lv-btn { margin-left: auto; } }
+@media (max-width: 480px) { .lv-header__inner > .lv-btn { display: none; } .lv-burger { margin-left: auto; } }

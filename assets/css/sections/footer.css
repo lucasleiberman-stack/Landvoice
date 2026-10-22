@@ -1,0 +1,9 @@
+/* FOOTER */
+.lv-footer { padding-block: clamp(56px, 7vw, 96px) 40px; border-top: 1px solid var(--lv-hairline); }
+.lv-footer__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; margin-bottom: 2.5rem; }
+.lv-footer .lv-logo { color: var(--lv-paper); }
+.lv-footer__nav { display: flex; flex-wrap: wrap; gap: .6rem 2rem; }
+.lv-footer__nav a { text-decoration: none; color: var(--lv-fg-muted); } .lv-footer__nav a:hover { color: var(--lv-paper); }
+.lv-footer__legal { max-width: 78rem; font-size: .8rem; line-height: 1.7; color: var(--lv-fg-muted); }
+.lv-footer__legal a[href^="tel"] { color: inherit; text-decoration: underline; text-underline-offset: .2em; }  /* keeps phone links the surrounding colour */
+.lv-footer__copy { margin-top: 1.4rem; }

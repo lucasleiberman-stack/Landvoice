@@ -1,0 +1,5 @@
+/* LEAD MANAGER: intro + full-bleed carousel of feature cards. JS: lv-carousel.js */
+.lv-lm { padding-top: 0; }
+.lv-lm__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(36px, 5vw, 64px); }
+.lv-lm__intro { display: grid; gap: 1.4rem; max-width: 62rem; }
+.lv-lm__actions { margin-top: clamp(32px, 4vw, 56px); }

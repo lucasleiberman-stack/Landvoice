@@ -1,0 +1,15 @@
+/* TESTIMONIAL: avatar + big quote + progress bars. JS: lv-slider.js */
+.lv-testimonial { padding-block: clamp(80px, 10vw, 150px); }
+.lv-quote { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(32px, 6vw, 90px); align-items: center; }
+.lv-quote__avatar { width: clamp(180px, 25vw, 360px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #D9D9D9; }
+.lv-quote__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.lv-quote__body .lv-eyebrow { margin-bottom: 1.2rem; }
+.lv-quote__text { font-family: var(--lv-font-display); font-size: clamp(1.6rem, 3vw, 2.8rem); font-weight: 500; letter-spacing: -.03em; line-height: 1.15; max-width: 24ch; }
+.lv-quote__who { margin-top: 1.6rem; font-weight: 600; }
+.lv-quote__who span { display: block; font-weight: 400; color: var(--lv-fg-muted); }
+.lv-quote__mark { position: absolute; right: 2%; top: -8%; width: clamp(120px, 18vw, 260px); color: var(--lv-paper); opacity: .06; pointer-events: none; }
+.lv-quote__slide[hidden] { display: none; }
+.lv-quote__dots { display: flex; gap: .5rem; margin-top: 2rem; }
+.lv-quote__dot { width: 3.2rem; height: 6px; border-radius: 3px; background: #B9B9B9; position: relative; overflow: hidden; }
+.lv-quote__dot.is-active { background: var(--lv-blue); }
+@media (max-width: 760px) { .lv-quote { grid-template-columns: 1fr; } }

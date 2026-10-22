@@ -1,0 +1,43 @@
+/* HERO: copy on the left, tilted territory map on the right with colour-coded record pins */
+.lv-hero { overflow: hidden; display: flex; align-items: center; min-height: min(88vh, 860px); padding-block: clamp(64px, 8vw, 120px); }
+.lv-hero__stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(16px, 3vw, 56px); align-items: center;
+  width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin-inline: auto; }   /* hero content never grows past 1800px */
+.lv-hero__copy { max-width: min(46rem, 100%); }
+.lv-hero .lv-eyebrow { margin-bottom: 1.6rem; }
+.lv-hero .lv-h1 { margin-bottom: 1.6rem; }
+.lv-hero .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
+
+/* map is centred in its column and slightly oversized so its soft edges bleed */
+.lv-hero__map { position: relative; width: 135%; margin-inline: -17.5%; aspect-ratio: 2800 / 1800; pointer-events: none; container-type: inline-size; }
+.lv-hero__map > img { width: 100%; height: 100%; }
+
+/* PROPERTY PINS: four footprints + frosted cards laid over the territory circle. They draw in one by one (--i = order).
+   Everything is sized in "u" = 1/525 of the overlay's width, so it scales with the map. */
+.lv-props { --u: calc(100cqw / 525); --step: .85s; --start: .7s;
+  position: absolute; left: 25%; top: 25%; width: 44%; aspect-ratio: 525 / 414; container-type: inline-size; }
+.lv-props__feet { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.lv-prop-foot { stroke: #000; stroke-width: 1; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center;
+  animation: lv-foot-in .7s var(--lv-ease) both; animation-delay: calc(var(--start) + var(--i) * var(--step)); }
+.lv-prop-foot--pre  { fill: rgba(0,111,255,.23); }
+.lv-prop-foot--fsbo { fill: rgba(182,255,182,.38); stroke: #073D13; }
+.lv-prop-foot--dist { fill: rgba(193,171,249,.69); }
+.lv-prop-foot--exp  { fill: #FBCA9E; }
+.lv-prop-card { --tag-bg: #C9E9D3; --tag-ink: #073D13;
+  position: absolute; left: calc(var(--x) / 525 * 100%); top: calc(var(--y) / 414 * 100%); width: calc(var(--w) / 525 * 100%); height: calc(var(--h) / 414 * 100%);
+  display: flex; flex-direction: column; gap: calc(var(--gap) * var(--u)); padding: calc(var(--pt) * var(--u)) calc(9 * var(--u)) 0 calc(var(--pt) * var(--u) + 2 * var(--u));
+  border-radius: calc(8 * var(--u)); background: rgba(255,255,255,.79); -webkit-backdrop-filter: blur(calc(11.55 * var(--u))); backdrop-filter: blur(calc(11.55 * var(--u)));
+  animation: lv-card-in .8s var(--lv-ease) both; animation-delay: calc(var(--start) + var(--i) * var(--step) + .3s); }
+.lv-prop-card__tag { display: grid; place-items: center; width: calc(var(--tw) * var(--u)); height: calc(18 * var(--u)); border-radius: calc(9 * var(--u)); background: var(--tag-bg); color: var(--tag-ink); font-size: calc(10.4 * var(--u)); font-weight: 600; line-height: 1; white-space: nowrap; }
+.lv-prop-card__addr { font-size: calc(13.3 * var(--u)); font-weight: 600; line-height: 1; color: var(--lv-ink); white-space: nowrap; }
+.lv-prop-card--pre  { --tag-bg: #90B8ED; --tag-ink: #173159; }
+.lv-prop-card--dist { --tag-bg: rgba(139,92,246,.5); --tag-ink: #2A1A52; }
+.lv-prop-card--exp  { --tag-bg: rgba(255,121,0,.37); --tag-ink: #9E4E06; }
+@keyframes lv-foot-in { from { opacity: 0; transform: scale(.25); } to { opacity: 1; transform: none; } }
+@keyframes lv-card-in { from { opacity: 0; transform: translateY(calc(14 * var(--u))); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .lv-prop-foot, .lv-prop-card { animation: none; } }
+
+@media (max-width: 900px) {
+  .lv-hero { min-height: 0; padding-bottom: 0; }
+  .lv-hero__stage { grid-template-columns: 1fr; }
+  .lv-hero__map { width: 150%; margin: 1rem -25% 0; }
+}

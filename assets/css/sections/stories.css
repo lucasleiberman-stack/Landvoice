@@ -1,0 +1,20 @@
+/* STORIES: video-card carousel + coach logo strip */
+.lv-stories__head { display: grid; gap: 1.2rem; justify-items: center; text-align: center; margin-bottom: clamp(40px, 5vw, 72px); }
+.lv-stories .lv-carousel__track { scroll-snap-type: x mandatory; padding-inline: max(var(--lv-gutter), calc((100% - min(52vw, 940px)) / 2)); scroll-padding-inline: 0; gap: clamp(24px, 4vw, 78px); }
+.lv-stories .lv-carousel__slide { width: min(52vw, 940px); scroll-snap-align: center; }
+.lv-video-card__media { position: relative; aspect-ratio: 2 / 1; border-radius: 14px; overflow: hidden; background: var(--lv-blue-soft); }
+.lv-video-card__play { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; transform: translate(-50%, -50%); display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--lv-blue); font-size: 1.1rem; transition: transform .3s var(--lv-ease); }
+.lv-video-card__play:hover { transform: translate(-50%, -50%) scale(1.1); }
+.lv-video-card__quote { margin-top: 1.4rem; text-align: center; font-size: clamp(1.1rem, 1.7vw, 1.55rem); line-height: 1.35; letter-spacing: -.01em; }
+@media (max-width: 760px) { .lv-stories .lv-carousel__slide { width: 82vw; } .lv-stories .lv-carousel__track { padding-inline: 9vw; } }
+
+/* equal space above (carousel) and below (proof cards) the coaches strip */
+.lv-stories { padding-bottom: 0; }
+.lv-coaches { margin-top: clamp(80px, 10vw, 150px); text-align: center; }
+.lv-coaches + .lv-proof { margin-top: clamp(80px, 10vw, 150px); }
+.lv-coaches__title { font-family: var(--lv-font-display); font-size: var(--lv-fs-h3); font-weight: 600; letter-spacing: -.03em; margin-bottom: clamp(28px, 4vw, 48px); }
+.lv-coach { display: grid; justify-items: center; gap: .7rem; }
+.lv-coach__logo { display: flex; align-items: center; gap: .8rem; padding: .7rem 1.3rem .7rem .8rem; background: #fff; border-radius: 8px; font-family: var(--lv-font-display); font-size: 1.5rem; font-weight: 500; color: #16284F; white-space: nowrap; }
+.lv-coach__avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--lv-paper-3); display: grid; place-items: center; font: 600 .8rem var(--lv-font-mono); color: #6B7280; }
+.lv-coach__name { font-family: var(--lv-font-mono); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--lv-fg-muted); }
+.lv-coaches .lv-marquee__item { margin-right: clamp(24px, 3vw, 40px); }

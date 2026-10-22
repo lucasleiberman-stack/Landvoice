@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landvoice | The Most Accurate Seller Data in Real Estate</title>
+<meta name="description" content="Landvoice provides every Expired, FSBO, Pre-Foreclosure, FRBO, and Neighborhood record you need to connect with motivated sellers and list more homes.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/img/landvoice-mark.svg">
+
+<!-- Styles: in dev they load separately. For production run ./bundle.sh and use dist/lv.css -->
+<link rel="stylesheet" href="assets/css/00-tokens.css">
+<link rel="stylesheet" href="assets/css/01-base.css">
+<link rel="stylesheet" href="assets/css/02-layout.css">
+<link rel="stylesheet" href="assets/css/03-components.css">
+<link rel="stylesheet" href="assets/css/sections/header.css">
+<link rel="stylesheet" href="assets/css/sections/hero.css">
+<link rel="stylesheet" href="assets/css/sections/trust.css">
+<link rel="stylesheet" href="assets/css/sections/who.css">
+<link rel="stylesheet" href="assets/css/sections/showcase.css">
+<link rel="stylesheet" href="assets/css/sections/services.css">
+<link rel="stylesheet" href="assets/css/sections/lead-manager.css">
+<link rel="stylesheet" href="assets/css/sections/testimonial.css">
+<link rel="stylesheet" href="assets/css/sections/integrations.css">
+<link rel="stylesheet" href="assets/css/sections/longevity.css">
+<link rel="stylesheet" href="assets/css/sections/steps.css">
+<link rel="stylesheet" href="assets/css/sections/addons.css">
+<link rel="stylesheet" href="assets/css/sections/stories.css">
+<link rel="stylesheet" href="assets/css/sections/proof.css">
+<link rel="stylesheet" href="assets/css/sections/pricing.css">
+<link rel="stylesheet" href="assets/css/sections/footer.css">
+</head>
+<body>
+
+<!-- ICON SPRITE (reference with <svg class="lv-icon"><use href="#lv-i-arrow"/></svg>) -->
+<svg class="lv-sprite" aria-hidden="true" focusable="false"><defs>
+  <symbol id="lv-i-arrow-solid" viewBox="0 0 20 20"><path d="M8.81554 0.309093C8.40245 0.722182 8.40249 1.39176 8.81437 1.80363L13.7127 6.70193C14.3785 7.36775 13.9073 8.506 12.9661 8.50468L1.05656 8.50522C0.776099 8.5052 0.508275 8.61636 0.309942 8.81469C-0.103147 9.22778 -0.103107 9.89736 0.30877 10.3092C0.507127 10.5076 0.774964 10.6188 1.05543 10.6188L12.9675 10.6208C13.91 10.6208 14.38 11.7579 13.7143 12.4236L8.81658 17.3213C8.40349 17.7344 8.40479 18.4027 8.81667 18.8146C9.2298 19.2277 9.89812 19.2265 10.3099 18.8147L18.8155 10.3091C19.2286 9.896 19.2273 9.22769 18.8154 8.81582L10.3088 0.309184C9.89694 -0.102693 9.22737 -0.102733 8.81554 0.309093Z"/></symbol>
+  <symbol id="lv-i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></symbol>
+  <symbol id="lv-i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 5.5 4.5 12 11 18.5"/></symbol>
+  <symbol id="lv-i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol>
+  <symbol id="lv-i-check" viewBox="0 0 20 20"><rect width="20" height="20" rx="5"/><path d="M5.5 10.3l3 3 6-6.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="lv-i-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.500 9.400l6.600-.8z"/></symbol>
+  <symbol id="lv-i-quote" viewBox="0 0 64 56"><path d="M0 56V30C0 12 10 2 26 0l2 8C19 10 14 16 14 24h14v32zm36 0V30C36 12 46 2 62 0l2 8c-9 2-14 8-14 16h14v32z"/></symbol>
+  <!-- solid service icons -->
+  <symbol id="lv-ic-expired" viewBox="0 0 48 48"><circle cx="19" cy="14" r="8"/><path d="M3 41c0-9.4 7.2-16 16-16 2.3 0 4.4.4 6.3 1.3-2 2.3-3.3 5.3-3.3 8.7 0 2.2.6 4.3 1.6 6H5a2 2 0 0 1-2-2z"/><circle cx="36" cy="33" r="9"/><path d="M36 27.5V33l3.5 2.2" fill="none" stroke="var(--lv-icon-cut)" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="lv-ic-fsbo" viewBox="0 0 48 48"><path d="M7 4h5v40H7z"/><path d="M12 7h31v5H12z"/><rect x="17" y="12" width="22" height="15" rx="1"/></symbol>
+  <symbol id="lv-ic-pre" viewBox="0 0 48 48"><path d="M24 4 2 24h6v20h14V30h4v14h14V24h6z"/></symbol>
+  <symbol id="lv-ic-nbhd" viewBox="0 0 48 48"><path d="M2 11l13-5v31L2 42zM17 6l14 5v31l-14-5zM33 11l13-5v31l-13 5z"/></symbol>
+  <symbol id="lv-ic-frbo" viewBox="0 0 48 48"><path fill-rule="evenodd" d="M14 12a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/><rect x="24" y="21" width="22" height="6"/><rect x="36" y="27" width="4" height="8"/><rect x="42" y="27" width="4" height="6"/></symbol>
+</defs></svg>
+
+<!-- ===== HEADER  (WP: header.php) ===== -->
+<header class="lv-header">
+  <div class="lv-header__inner">
+    <a class="lv-logo" href="/" aria-label="Landvoice home">
+      <img class="lv-logo__mark" src="assets/img/landvoice-mark.svg" alt="" width="34" height="34">
+      <span class="lv-logo__word"><b>LAND</b>VOICE</span>
+    </a>
+    <nav class="lv-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+    <a class="lv-btn lv-btn--sm" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Buy Now</span></a>
+    <button class="lv-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="lv-menu" data-lv-menu-toggle><span></span><span></span><span></span></button>
+  </div>
+  <div class="lv-menu" id="lv-menu" hidden>
+    <ul>
+      <li><a href="#products">Products</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#training">Training</a></li><li><a href="#contact">Contact</a></li><li><a href="#login">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO  (WP: template-parts/hero.php) ===== -->
+<section class="lv-band lv-band--light lv-band--flat-top lv-hero" aria-labelledby="hero-title">
+  <div class="lv-hero__stage">
+    <div class="lv-hero__copy">
+      <p class="lv-eyebrow" data-lv-reveal>Serving listing agents <span class="lv-accent">since 1991</span></p>
+      <h1 class="lv-h1" id="hero-title" data-lv-reveal style="--lv-delay:.08s">The Most Accurate<br>Seller Data In Real Estate.</h1>
+      <p class="lv-lede" data-lv-reveal style="--lv-delay:.16s">Landvoice provides every Expired, FSBO, Pre-Foreclosure, FRBO, and Neighborhood record you need to connect with motivated sellers and list more homes.</p>
+      <div class="lv-actions" data-lv-reveal style="--lv-delay:.24s">
+        <a class="lv-btn" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+        <a class="lv-btn lv-btn--dark" href="#demo"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Live Demo</span></a>
+      </div>
+    </div>
+  <!-- map graphic. Pins are positioned in % of the image (--x / --y). Edit text freely. -->
+  <div class="lv-hero__map" aria-hidden="true">
+    <img src="assets/img/hero-map.png" alt="" width="2000" height="1286">
+    <!-- property pins: footprints + frosted cards, drawn in one by one (order = --i). Coordinates are a 525x414 grid. -->
+    <div class="lv-props">
+      <svg class="lv-props__feet" viewBox="0 0 525 414" aria-hidden="true">
+        <polygon class="lv-prop-foot lv-prop-foot--pre" style="--i:0" points="377,91.5 328,64.5 366,42 414,69.5"/>
+        <polygon class="lv-prop-foot lv-prop-foot--fsbo" style="--i:1" points="109,248.5 78,268.5 34.5,232.8 32,230.5 63.5,213"/>
+        <polygon class="lv-prop-foot lv-prop-foot--dist" style="--i:2" points="465,226 492,243 509.5,229.5 482,213"/>
+        <polygon class="lv-prop-foot lv-prop-foot--exp" style="--i:3" points="255.5,413 234.5,395 232,393 255.5,376 279.5,395"/>
+      </svg>
+      <div class="lv-prop-card lv-prop-card--pre" style="--i:0;--x:312;--y:0;--w:108;--h:53;--tw:90;--pt:7;--gap:5.4"><span class="lv-prop-card__tag">Pre-foreclosure</span><span class="lv-prop-card__addr">438 H St.</span></div>
+      <div class="lv-prop-card lv-prop-card--fsbo" style="--i:1;--x:0;--y:165;--w:115;--h:53;--tw:46;--pt:7;--gap:5.4"><span class="lv-prop-card__tag">FSBO</span><span class="lv-prop-card__addr">438 Irving St.</span></div>
+      <div class="lv-prop-card lv-prop-card--dist" style="--i:2;--x:433;--y:153;--w:92;--h:63;--tw:72;--pt:10;--gap:9.4"><span class="lv-prop-card__tag">Distressed</span><span class="lv-prop-card__addr">45 H St.</span></div>
+      <div class="lv-prop-card lv-prop-card--exp" style="--i:3;--x:203;--y:317;--w:117;--h:63;--tw:57;--pt:10;--gap:10"><span class="lv-prop-card__tag">Expired</span><span class="lv-prop-card__addr">439 Irving St.</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== DARK BAND: trust strip + "Who we are" story  (WP: template-parts/trust.php, who.php) ===== -->
+<div class="lv-band lv-band--dark lv-band--before-device">
+
+  <section class="lv-trust" aria-labelledby="trust-title">
+    <h3 class="lv-trust__title" id="trust-title">Trusted by <span class="lv-accent">200k</span> agents across the industry</h3>
+    <div class="lv-marquee" aria-label="Brokerages that use Landvoice">
+      <!-- TODO: swap each .lv-wordmark for an <img> logo -->
+      <div class="lv-marquee__track" data-lv-marquee>
+        <div class="lv-marquee__item"><span class="lv-wordmark">BERKSHIRE HATHAWAY</span></div>
+        <div class="lv-marquee__item"><span class="lv-wordmark">EXIT</span></div>
+        <div class="lv-marquee__item"><span class="lv-wordmark">eXp</span></div>
+        <div class="lv-marquee__item"><span class="lv-wordmark">COLDWELL BANKER</span></div>
+        <div class="lv-marquee__item"><span class="lv-wordmark">EXIT</span></div>
+        <div class="lv-marquee__item"><span class="lv-wordmark">eXp</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCROLL STORY: the block sticks to the screen, then the right column scrolls (js/60-story.js) -->
+  <section class="lv-who" data-lv-story data-lv-story-speed="1.1" data-lv-story-until=".lv-device" data-lv-story-gap="0.45" aria-labelledby="who-title">
+    <div class="lv-who__sticky" data-lv-story-sticky>
+      <div class="lv-container lv-who__grid">
+        <div class="lv-who__head">
+          <p class="lv-eyebrow">Who we are</p>
+          <h2 class="lv-h2 lv-h2--xl" id="who-title">The Longest Operating<br>Seller Data Provider<br>in Real Estate.</h2>
+        </div>
+        <div class="lv-who__window" data-lv-story-window>
+          <div class="lv-who__track" data-lv-story-track>
+            <p class="lv-who__lead">Landvoice has delivered seller records to <span class="lv-todo">[X]+</span> agents through <span class="lv-todo">[X]</span> housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated.</p>
+            <div class="lv-stat"><p class="lv-stat__value" data-lv-story-num>35+</p><p class="lv-stat__label">Years Delivering High Intent Leads</p></div>
+            <div class="lv-stat"><p class="lv-stat__value" data-lv-story-num>#1</p><p class="lv-stat__label">Accuracy with Leads Provided In The Industry</p></div>
+            <div class="lv-stat"><p class="lv-stat__value" data-lv-story-num>155M</p><p class="lv-stat__label">Homeowner Records Delivered</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== LIGHT BAND: tablet + services road + lead manager ===== -->
+<div class="lv-band lv-band--light">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+
+  <!-- SHOWCASE (WP: template-parts/showcase.php) -->
+  <div class="lv-showcase" id="demo">
+    <div class="lv-container">
+      <figure class="lv-device" data-lv-video-frame>
+        <div class="lv-device__screen">
+          <div class="lv-ph" data-label="Screenshot: Neighborhood Search map (video poster)"></div>
+          <button class="lv-play" type="button" data-lv-video="" aria-label="Play video"><span class="lv-play__dot"><svg class="lv-icon"><use href="#lv-i-play"/></svg></span>Play video</button>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <!-- SERVICES (WP: template-parts/services.php) -->
+  <section class="lv-section lv-services" id="products" aria-labelledby="services-title">
+    <div class="lv-container">
+      <header class="lv-services__head" data-lv-reveal>
+        <p class="lv-eyebrow">Unmatched seller data</p>
+        <h2 class="lv-h2" id="services-title">The Smarter Way for Real Estate Agents to Get More Listings.</h2>
+        <p class="lv-lede">The agents who list more homes usually have one thing in common: they consistently talk to more motivated sellers. Landvoice helps you build a more predictable listing pipeline by giving you access to real estate seller data that is aligned with how top agents list more homes.</p>
+      </header>
+
+      <div class="lv-road" data-lv-road>
+        <div class="lv-road__rows">
+          <div class="lv-road__line" aria-hidden="true"><div class="lv-road__fill"></div></div>
+
+          <div class="lv-road__row" data-lv-road-row>
+            <article class="lv-svc lv-svc--left">
+              <svg class="lv-svc__icon" aria-hidden="true"><use href="#lv-ic-expired"/></svg>
+              <h3 class="lv-h3 lv-svc__title">Expired Listings</h3>
+              <p class="lv-svc__text">Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.</p>
+              <a class="lv-btn lv-btn--sm" href="#expired"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Learn More</span></a>
+            </article>
+            <div class="lv-road__mid" aria-hidden="true"><span class="lv-road__arm lv-road__arm--l"></span><span class="lv-road__node"></span><span class="lv-road__arm lv-road__arm--r"></span></div>
+            <article class="lv-svc lv-svc--right">
+              <svg class="lv-svc__icon" aria-hidden="true"><use href="#lv-ic-fsbo"/></svg>
+              <h3 class="lv-h3 lv-svc__title">FSBO Data</h3>
+              <p class="lv-svc__text">Owners selling on their own. Most eventually list with an agent - reach them before three competitors do. Updated every morning.</p>
+              <a class="lv-btn lv-btn--sm" href="#fsbo"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Learn More</span></a>
+            </article>
+          </div>
+
+          <div class="lv-road__row" data-lv-road-row>
+            <article class="lv-svc lv-svc--left">
+              <svg class="lv-svc__icon" aria-hidden="true"><use href="#lv-ic-pre"/></svg>
+              <h3 class="lv-h3 lv-svc__title">Pre-Foreclosure &amp; Distressed</h3>
+              <p class="lv-svc__text">Notice of Default, Lis Pendens, Notice of Trustee Sale, and bank-owned records from county filings. Owners on a deadline who need a real solution.</p>
+              <a class="lv-btn lv-btn--sm" href="#pre"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Learn More</span></a>
+            </article>
+            <div class="lv-road__mid" aria-hidden="true"><span class="lv-road__arm lv-road__arm--l"></span><span class="lv-road__node"></span><span class="lv-road__arm lv-road__arm--r"></span></div>
+            <article class="lv-svc lv-svc--right">
+              <svg class="lv-svc__icon" aria-hidden="true"><use href="#lv-ic-nbhd"/></svg>
+              <h3 class="lv-h3 lv-svc__title">Neighborhood Search</h3>
+              <!-- TODO copy: this text duplicates the Expired Listings copy from the design -->
+              <p class="lv-svc__text">Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.</p>
+              <a class="lv-btn lv-btn--sm" href="#nbhd"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Learn More</span></a>
+            </article>
+          </div>
+        </div>
+
+        <div class="lv-services__end" data-lv-reveal>
+          <h3 class="lv-h3">FRBO Data</h3>
+          <p class="lv-muted">Coming soon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD MANAGER (WP: template-parts/lead-manager.php) -->
+  <section class="lv-section lv-lm" data-lv-carousel aria-labelledby="lm-title">
+    <div class="lv-container lv-lm__head">
+      <div class="lv-lm__intro" data-lv-reveal>
+        <p class="lv-eyebrow">Unmatched seller data</p>
+        <h2 class="lv-h2" id="lm-title">Your Data, Organized Your Way.<br>Landvoice Lead Manager.</h2>
+        <p class="lv-lede">Most providers deliver seller data one of two ways: a raw CSV you have to sort, de-dupe, and babysit - or a locked platform that decides what you're allowed to see. Landvoice Lead Manager is a workspace with one purpose: turning verified seller records into the contact list you actually want to connect with.</p>
+      </div>
+      <div class="lv-carousel__controls">
+        <button class="lv-carousel__btn" type="button" aria-label="Previous" data-lv-carousel-prev><svg class="lv-icon lv-icon--flip"><use href="#lv-i-arrow-solid"/></svg></button>
+        <button class="lv-carousel__btn" type="button" aria-label="Next" data-lv-carousel-next><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></button>
+      </div>
+    </div>
+    <div class="lv-carousel__track" data-lv-carousel-track>
+      <article class="lv-carousel__slide lv-fcard">
+        <div class="lv-fcard__body"><h3 class="lv-fcard__title">Filter on your terms</h3><p class="lv-fcard__text">Organize records by Date Expired, price range, days on market, neighborhood, property type, or lead source. Build the list that matches how you prospect.</p></div>
+        <div class="lv-fcard__media"><img class="lv-fcard__img" src="assets/img/lm-filters.png" width="840" height="504" alt="Lead Manager showing active filters (Expired, Withdrawn, Canceled) above a lead list" loading="lazy"></div>
+      </article>
+      <article class="lv-carousel__slide lv-fcard">
+        <div class="lv-fcard__body"><h3 class="lv-fcard__title">Mark, tag, and take notes</h3><!-- TODO copy: duplicates card 1 in the design --><p class="lv-fcard__text">Organize records by Date Expired, price range, days on market, neighborhood, property type, or lead source. Build the list that matches how you prospect.</p></div>
+        <div class="lv-fcard__media"><img class="lv-fcard__img" src="assets/img/lm-tags.png" width="840" height="504" alt="Lead Manager showing an Add Tag button and a row of tags such as Attempt1, EmailSent and Contacted" loading="lazy"></div>
+      </article>
+      <article class="lv-carousel__slide lv-fcard">
+        <div class="lv-fcard__body"><h3 class="lv-fcard__title">Maintain your own do-not-call list</h3><p class="lv-fcard__text lv-todo">Copy needed.</p></div>
+        <div class="lv-fcard__media"><img class="lv-fcard__img" src="assets/img/lm-dnc.png" width="840" height="504" alt="A do-not-call list of contacts, each with a toggle and a call button" loading="lazy"></div>
+      </article>
+      <article class="lv-carousel__slide lv-fcard">
+        <div class="lv-fcard__body"><h3 class="lv-fcard__title">Export clean, anytime</h3><p class="lv-fcard__text lv-todo">Copy needed.</p></div>
+        <div class="lv-fcard__media"><img class="lv-fcard__img" src="assets/img/lm-export.png" width="840" height="504" alt="A list of expired and withdrawn leads with checkboxes selecting which to export" loading="lazy"></div>
+      </article>
+    </div>
+    <div class="lv-container lv-lm__actions lv-actions">
+      <a class="lv-btn" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+      <a class="lv-btn lv-btn--dark" href="#demo"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Live Demo</span></a>
+    </div>
+  </section>
+</div>
+
+<!-- ===== DARK BAND: testimonial (WP: template-parts/testimonial.php) ===== -->
+<section class="lv-band lv-band--dark lv-testimonial" aria-label="Client success" data-lv-slider data-lv-interval="8000">
+  <div class="lv-container lv-quote">
+    <svg class="lv-quote__mark" aria-hidden="true"><use href="#lv-i-quote"/></svg>
+    <!-- TODO: add <img src="..." alt="Sheri Jackson"> inside the avatar -->
+    <div class="lv-quote__avatar"></div>
+    <div class="lv-quote__body">
+      <p class="lv-eyebrow">Client success</p>
+      <div class="lv-quote__slide" data-lv-slide>
+        <blockquote class="lv-quote__text">I got 3 listings in my very first month with Landvoice! It has been a game-changer for my business.</blockquote>
+        <p class="lv-quote__who">Sheri Jackson<span>Jackson Team, Las Vegas</span></p>
+      </div>
+      <div class="lv-quote__slide" data-lv-slide hidden>
+        <blockquote class="lv-quote__text">Landvoice integrates seamlessly with the other apps. It's a no-brainer.</blockquote>
+        <p class="lv-quote__who lv-todo">Agent Name<span>City, ST</span></p>
+      </div>
+      <div class="lv-quote__slide" data-lv-slide hidden>
+        <blockquote class="lv-quote__text">I've tried other seller lead data softwares but nothing comes close to Landvoice.</blockquote>
+        <p class="lv-quote__who lv-todo">Agent Name<span>City, ST</span></p>
+      </div>
+      <div class="lv-quote__dots"><button class="lv-quote__dot is-active" type="button" aria-label="Testimonial 1" data-lv-dot></button><button class="lv-quote__dot" type="button" aria-label="Testimonial 2" data-lv-dot></button><button class="lv-quote__dot" type="button" aria-label="Testimonial 3" data-lv-dot></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIGHT BAND: integrations (WP: template-parts/integrations.php) ===== -->
+<section class="lv-band lv-band--light lv-section" aria-labelledby="int-title">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+  <div class="lv-container">
+    <header class="lv-integrations__head" data-lv-reveal>
+      <p class="lv-eyebrow"><span class="lv-accent">Integrations</span></p>
+      <h2 class="lv-h2" id="int-title">The Most Accurate Data, Inside the CRM You Already Use.</h2>
+      <p class="lv-lede">Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records.</p>
+    </header>
+
+    <div class="lv-integrations__main">
+      <div class="lv-integrations__copy" data-lv-reveal>
+        <h3 class="lv-h3">Works with the CRMs and Dialers agents actually use</h3>
+        <!-- TODO copy: repeats the section intro above -->
+        <p class="lv-muted">Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records.</p>
+        <div class="lv-actions">
+          <a class="lv-btn" href="#integrations"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Integrations</span></a>
+          <a class="lv-btn lv-btn--dark" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+        </div>
+      </div>
+      <!-- TODO: swap this single image for individual logo tiles (.lv-logo-tile) once real logo files exist -->
+      <div class="lv-cluster" data-lv-reveal style="--lv-delay:.1s">
+        <img class="lv-cluster__img" src="assets/img/integrations-cluster.webp" width="1608" height="974" alt="Landvoice integrates with Lofty, Follow Up Boss, BoldTrail, MOJO, Wise Agent, HighLevel and Brivity, with CINC, BoomTown, reside, Sierra Interactive and SureSend coming soon." loading="lazy">
+      </div>
+    </div>
+
+    <div class="lv-else" data-lv-reveal>
+      <p class="lv-eyebrow"><span class="lv-accent">Integrations</span></p>
+      <h2 class="lv-h2">And Everything Else.</h2>
+      <p class="lv-lede">Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records.</p>
+      <img class="lv-else__img" src="assets/img/integrations-else.png" width="1420" height="370" alt="Connect through an API integration or a CSV import." loading="lazy">
+      <h3 class="lv-else__closer">Your brokerage CRM stays your CRM.<br>Landvoice just fills it with better data.</h3>
+      <div class="lv-actions">
+        <a class="lv-btn" href="#integrations"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Integrations</span></a>
+        <a class="lv-btn lv-btn--dark" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DARK BAND: longevity (WP: template-parts/longevity.php) ===== -->
+<section class="lv-band lv-band--dark lv-section lv-longevity" aria-labelledby="long-title">
+  <div class="lv-container lv-container--wide lv-longevity__grid">
+    <div class="lv-longevity__copy" data-lv-reveal>
+      <p class="lv-eyebrow">Longevity</p>
+      <h2 class="lv-h2 lv-h2--xl" id="long-title">No One Has Been Doing This Longer.</h2>
+      <p class="lv-body">Landvoice was founded in 1991 - before the modern MLS, before online listing portals, before the iPhone, and before every other seller data provider in this industry existed. The first FSBO lists were built by hand from newspaper classifieds and faxed to agents. Delivery moved to email, then CD-ROM, then to the cloud platform agents use today.</p>
+      <p class="lv-body">Thirty-five years later, we're still doing the same job: finding homeowners who need to sell now and verifying how to reach them.</p>
+      <p class="lv-body">That history isn't nostalgia - it's the entire reason our data is more accurate. Landvoice has delivered seller records to <span class="lv-todo">[X]+</span> agents through <span class="lv-todo">[X]</span> housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated.</p>
+      <a class="lv-btn" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+    </div>
+    <div class="lv-longevity__stats" data-lv-reveal style="--lv-delay:.12s">
+      <div class="lv-big-stat"><p class="lv-big-stat__label">Founded in</p><p class="lv-big-stat__value">1991</p></div>
+      <div class="lv-big-stat"><p class="lv-big-stat__label">Years In Business</p><p class="lv-big-stat__value">35+</p></div>
+      <div class="lv-big-stat"><p class="lv-big-stat__label">Markets Covered</p><p class="lv-big-stat__value">3.3K</p><p class="lv-big-stat__note">Counties across US &amp; Canada</p></div>
+      <div class="lv-big-stat"><p class="lv-big-stat__label">Clients Helped</p><p class="lv-big-stat__value">5M</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIGHT BAND: how it works (WP: template-parts/steps.php) ===== -->
+<section class="lv-band lv-band--light lv-section" aria-labelledby="steps-title">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+  <div class="lv-container lv-container--wide">
+    <header class="lv-steps__head" data-lv-reveal>
+      <p class="lv-eyebrow">How Landvoice works | 3 simple steps</p>
+      <h2 class="lv-h2" id="steps-title">Seamless Prospecting Built<br>For Your Daily Routine</h2>
+    </header>
+    <ol class="lv-steps__list">
+      <li class="lv-step" data-lv-reveal>
+        <span class="lv-step__num">01</span>
+        <h3 class="lv-h3 lv-step__title">Choose your territory</h3>
+        <p class="lv-step__text">Select the counties, ZIP codes, MLS, or map areas you need in your business. Add, swap, or expand coverage anytime.</p>
+        <div class="lv-step__media"><img class="lv-step__img" src="assets/img/step-1-territory.png" width="434" height="340" alt="Neighborhood Search map with Square, Circle and Polygon tools for choosing a territory" loading="lazy"></div>
+      </li>
+      <li class="lv-step" data-lv-reveal style="--lv-delay:.1s">
+        <span class="lv-step__num">02</span>
+        <h3 class="lv-h3 lv-step__title">Get verified data every morning</h3>
+        <p class="lv-step__text">New Expireds and FSBOs land in your account daily - verified, human-reviewed, de-duplicated, and scrubbed against the State and National DNC Registry.</p>
+        <div class="lv-step__media"><img class="lv-step__img" src="assets/img/step-2-daily-list.png" width="434" height="340" alt="A daily list of new FSBO, Expired and Withdrawn leads with addresses" loading="lazy"></div>
+      </li>
+      <li class="lv-step" data-lv-reveal style="--lv-delay:.2s">
+        <span class="lv-step__num">03</span>
+        <h3 class="lv-h3 lv-step__title">Filter, work, export</h3>
+        <p class="lv-step__text">Build your data list in Landvoice Lead Manager, mark your outcomes, and export into the CRM and dialer you already use.</p>
+        <div class="lv-step__media"><img class="lv-step__img" src="assets/img/step-3-export.png" width="434" height="340" alt="Leads selected with checkboxes, ready to export" loading="lazy"></div>
+      </li>
+    </ol>
+    <div class="lv-steps__foot" data-lv-reveal>
+      <h3 class="lv-steps__lead">Setup takes minutes.<br>Most agents work their <span class="lv-accent">first list the same day they sign up.</span></h3>
+      <div class="lv-actions">
+        <a class="lv-btn" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+        <a class="lv-btn lv-btn--dark" href="#demo"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Live Demo</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DARK BAND: add-ons carousel (WP: template-parts/addons.php) ===== -->
+<section class="lv-band lv-band--dark lv-section" data-lv-carousel aria-labelledby="addons-title">
+  <div class="lv-container lv-addons__head">
+    <div data-lv-reveal>
+      <p class="lv-eyebrow">Add-ons</p>
+      <h2 class="lv-h2 lv-h2--xl" id="addons-title">More Than Just Data.<br>Add To Your Tool Kit.</h2>
+    </div>
+    <div class="lv-carousel__controls">
+      <button class="lv-carousel__btn" type="button" aria-label="Previous" data-lv-carousel-prev><svg class="lv-icon lv-icon--flip"><use href="#lv-i-arrow-solid"/></svg></button>
+      <button class="lv-carousel__btn" type="button" aria-label="Next" data-lv-carousel-next><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></button>
+    </div>
+  </div>
+  <div class="lv-carousel__track" data-lv-carousel-track>
+    <article class="lv-carousel__slide lv-fcard lv-fcard--light">
+      <div class="lv-fcard__body"><h3 class="lv-fcard__title">Inked Cards</h3>
+        <ul class="lv-tags"><li class="lv-tag">Automated</li><li class="lv-tag">Hand-written style</li><li class="lv-tag">On-demand fulfillment</li><li class="lv-tag">Unlimited</li></ul>
+        <p class="lv-fcard__text">Bypass the crowded email inbox entirely. Launch high-converting outreach with custom marketing assets designed to land right on the seller's kitchen table and force them to take notice.</p>
+        <a class="lv-btn lv-btn--sm" href="#inked"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a></div>
+      <div class="lv-fcard__media"><div class="lv-ph" data-label="Image: Inked Card"></div></div>
+    </article>
+    <article class="lv-carousel__slide lv-fcard lv-fcard--light">
+      <div class="lv-fcard__body"><h3 class="lv-fcard__title">Call Capture</h3>
+        <ul class="lv-tags"><li class="lv-tag">Lead routing</li><li class="lv-tag">24/7 tracking</li><li class="lv-tag">Toll-free numbers</li><li class="lv-tag">Logging</li></ul>
+        <p class="lv-fcard__text">Automatically captures and logs the caller ID of every lead who dials your sign riders or toll-free numbers, ensuring you never miss a prospective seller.</p>
+        <a class="lv-btn lv-btn--sm" href="#capture"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a></div>
+      <div class="lv-fcard__media"><div class="lv-ph" data-label="Image: Call Capture"></div></div>
+    </article>
+    <article class="lv-carousel__slide lv-fcard lv-fcard--light">
+      <div class="lv-fcard__body"><h3 class="lv-fcard__title">Listing Coaching</h3>
+        <ul class="lv-tags"><li class="lv-tag">Scripts</li><li class="lv-tag">Objection handling</li><li class="lv-tag">Live monthly training</li><li class="lv-tag">Roleplay</li></ul>
+        <p class="lv-fcard__text lv-todo">Copy needed (earlier draft reused the Inked Cards text).</p>
+        <a class="lv-btn lv-btn--sm" href="#coaching"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a></div>
+      <div class="lv-fcard__media"><div class="lv-ph" data-label="Image: Listing Coaching"></div></div>
+    </article>
+    <article class="lv-carousel__slide lv-fcard lv-fcard--light">
+      <div class="lv-fcard__body"><h3 class="lv-fcard__title">Data Genie</h3>
+        <ul class="lv-tags"><li class="lv-tag">Skip tracing</li><li class="lv-tag">Nationwide data</li><li class="lv-tag">Lead enrichment</li><li class="lv-tag">Verified</li></ul>
+        <p class="lv-fcard__text">Get emails, phone numbers and addresses of incomplete leads throughout the nation.</p>
+        <a class="lv-btn lv-btn--sm" href="#genie"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a></div>
+      <div class="lv-fcard__media"><div class="lv-ph" data-label="Image: Data Genie"></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== LIGHT BAND: stories + coaches + proof + AI (WP: template-parts/stories.php, proof.php) ===== -->
+<div class="lv-band lv-band--light">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+
+  <section class="lv-section lv-stories" id="training" data-lv-carousel data-lv-carousel-start="center" aria-labelledby="stories-title">
+    <header class="lv-container lv-stories__head" data-lv-reveal>
+      <!-- NOTE: design showed "ADD-ONS" here (looks like a leftover). Using "Testimonials" until confirmed. -->
+      <p class="lv-eyebrow">Testimonials</p>
+      <h2 class="lv-h2 lv-h2--xl" id="stories-title">Success Stories.<br>Hear It From Clients.</h2>
+    </header>
+    <div class="lv-carousel__track" data-lv-carousel-track>
+      <article class="lv-carousel__slide lv-video-card" data-lv-video-frame>
+        <div class="lv-video-card__media"><div class="lv-ph" data-label="Video poster"></div><button class="lv-video-card__play" type="button" data-lv-video="" aria-label="Play video"><svg class="lv-icon"><use href="#lv-i-play"/></svg></button></div>
+        <p class="lv-video-card__quote">“I've tried other seller lead data softwares but nothing comes close to Landvoice”</p>
+      </article>
+      <article class="lv-carousel__slide lv-video-card" data-lv-video-frame>
+        <div class="lv-video-card__media"><div class="lv-ph" data-label="Video poster"></div><button class="lv-video-card__play" type="button" data-lv-video="" aria-label="Play video"><svg class="lv-icon"><use href="#lv-i-play"/></svg></button></div>
+        <p class="lv-video-card__quote">“Landvoice integrates seamlessly with the other apps. It's a no-brainer”</p>
+      </article>
+      <article class="lv-carousel__slide lv-video-card" data-lv-video-frame>
+        <div class="lv-video-card__media"><div class="lv-ph" data-label="Video poster"></div><button class="lv-video-card__play" type="button" data-lv-video="" aria-label="Play video"><svg class="lv-icon"><use href="#lv-i-play"/></svg></button></div>
+        <p class="lv-video-card__quote">“I've tried other seller lead data softwares but nothing comes close to Landvoice”</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="lv-section lv-section--tight" style="padding-top:0" aria-labelledby="coaches-title">
+    <div class="lv-container">
+      <div class="lv-coaches" data-lv-reveal>
+        <h3 class="lv-coaches__title" id="coaches-title">Trusted by the <span class="lv-accent">top coaches</span> in the industry</h3>
+        <div class="lv-marquee">
+          <!-- TODO: replace avatar + wordmark with the real coach logos -->
+          <div class="lv-marquee__track" data-lv-marquee style="--lv-marquee-speed:50s">
+            <div class="lv-marquee__item lv-coach"><div class="lv-coach__logo"><span class="lv-coach__avatar">TF</span>TomFerry</div><span class="lv-coach__name">Tom Ferry</span></div>
+            <div class="lv-marquee__item lv-coach"><div class="lv-coach__logo"><span class="lv-coach__avatar">DG</span>FORWARD COACHING</div><span class="lv-coach__name">Debbie De Grote</span></div>
+            <div class="lv-marquee__item lv-coach"><div class="lv-coach__logo"><span class="lv-coach__avatar">TF</span>TomFerry</div><span class="lv-coach__name">Tom Ferry</span></div>
+            <div class="lv-marquee__item lv-coach"><div class="lv-coach__logo"><span class="lv-coach__avatar">DG</span>FORWARD COACHING</div><span class="lv-coach__name">Debbie De Grote</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lv-proof">
+        <article class="lv-proof__card lv-proof__card--dark" data-lv-reveal>
+          <div class="lv-proof__rank"><b>#1</b><h3 class="lv-proof__title">Rated Real Estate<br>Data Provider On Google</h3></div>
+          <div class="lv-stars"><span class="lv-stars__g" aria-hidden="true">G</span><span class="lv-stars__row" aria-hidden="true"><svg class="lv-icon"><use href="#lv-i-star"/></svg><svg class="lv-icon"><use href="#lv-i-star"/></svg><svg class="lv-icon"><use href="#lv-i-star"/></svg><svg class="lv-icon"><use href="#lv-i-star"/></svg><svg class="lv-icon"><use href="#lv-i-star"/></svg></span></div>
+          <p class="lv-proof__meta">4.9 Stars | 630+ Reviews</p>
+          <p>Rated higher on Google than any other provider in our market—backed by hundreds of real estate professionals who rely on our accuracy daily.</p>
+          <a class="lv-btn" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+        </article>
+        <article class="lv-proof__card lv-proof__card--orange" data-lv-reveal style="--lv-delay:.1s">
+          <h3 class="lv-proof__title">Power Your Prospecting With The Highest-Rated Data In Real Estate</h3>
+          <p>Join thousands of top-producing agents who rely on Landvoice for unbeatable data quality, accurate phone numbers, and industry-leading Google reviews.</p>
+          <a class="lv-btn lv-btn--dark" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Started</span></a>
+        </article>
+      </div>
+
+      <!-- AI links open each assistant with a ready-made question. Icons are simple stand-ins: replace with the official marks. -->
+      <div class="lv-ai" data-lv-reveal>
+        <h2 class="lv-ai__title">Ask Your Favorite AI About Landvoice</h2>
+        <div class="lv-ai__row">
+          <a class="lv-ai__link" href="https://claude.ai/new?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F" target="_blank" rel="noopener" aria-label="Ask Claude"><svg viewBox="0 0 64 64"><g stroke="#D97757" stroke-width="5" stroke-linecap="round"><path d="M32 8v14M32 42v14M8 32h14M42 32h14M15 15l10 10M39 39l10 10M49 15L39 25M25 39L15 49"/></g></svg></a>
+          <a class="lv-ai__link" href="https://chatgpt.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F" target="_blank" rel="noopener" aria-label="Ask ChatGPT"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#10A37F"/><g fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><path d="M32 14l15 9v18l-15 9-15-9V23z"/><circle cx="32" cy="32" r="6"/></g></svg></a>
+          <a class="lv-ai__link" href="https://gemini.google.com/app" target="_blank" rel="noopener" aria-label="Ask Gemini"><svg viewBox="0 0 64 64"><defs><linearGradient id="lv-gm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4285F4"/><stop offset="1" stop-color="#9B72CB"/></linearGradient></defs><path fill="url(#lv-gm)" d="M32 4c2 15 13 26 28 28-15 2-26 13-28 28-2-15-13-26-28-28C19 30 30 19 32 4z"/></svg></a>
+          <a class="lv-ai__link" href="https://www.perplexity.ai/search?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F" target="_blank" rel="noopener" aria-label="Ask Perplexity"><svg viewBox="0 0 64 64"><path d="M12 10l20 20 20-20v44L32 34 12 54z" fill="none" stroke="#20B2C8" stroke-width="5" stroke-linejoin="round"/></svg></a>
+          <a class="lv-ai__link" href="https://grok.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F" target="_blank" rel="noopener" aria-label="Ask Grok"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="none" stroke="#1B2330" stroke-width="5"/><path d="M20 44L44 20" stroke="#1B2330" stroke-width="5" stroke-linecap="round"/></svg></a>
+        </div>
+        <p class="lv-ai__note">You'll be redirected to the AI when you tap on one.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== DARK BAND: pricing (WP: template-parts/pricing.php) ===== -->
+<section class="lv-band lv-band--dark lv-section" id="pricing" aria-labelledby="pricing-title">
+  <div class="lv-container lv-container--wide">
+    <header class="lv-pricing__head" data-lv-reveal>
+      <p class="lv-eyebrow">Flexible plans</p>
+      <h2 class="lv-h2 lv-h2--xl" id="pricing-title">Choose the Right Plan<br>to Power Your Workflow</h2>
+    </header>
+    <div class="lv-plans">
+      <article class="lv-plan" data-lv-reveal>
+        <p class="lv-plan__name">Starter</p>
+        <p class="lv-plan__price">$797</p><p class="lv-plan__save">Pay Annually and Save $247</p>
+        <ul class="lv-plan__list">
+          <li>Expired Listings <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>FSBO Data <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Pre-Foreclosure <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Neighborhood Search <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Scripts <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>
+        </ul>
+        <a class="lv-btn lv-btn--block" href="#checkout-starter"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Starter</span></a>
+      </article>
+      <article class="lv-plan lv-plan--pro" data-lv-reveal style="--lv-delay:.08s">
+        <span class="lv-plan__badge">Most popular</span>
+        <p class="lv-plan__name">Pro</p>
+        <p class="lv-plan__price">$1,770</p><p class="lv-plan__save">Pay Annually and Save $514</p>
+        <p class="lv-plan__note">Includes Expired Pro, which is an enhanced data set that gets up to 6 months of listing data for Expireds.</p>
+        <ul class="lv-plan__list">
+          <li>Everything in Starter <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Area Pro <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Remine <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>
+        </ul>
+        <a class="lv-btn lv-btn--block" href="#checkout-pro"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Pro</span></a>
+      </article>
+      <article class="lv-plan" data-lv-reveal style="--lv-delay:.16s">
+        <p class="lv-plan__name">Elite</p>
+        <p class="lv-plan__price">$1,997</p><p class="lv-plan__save">Pay Annually and Save $737</p>
+        <ul class="lv-plan__list">
+          <li>Everything in Pro <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Divorce <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Probate <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Pre-Probate <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>
+        </ul>
+        <a class="lv-btn lv-btn--block" href="#checkout-elite"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Get Elite</span></a>
+      </article>
+      <article class="lv-plan lv-plan--byo" data-lv-reveal style="--lv-delay:.24s">
+        <p class="lv-plan__name">Build your own</p>
+        <p class="lv-plan__price">$49 <small>/mo</small></p>
+        <p>Starts at $49/mo</p><p>Choose individual lead types</p>
+        <p class="lv-todo">Add on: (list needed)</p>
+        <a class="lv-btn lv-btn--dark lv-btn--block" href="#checkout-byo"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Build Your Own</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER  (WP: footer.php) ===== -->
+<footer class="lv-band lv-band--dark lv-footer" id="contact">
+  <div class="lv-container">
+    <div class="lv-footer__top">
+      <a class="lv-logo" href="/" aria-label="Landvoice home"><img class="lv-logo__mark" src="assets/img/landvoice-mark.svg" alt="" width="34" height="34"><span class="lv-logo__word"><b>LAND</b>VOICE</span></a>
+      <nav class="lv-footer__nav" aria-label="Footer"><a href="#products">Products</a><a href="#pricing">Pricing</a><a href="#training">Training</a><a href="#contact">Contact</a><a href="#login">Login</a></nav>
+    </div>
+    <p class="lv-footer__legal">©2026 Place Real Estate Services, LLC. All Rights Reserved. All entities named have offices located at 6330 South 3000 East, Suite 600, Salt Lake City, UT 84121. Pyramid Platform and Prop Offers are provided by homegenius Real Estate, LLC. Single-family rental diligence services are provided by Place Real Estate Management, LLC (Tel: <a href="tel:+18777071415">877.707.1415</a>), a licensed property management company in UT (License #9172198-MN00) and NV (License #ASM.0000217). Real estate services are provided by homegenius Real Estate LLC and homegenius Real Estate Inc. (collectively dba homegenius Real Estate) (Tel: <a href="tel:+18775001415">877-500-1415</a>), which are collectively licensed in every state and the District of Columbia. This communication is for business professionals only and is not intended for distribution to consumers or other third parties. It is not an advertisement as defined by Section 1026.2(a)(2) of Regulation Z.</p>
+  </div>
+</footer>
+
+<!-- Scripts: in dev they load separately. For production run ./bundle.sh and use dist/lv.js -->
+<script src="assets/js/00-core.js"></script>
+<script src="assets/js/10-menu.js"></script>
+<script src="assets/js/20-reveal.js"></script>
+<script src="assets/js/30-marquee.js"></script>
+<script src="assets/js/40-carousel.js"></script>
+<script src="assets/js/50-slider.js"></script>
+<script src="assets/js/60-story.js"></script>
+<script src="assets/js/70-road.js"></script>
+<script src="assets/js/80-media.js"></script>
+</body>
+</html>

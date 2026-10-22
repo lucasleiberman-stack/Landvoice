@@ -1,0 +1,12 @@
+/* LONGEVITY: copy on the left, dotted US/Canada map + 2x2 stats on the right */
+.lv-longevity { overflow: hidden; }
+.lv-longevity__grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 110px); align-items: center; }
+.lv-longevity__copy { display: grid; gap: 1.4rem; justify-items: start; }
+.lv-longevity__copy p + p { margin-top: -.2rem; }
+.lv-longevity__copy .lv-body { color: var(--lv-fg-muted); max-width: 40rem; }
+.lv-longevity__stats { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px) 2rem; text-align: center; }
+.lv-longevity__stats::before { content: ""; position: absolute; inset: -30% -30%; z-index: -1; background: url(../../img/us-canada-dots.svg) center / contain no-repeat; }
+.lv-big-stat__label { font-size: 1.15rem; }
+.lv-big-stat__value { font-family: var(--lv-font-display); font-size: clamp(3.45rem, 6.9vw, 6.9rem); font-weight: 600; letter-spacing: -.05em; line-height: 1.05; }
+.lv-big-stat__note { font-family: var(--lv-font-mono); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+@media (max-width: 900px) { .lv-longevity__grid { grid-template-columns: 1fr; } }

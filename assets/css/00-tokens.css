@@ -1,0 +1,56 @@
+/* ==========================================================================
+   00 TOKENS: every colour, size and spacing value lives here.
+   Change a value once and it updates everywhere.
+   ========================================================================== */
+:root {
+  /* colour: neutrals */
+  --lv-ink: #0D1117;
+  --lv-ink-2: #151B24;
+  --lv-ink-3: #212A36;
+  --lv-paper: #F1F0ED;
+  --lv-paper-2: #E8E6E1;
+  --lv-paper-3: #D9D6CF;
+  --lv-white: #FFFFFF;
+
+  /* colour: brand */
+  --lv-blue: #0A66FF;
+  --lv-blue-deep: #0850C8;
+  --lv-blue-soft: #D5DDF0;
+  --lv-blue-on-dark: #6AA3FF;
+  --lv-orange: #FF6A00;
+  --lv-road: #4C8DF6;          /* the services "road" line */
+
+  /* colour: lines */
+  --lv-line: rgba(13, 17, 23, .14);
+  --lv-line-inv: rgba(241, 240, 237, .16);
+
+  /* type: families (swap here to change fonts site-wide) */
+  --lv-font-display: 'Schibsted Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --lv-font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --lv-font-mono: 'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* type: sizes */
+  --lv-fs-h1: clamp(2.4rem, 4.6vw, 60px);
+  --lv-fs-h2: clamp(2rem, 3.9vw, 56px);          /* every h2 */
+  --lv-fs-h2-xl: var(--lv-fs-h2);                /* kept as an alias: same size as every h2 */
+  --lv-fs-h3: clamp(1.35rem, 2vw, 1.9rem);
+  --lv-fs-body: 1.0625rem;
+  --lv-fs-lede: clamp(1.05rem, 1.3vw, 1.2rem);
+  --lv-fs-eyebrow: .8rem;
+  --lv-fs-stat: clamp(4rem, 11vw, 200px);         /* big stats, 200px max */
+  --lv-lh-stat: 1.5;
+
+  /* layout */
+  --lv-max: 1240px;                              /* content width */
+  --lv-max-wide: 1600px;                         /* wide content (Who we are) */
+  --lv-max-hero: 1800px;                         /* hero stage */
+  --lv-gutter: clamp(24px, 6vw, 96px);           /* page side padding */
+  --lv-section-y: clamp(96px, 13vw, 200px);      /* vertical rhythm between sections */
+  --lv-radius-band: clamp(32px, 5vw, 80px);      /* rounded corners on light bands */
+  --lv-radius-card: 20px;
+  --lv-header-h: 69px;                           /* sticky header height: sticky stages pin just beneath it */
+  --lv-device-overlap: 100px;                    /* how far the tablet rises above the light band */
+
+  /* motion */
+  --lv-ease: cubic-bezier(.16, 1, .3, 1);
+}

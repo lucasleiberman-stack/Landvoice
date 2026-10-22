@@ -1,0 +1,3 @@
+/* SHOWCASE: tablet that rises out of the dark band into the light one */
+.lv-showcase { margin-top: calc(var(--lv-device-overlap) * -1); padding-bottom: clamp(56px, 8vw, 110px); z-index: 3; }
+.lv-showcase .lv-device__screen { background: var(--lv-paper-2); }

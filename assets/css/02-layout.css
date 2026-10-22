@@ -1,0 +1,64 @@
+/* ==========================================================================
+   02 LAYOUT: container, bands (light / dark), section spacing, grid plane
+   A BAND is a full-width coloured block. Light bands get rounded corners and
+   sit on the dark page background; dark bands are flat.
+   ========================================================================== */
+.lv-container { width: min(100% - 2 * var(--lv-gutter), var(--lv-max)); margin-inline: auto; }
+
+.lv-container--wide { width: min(100% - 2 * var(--lv-gutter), var(--lv-max-wide)); }   /* same 1600px width as Who we are */
+
+.lv-band {
+  position: relative;
+  display: flow-root;                    /* stops child margins collapsing through the band (needed for the tablet overlap) */
+  --lv-edge: max(var(--lv-gutter), calc((100% - var(--lv-max)) / 2));   /* left inset used by full-bleed carousels */
+}
+.lv-band > *:not(.lv-gridplane) { position: relative; z-index: 1; }
+
+.lv-band--light {
+  --lv-fg: var(--lv-ink); --lv-fg-muted: #4A5260; --lv-hairline: var(--lv-line);
+  --lv-link: var(--lv-blue); --lv-surface: var(--lv-paper); --lv-icon-cut: var(--lv-paper);
+  background: var(--lv-paper); color: var(--lv-fg);
+  border-radius: var(--lv-radius-band);
+}
+.lv-band--light.lv-band--flat-top { border-top-left-radius: 0; border-top-right-radius: 0; }
+
+.lv-band--dark {
+  --lv-fg: var(--lv-paper); --lv-fg-muted: #A9B1BE; --lv-hairline: var(--lv-line-inv);
+  --lv-link: var(--lv-blue-on-dark); --lv-surface: var(--lv-ink); --lv-icon-cut: var(--lv-ink);
+  background: var(--lv-ink); color: var(--lv-fg);
+}
+.lv-band--before-device { padding-bottom: calc(var(--lv-device-overlap) + clamp(40px, 6vw, 96px)); }   /* room for the tablet + breathing space */
+
+.lv-section { padding-block: var(--lv-section-y); }
+.lv-section--tight { padding-block: clamp(56px, 8vw, 120px); }
+
+/* faint tilted grid patches behind a band: add the .lv-gridplane block (6 patches) as the band's first child.
+   Each patch sits on a corner/side of the band and fades to nothing on the edge that faces the centre. */
+.lv-gridplane { position: absolute; inset: 0; z-index: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+.lv-gridplane__patch {
+  --lv-patch: clamp(180px, 20vw, 340px);
+  position: absolute; width: var(--lv-patch); aspect-ratio: 1;
+  -webkit-mask-image: radial-gradient(ellipse 100% 100% at var(--lv-px, 0) var(--lv-py, 0), #000 0, #000 18%, rgba(0,0,0,.5) 50%, transparent 100%);
+          mask-image: radial-gradient(ellipse 100% 100% at var(--lv-px, 0) var(--lv-py, 0), #000 0, #000 18%, rgba(0,0,0,.5) 50%, transparent 100%);
+}
+.lv-gridplane__patch::before {
+  content: ""; position: absolute; inset: -40%;
+  background: url(../img/grid-light.svg) 0 0 / 120px 99px, url(../img/grid-light.svg) 0 0 / 120px 99px;   /* doubled so the faint lines read at patch size */
+  transform: perspective(900px) rotateX(48deg) rotateZ(-26deg);
+}
+.lv-band--dark .lv-gridplane__patch::before { background-image: url(../img/grid-dark.svg), url(../img/grid-dark.svg); }
+.lv-gridplane__patch--tl { left: 0; top: 0; }
+.lv-gridplane__patch--tr { right: 0; top: 0; --lv-px: 100%; }
+.lv-gridplane__patch--bl { left: 0; bottom: 0; --lv-py: 100%; }
+.lv-gridplane__patch--br { right: 0; bottom: 0; --lv-px: 100%; --lv-py: 100%; }
+.lv-gridplane__patch--ml { left: 0; top: 34%; --lv-patch: clamp(120px, 13vw, 220px); --lv-py: 50%; }
+.lv-gridplane__patch--mr { right: 0; top: 60%; --lv-patch: clamp(120px, 13vw, 220px); --lv-px: 100%; --lv-py: 50%; }
+@media (max-width: 760px) { .lv-gridplane__patch--ml, .lv-gridplane__patch--mr { display: none; } .lv-gridplane__patch { --lv-patch: 150px; } }
+
+/* scroll reveal: <el data-lv-reveal style="--lv-delay:.1s"> */
+[data-lv-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--lv-ease) var(--lv-delay, 0s), transform .9s var(--lv-ease) var(--lv-delay, 0s); }
+[data-lv-reveal].is-in { opacity: 1; transform: none; }
+.no-js [data-lv-reveal] { opacity: 1; transform: none; }
+
+/* to-do markers: anything still needing real content */
+.lv-todo { outline: 1.5px dashed var(--lv-orange); outline-offset: 3px; border-radius: 2px; }

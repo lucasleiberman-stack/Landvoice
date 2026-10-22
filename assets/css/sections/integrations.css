@@ -1,0 +1,16 @@
+/* INTEGRATIONS: logo cluster + "And Everything Else" connector */
+.lv-integrations__head { display: grid; gap: 1.4rem; justify-items: center; text-align: center; max-width: 60rem; margin-inline: auto; }
+.lv-integrations__main { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
+.lv-integrations__copy { display: grid; gap: 1.2rem; justify-items: start; }
+.lv-integrations__copy .lv-h3 { font-size: clamp(1.4rem, 1.9vw, 1.7rem); }
+
+.lv-cluster { position: relative; display: grid; gap: 12px; justify-items: center; }
+.lv-cluster__img { display: block; width: 100%; height: auto; }   /* the image carries its own glow */
+.lv-cluster__row { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.lv-logo-tile { position: relative; overflow: hidden; display: grid; place-items: center; min-width: 8.5rem; height: 6.4rem; padding: 0 1.6rem; background: #fff; border-radius: 14px; box-shadow: 0 10px 24px -14px rgba(13,17,23,.25); font-family: var(--lv-font-display); font-weight: 700; font-size: 1.3rem; letter-spacing: -.02em; color: var(--lv-ink); white-space: nowrap; }
+.lv-logo-tile--soon::after { content: "coming soon"; position: absolute; top: 14px; right: -34px; width: 120px; padding: 2px 0; transform: rotate(45deg); background: var(--lv-orange); color: #fff; font: 600 .5rem/1.5 var(--lv-font-body); letter-spacing: .06em; text-transform: uppercase; text-align: center; }
+
+.lv-else { margin-top: calc(clamp(96px, 12vw, 180px) - 70px); display: grid; gap: 1.4rem; justify-items: center; text-align: center; }
+.lv-else__img { display: block; width: min(85%, 44.2rem); height: auto; margin: clamp(0px, 1vw, 12px) auto; }   /* image carries its own glow */
+.lv-else__closer { font-family: var(--lv-font-display); font-size: var(--lv-fs-h3); font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
+@media (max-width: 900px) { .lv-integrations__main { grid-template-columns: 1fr; } }

@@ -1,0 +1,10 @@
+/* TRUST: "Trusted by 200k agents" + looping logo strip. JS: lv-marquee.js */
+.lv-trust { padding-block: clamp(56px, 7vw, 96px); text-align: center; overflow: hidden; border-bottom: 1px solid var(--lv-hairline); }
+.lv-trust__title { font-family: var(--lv-font-display); font-size: var(--lv-fs-h3); font-weight: 600; letter-spacing: -.03em; margin-bottom: clamp(32px, 4vw, 56px); }
+.lv-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.lv-marquee__track { display: flex; width: max-content; animation: lv-marquee var(--lv-marquee-speed, 40s) linear infinite; }
+.lv-marquee:hover .lv-marquee__track { animation-play-state: paused; }
+.lv-marquee__item { flex: none; margin-right: clamp(56px, 7vw, 110px); display: flex; align-items: center; }
+@keyframes lv-marquee { to { transform: translateX(-50%); } }
+/* text stand-ins for logos: replace each .lv-wordmark with an <img> */
+.lv-wordmark { font-family: var(--lv-font-display); font-weight: 800; font-size: clamp(1.4rem, 2.4vw, 2.2rem); letter-spacing: -.02em; color: rgba(241,240,237,.4); white-space: nowrap; }

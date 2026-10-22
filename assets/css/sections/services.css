@@ -1,0 +1,48 @@
+/* SERVICES: a road drawn down the page with a junction + straight arms at each row. JS: lv-road.js
+   Tweak: --lv-arm (arm length), --lv-arm-y (arm height from row top), --lv-road-w (line thickness) */
+.lv-services { padding-top: 0; }
+.lv-services__head { max-width: 56rem; margin-inline: auto; display: grid; gap: 1.4rem; justify-items: center; text-align: center; }
+.lv-services__head .lv-lede { max-width: 54rem; }
+
+.lv-road { --lv-arm: clamp(260px, 32vw, 480px); --lv-arm-y: 84px; --lv-road-w: 6px; --lv-road-progress: 0px; margin-top: clamp(72px, 9vw, 130px); }
+.lv-road__rows { position: relative; display: grid; row-gap: clamp(72px, 9vw, 130px); }
+
+/* the vertical line: faint track + a filling "paved" part */
+.lv-road__line { position: absolute; left: 50%; top: -90px; bottom: -30px; width: var(--lv-road-w); transform: translateX(-50%); pointer-events: none; background: rgba(76,141,246,.14); border-radius: 4px;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 90px, #000 calc(100% - 90px), transparent); mask-image: linear-gradient(180deg, transparent, #000 90px, #000 calc(100% - 90px), transparent); }
+.lv-road__fill { position: absolute; left: 0; top: 0; width: 100%; height: var(--lv-road-progress); background: var(--lv-road); border-radius: 4px; box-shadow: 0 0 14px rgba(76,141,246,.55); }
+.lv-road__fill::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; transform: translateX(-50%); background: rgba(255,255,255,.75); }
+
+.lv-road__row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) var(--lv-arm) minmax(0, 1fr); align-items: start; }
+.lv-road__mid { position: relative; height: 0; }
+.lv-road__arm { position: absolute; top: var(--lv-arm-y); width: 50%; height: var(--lv-road-w); margin-top: calc(var(--lv-road-w) / -2); background: var(--lv-road); box-shadow: 0 0 12px rgba(76,141,246,.5); transform: scaleX(0); transition: transform 1s var(--lv-ease) .1s; }
+.lv-road__arm::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 2px; transform: translateY(-50%); background: rgba(255,255,255,.75); }
+.lv-road__arm--l { right: 50%; transform-origin: 100% 50%; }
+.lv-road__arm--r { left: 50%; transform-origin: 0 50%; }
+.lv-road__node { position: absolute; z-index: 2; left: 50%; top: var(--lv-arm-y);   /* above the arms so the circle's middle stays empty */
+  width: 44px; height: 44px; border-radius: 50%; background: var(--lv-paper); border: 6px solid var(--lv-road); box-shadow: 0 0 0 6px rgba(76,141,246,.16), 0 0 18px rgba(76,141,246,.45);
+  transform: translate(-50%, -50%) scale(.4); opacity: 0; transition: transform .6s var(--lv-ease), opacity .4s; }
+.lv-road__row.is-active .lv-road__arm { transform: scaleX(1); }
+.lv-road__row.is-active .lv-road__node { transform: translate(-50%, -50%); opacity: 1; }
+
+/* service item */
+.lv-svc { max-width: 31rem; opacity: 0; transform: translateY(30px); transition: opacity .9s var(--lv-ease) .45s, transform .9s var(--lv-ease) .45s; }
+.lv-road__row.is-active .lv-svc, .no-js .lv-svc { opacity: 1; transform: none; }
+.lv-svc--left { justify-self: end; text-align: right; padding-right: 28px; }
+.lv-svc--right { justify-self: start; padding-left: 28px; }
+.lv-svc__icon { width: 48px; height: 48px; margin-bottom: 18px; }
+.lv-svc--left .lv-svc__icon { margin-left: auto; }
+.lv-svc__title { margin-bottom: 1.1rem; }
+.lv-svc__text { margin-bottom: 1.6rem; color: var(--lv-fg-muted); }
+.lv-services__end { margin-top: clamp(40px, 6vw, 90px); text-align: center; display: grid; gap: .6rem; justify-items: center; }
+
+@media (max-width: 860px) {
+  .lv-road__line { left: 14px; }
+  .lv-road__row { grid-template-columns: 1fr; padding-left: 60px; row-gap: 3rem; }
+  .lv-road__mid { position: absolute; left: 0; top: 0; width: 100%; }
+  .lv-road__arm--l { display: none; }
+  .lv-road__arm--r { left: 14px; width: 46px; }
+  .lv-road__node { left: 14px; }
+  .lv-svc--left, .lv-svc--right { justify-self: start; text-align: left; padding: 0; }
+  .lv-svc--left .lv-svc__icon { margin-left: 0; }
+}
