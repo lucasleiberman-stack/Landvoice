@@ -129,22 +129,24 @@
 <!-- ===== LIGHT BAND: Section 3 what data includes ===== -->
 <section class="lv-band lv-band--light lv-section" aria-labelledby="pg-data">
   <div class="lv-container lv-container--wide lv-split">
-    <h2 class="lv-h2" id="pg-data" data-lv-reveal>What Landvoice Expired Data Includes</h2>
-    <div data-lv-reveal style="--lv-delay:.1s">
+    <div class="lv-pg__stack" data-lv-reveal>
+      <h2 class="lv-h2" id="pg-data">What Landvoice Expired Data Includes</h2>
       <h3 class="lv-pg__sub">Homeowner information including name, phone numbers, email, and social media links. All phone numbers are scrubbed against the National and State Do Not Call Registry. Landvoice Expired Data also includes current status, price, days on market, as well as other relevant homeowner information.</h3>
       <ul class="lv-tags"><li class="lv-tag">Name</li><li class="lv-tag">Phone numbers</li><li class="lv-tag">Email</li><li class="lv-tag">Social media links</li><li class="lv-tag">Current status</li><li class="lv-tag">Price</li><li class="lv-tag">Days on market</li></ul>
     </div>
+    <div class="lv-mock" data-lv-reveal style="--lv-delay:.1s"><div class="lv-ph" data-label="Mockup: Expired lead record"></div></div>
   </div>
 </section>
 
 <!-- ===== DARK BAND: Section 4 accurate phone numbers ===== -->
 <section class="lv-band lv-band--dark lv-section" aria-labelledby="pg-phones">
   <div class="lv-container lv-container--wide lv-split">
-    <div class="lv-pg__head" data-lv-reveal>
+    <div class="lv-pg__stack" data-lv-reveal>
       <h2 class="lv-h2" id="pg-phones">Accurate Phone Numbers Rather than More Phone Numbers</h2>
       <h3 class="lv-pg__sub">Up to four phone numbers, ranked by accuracy and likelihood of reaching the owner. Landvoice believes less is more, saving you time with more accurate phone numbers.</h3>
+      <div class="lv-fact"><p class="lv-fact__value">4</p><p class="lv-fact__label">Phone numbers per record at most, ranked by accuracy</p></div>
     </div>
-    <div class="lv-fact" data-lv-reveal style="--lv-delay:.1s"><p class="lv-fact__value">4</p><p class="lv-fact__label">Phone numbers per record at most, ranked by accuracy</p></div>
+    <div class="lv-mock" data-lv-reveal style="--lv-delay:.1s"><div class="lv-ph" data-label="Mockup: Ranked phone numbers"></div></div>
   </div>
 </section>
 
@@ -192,16 +194,41 @@
   </div>
 </section>
 
-<!-- ===== DARK BAND: Section 8 does it still work ===== -->
-<section class="lv-band lv-band--dark lv-section" aria-labelledby="pg-works">
+<!-- ===== DARK BAND: testimonial (WP: template-parts/testimonial.php) ===== -->
+<section class="lv-band lv-band--dark lv-testimonial" aria-label="Client success" data-lv-slider data-lv-interval="8000">
+  <div class="lv-container lv-quote">
+    <svg class="lv-quote__mark" aria-hidden="true"><use href="#lv-i-quote"/></svg>
+    <!-- TODO: add <img src="..." alt="Sheri Jackson"> inside the avatar -->
+    <div class="lv-quote__avatar"></div>
+    <div class="lv-quote__body">
+      <p class="lv-eyebrow">Client success</p>
+      <div class="lv-quote__slide" data-lv-slide>
+        <blockquote class="lv-quote__text">I got 3 listings in my very first month with Landvoice! It has been a game-changer for my business.</blockquote>
+        <p class="lv-quote__who">Sheri Jackson<span>Jackson Team, Las Vegas</span></p>
+      </div>
+      <div class="lv-quote__slide" data-lv-slide hidden>
+        <blockquote class="lv-quote__text">Landvoice integrates seamlessly with the other apps. It's a no-brainer.</blockquote>
+        <p class="lv-quote__who lv-todo">Agent Name<span>City, ST</span></p>
+      </div>
+      <div class="lv-quote__slide" data-lv-slide hidden>
+        <blockquote class="lv-quote__text">I've tried other seller lead data softwares but nothing comes close to Landvoice.</blockquote>
+        <p class="lv-quote__who lv-todo">Agent Name<span>City, ST</span></p>
+      </div>
+      <div class="lv-quote__dots"><button class="lv-quote__dot is-active" type="button" aria-label="Testimonial 1" data-lv-dot></button><button class="lv-quote__dot" type="button" aria-label="Testimonial 2" data-lv-dot></button><button class="lv-quote__dot" type="button" aria-label="Testimonial 3" data-lv-dot></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LIGHT BAND: Section 8 does it still work ===== -->
+<section class="lv-band lv-band--light lv-section" aria-labelledby="pg-works">
   <div class="lv-container lv-container--wide lv-split">
     <h2 class="lv-h2" id="pg-works" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
     <p class="lv-pg__body" data-lv-reveal style="--lv-delay:.1s">Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads.</p>
   </div>
 </section>
 
-<!-- ===== LIGHT BAND: Section 10 price ===== -->
-<section class="lv-band lv-band--light lv-section" id="pricing" aria-labelledby="pg-price">
+<!-- ===== DARK BAND: Section 10 price ===== -->
+<section class="lv-band lv-band--dark lv-section" id="pricing" aria-labelledby="pg-price">
   <div class="lv-container lv-container--wide">
     <header class="lv-pg__head lv-pg__head--center" data-lv-reveal>
       <h2 class="lv-h2" id="pg-price">How Much Does Landvoice Expired Listing Data Cost?</h2>
@@ -213,16 +240,16 @@
   </div>
 </section>
 
-<!-- ===== DARK BAND: Section 11 comparison ===== -->
-<section class="lv-band lv-band--dark lv-section" aria-labelledby="pg-compare">
+<!-- ===== LIGHT BAND: Section 11 comparison ===== -->
+<section class="lv-band lv-band--light lv-section" aria-labelledby="pg-compare">
   <div class="lv-container lv-container--wide lv-split">
     <h2 class="lv-h2" id="pg-compare" data-lv-reveal>Landvoice Compared With Other Expired Data Providers</h2>
     <h3 class="lv-pg__sub" data-lv-reveal style="--lv-delay:.1s">Other Expired providers append Expired leads with much less contact information. Landvoice gives its customers a massive competitive advantage by providing higher quality phone numbers and contact information.</h3>
   </div>
 </section>
 
-<!-- ===== LIGHT BAND: Section 13 FAQ (18 questions: copy needed) ===== -->
-<section class="lv-band lv-band--light lv-section" id="faq" aria-labelledby="faq-title">
+<!-- ===== DARK BAND: Section 13 FAQ (18 questions: copy needed) ===== -->
+<section class="lv-band lv-band--dark lv-section" id="faq" aria-labelledby="faq-title">
   <div class="lv-container lv-container--wide">
     <h2 class="lv-h2 lv-center" id="faq-title" data-lv-reveal>Frequently Asked Questions About Expired Leads</h2>
     <div class="lv-faq">
@@ -252,8 +279,8 @@
   </div>
 </section>
 
-<!-- ===== DARK BAND: Section 14 closing CTA ===== -->
-<section class="lv-band lv-band--dark lv-section" aria-labelledby="pg-cta">
+<!-- ===== LIGHT BAND: Section 14 closing CTA ===== -->
+<section class="lv-band lv-band--light lv-section" aria-labelledby="pg-cta">
   <div class="lv-container lv-cta" data-lv-reveal>
     <h2 class="lv-h2" id="pg-cta">Start Listing More Homes This Month</h2>
     <a class="lv-btn" href="#checkout-expired"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Sign up now</span></a>

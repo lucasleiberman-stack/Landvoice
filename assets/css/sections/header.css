@@ -1,6 +1,7 @@
 /* HEADER: sticky bar, logo, nav, menu panel. JS: lv-menu.js */
 .lv-header { position: sticky; top: 0; z-index: 100; background: var(--lv-paper); border-bottom: 1px solid var(--lv-line); color: var(--lv-ink); }
 .lv-header__inner { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 40px); width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); height: 68px; margin-inline: auto; }
+.lv-header .lv-btn { white-space: nowrap; flex: none; }
 .lv-logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; }
 .lv-logo__mark { width: 34px; height: 34px; }
 .lv-logo__word { font-size: 1.6rem; font-weight: 300; letter-spacing: .24em; line-height: 1; font-family: var(--lv-font-display); }
@@ -8,11 +9,11 @@
 .lv-nav { margin-left: auto; }
 .lv-nav { align-self: stretch; }
 .lv-nav__list { display: flex; gap: clamp(18px, 2.4vw, 36px); height: 100%; }
-.lv-nav__item { display: flex; align-items: center; }
-.lv-nav__list > li > a { white-space: nowrap; text-decoration: none; font-size: 1.05rem; padding-block: .4rem; border-bottom: 2px solid transparent; transition: border-color .2s; }
+.lv-nav__list > li { display: flex; align-items: center; }
+.lv-nav__list > li > a { display: inline-flex; align-items: center; white-space: nowrap; text-decoration: none; font-size: 1.05rem; padding-block: .4rem; border-bottom: 2px solid transparent; transition: border-color .2s; }
 .lv-nav__list > li > a:hover { border-color: var(--lv-orange); }
 /* MEGA MENU: opens on hover / keyboard focus (and on tap, JS adds .is-open). Panel hangs off the sticky header. */
-.lv-nav__item--mega > a::after { content: ""; display: inline-block; width: .42em; height: .42em; margin: 0 0 .2em .55em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); transition: transform .25s var(--lv-ease); }
+.lv-nav__item--mega > a::after { content: ""; display: inline-block; width: .42em; height: .42em; flex: none; margin: -.2em 0 0 .6em; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); transition: transform .25s var(--lv-ease); }
 .lv-nav__item--mega:hover > a::after, .lv-nav__item--mega:focus-within > a::after, .lv-nav__item--mega.is-open > a::after { transform: rotate(-135deg) translate(-2px, -2px); }
 .lv-mega { position: absolute; top: 100%; left: 0; right: 0; background: var(--lv-paper); border-bottom: 1px solid var(--lv-line); box-shadow: 0 24px 40px -24px rgba(13,17,23,.25); visibility: hidden; opacity: 0; transform: translateY(-6px); transition: opacity .2s var(--lv-ease), transform .2s var(--lv-ease), visibility 0s .2s; }
 .lv-nav__item--mega:hover > .lv-mega, .lv-nav__item--mega:focus-within > .lv-mega, .lv-nav__item--mega.is-open > .lv-mega { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }

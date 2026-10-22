@@ -20,6 +20,15 @@
 .lv-split .lv-tag { font-size: .9rem; }
 .lv-band--dark .lv-tag { color: var(--lv-blue-on-dark); border-color: var(--lv-blue-on-dark); }
 
+/* product mockup frames (swap the .lv-ph placeholder for an <img>) */
+.lv-mock { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
+.lv-band--dark .lv-mock { background: var(--lv-ink-2); }
+.lv-mock img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lv-split > .lv-mock { padding-top: 0; }
+.lv-pg__stack { display: grid; gap: 1.4rem; justify-items: start; }
+.lv-pg__stack .lv-tags { margin-top: .4rem; }
+.lv-pg__stack .lv-fact { margin-top: .6rem; width: 100%; }
+
 /* big-number facts */
 .lv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: clamp(40px, 5vw, 72px); }
 .lv-fact { padding: clamp(24px, 3vw, 40px); border: 1px solid var(--lv-hairline); border-radius: var(--lv-radius-card); }
