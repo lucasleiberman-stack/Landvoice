@@ -60,7 +60,7 @@ Reuse the same pieces: `lv-band` (light/dark), `lv-section`, `lv-container`, the
 ## Placeholders still to fill (all outlined in dashed orange or marked `lv-ph`)
 - Real logos: trust strip, CRM tiles (12), coach logos, AI icons are simple stand-ins.
 - Screenshots / graphics: tablet video poster, lead manager cards (4), "how it works" images (3), add-on images (4), video posters (3), Sheri Jackson headshot.
-- Copy: "[X]+ agents" / "[X] housing cycles" (two places), Lead Manager cards 3 and 4, Listing Coaching text, Build Your Own "Add on" list, testimonials 2 and 3 names, video URLs (`data-lv-video`).
+- Copy: "[X]+ agents" / "[X] housing cycles" (two places), Lead Manager cards 3 and 4, Build Your Own "Add on" list, testimonials 2 and 3 names, video URLs (`data-lv-video`).
 
 ## Copy notes: please confirm
 - Eyebrow "SERVING LISTINGS AGENTS" corrected to "listing agents"; "Pre-forclosure" and "Pre-Forclosure" corrected to "Pre-foreclosure"; "Its a no-brainer" to "It's".

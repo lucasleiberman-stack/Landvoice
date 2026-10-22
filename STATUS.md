@@ -36,7 +36,7 @@ Pricing
 Footer
 - [ ] Add TikTok and X links/icons to the footer next to the existing four (need the profile URLs; also set the Facebook/YouTube/LinkedIn/Instagram URLs, still `#` placeholders)
 Cleanup
-- [ ] X out all Listing Coaching stuff (add-on card and its image `assets/img/addon-listing-coaching.png`, mega menu add-on link, anywhere else it appears), then re-check the add-ons carousel
+- [x] Listing Coaching removed from the add-ons carousel and the Products menu (done)
 
 Needs from the user before starting: franchise logos, REDX coach details, billing prices, team statement copy, social URLs, new images (Data Genie, filters, DNC, Brivity integration).
 
