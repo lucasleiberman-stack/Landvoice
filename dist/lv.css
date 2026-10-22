@@ -555,11 +555,10 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-svc--left .lv-svc__icon { margin-left: auto; }
 .lv-svc__title { margin-bottom: 1.1rem; }
 .lv-svc__text { margin-bottom: 1.6rem; color: var(--lv-fg-muted); }
-.lv-services__end { position: relative; overflow: hidden; margin: clamp(40px, 6vw, 90px) auto 0; padding: clamp(32px, 4vw, 52px) clamp(24px, 4vw, 56px); max-width: 38rem; background: #fff; border-radius: var(--lv-radius-card); box-shadow: 0 10px 24px -14px rgba(13,17,23,.25); text-align: center; display: grid; gap: .6rem; justify-items: center; }
+.lv-services__end { margin-top: clamp(40px, 6vw, 90px); text-align: center; display: grid; gap: .6rem; justify-items: center; }
 .lv-services__end .lv-svc__icon { margin-bottom: .4rem; }
-.lv-services__end .lv-svc__text { margin-bottom: 0; max-width: 32rem; }
-/* "coming soon" corner ribbon (same look as the integrations tiles); add .lv-soon to any positioned, overflow-hidden box */
-.lv-soon::after { content: "coming soon"; position: absolute; top: 18px; right: -38px; width: 140px; padding: 3px 0; transform: rotate(45deg); background: var(--lv-orange); color: #fff; font: 600 .56rem/1.5 var(--lv-font-body); letter-spacing: .06em; text-transform: uppercase; text-align: center; }
+.lv-services__end .lv-svc__text { margin-bottom: 0; max-width: 34rem; }
+.lv-services__soon { font: 600 .7rem/1 var(--lv-font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--lv-orange); }   /* small "coming soon" under the title */
 
 @media (max-width: 860px) {
   .lv-road__line { left: 14px; }
