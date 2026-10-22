@@ -8,13 +8,14 @@ Homepage prototype is built end to end; remaining work is filling placeholders a
 ## Done recently
 - Git set up, pushed to github.com/lucasleiberman-stack/Landvoice
 - CLAUDE.md and low-context workflow (`/wrap`, `/section`) added
+- Homepage FAQ answers added (22)
 - FAQ section added below pricing (`#faq`, `sections/faq.css`, native details/summary, no JS)
 
 ## Next up
 - Expired Listings product page built (`expired-listings.html`, `sections/product.css`) as the template for other product pages; needs: hero image, 18 FAQ questions + answers, checkout link (`#checkout-expired`)
 - Enable GitHub Pages for a live preview
 - Fill placeholders listed in README.md (logos, screenshots, stats, video URLs)
-- Write the 22 FAQ answers (each is a `TODO copy` placeholder in index.html)
+- Homepage FAQ answers are in; fill the orange bracketed placeholders in them ([X]% phone match rate, $[X] price, CRM/dialer names)
 - Confirm flagged copy (see `TODO copy` comments in index.html)
 
 ## Decisions / gotchas
