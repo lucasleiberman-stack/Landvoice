@@ -13,8 +13,5 @@
 .lv-coaches { margin-top: clamp(80px, 10vw, 150px); text-align: center; }
 .lv-coaches + .lv-proof { margin-top: clamp(80px, 10vw, 150px); }
 .lv-coaches__title { font-family: var(--lv-font-display); font-size: var(--lv-fs-h3); font-weight: 600; letter-spacing: -.03em; margin-bottom: clamp(28px, 4vw, 48px); }
-.lv-coach { display: grid; justify-items: center; gap: .7rem; }
-.lv-coach__logo { display: flex; align-items: center; gap: .8rem; padding: .7rem 1.3rem .7rem .8rem; background: #fff; border-radius: 8px; font-family: var(--lv-font-display); font-size: 1.5rem; font-weight: 500; color: #16284F; white-space: nowrap; }
-.lv-coach__avatar { width: 54px; height: 54px; border-radius: 50%; background: var(--lv-paper-3); display: grid; place-items: center; font: 600 .8rem var(--lv-font-mono); color: #6B7280; }
-.lv-coach__name { font-family: var(--lv-font-mono); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--lv-fg-muted); }
+.lv-coach__img { display: block; height: 104px; width: auto; max-width: none; }   /* logo + coach name are baked into the image */
 .lv-coaches .lv-marquee__item { margin-right: clamp(24px, 3vw, 40px); }
