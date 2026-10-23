@@ -69,3 +69,4 @@
 /* optional second block under the hero lede (a small heading + paragraph), still inside .lv-herocopy */
 .lv-herocopy__more { display: grid; gap: .8rem; margin-top: .4rem; }
 .lv-herocopy__more .lv-lede { margin-bottom: 0; }
+.lv-herocopy__more .lv-h3 { font-size: var(--lv-fs-lede); letter-spacing: -.01em; line-height: 1.4; }   /* the small heading is the same size as the paragraph below it; weight keeps it reading as a heading */

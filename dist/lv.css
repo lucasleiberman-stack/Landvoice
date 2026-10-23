@@ -242,6 +242,7 @@ h2 { font-size: var(--lv-fs-h2); }
 /* optional second block under the hero lede (a small heading + paragraph), still inside .lv-herocopy */
 .lv-herocopy__more { display: grid; gap: .8rem; margin-top: .4rem; }
 .lv-herocopy__more .lv-lede { margin-bottom: 0; }
+.lv-herocopy__more .lv-h3 { font-size: var(--lv-fs-lede); letter-spacing: -.01em; line-height: 1.4; }   /* the small heading is the same size as the paragraph below it; weight keeps it reading as a heading */
 /* ADD-ONS: dark band with a carousel of light cards. JS: lv-carousel.js */
 .lv-addons__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(36px, 5vw, 64px); }
 .lv-addons__head .lv-eyebrow { margin-bottom: 1.2rem; }
