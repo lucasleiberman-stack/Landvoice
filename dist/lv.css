@@ -39,6 +39,7 @@
   --lv-fs-eyebrow: .8rem;
   --lv-fs-stat: clamp(4rem, 11vw, 200px);         /* big stats, 200px max */
   --lv-lh-stat: 1.5;
+  --lv-ls-sub: -0.3px;                         /* letter spacing for sub paragraphs (.lv-lede, .lv-pg__sub, .lv-pg__body) and pills (.lv-tag, .lv-pill) */
 
   /* layout */
   --lv-max: 1240px;                              /* content width */
@@ -94,7 +95,7 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-h2 { font-size: var(--lv-fs-h2); }
 .lv-h2--xl { font-size: var(--lv-fs-h2-xl); }
 .lv-h3 { font-size: var(--lv-fs-h3); letter-spacing: -.025em; line-height: 1.15; }
-.lv-lede { font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; color: var(--lv-fg-muted); max-width: 60ch; }
+.lv-lede { font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 60ch; }
 .lv-eyebrow { font-family: var(--lv-font-mono); font-size: var(--lv-fs-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--lv-fg); }
 .lv-accent { color: var(--lv-link); }
 .lv-muted { color: var(--lv-fg-muted); }
@@ -194,7 +195,7 @@ h2 { font-size: var(--lv-fs-h2); }
 
 /* TAG (outlined pill) */
 .lv-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
-.lv-tag { font-size: .8rem; line-height: 1; color: var(--lv-blue); border: 1px solid var(--lv-blue); border-radius: 999px; padding: .4em .85em; }
+.lv-tag { font-size: .8rem; line-height: 1; letter-spacing: var(--lv-ls-sub); color: var(--lv-blue); border: 1px solid var(--lv-blue); border-radius: 999px; padding: .4em .85em; }
 
 /* PLACEHOLDER box for screenshots / video: <div class="lv-ph" data-label="Screenshot: filters"></div> */
 .lv-ph { position: relative; display: grid; place-items: center; min-height: 100%; width: 100%; border-radius: inherit; text-align: center; padding: 1rem;
@@ -457,8 +458,8 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-pg-hero__media { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
 
 /* the H3 under a section heading: long supporting sentence, body face, not a display heading */
-.lv-pg__sub { font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: 0; color: var(--lv-fg-muted); max-width: 62ch; }
-.lv-pg__body { font-size: var(--lv-fs-lede); line-height: 1.65; color: var(--lv-fg-muted); max-width: 62ch; }
+.lv-pg__sub { font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 62ch; }
+.lv-pg__body { font-size: var(--lv-fs-lede); line-height: 1.65; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 62ch; }
 .lv-pg__head { display: grid; gap: 1.4rem; max-width: 62rem; }
 .lv-pg__head--center { justify-items: center; text-align: center; margin-inline: auto; }
 
@@ -475,7 +476,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 /* data fields: tags under the paragraph, 20% smaller than the first big version, wrapping */
 .lv-pg__stack .lv-tags { gap: .72rem; }
-.lv-pg__stack .lv-tag { font-family: var(--lv-font-body); font-size: clamp(.88rem, 1.52vw, 1.36rem); font-weight: 500; letter-spacing: normal;   /* same font and spacing as paragraph text */ padding: .6em 1.3em; border-width: 1.5px; background: rgba(106,163,255,.1); }
+.lv-pg__stack .lv-tag { font-family: var(--lv-font-body); font-size: clamp(.88rem, 1.52vw, 1.36rem); font-weight: 500;   /* same font and letter spacing (--lv-ls-sub) as the sub paragraphs */ padding: .6em 1.3em; border-width: 1.5px; background: rgba(106,163,255,.1); }
 
 /* product mockup frames (swap the .lv-ph placeholder for an <img>) */
 .lv-mock { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
@@ -495,7 +496,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 
 /* highlighted phrases inside a sub paragraph: blue pills that wrap with the text */
-.lv-pill { display: inline-block; margin: .18em .1em; padding: .12em .8em; border-radius: 999px; background: rgba(106,163,255,.1); border: 1.5px solid var(--lv-blue); color: var(--lv-blue); font-weight: 500; line-height: 1.45; }   /* same look as the data-field tags: pale blue fill, blue outline and text */
+.lv-pill { letter-spacing: var(--lv-ls-sub); display: inline-block; margin: .18em .1em; padding: .12em .8em; border-radius: 999px; background: rgba(106,163,255,.1); border: 1.5px solid var(--lv-blue); color: var(--lv-blue); font-weight: 500; line-height: 1.45; }   /* same look as the data-field tags: pale blue fill, blue outline and text */
 .lv-band--dark .lv-pill { border-color: var(--lv-blue-on-dark); color: var(--lv-blue-on-dark); }
 
 /* steps without images */

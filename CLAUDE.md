@@ -25,6 +25,7 @@ Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later 
 ## Conventions (must follow)
 - Every class starts with `lv-`, BEM style (`lv-block__element--modifier`).
 - Hero blocks: wrap the hero text in `lv-herocopy` and use `lv-eyebrow` + `lv-h1` + `lv-lede` inside it (see README "Building hero blocks"). Never set hero font sizes or margins per page.
+- Sub paragraphs (`lv-lede`, `lv-pg__sub`, `lv-pg__body`) and pills (`lv-tag`, `lv-pill`) use `letter-spacing: var(--lv-ls-sub)` (-0.3px). Change the token, don't hard-code spacing.
 - Standard block padding: put `lv-section` on any new band/block (top and bottom padding = `--lv-section-y` in `00-tokens.css`; `lv-section--tight` for the smaller one). Change the token to change every block at once. Don't hard-code section padding.
 - Use `var(--lv-...)` tokens; add new colours/sizes to `00-tokens.css`, don't hard-code them in section files.
 - Light/dark is a band class (`lv-band--light` / `lv-band--dark`); text and line colours come from `--lv-fg`, `--lv-fg-muted`, `--lv-hairline`.

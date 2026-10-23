@@ -37,7 +37,7 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-h2 { font-size: var(--lv-fs-h2); }
 .lv-h2--xl { font-size: var(--lv-fs-h2-xl); }
 .lv-h3 { font-size: var(--lv-fs-h3); letter-spacing: -.025em; line-height: 1.15; }
-.lv-lede { font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; color: var(--lv-fg-muted); max-width: 60ch; }
+.lv-lede { font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 60ch; }
 .lv-eyebrow { font-family: var(--lv-font-mono); font-size: var(--lv-fs-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--lv-fg); }
 .lv-accent { color: var(--lv-link); }
 .lv-muted { color: var(--lv-fg-muted); }

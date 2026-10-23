@@ -39,6 +39,7 @@
   --lv-fs-eyebrow: .8rem;
   --lv-fs-stat: clamp(4rem, 11vw, 200px);         /* big stats, 200px max */
   --lv-lh-stat: 1.5;
+  --lv-ls-sub: -0.3px;                         /* letter spacing for sub paragraphs (.lv-lede, .lv-pg__sub, .lv-pg__body) and pills (.lv-tag, .lv-pill) */
 
   /* layout */
   --lv-max: 1240px;                              /* content width */
