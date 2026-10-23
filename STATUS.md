@@ -34,7 +34,7 @@ Pricing
 - [ ] Add a Monthly / Quarterly / Annual billing tab. NEEDS the monthly and quarterly prices for each plan
 - [ ] Add a team statement below pricing, like REDX has. NEEDS copy (and photo?)
 Footer
-- [ ] Add TikTok and X links/icons to the footer next to the existing four (need the profile URLs; also set the Facebook/YouTube/LinkedIn/Instagram URLs, still `#` placeholders)
+- [x] TikTok and X icons added to the footer (done). Still need real profile URLs for all six social links (all `#` placeholders)
 Cleanup
 - [x] Listing Coaching removed from the add-ons carousel and the Products menu (done)
 
