@@ -19,7 +19,6 @@
 
 /* several blocks sharing one band: even spacing between them */
 .lv-pg-block { margin-top: clamp(72px, 9vw, 140px); }
-.lv-section--joined { padding-top: 0; }   /* sits directly under the testimonial's own bottom padding */
 
 /* data fields: tags under the paragraph, 20% smaller than the first big version, wrapping */
 .lv-pg__stack .lv-tags { gap: .72rem; }
@@ -46,6 +45,7 @@
 /* numbered reasons */
 .lv-reasons { display: grid; gap: 14px; counter-reset: reason; }
 .lv-reason { background: var(--lv-paper-2); counter-increment: reason; display: flex; align-items: center; gap: 1.2rem; padding: 1.3rem 1.5rem; border: 1px solid var(--lv-hairline); border-radius: var(--lv-radius-card); font-family: var(--lv-font-display); font-size: clamp(1.15rem, 1.6vw, 1.45rem); font-weight: 500; letter-spacing: -.02em; }
+.lv-band--dark .lv-reason { background: var(--lv-ink-2); }
 .lv-reason::before { content: "0" counter(reason); font: 500 .85rem var(--lv-font-mono); letter-spacing: .08em; color: var(--lv-link); }
 
 /* steps without images */

@@ -7,7 +7,7 @@
 .lv-quote__text { font-family: var(--lv-font-display); font-size: clamp(1.6rem, 3vw, 2.8rem); font-weight: 500; letter-spacing: -.03em; line-height: 1.15; max-width: 24ch; }
 .lv-quote__who { margin-top: 1.6rem; font-weight: 600; }
 .lv-quote__who span { display: block; font-weight: 400; color: var(--lv-fg-muted); }
-.lv-quote__mark { position: absolute; right: 2%; top: -8%; width: clamp(120px, 18vw, 260px); color: var(--lv-paper); opacity: .06; pointer-events: none; }
+.lv-quote__mark { position: absolute; right: 2%; top: -8%; width: clamp(120px, 18vw, 260px); color: var(--lv-fg); opacity: .06; pointer-events: none; }
 .lv-quote__slide[hidden] { display: none; }
 .lv-quote__dots { display: flex; gap: .5rem; margin-top: 2rem; }
 .lv-quote__dot { width: 3.2rem; height: 6px; border-radius: 3px; background: #B9B9B9; position: relative; overflow: hidden; }
