@@ -271,8 +271,8 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-header { position: sticky; top: 0; z-index: 100; margin-inline: 0; border-radius: 0; background: var(--lv-paper); border-bottom: 1px solid var(--lv-line); color: var(--lv-ink);
   transition: top .5s var(--lv-ease), margin .5s var(--lv-ease), border-radius .5s var(--lv-ease), box-shadow .5s var(--lv-ease), border-color .5s var(--lv-ease); }
 /* once the page scrolls, the bar floats: 10px off the top, inset from the sides, rounded and slightly narrower (class set by lv-menu.js) */
-.lv-header.is-stuck { top: 10px; margin-inline: clamp(10px, 2.2vw, 36px); border-radius: 20px; border-bottom-color: transparent; box-shadow: 0 0 0 1px var(--lv-line), 0 16px 36px -14px rgba(13,17,23,.35); }
-.lv-header.is-stuck .lv-menu { border-radius: 0 0 20px 20px; }
+.lv-header.is-stuck { top: 10px; margin-inline: clamp(10px, 2.2vw, 36px); border-radius: 12px; border-bottom-color: transparent; box-shadow: 0 0 0 1px var(--lv-line), 0 6px 14px -10px rgba(13,17,23,.22); }
+.lv-header.is-stuck .lv-menu { border-radius: 0 0 12px 12px; }
 @media (prefers-reduced-motion: reduce) { .lv-header { transition: none; } }
 .lv-header__inner { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 40px); width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); height: 68px; margin-inline: auto; }
 .lv-header .lv-btn { white-space: nowrap; flex: none; }
@@ -320,7 +320,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @media (max-width: 900px) { .lv-nav { display: none; } .lv-header__inner > .lv-btn { margin-left: auto; } }
 @media (max-width: 480px) { .lv-header__inner > .lv-btn { display: none; } .lv-burger { margin-left: auto; } }
 .lv-mega::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }   /* hover bridge across the gap when the bar floats */
-.lv-header.is-stuck .lv-mega { top: calc(100% + 10px); border-radius: 20px; border-bottom: 0; box-shadow: 0 0 0 1px var(--lv-line), 0 24px 40px -20px rgba(13,17,23,.3); }
+.lv-header.is-stuck .lv-mega { top: calc(100% + 10px); border-radius: 12px; border-bottom: 0; box-shadow: 0 0 0 1px var(--lv-line), 0 10px 20px -14px rgba(13,17,23,.22); }
 /* HERO: copy on the left, tilted territory map on the right with colour-coded record pins */
 .lv-hero { overflow: hidden; display: flex; align-items: center; min-height: min(88vh, 860px); padding-block: clamp(64px, 8vw, 120px); }
 .lv-hero__stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(16px, 3vw, 56px); align-items: center;
