@@ -2,10 +2,6 @@
 .lv-hero { overflow: hidden; display: flex; align-items: center; min-height: min(88vh, 860px); padding-block: clamp(64px, 8vw, 120px); }
 .lv-hero__stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(16px, 3vw, 56px); align-items: center;
   width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin-inline: auto; }   /* hero content never grows past 1800px */
-.lv-hero__copy { max-width: min(46rem, 100%); }
-.lv-hero .lv-eyebrow { margin-bottom: 1.6rem; }
-.lv-hero .lv-h1 { margin-bottom: 1.6rem; }
-.lv-hero .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
 
 /* map is centred in its column and slightly oversized so its soft edges bleed */
 .lv-hero__map { position: relative; width: 135%; margin-inline: -17.5%; aspect-ratio: 2800 / 1800; pointer-events: none; container-type: inline-size; }

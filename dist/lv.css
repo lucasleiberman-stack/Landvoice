@@ -94,7 +94,7 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-h2 { font-size: var(--lv-fs-h2); }
 .lv-h2--xl { font-size: var(--lv-fs-h2-xl); }
 .lv-h3 { font-size: var(--lv-fs-h3); letter-spacing: -.025em; line-height: 1.15; }
-.lv-lede { font-size: var(--lv-fs-lede); line-height: 1.65; color: var(--lv-fg-muted); max-width: 60ch; }
+.lv-lede { font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; color: var(--lv-fg-muted); max-width: 60ch; }
 .lv-eyebrow { font-family: var(--lv-font-mono); font-size: var(--lv-fs-eyebrow); letter-spacing: .08em; text-transform: uppercase; color: var(--lv-fg); }
 .lv-accent { color: var(--lv-link); }
 .lv-muted { color: var(--lv-fg-muted); }
@@ -231,6 +231,14 @@ h2 { font-size: var(--lv-fs-h2); }
   border-radius: 999px; background: #fff; color: var(--lv-ink); font-size: 1.15rem; font-weight: 500; z-index: 2; transition: transform .3s var(--lv-ease); }
 .lv-play:hover { transform: translate(-50%, -50%) scale(1.05); }
 .lv-play__dot { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: var(--lv-blue); color: #fff; font-size: 1rem; }
+
+/* HERO COPY: the eyebrow + h1 + lede stack used by EVERY page hero (home, product pages, future pages).
+   Put .lv-herocopy on the wrapper around the hero's text so the sizes, line heights and spacing stay identical everywhere.
+   Markup: <div class="lv-herocopy"><p class="lv-eyebrow">..</p><h1 class="lv-h1">..</h1><p class="lv-lede">..</p> [buttons: <div class="lv-actions">] </div> */
+.lv-herocopy { max-width: min(46rem, 100%); }
+.lv-herocopy .lv-eyebrow { margin-bottom: 1.6rem; }
+.lv-herocopy .lv-h1 { margin-bottom: 1.6rem; }
+.lv-herocopy .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
 /* ADD-ONS: dark band with a carousel of light cards. JS: lv-carousel.js */
 .lv-addons__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(36px, 5vw, 64px); }
 .lv-addons__head .lv-eyebrow { margin-bottom: 1.2rem; }
@@ -328,10 +336,6 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-hero { overflow: hidden; display: flex; align-items: center; min-height: min(88vh, 860px); padding-block: clamp(64px, 8vw, 120px); }
 .lv-hero__stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(16px, 3vw, 56px); align-items: center;
   width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin-inline: auto; }   /* hero content never grows past 1800px */
-.lv-hero__copy { max-width: min(46rem, 100%); }
-.lv-hero .lv-eyebrow { margin-bottom: 1.6rem; }
-.lv-hero .lv-h1 { margin-bottom: 1.6rem; }
-.lv-hero .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
 
 /* map is centred in its column and slightly oversized so its soft edges bleed */
 .lv-hero__map { position: relative; width: 135%; margin-inline: -17.5%; aspect-ratio: 2800 / 1800; pointer-events: none; container-type: inline-size; }
@@ -446,13 +450,10 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
    Reuses bands, type, buttons, tags, steps and the FAQ accordion; only the pieces below are new. */
 .lv-pg-hero { overflow: hidden; padding-block: clamp(64px, 9vw, 140px); }
 .lv-pg-hero__stage { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(32px, 5vw, 96px); align-items: center; width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin-inline: auto; }
-.lv-pg-hero .lv-eyebrow { margin-bottom: 1.6rem; }
-.lv-pg-hero .lv-h1 { margin-bottom: 1.6rem; }
 .lv-pg-hero__media { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
 
 /* the H3 under a section heading: long supporting sentence, body face, not a display heading */
 .lv-pg__sub { font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: 0; color: var(--lv-fg-muted); max-width: 62ch; }
-.lv-pg-hero .lv-pg__sub { font-size: clamp(1.15rem, 1.5vw, 1.4rem); color: var(--lv-fg); }
 .lv-pg__body { font-size: var(--lv-fs-lede); line-height: 1.65; color: var(--lv-fg-muted); max-width: 62ch; }
 .lv-pg__head { display: grid; gap: 1.4rem; max-width: 62rem; }
 .lv-pg__head--center { justify-items: center; text-align: center; margin-inline: auto; }

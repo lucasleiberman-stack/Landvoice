@@ -54,6 +54,20 @@ prototype/
 4. Keep the `no-js` class on `<html>` (the core script removes it).
 5. Replace text stand-ins with real content: ACF fields or blocks map naturally onto the repeated pieces (service items, feature cards, plans, logo tiles).
 
+## Building hero blocks (home, product pages, any new page)
+Every hero's text uses the same stack so type size, line height and spacing never drift between pages:
+```html
+<div class="lv-herocopy">                     <!-- shared wrapper: max width + spacing, defined once in 03-components.css -->
+  <p class="lv-eyebrow">Eyebrow text</p>
+  <h1 class="lv-h1">Headline</h1>              <!-- --lv-fs-h1, line-height 1.05 -->
+  <p class="lv-lede">Supporting paragraph</p>  <!-- --lv-fs-lede, line-height 1.65 (can be an h3 if the copy calls for one: keep the lv-lede class) -->
+  <div class="lv-actions"> ...buttons... </div>
+</div>
+```
+- Never add hero-specific font sizes or margins in a page's CSS; change `.lv-herocopy` (or the `--lv-fs-h1` / `--lv-fs-lede` tokens) so every hero changes together.
+- Hero bands: use `lv-band lv-band--light lv-band--flat-top` + the page's hero class for layout (see `.lv-hero` in `sections/hero.css` and `.lv-pg-hero` in `sections/product.css`).
+- Reveal animation: `data-lv-reveal` on each element, with `style="--lv-delay:.08s"`, `.16s`, `.24s` for the stagger.
+
 ## Building other pages from this one
 Reuse the same pieces: `lv-band` (light/dark), `lv-section`, `lv-container`, the type classes, `lv-btn`, `lv-fcard`, `lv-carousel`, `lv-plan`, `lv-tag`, `lv-eyebrow`. A new page is mostly a new order of existing sections plus (at most) one new section CSS file.
 

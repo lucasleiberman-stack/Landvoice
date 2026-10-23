@@ -58,3 +58,11 @@
   border-radius: 999px; background: #fff; color: var(--lv-ink); font-size: 1.15rem; font-weight: 500; z-index: 2; transition: transform .3s var(--lv-ease); }
 .lv-play:hover { transform: translate(-50%, -50%) scale(1.05); }
 .lv-play__dot { display: grid; place-items: center; width: 2.3rem; height: 2.3rem; border-radius: 50%; background: var(--lv-blue); color: #fff; font-size: 1rem; }
+
+/* HERO COPY: the eyebrow + h1 + lede stack used by EVERY page hero (home, product pages, future pages).
+   Put .lv-herocopy on the wrapper around the hero's text so the sizes, line heights and spacing stay identical everywhere.
+   Markup: <div class="lv-herocopy"><p class="lv-eyebrow">..</p><h1 class="lv-h1">..</h1><p class="lv-lede">..</p> [buttons: <div class="lv-actions">] </div> */
+.lv-herocopy { max-width: min(46rem, 100%); }
+.lv-herocopy .lv-eyebrow { margin-bottom: 1.6rem; }
+.lv-herocopy .lv-h1 { margin-bottom: 1.6rem; }
+.lv-herocopy .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }

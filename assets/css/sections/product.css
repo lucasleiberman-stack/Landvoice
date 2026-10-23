@@ -2,13 +2,10 @@
    Reuses bands, type, buttons, tags, steps and the FAQ accordion; only the pieces below are new. */
 .lv-pg-hero { overflow: hidden; padding-block: clamp(64px, 9vw, 140px); }
 .lv-pg-hero__stage { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(32px, 5vw, 96px); align-items: center; width: min(100% - 2 * var(--lv-gutter), var(--lv-max-hero)); margin-inline: auto; }
-.lv-pg-hero .lv-eyebrow { margin-bottom: 1.6rem; }
-.lv-pg-hero .lv-h1 { margin-bottom: 1.6rem; }
 .lv-pg-hero__media { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
 
 /* the H3 under a section heading: long supporting sentence, body face, not a display heading */
 .lv-pg__sub { font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); font-weight: 400; line-height: 1.65; letter-spacing: 0; color: var(--lv-fg-muted); max-width: 62ch; }
-.lv-pg-hero .lv-pg__sub { font-size: clamp(1.15rem, 1.5vw, 1.4rem); color: var(--lv-fg); }
 .lv-pg__body { font-size: var(--lv-fs-lede); line-height: 1.65; color: var(--lv-fg-muted); max-width: 62ch; }
 .lv-pg__head { display: grid; gap: 1.4rem; max-width: 62rem; }
 .lv-pg__head--center { justify-items: center; text-align: center; margin-inline: auto; }
