@@ -1,46 +1,34 @@
 # Status (handoff between sessions)
 
-Workflow: new session per section/task. Start oriented from this file (optionally `/section <name>`). Finish with `/wrap`, then push when ready.
+Workflow: new session per section/task. Start oriented from this file and `STYLE-GUIDE.md` (both load automatically; optionally `/section <name>`). Finish with `/wrap`, then the user pushes. Dev server: `python3 serve.py`.
 
 ## Current focus
-Homepage prototype is built end to end; remaining work is filling placeholders and confirming copy.
+Homepage and the Expired Listings product page are built; remaining work is filling placeholders, the pricing additions, and building the other product pages from the Expired template.
 
-## Done recently
-- Git set up, pushed to github.com/lucasleiberman-stack/Landvoice
-- CLAUDE.md and low-context workflow (`/wrap`, `/section`) added
-- Homepage FAQ answers added (22)
-- FAQ section added below pricing (`#faq`, `sections/faq.css`, native details/summary, no JS)
+## Done so far (high level)
+- Git + GitHub set up (user pushes; many local commits are NOT pushed yet, so remind them to `git push`)
+- Homepage: hero with live SVG circle + dot/ray pins, 14-logo slider, Products mega menu, floating pill header, services road, Lead Manager cards (new filters + DNC images), add-ons carousel (Inked Cards, Call Capture, Data Genie), integrations image, FAQ (22 answers), AI icons, redesigned footer with 6 social icons
+- Expired Listings page (`expired-listings.html`): full template built, bands alternate light/dark, shared hero styles
+- Design system documented in `STYLE-GUIDE.md`; tokens for padding (`--lv-section-y`) and sub-paragraph/pill letter spacing (`--lv-ls-sub`)
 
 ## Next up
-- Expired Listings product page built (`expired-listings.html`, `sections/product.css`) as the template for other product pages; needs: hero image, 18 FAQ questions + answers, checkout link (`#checkout-expired`)
+- Build the other product pages (FSBO, Pre-Foreclosure & Distressed, Neighborhood Search, FRBO later) by copying `expired-listings.html`; then link them from the Products mega menu (`data-lv-mega` in both pages' headers) and footer links
+- Expired page needs: hero image, 18 FAQ questions + answers, checkout link (`#checkout-expired`), mockup screenshots in the `lv-mock` frames
 - Enable GitHub Pages for a live preview
-- Fill placeholders listed in README.md (logos, screenshots, stats, video URLs)
-- Homepage FAQ answers are in; fill the orange bracketed placeholders in them ([X]% phone match rate, $[X] price, CRM/dialer names)
-- Confirm flagged copy (see `TODO copy` comments in index.html)
+- Homepage FAQ: fill the orange bracketed values ([X]% phone match rate, $[X] price, CRM/dialer names); confirm flagged `TODO copy`
+- Replace remaining placeholders listed in README.md (screenshots, stats, headshots, video URLs)
 
-## Backlog: round of edits to do next (from the user; none started)
-Hero / homepage
-- [x] Hero animation: FRBO pin added (pink), FSBO orange, Expired green, cards larger (done)
-- [x] Logo slider: all 15 brokerages now use real logo files (done)
+## Backlog (from the user)
 - [ ] Coaches strip: add MFO (Mike Ferry Organization), then "all of REDX" for coaches. NEEDS CLARIFYING: which coaches/logos does "all of REDX" mean?
-- [x] FRBO blurb added with a coming-soon ribbon (done; delete the "Coming soon" line under the FRBO title when it launches) (product buttons are now full size: done)
-- [x] Lead Manager filters image updated (Canceled second) (done)
-- [x] Lead Manager DNC image updated (DNC labels beside the toggles) (done)
-- [x] Integrations image updated (Brivity first, plus "+ More" tile, coming-soon ribbons) (done)
-- [ ] New picture for Data Genie (add-on card placeholder)
-- [x] "4.9 stars" wording bolder and larger (done)
-Pricing
-- [ ] Build Your Own plan: list the products and mention "build your bundle" (replace the `Add on: (list needed)` placeholder)
-- [ ] Add a Monthly / Quarterly / Annual billing tab. NEEDS the monthly and quarterly prices for each plan
-- [ ] Add a team statement below pricing, like REDX has. NEEDS copy (and photo?)
-Footer
-- [x] TikTok and X icons added to the footer (done). Still need real profile URLs for all six social links (all `#` placeholders)
-Cleanup
-- [x] Listing Coaching removed from the add-ons carousel and the Products menu (done)
+- [ ] New picture for the Data Genie add-on card (placeholder now)
+- [ ] Pricing: Build Your Own plan: list the products and mention "build your bundle" (replace the `Add on: (list needed)` placeholder)
+- [ ] Pricing: Monthly / Quarterly / Annual billing tab. NEEDS monthly and quarterly prices per plan
+- [ ] Team statement below pricing (like REDX). NEEDS copy and maybe a photo
+- [ ] Footer: real profile URLs for Facebook, YouTube, LinkedIn, Instagram, TikTok, X (all `#` now); also Blog, Help, CCPA, Terms, Privacy links
 
-Needs from the user before starting: franchise logos, REDX coach details, billing prices, team statement copy, social URLs, new images (Data Genie).
-
-## Decisions / gotchas
-- Hero map circle is now live SVG (`.lv-circle`, `sections/hero.css`) over `hero-map-clean.png`, which had the old baked-in circle, ring and "Your territory" label removed. Timing: ring 0.35-2.3s, tint 1.7-2.6s, pins start at 2.5s (`--start` / `--step` on `.lv-props`). The old `hero-map.png` is in git history. One street label (Fulton St) is slightly blemished where the old ring crossed it
-- Pricing billing toggle not built yet (see backlog)
-- `dist/` is generated by `./bundle.sh`; edit source files only
+## Gotchas
+- Header and footer markup is duplicated in `index.html` and `expired-listings.html`; edit both (or build a shared include when moving to WordPress).
+- Hero map circle is live SVG over `hero-map-clean.png` (old baked circle removed; one street label, Fulton St, slightly blemished). Pill positions use map units (`--dx`/`--dy`).
+- FRBO is "coming soon" (orange pill under its title); delete that line when it launches.
+- `dist/` is generated by `./bundle.sh`; edit source files only. `assets/img/` is read-denied for the assistant (copy/convert via shell is fine).
+- A look that seems wrong is often a cached stylesheet: hard refresh.

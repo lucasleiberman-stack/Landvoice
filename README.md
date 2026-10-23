@@ -1,5 +1,7 @@
 # Landvoice homepage: prototype
 
+> Design rules (type, bands, padding, hero, pills, buttons) live in `STYLE-GUIDE.md`; session handoff in `STATUS.md`.
+
 Plain HTML, CSS and JS with no build tools. Open `index.html` through any local server (`python3 -m http.server`), or just double-click it.
 Everything is written so it can be lifted into WordPress as theme template parts.
 

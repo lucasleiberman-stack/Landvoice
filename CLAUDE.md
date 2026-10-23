@@ -1,8 +1,9 @@
 # Landvoice homepage
 
-Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later be lifted into WordPress as theme template parts. `README.md` has the full conventions, JS hook table, WordPress steps and the list of unfilled placeholders; read it before larger changes.
+Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later be lifted into WordPress as theme template parts. `STYLE-GUIDE.md` (loaded below) is the design system: type, bands, padding, hero, pills, buttons, header/footer, product-page template. `README.md` has the JS hook table, WordPress steps and the list of unfilled placeholders.
 
 @STATUS.md
+@STYLE-GUIDE.md
 
 ## Keeping context small (follow every session)
 - Never read all of `index.html`. Grep for the section's `<!-- ===== NAME` comment and read only that range (offset/limit). `/section <name>` does this.
@@ -37,7 +38,7 @@ Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later 
 ## Open items
 - Placeholders (logos, screenshots, headshots, `[X]+` stats, video URLs) are listed in `README.md`; they are dashed orange or marked `lv-ph`.
 - `TODO copy` comments in `index.html` flag duplicated text awaiting real copy; leave them until the copy is confirmed.
-- Not built yet: pricing billing toggle. FAQ answers are placeholders.
+- Not built yet: pricing billing toggle. Expired page FAQ answers are placeholders.
 
 ## Git
 - Remote: `origin` = github.com/lucasleiberman-stack/Landvoice, branch `main`.
