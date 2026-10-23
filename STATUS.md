@@ -24,7 +24,7 @@ Hero / homepage
 - [x] Logo slider: all 15 brokerages now use real logo files (done)
 - [ ] Coaches strip: add MFO (Mike Ferry Organization), then "all of REDX" for coaches. NEEDS CLARIFYING: which coaches/logos does "all of REDX" mean?
 - [x] FRBO blurb added with a coming-soon ribbon (done; delete the "Coming soon" line under the FRBO title when it launches) (product buttons are now full size: done)
-- [ ] Lead Manager filters: move "Canceled" to second (it is baked into `assets/img/lm-filters.png`; needs a new image or a rebuilt HTML mockup)
+- [x] Lead Manager filters image updated (Canceled second) (done)
 - [ ] Lead Manager DNC card: add "DNC" text next to the toggle (baked into `assets/img/lm-dnc.png`; same note)
 - [x] Integrations image updated (Brivity first, plus "+ More" tile, coming-soon ribbons) (done)
 - [ ] New picture for Data Genie (add-on card placeholder)
