@@ -123,7 +123,13 @@
     </div>
   <!-- map graphic. Pins are positioned in % of the image (--x / --y). Edit text freely. -->
   <div class="lv-hero__map" aria-hidden="true">
-    <img src="assets/img/hero-map.png" alt="" width="2000" height="1286">
+    <img src="assets/img/hero-map-clean.png" alt="" width="2000" height="1286">
+    <!-- the territory circle is drawn here (not baked into the map): ring sweeps in, fill fades up, then the pins below animate in -->
+    <svg class="lv-circle" viewBox="0 0 2000 1286" aria-hidden="true">
+      <defs><mask id="lv-ring-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="2000" height="1286"><path class="lv-circle__sweep" d="M980.5 316A603.5 405 0 1 1 980.5 1126A603.5 405 0 1 1 980.5 316Z" pathLength="1" fill="none" stroke="#fff" stroke-width="70"/></mask></defs>
+      <ellipse class="lv-circle__fill" cx="980.5" cy="721" rx="603.5" ry="405"/>
+      <path class="lv-circle__dots" d="M980.5 316A603.5 405 0 1 1 980.5 1126A603.5 405 0 1 1 980.5 316Z" fill="none" mask="url(#lv-ring-reveal)"/>
+    </svg>
     <!-- property pins: footprints + frosted cards, drawn in one by one (order = --i). Coordinates are a 525x414 grid. -->
     <div class="lv-props">
       <svg class="lv-props__feet" viewBox="0 0 525 414" aria-hidden="true">

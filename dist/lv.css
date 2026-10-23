@@ -336,7 +336,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 /* PROPERTY PINS: five footprints + frosted cards laid over the territory circle. They draw in one by one (--i = order).
    Everything is sized in "u" = 1/525 of the overlay's width, so it scales with the map. */
-.lv-props { --u: calc(100cqw / 525); --step: .85s; --start: .7s;
+.lv-props { --u: calc(100cqw / 525); --step: .6s; --start: 2.5s;   /* pins start once the circle has drawn in */
   position: absolute; left: 25%; top: 25%; width: 44%; aspect-ratio: 525 / 414; container-type: inline-size; }
 .lv-props__feet { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .lv-prop-foot { stroke: #000; stroke-width: 1; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center;
@@ -371,6 +371,15 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
   .lv-hero__stage { grid-template-columns: 1fr; }
   .lv-hero__map { width: 150%; margin: 1rem -25% 0; }
 }
+
+/* TERRITORY CIRCLE: dotted ring sweeps round from the top, then the tint fades up. Drawn in SVG on top of the clean map (same 2000x1286 space as the image). */
+.lv-circle { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.lv-circle__fill { fill: #4089E4; fill-opacity: .105; opacity: 0; animation: lv-circle-fill .9s ease-out 1.7s both; }
+.lv-circle__dots { stroke: rgba(62,139,232,.6); stroke-width: 6; stroke-linecap: round; stroke-dasharray: 0 11; }
+.lv-circle__sweep { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lv-circle-draw 1.9s cubic-bezier(.65,0,.25,1) .35s both; }
+@keyframes lv-circle-draw { to { stroke-dashoffset: 0; } }
+@keyframes lv-circle-fill { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .lv-circle__sweep { animation: none; stroke-dashoffset: 0; } .lv-circle__fill { animation: none; opacity: 1; } }
 /* INTEGRATIONS: logo cluster + "And Everything Else" connector */
 .lv-integrations__head { display: grid; gap: 1.4rem; justify-items: center; text-align: center; max-width: 60rem; margin-inline: auto; }
 .lv-integrations__main { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
