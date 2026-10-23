@@ -26,7 +26,7 @@ Hero / homepage
 - [x] FRBO blurb added with a coming-soon ribbon (done; delete the "Coming soon" line under the FRBO title when it launches) (product buttons are now full size: done)
 - [ ] Lead Manager filters: move "Canceled" to second (it is baked into `assets/img/lm-filters.png`; needs a new image or a rebuilt HTML mockup)
 - [ ] Lead Manager DNC card: add "DNC" text next to the toggle (baked into `assets/img/lm-dnc.png`; same note)
-- [ ] Integrations: Brivity first, plus an "and more" tile (currently one image, `integrations-cluster.webp`; needs a new image or individual logo tiles)
+- [x] Integrations image updated (Brivity first, plus "+ More" tile, coming-soon ribbons) (done)
 - [ ] New picture for Data Genie (add-on card placeholder)
 - [x] "4.9 stars" wording bolder and larger (done)
 Pricing
@@ -38,7 +38,7 @@ Footer
 Cleanup
 - [x] Listing Coaching removed from the add-ons carousel and the Products menu (done)
 
-Needs from the user before starting: franchise logos, REDX coach details, billing prices, team statement copy, social URLs, new images (Data Genie, filters, DNC, Brivity integration).
+Needs from the user before starting: franchise logos, REDX coach details, billing prices, team statement copy, social URLs, new images (Data Genie, filters, DNC).
 
 ## Decisions / gotchas
 - Hero map circle is now live SVG (`.lv-circle`, `sections/hero.css`) over `hero-map-clean.png`, which had the old baked-in circle, ring and "Your territory" label removed. Timing: ring 0.35-2.3s, tint 1.7-2.6s, pins start at 2.5s (`--start` / `--step` on `.lv-props`). The old `hero-map.png` is in git history. One street label (Fulton St) is slightly blemished where the old ring crossed it
