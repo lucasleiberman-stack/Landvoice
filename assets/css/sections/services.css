@@ -4,7 +4,7 @@
 .lv-services__head { max-width: 56rem; margin-inline: auto; display: grid; gap: 1.4rem; justify-items: center; text-align: center; }
 .lv-services__head .lv-lede { max-width: 54rem; }
 
-.lv-road { --lv-arm: clamp(260px, 32vw, 480px); --lv-arm-y: 84px; --lv-road-w: 6px; --lv-road-progress: 0px; margin-top: clamp(72px, 9vw, 130px); }
+.lv-road { --lv-arm: clamp(200px, 20vw, 300px); --lv-arm-y: 84px; --lv-road-w: 6px; --lv-road-progress: 0px; margin-top: clamp(72px, 9vw, 130px); }
 .lv-road__rows { position: relative; display: grid; row-gap: clamp(72px, 9vw, 130px); }
 
 /* the vertical line: faint track + a filling "paved" part */
