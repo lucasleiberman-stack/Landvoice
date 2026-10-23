@@ -45,7 +45,8 @@
   --lv-max-wide: 1600px;                         /* wide content (Who we are) */
   --lv-max-hero: 1800px;                         /* hero stage */
   --lv-gutter: clamp(24px, 6vw, 96px);           /* page side padding */
-  --lv-section-y: clamp(96px, 13vw, 200px);      /* vertical rhythm between sections */
+  --lv-section-y: clamp(96px, 13vw, 200px);      /* STANDARD BLOCK PADDING (top and bottom): used by .lv-section. Change it here to change every block */
+  --lv-section-y-tight: clamp(56px, 8vw, 120px); /* smaller version of the above (.lv-section--tight) */
   --lv-radius-band: clamp(32px, 5vw, 80px);      /* rounded corners on light bands */
   --lv-radius-card: 20px;
   --lv-header-h: 79px;                           /* floating header: 69px bar + 10px gap; sticky stages pin just beneath it */
@@ -135,8 +136,10 @@ h2 { font-size: var(--lv-fs-h2); }
 }
 .lv-band--before-device { padding-bottom: calc(var(--lv-device-overlap) + clamp(40px, 6vw, 96px)); }   /* room for the tablet + breathing space */
 
+/* STANDARD BLOCK PADDING: add .lv-section to any new band/block for the site's standard top + bottom padding.
+   Value lives in 00-tokens.css (--lv-section-y). Use .lv-section--tight for a smaller version (--lv-section-y-tight). */
 .lv-section { padding-block: var(--lv-section-y); }
-.lv-section--tight { padding-block: clamp(56px, 8vw, 120px); }
+.lv-section--tight { padding-block: var(--lv-section-y-tight); }
 
 /* faint tilted grid patches behind a band: add the .lv-gridplane block (6 patches) as the band's first child.
    Each patch sits on a corner/side of the band and fades to nothing on the edge that faces the centre. */

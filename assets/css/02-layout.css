@@ -29,8 +29,10 @@
 }
 .lv-band--before-device { padding-bottom: calc(var(--lv-device-overlap) + clamp(40px, 6vw, 96px)); }   /* room for the tablet + breathing space */
 
+/* STANDARD BLOCK PADDING: add .lv-section to any new band/block for the site's standard top + bottom padding.
+   Value lives in 00-tokens.css (--lv-section-y). Use .lv-section--tight for a smaller version (--lv-section-y-tight). */
 .lv-section { padding-block: var(--lv-section-y); }
-.lv-section--tight { padding-block: clamp(56px, 8vw, 120px); }
+.lv-section--tight { padding-block: var(--lv-section-y-tight); }
 
 /* faint tilted grid patches behind a band: add the .lv-gridplane block (6 patches) as the band's first child.
    Each patch sits on a corner/side of the band and fades to nothing on the edge that faces the centre. */
