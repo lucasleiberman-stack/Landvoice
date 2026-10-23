@@ -11,37 +11,42 @@
 .lv-hero__map { position: relative; width: 135%; margin-inline: -17.5%; aspect-ratio: 2800 / 1800; pointer-events: none; container-type: inline-size; }
 .lv-hero__map > img { width: 100%; height: 100%; }
 
-/* PROPERTY PINS: five footprints + frosted cards laid over the territory circle. They draw in one by one (--i = order).
+/* PROPERTY PINS: five dots with rays + pills laid over the territory circle. They draw in one by one (--i = order).
    Everything is sized in "u" = 1/525 of the overlay's width, so it scales with the map. */
 .lv-props { --u: calc(100cqw / 525); --step: .6s; --start: 2.5s;   /* pins start once the circle has drawn in */
   position: absolute; left: 25%; top: 25%; width: 44%; aspect-ratio: 525 / 414; container-type: inline-size; }
 .lv-props__feet { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.lv-prop-foot { stroke: #000; stroke-width: 1; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center;
-  animation: lv-foot-in .7s var(--lv-ease) both; animation-delay: calc(var(--start) + var(--i) * var(--step)); }
-.lv-prop-foot--pre  { fill: rgba(0,111,255,.23); }
-.lv-prop-foot--fsbo { fill: rgba(255,140,40,.34); stroke: #7A3500; }
-.lv-prop-foot--dist { fill: rgba(193,171,249,.69); }
-.lv-prop-foot--exp  { fill: rgba(182,255,182,.38); stroke: #073D13; }
-.lv-prop-foot--frbo { fill: rgba(255,150,196,.45); stroke: #5C1239; }
-.lv-prop-card { --tag-bg: #C9E9D3; --tag-ink: #073D13; --pill-h: 28;
-  /* one-line pill: tag + address. Its bottom edge stays where the old tall card ended (--y + --h), so it still sits on its footprint. */
-  position: absolute; left: calc(var(--x) / 525 * 100%); top: calc((var(--y) + var(--h) - var(--pill-h)) / 414 * 100%); width: max-content; height: calc(var(--pill-h) * var(--u));
+/* each pin = a dot on the property + a ray rising from it into the pill (pill delay = dot delay + .55s) */
+.lv-pin { --c: #5B9BF0; --dly: calc(var(--start) + var(--i) * var(--step)); }
+.lv-pin--pre  { --c: #3F86EA; }
+.lv-pin--fsbo { --c: #FF8A1F; }
+.lv-pin--dist { --c: #9B7AF5; }
+.lv-pin--exp  { --c: #3FBF77; }
+.lv-pin--frbo { --c: #F76FAD; }
+.lv-pin__dot { fill: var(--c); stroke: #fff; stroke-width: 2; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 1px 2px rgba(13,17,23,.35));
+  animation: lv-dot-in .55s var(--lv-ease) both; animation-delay: var(--dly); }
+.lv-pin__ray { stroke: var(--c); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 30; vector-effect: non-scaling-stroke;
+  animation: lv-ray-in .4s ease-out both; animation-delay: calc(var(--dly) + .2s); }
+.lv-prop-card { --tag-bg: #C9E9D3; --tag-ink: #073D13; --pill-h: 28; --ray: 30;
+  /* one-line pill: tag + address, sitting on top of the pin's ray. --dx/--dy = the dot; the ray (16u in from the pill's left edge) runs from the dot up into the pill's bottom edge. */
+  position: absolute; left: calc((var(--dx) - 16) / 525 * 100%); top: calc((var(--dy) - var(--ray) - var(--pill-h)) / 414 * 100%); width: max-content; height: calc(var(--pill-h) * var(--u));
   display: flex; flex-direction: row; align-items: center; gap: calc(7 * var(--u)); padding: 0 calc(13 * var(--u)) 0 calc(5 * var(--u));
   border-radius: 999px; background: rgba(255,255,255,.94); -webkit-backdrop-filter: blur(calc(11.55 * var(--u))); backdrop-filter: blur(calc(11.55 * var(--u)));
   box-shadow: 0 calc(8 * var(--u)) calc(22 * var(--u)) rgba(13,17,23,.24), 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.7);
-  scale: 1.28; transform-origin: var(--o, 50% 50%);   /* scaled up so they read at a glance; --o picks the side they grow from */
-  animation: lv-card-in .8s var(--lv-ease) both; animation-delay: calc(var(--start) + var(--i) * var(--step) + .3s); }
-.lv-prop-card--dist { left: auto; right: calc((525 - var(--x) - var(--w)) / 525 * 100%); }   /* right-hand pill grows leftwards */
+  scale: 1.28; transform-origin: calc(16 * var(--u)) 100%;   /* scaled up so they read at a glance; grows up and sideways from the point the ray enters */
+  animation: lv-card-in .8s var(--lv-ease) both; animation-delay: calc(var(--start) + var(--i) * var(--step) + .55s); }
+.lv-prop-card--dist { left: auto; right: calc((525 - var(--dx) - 16) / 525 * 100%); transform-origin: calc(100% - 16 * var(--u)) 100%; }   /* right-hand pill hangs to the left of its ray */
 .lv-prop-card__tag { display: grid; place-items: center; flex: none; width: calc(var(--tw) * var(--u)); height: calc(20 * var(--u)); border-radius: 999px; background: var(--tag-bg); color: var(--tag-ink); font-size: calc(10.4 * var(--u)); font-weight: 700; letter-spacing: .02em; line-height: 1; white-space: nowrap; }
 .lv-prop-card__addr { font-size: calc(13.3 * var(--u)); font-weight: 700; line-height: 1; color: var(--lv-ink); white-space: nowrap; }
-.lv-prop-card--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59; --o: 50% 0; }
-.lv-prop-card--dist { --tag-bg: #B79CFA; --tag-ink: #2A1A52; --o: 100% 50%; }
-.lv-prop-card--exp  { --tag-bg: #7ED8A0; --tag-ink: #06361A; --o: 50% 100%; }   /* green */
-.lv-prop-card--fsbo { --tag-bg: #FFA24D; --tag-ink: #6B2D00; --o: 0 50%; }   /* orange */
-.lv-prop-card--frbo { --tag-bg: #FF9CC8; --tag-ink: #5C1239; --o: 50% 50%; }   /* pink */
-@keyframes lv-foot-in { from { opacity: 0; transform: scale(.25); } to { opacity: 1; transform: none; } }
+.lv-prop-card--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59 ; }
+.lv-prop-card--dist { --tag-bg: #B79CFA; --tag-ink: #2A1A52 ; }
+.lv-prop-card--exp  { --tag-bg: #7ED8A0; --tag-ink: #06361A ; }   /* green */
+.lv-prop-card--fsbo { --tag-bg: #FFA24D; --tag-ink: #6B2D00 ; }   /* orange */
+.lv-prop-card--frbo { --tag-bg: #FF9CC8; --tag-ink: #5C1239 ; }   /* pink */
+@keyframes lv-dot-in { from { opacity: 0; transform: scale(.2); } 60% { opacity: 1; transform: scale(1.25); } to { opacity: 1; transform: none; } }
+@keyframes lv-ray-in { from { stroke-dashoffset: 30; } to { stroke-dashoffset: 0; } }
 @keyframes lv-card-in { from { opacity: 0; transform: translateY(calc(14 * var(--u))); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .lv-prop-foot, .lv-prop-card { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .lv-pin__dot, .lv-pin__ray, .lv-prop-card { animation: none; } }
 
 @media (max-width: 900px) {
   .lv-hero { min-height: 0; padding-bottom: 0; }
