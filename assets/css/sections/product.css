@@ -18,8 +18,7 @@
 .lv-band--dark .lv-tag { color: var(--lv-blue-on-dark); border-color: var(--lv-blue-on-dark); }
 
 /* several blocks sharing one band: even spacing between them */
-.lv-pg-block, .lv-pg-block--hero { margin-top: clamp(72px, 9vw, 140px); }
-.lv-pg-block--hero { width: min(100% - 2 * var(--lv-gutter), var(--lv-max-wide)); margin-inline: auto; }
+.lv-pg-block { margin-top: clamp(72px, 9vw, 140px); }
 .lv-section--joined { padding-top: 0; }   /* sits directly under the testimonial's own bottom padding */
 
 /* data fields: tags under the paragraph, 20% smaller than the first big version, wrapping */

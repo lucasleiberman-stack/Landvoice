@@ -62,6 +62,8 @@ Every hero's text uses the same stack so type size, line height and spacing neve
   <h1 class="lv-h1">Headline</h1>              <!-- --lv-fs-h1, line-height 1.05 -->
   <p class="lv-lede">Supporting paragraph</p>  <!-- --lv-fs-lede, line-height 1.65 (can be an h3 if the copy calls for one: keep the lv-lede class) -->
   <div class="lv-actions"> ...buttons... </div>
+  <!-- optional: a second small heading + paragraph under the lede -->
+  <div class="lv-herocopy__more"><h3 class="lv-h3">Heading</h3><p class="lv-lede">Paragraph</p></div>
 </div>
 ```
 - Never add hero-specific font sizes or margins in a page's CSS; change `.lv-herocopy` (or the `--lv-fs-h1` / `--lv-fs-lede` tokens) so every hero changes together.

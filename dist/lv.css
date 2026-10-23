@@ -239,6 +239,9 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-herocopy .lv-eyebrow { margin-bottom: 1.6rem; }
 .lv-herocopy .lv-h1 { margin-bottom: 1.6rem; }
 .lv-herocopy .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
+/* optional second block under the hero lede (a small heading + paragraph), still inside .lv-herocopy */
+.lv-herocopy__more { display: grid; gap: .8rem; margin-top: .4rem; }
+.lv-herocopy__more .lv-lede { margin-bottom: 0; }
 /* ADD-ONS: dark band with a carousel of light cards. JS: lv-carousel.js */
 .lv-addons__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(36px, 5vw, 64px); }
 .lv-addons__head .lv-eyebrow { margin-bottom: 1.2rem; }
@@ -466,8 +469,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-band--dark .lv-tag { color: var(--lv-blue-on-dark); border-color: var(--lv-blue-on-dark); }
 
 /* several blocks sharing one band: even spacing between them */
-.lv-pg-block, .lv-pg-block--hero { margin-top: clamp(72px, 9vw, 140px); }
-.lv-pg-block--hero { width: min(100% - 2 * var(--lv-gutter), var(--lv-max-wide)); margin-inline: auto; }
+.lv-pg-block { margin-top: clamp(72px, 9vw, 140px); }
 .lv-section--joined { padding-top: 0; }   /* sits directly under the testimonial's own bottom padding */
 
 /* data fields: tags under the paragraph, 20% smaller than the first big version, wrapping */

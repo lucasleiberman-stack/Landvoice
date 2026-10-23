@@ -66,3 +66,6 @@
 .lv-herocopy .lv-eyebrow { margin-bottom: 1.6rem; }
 .lv-herocopy .lv-h1 { margin-bottom: 1.6rem; }
 .lv-herocopy .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
+/* optional second block under the hero lede (a small heading + paragraph), still inside .lv-herocopy */
+.lv-herocopy__more { display: grid; gap: .8rem; margin-top: .4rem; }
+.lv-herocopy__more .lv-lede { margin-bottom: 0; }
