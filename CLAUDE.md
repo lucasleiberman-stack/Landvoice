@@ -19,7 +19,7 @@ Static homepage prototype (plain HTML/CSS/JS, no build tooling) that will later 
 - `expired-listings.html`: product-page template (header/footer copied from `index.html`, content sections use `assets/css/sections/product.css`). New product pages: copy it and swap the copy.
 
 ## Run
-- Dev server: `python3 -m http.server 8000` (also configured as `landvoice-homepage` in `.claude/launch.json`).
+- Dev server: `python3 serve.py` (port 8000; it sends no-cache headers so edits show on a normal refresh; also configured as `landvoice-homepage` in `.claude/launch.json`). If a page looks stale, hard-refresh (Cmd+Shift+R).
 - Rebuild the production bundle after any CSS/JS change: `./bundle.sh`, and commit `dist/` with the source change.
 
 ## Conventions (must follow)
