@@ -64,6 +64,12 @@ All values live in `assets/css/00-tokens.css`. Change a token, never hard-code a
 Order used: hero (light) -> what-are (dark, h2 left + paragraph right via `lv-split`) -> data fields + phone numbers (light; `lv-pg__stack` + `lv-mock`, centred `lv-pg__center` block with `lv-mock--sm`) -> old expireds facts (dark, `lv-facts`) -> why + steps (light; `lv-pill` paragraph, `lv-steps__list--text`) -> testimonial + still-works + price (dark, joined) -> comparison + FAQ + CTA (light) -> footer.
 Reusable pieces: `lv-split` (2 columns), `lv-pg__center` (centred stack), `lv-pg__stack`, `lv-pg__sub`/`lv-pg__body` (sub paragraphs), `lv-mock` / `lv-mock--sm` (screenshot frames; swap the `.lv-ph` placeholder for an `<img>`), `lv-facts`/`lv-fact`, `lv-price`, `lv-cta`, `lv-faq` (native `<details>`, no JS), `lv-steps` (shared with the homepage). To make another product page: copy the file, swap copy and images, keep the band alternation.
 
+## Scroll-draw animation (`data-lv-draw`) and the vertical timeline
+- `assets/js/25-draw.js`: any element with `data-lv-draw` gets `.is-drawn` the first time it scrolls into view and keeps it (plays once; no replay on scroll back up). No JS or reduced motion = finished state.
+- `lv-timeline` (in `product.css`): vertical numbered steps, 66px circles + body text, max-width 46rem. On first scroll the line draws down and each circle pops in as the line reaches it (`--lv-tl-step` 1.15s per step; per-item delay from `style="--i:N"`). Markup: `<ol class="lv-timeline" data-lv-draw><li class="lv-timeline__item" style="--i:0"><span class="lv-timeline__num">01</span><div class="lv-timeline__body"><h3 class="lv-h3 lv-timeline__title">..</h3><p class="lv-lede">..</p></div></li>...</ol>`. Works on dark bands too.
+- Keep section headlines short (e.g. "Turn Expired Data Into Signed Listings").
+- A row of `lv-pill`s inside a sub paragraph goes in `<span class="lv-pills">` (adds the gap under the pills).
+
 ## Placeholders and copy flags
 - `lv-ph` = grey striped image placeholder. `lv-todo` = orange dashed outline marking copy that still needs to be supplied (`TODO copy: ...`). Orange-dashed bracketed text like `[X]%` in FAQ answers = unconfirmed values.
 

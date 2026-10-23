@@ -47,9 +47,6 @@
 .lv-pills { display: block; margin-bottom: 1.6rem; }   /* the gap between a row of pills and the text under it */
 .lv-band--dark .lv-pill { border-color: var(--lv-blue-on-dark); color: var(--lv-blue-on-dark); }
 
-/* steps without images */
-.lv-steps__list--text .lv-step { align-content: start; }
-.lv-steps__list--text .lv-step__title { max-width: 22ch; }
 
 /* price card */
 .lv-price { display: grid; justify-items: center; gap: 1.6rem; max-width: 34rem; margin: 0 auto; padding: clamp(32px, 4vw, 56px); border-radius: 22px; background: #fff; color: var(--lv-ink); text-align: center; box-shadow: 0 0 0 2px var(--lv-blue), 0 0 38px rgba(10,102,255,.28); }
@@ -63,3 +60,29 @@
   .lv-pg-hero__stage, .lv-split { grid-template-columns: 1fr; }
   .lv-split > :last-child { padding-top: 0; }
 }
+
+/* TIMELINE: vertical numbered steps. data-lv-draw: the first time it scrolls into view the line draws down and each circle pops in as the line reaches it (plays once). */
+.lv-timeline { --lv-tl-dot: 66px; --lv-tl-gap: clamp(40px, 5vw, 64px); --lv-tl-step: 1.15s; max-width: 46rem; margin: clamp(40px, 5vw, 72px) auto 0; display: grid; gap: var(--lv-tl-gap); }
+.lv-timeline__item { position: relative; display: grid; grid-template-columns: var(--lv-tl-dot) minmax(0, 1fr); column-gap: clamp(20px, 3vw, 32px); align-items: start; --d: calc(var(--i) * var(--lv-tl-step)); }
+.lv-timeline__num { position: relative; z-index: 1; display: grid; place-items: center; width: var(--lv-tl-dot); height: var(--lv-tl-dot); border-radius: 50%; background: var(--lv-paper); border: 3px solid var(--lv-blue); font-family: var(--lv-font-display); font-size: 1.5rem; font-weight: 500; color: var(--lv-ink); }
+.lv-band--dark .lv-timeline__num { background: var(--lv-ink); color: var(--lv-paper); border-color: var(--lv-blue-on-dark); }
+.lv-timeline__body { padding-top: 1.05rem; }
+.lv-timeline__title { max-width: 28ch; }
+.lv-timeline__body .lv-lede { margin-top: .6rem; max-width: 44ch; }
+/* connector from this circle down to the next one: faint track + blue fill that draws */
+.lv-timeline__item:not(:last-child)::before, .lv-timeline__item:not(:last-child)::after { content: ""; position: absolute; left: calc(var(--lv-tl-dot) / 2 - 1.5px); top: var(--lv-tl-dot); height: calc(100% - var(--lv-tl-dot) + var(--lv-tl-gap)); width: 3px; border-radius: 2px; }
+.lv-timeline__item:not(:last-child)::before { background: rgba(10,102,255,.16); }
+.lv-timeline__item:not(:last-child)::after { background: var(--lv-blue); transform-origin: top; }
+.lv-band--dark .lv-timeline__item:not(:last-child)::after { background: var(--lv-blue-on-dark); }
+
+/* hidden start state only when JS is running and the block has not been drawn yet */
+html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__num { opacity: 0; transform: scale(.4); }
+html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__body { opacity: 0; transform: translateY(14px); }
+html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__item::after { transform: scaleY(0); }
+.lv-timeline.is-drawn .lv-timeline__num { animation: lv-tl-pop .7s var(--lv-ease) both; animation-delay: var(--d); }
+.lv-timeline.is-drawn .lv-timeline__body { animation: lv-tl-text .8s var(--lv-ease) both; animation-delay: calc(var(--d) + .2s); }
+.lv-timeline.is-drawn .lv-timeline__item::after { animation: lv-tl-line calc(var(--lv-tl-step) - .35s) cubic-bezier(.5,0,.2,1) both; animation-delay: calc(var(--d) + .45s); }
+@keyframes lv-tl-pop { 0% { opacity: 0; transform: scale(.4); box-shadow: 0 0 0 0 rgba(10,102,255,.35); } 55% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: none; box-shadow: 0 0 0 10px rgba(10,102,255,0); } }
+@keyframes lv-tl-text { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes lv-tl-line { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) { .lv-timeline.is-drawn .lv-timeline__num, .lv-timeline.is-drawn .lv-timeline__body, .lv-timeline.is-drawn .lv-timeline__item::after { animation: none; } }

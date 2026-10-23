@@ -37,6 +37,7 @@ prototype/
 | `data-lv-road` + `data-lv-road-row` | services road fills as you scroll and switches each row on | 70-road.js |
 | `data-lv-carousel` + `-track` / `-prev` / `-next` | scroll-snap carousel with arrow buttons (lead manager, add-ons, success stories) | 40-carousel.js |
 | `data-lv-slider` + `data-lv-slide` / `data-lv-dot` | one-at-a-time testimonial slider (`data-lv-interval` ms) | 50-slider.js |
+| `data-lv-draw` | one-time draw animation on first scroll into view (adds `.is-drawn`); used by `.lv-timeline` | 25-draw.js |
 | `data-lv-marquee` | duplicates logos so the CSS loop is seamless | 30-marquee.js |
 | `data-lv-menu-toggle` | header menu button | 10-menu.js |
 | `data-lv-video="URL"` | swaps the placeholder for an iframe when played (empty = does nothing yet) | 80-media.js |
