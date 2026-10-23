@@ -475,7 +475,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 /* data fields: tags under the paragraph, 20% smaller than the first big version, wrapping */
 .lv-pg__stack .lv-tags { gap: .72rem; }
-.lv-pg__stack .lv-tag { font-family: var(--lv-font-display); font-size: clamp(.88rem, 1.52vw, 1.36rem); font-weight: 500; letter-spacing: -.01em; padding: .6em 1.3em; border-width: 1.5px; background: rgba(106,163,255,.1); }
+.lv-pg__stack .lv-tag { font-family: var(--lv-font-body); font-size: clamp(.88rem, 1.52vw, 1.36rem); font-weight: 500; letter-spacing: normal;   /* same font and spacing as paragraph text */ padding: .6em 1.3em; border-width: 1.5px; background: rgba(106,163,255,.1); }
 
 /* product mockup frames (swap the .lv-ph placeholder for an <img>) */
 .lv-mock { position: relative; aspect-ratio: 5 / 4; border-radius: var(--lv-radius-card); overflow: hidden; background: var(--lv-paper-2); }
