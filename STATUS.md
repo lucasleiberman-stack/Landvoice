@@ -21,7 +21,7 @@ Homepage prototype is built end to end; remaining work is filling placeholders a
 ## Backlog: round of edits to do next (from the user; none started)
 Hero / homepage
 - [x] Hero animation: FRBO pin added (pink), FSBO orange, Expired green, cards larger (done)
-- [ ] Logo slider: Keller Williams, RE/MAX, Century 21, Compass, Sotheby's, Howard Hanna and Douglas Elliman now use real white logo files; still text stand-ins (Redfin, Realty ONE Group, ERA): swap each `.lv-wordmark` for the real logo file (4 real logos already in `assets/img/brokerages/`)
+- [x] Logo slider: all 15 brokerages now use real logo files (done)
 - [ ] Coaches strip: add MFO (Mike Ferry Organization), then "all of REDX" for coaches. NEEDS CLARIFYING: which coaches/logos does "all of REDX" mean?
 - [x] FRBO blurb added with a coming-soon ribbon (done; delete the "Coming soon" line under the FRBO title when it launches) (product buttons are now full size: done)
 - [ ] Lead Manager filters: move "Canceled" to second (it is baked into `assets/img/lm-filters.png`; needs a new image or a rebuilt HTML mockup)
