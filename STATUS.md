@@ -28,7 +28,7 @@ Hero / homepage
 - [ ] Lead Manager DNC card: add "DNC" text next to the toggle (baked into `assets/img/lm-dnc.png`; same note)
 - [ ] Integrations: Brivity first, plus an "and more" tile (currently one image, `integrations-cluster.webp`; needs a new image or individual logo tiles)
 - [ ] New picture for Data Genie (add-on card placeholder)
-- [ ] Make the "4.9 stars" wording in the proof card stand out
+- [x] "4.9 stars" wording bolder and larger (done)
 Pricing
 - [ ] Build Your Own plan: list the products and mention "build your bundle" (replace the `Add on: (list needed)` placeholder)
 - [ ] Add a Monthly / Quarterly / Annual billing tab. NEEDS the monthly and quarterly prices for each plan

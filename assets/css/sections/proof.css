@@ -11,7 +11,7 @@
 .lv-stars { display: flex; align-items: center; gap: .9rem; color: #FFC21A; font-size: 1.7rem; }
 .lv-stars__g { font: 700 2.2rem/1 var(--lv-font-display); color: #4285F4; }
 .lv-stars__row { display: flex; gap: .15rem; }
-.lv-proof__meta { font-family: var(--lv-font-mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+.lv-proof__meta { font-family: var(--lv-font-mono); font-size: 1rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
 .lv-proof__card .lv-btn { margin-top: auto; }
 @media (max-width: 900px) { .lv-proof { grid-template-columns: 1fr; } }
 
