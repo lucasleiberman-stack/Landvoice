@@ -43,7 +43,8 @@
 
 
 /* highlighted phrases inside a sub paragraph: blue pills that wrap with the text */
-.lv-pill { display: inline-block; margin: .18em .1em; padding: .12em .8em; border-radius: 999px; background: var(--lv-blue); color: #fff; font-weight: 500; line-height: 1.45; }
+.lv-pill { display: inline-block; margin: .18em .1em; padding: .12em .8em; border-radius: 999px; background: rgba(106,163,255,.1); border: 1.5px solid var(--lv-blue); color: var(--lv-blue); font-weight: 500; line-height: 1.45; }   /* same look as the data-field tags: pale blue fill, blue outline and text */
+.lv-band--dark .lv-pill { border-color: var(--lv-blue-on-dark); color: var(--lv-blue-on-dark); }
 
 /* steps without images */
 .lv-steps__list--text .lv-step { align-content: start; }
