@@ -1,9 +1,9 @@
 {
-  "label": "Trust Logos and Who We Are",
+  "label": "Who We Are",
   "css_assets": [],
   "external_js": [],
   "global": false,
-  "help_text": "Dark band: the trusted-by logo strip and the Who we are scroll story with three stats.",
+  "help_text": "Dark band: Who we are scroll story with a lead paragraph and stats. Place it after the Logo Slider and before the tablet section.",
   "host_template_types": [
     "PAGE"
   ],

@@ -1,0 +1,15 @@
+{
+  "label": "Logo Slider",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Dark band with the Trusted by heading and the scrolling brokerage logo strip.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

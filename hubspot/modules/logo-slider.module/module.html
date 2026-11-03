@@ -1,0 +1,14 @@
+{# Dark band: "Trusted by" heading + scrolling logo strip. Sits directly above the Who We Are module (two dark bands merge). #}
+<div class="lv-band lv-band--dark">
+  <section class="lv-trust" aria-labelledby="trust-title">
+    <h3 class="lv-trust__title" id="trust-title">{{ module.trust_before }} <span class="lv-accent">{{ module.trust_accent }}</span> {{ module.trust_after }}</h3>
+    <div class="lv-marquee" aria-label="{{ module.logos_label }}">
+      <div class="lv-marquee__track" data-lv-marquee style="--lv-marquee-speed:90s">
+        {% for item in module.logos %}
+        {% set logo_src = item.image.src or get_asset_url('../../images/brokerages/' ~ item.file) %}
+        <div class="lv-marquee__item"><img class="lv-logo-img{% if item.style %} lv-logo-img--{{ item.style }}{% endif %}" src="{{ logo_src }}" alt="{{ item.alt }}" loading="lazy"></div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
