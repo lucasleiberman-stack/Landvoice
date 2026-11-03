@@ -1,0 +1,34 @@
+{# Dark band: "Trusted by" logo strip + the "Who we are" scroll story. Text and images are editable; layout and scroll behaviour are fixed markup. #}
+<div class="lv-band lv-band--dark lv-band--before-device">
+
+  <section class="lv-trust" aria-labelledby="trust-title">
+    <h3 class="lv-trust__title" id="trust-title">{{ module.trust_before }} <span class="lv-accent">{{ module.trust_accent }}</span> {{ module.trust_after }}</h3>
+    <div class="lv-marquee" aria-label="{{ module.logos_label }}">
+      <div class="lv-marquee__track" data-lv-marquee style="--lv-marquee-speed:90s">
+        {% for item in module.logos %}
+        {% set logo_src = item.image.src or get_asset_url('../../images/brokerages/' ~ item.file) %}
+        <div class="lv-marquee__item"><img class="lv-logo-img{% if item.style %} lv-logo-img--{{ item.style }}{% endif %}" src="{{ logo_src }}" alt="{{ item.alt }}" loading="lazy"></div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="lv-who" data-lv-story data-lv-story-speed="1.1" data-lv-story-until=".lv-device" data-lv-story-gap="0.45" aria-labelledby="who-title">
+    <div class="lv-who__sticky" data-lv-story-sticky>
+      <div class="lv-container lv-who__grid">
+        <div class="lv-who__head">
+          <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+          <h2 class="lv-h2 lv-h2--xl" id="who-title">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}{% if module.headline_line_3 %}<br>{{ module.headline_line_3 }}{% endif %}</h2>
+        </div>
+        <div class="lv-who__window" data-lv-story-window>
+          <div class="lv-who__track" data-lv-story-track>
+            <p class="lv-who__lead">{{ module.lead }}</p>
+            {% for stat in module.stats %}
+            <div class="lv-stat"><p class="lv-stat__value" data-lv-story-num>{{ stat.value }}</p><p class="lv-stat__label">{{ stat.label }}</p></div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

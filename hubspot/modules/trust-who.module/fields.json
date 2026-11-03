@@ -1,0 +1,287 @@
+[
+  {
+    "name": "trust_before",
+    "label": "Trust heading: before the number",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Trusted by"
+  },
+  {
+    "name": "trust_accent",
+    "label": "Trust heading: highlighted number (blue)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "200k"
+  },
+  {
+    "name": "trust_after",
+    "label": "Trust heading: after the number",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "agents across the industry"
+  },
+  {
+    "name": "logos_label",
+    "label": "Logo strip description (for screen readers)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Brokerages that use Landvoice"
+  },
+  {
+    "name": "logos",
+    "label": "Brokerage logos",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 30,
+      "default": 14
+    },
+    "children": [
+      {
+        "name": "file",
+        "label": "Theme file name (in images/brokerages/)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "brokerage-1.png"
+      },
+      {
+        "name": "image",
+        "label": "Logo image (optional: overrides the theme file)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": false,
+        "resizable": false,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "name": "alt",
+        "label": "Logo name (alt text)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Brokerage"
+      },
+      {
+        "name": "style",
+        "label": "Logo size style",
+        "type": "choice",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "multiple": false,
+        "choices": [
+          [
+            "",
+            "Default size"
+          ],
+          [
+            "kw",
+            "kw"
+          ],
+          [
+            "remax",
+            "remax"
+          ],
+          [
+            "century",
+            "century"
+          ],
+          [
+            "compass",
+            "compass"
+          ],
+          [
+            "sothebys",
+            "sothebys"
+          ],
+          [
+            "hanna",
+            "hanna"
+          ],
+          [
+            "redfin",
+            "redfin"
+          ],
+          [
+            "elliman",
+            "elliman"
+          ],
+          [
+            "rog",
+            "rog"
+          ],
+          [
+            "era",
+            "era"
+          ]
+        ],
+        "default": ""
+      }
+    ],
+    "default": [
+      {
+        "file": "brokerage-1.png",
+        "alt": "Berkshire Hathaway HomeServices",
+        "style": ""
+      },
+      {
+        "file": "brokerage-2.png",
+        "alt": "EXIT Realty",
+        "style": ""
+      },
+      {
+        "file": "brokerage-3.png",
+        "alt": "eXp Realty",
+        "style": ""
+      },
+      {
+        "file": "brokerage-4.png",
+        "alt": "Coldwell Banker",
+        "style": ""
+      },
+      {
+        "file": "keller-williams.png",
+        "alt": "Keller Williams",
+        "style": "kw"
+      },
+      {
+        "file": "remax.png",
+        "alt": "RE/MAX",
+        "style": "remax"
+      },
+      {
+        "file": "century-21.png",
+        "alt": "Century 21",
+        "style": "century"
+      },
+      {
+        "file": "compass.png",
+        "alt": "Compass",
+        "style": "compass"
+      },
+      {
+        "file": "sothebys.svg",
+        "alt": "Sotheby’s International Realty",
+        "style": "sothebys"
+      },
+      {
+        "file": "howard-hanna.png",
+        "alt": "Howard Hanna Real Estate Services",
+        "style": "hanna"
+      },
+      {
+        "file": "redfin.png",
+        "alt": "Redfin, powered by Rocket",
+        "style": "redfin"
+      },
+      {
+        "file": "douglas-elliman.png",
+        "alt": "Douglas Elliman",
+        "style": "elliman"
+      },
+      {
+        "file": "realty-one-group.svg",
+        "alt": "Realty ONE Group",
+        "style": "rog"
+      },
+      {
+        "file": "era.svg",
+        "alt": "ERA Real Estate",
+        "style": "era"
+      }
+    ]
+  },
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Who we are"
+  },
+  {
+    "name": "headline_line_1",
+    "label": "Headline, line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "The Longest Operating"
+  },
+  {
+    "name": "headline_line_2",
+    "label": "Headline, line 2",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Seller Data Provider"
+  },
+  {
+    "name": "headline_line_3",
+    "label": "Headline, line 3",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "in Real Estate."
+  },
+  {
+    "name": "lead",
+    "label": "Lead paragraph",
+    "type": "textarea",
+    "required": false,
+    "locked": false,
+    "default": "Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
+  },
+  {
+    "name": "stats",
+    "label": "Stats",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "value",
+        "label": "Number",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "35+"
+      },
+      {
+        "name": "label",
+        "label": "Label",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Years Delivering High Intent Leads"
+      }
+    ],
+    "default": [
+      {
+        "value": "35+",
+        "label": "Years Delivering High Intent Leads"
+      },
+      {
+        "value": "#1",
+        "label": "Accuracy with Leads Provided In The Industry"
+      },
+      {
+        "value": "155M",
+        "label": "Homeowner Records Delivered"
+      }
+    ]
+  }
+]
