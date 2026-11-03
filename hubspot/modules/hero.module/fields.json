@@ -1,0 +1,115 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Serving listing agents"
+  },
+  {
+    "name": "eyebrow_accent",
+    "label": "Eyebrow highlight (orange)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "since 1991"
+  },
+  {
+    "name": "headline_line_1",
+    "label": "Headline, line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "The Most Accurate"
+  },
+  {
+    "name": "headline_line_2",
+    "label": "Headline, line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Seller Data In Real Estate."
+  },
+  {
+    "name": "lede",
+    "label": "Supporting paragraph",
+    "type": "textarea",
+    "required": false,
+    "locked": false,
+    "default": "Landvoice provides every Expired, FSBO, Pre-Foreclosure, FRBO, and Neighborhood record you need to connect with motivated sellers and list more homes."
+  },
+  {
+    "name": "button_1_label",
+    "label": "Button 1 label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Get Started"
+  },
+  {
+    "name": "button_1_link",
+    "label": "Button 1 link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "button_2_label",
+    "label": "Button 2 label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Live Demo"
+  },
+  {
+    "name": "button_2_link",
+    "label": "Button 2 link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#demo",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "map_image",
+    "label": "Map image (leave empty for the default)",
+    "type": "image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  }
+]
