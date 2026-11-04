@@ -34,7 +34,7 @@
   {
     "name": "lead",
     "label": "Lead paragraph",
-    "type": "textarea",
+    "type": "text",
     "required": false,
     "locked": false,
     "default": "Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
@@ -58,8 +58,8 @@
         "default": "35+"
       },
       {
-        "name": "label",
-        "label": "Label",
+        "name": "caption",
+        "label": "Caption",
         "type": "text",
         "required": false,
         "locked": false,
@@ -69,15 +69,15 @@
     "default": [
       {
         "value": "35+",
-        "label": "Years Delivering High Intent Leads"
+        "caption": "Years Delivering High Intent Leads"
       },
       {
         "value": "#1",
-        "label": "Accuracy with Leads Provided In The Industry"
+        "caption": "Accuracy with Leads Provided In The Industry"
       },
       {
         "value": "155M",
-        "label": "Homeowner Records Delivered"
+        "caption": "Homeowner Records Delivered"
       }
     ]
   }

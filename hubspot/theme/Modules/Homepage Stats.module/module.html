@@ -1,0 +1,21 @@
+{# Dark band: "Who we are" sticky scroll story with stats. Must come before the tablet section (it stops scrolling at .lv-device). #}
+<div class="lv-band lv-band--dark lv-band--before-device">
+  <section class="lv-who" data-lv-story data-lv-story-speed="1.1" data-lv-story-until=".lv-device" data-lv-story-gap="0.45" aria-labelledby="who-title">
+    <div class="lv-who__sticky" data-lv-story-sticky>
+      <div class="lv-container lv-who__grid">
+        <div class="lv-who__head">
+          <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+          <h2 class="lv-h2 lv-h2--xl" id="who-title">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}{% if module.headline_line_3 %}<br>{{ module.headline_line_3 }}{% endif %}</h2>
+        </div>
+        <div class="lv-who__window" data-lv-story-window>
+          <div class="lv-who__track" data-lv-story-track>
+            <p class="lv-who__lead">{{ module.lead }}</p>
+            {% for stat in module.stats %}
+            <div class="lv-stat"><p class="lv-stat__value" data-lv-story-num>{{ stat.value }}</p><p class="lv-stat__label">{{ stat.caption }}</p></div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

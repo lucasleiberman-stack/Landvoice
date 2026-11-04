@@ -34,7 +34,7 @@
   {
     "name": "lede",
     "label": "Supporting paragraph",
-    "type": "textarea",
+    "type": "text",
     "required": false,
     "locked": false,
     "default": "Landvoice provides every Expired, FSBO, Pre-Foreclosure, FRBO, and Neighborhood record you need to connect with motivated sellers and list more homes."

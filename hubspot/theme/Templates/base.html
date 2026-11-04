@@ -1,0 +1,121 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+-->
+<!doctype html>
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if content.html_title %}<title>{{ content.html_title }}</title>{% endif %}
+<meta name="description" content="{{ content.meta_description }}">
+{% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% else %}<link rel="icon" href="{{ get_asset_url('../../images/landvoice-mark.svg') }}">{% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ get_asset_url('/Landvoice - 2026 Redesign/CSS/2026main.css') }}">
+{{ standard_header_includes }}
+</head>
+<body>
+
+
+<!-- ICON SPRITE (reference with <svg class="lv-icon"><use href="#lv-i-arrow"/></svg>) -->
+<svg class="lv-sprite" aria-hidden="true" focusable="false"><defs>
+  <symbol id="lv-i-arrow-solid" viewBox="0 0 20 20"><path d="M8.81554 0.309093C8.40245 0.722182 8.40249 1.39176 8.81437 1.80363L13.7127 6.70193C14.3785 7.36775 13.9073 8.506 12.9661 8.50468L1.05656 8.50522C0.776099 8.5052 0.508275 8.61636 0.309942 8.81469C-0.103147 9.22778 -0.103107 9.89736 0.30877 10.3092C0.507127 10.5076 0.774964 10.6188 1.05543 10.6188L12.9675 10.6208C13.91 10.6208 14.38 11.7579 13.7143 12.4236L8.81658 17.3213C8.40349 17.7344 8.40479 18.4027 8.81667 18.8146C9.2298 19.2277 9.89812 19.2265 10.3099 18.8147L18.8155 10.3091C19.2286 9.896 19.2273 9.22769 18.8154 8.81582L10.3088 0.309184C9.89694 -0.102693 9.22737 -0.102733 8.81554 0.309093Z"/></symbol>
+  <symbol id="lv-i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5.5 19.5 12 13 18.5"/></symbol>
+  <symbol id="lv-i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H5M11 5.5 4.5 12 11 18.5"/></symbol>
+  <symbol id="lv-i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></symbol>
+  <symbol id="lv-i-check" viewBox="0 0 20 20"><rect width="20" height="20" rx="5"/><path d="M5.5 10.3l3 3 6-6.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="lv-i-star" viewBox="0 0 24 24"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.500 9.400l6.600-.8z"/></symbol>
+  <symbol id="lv-i-quote" viewBox="0 0 64 56"><path d="M0 56V30C0 12 10 2 26 0l2 8C19 10 14 16 14 24h14v32zm36 0V30C36 12 46 2 62 0l2 8c-9 2-14 8-14 16h14v32z"/></symbol>
+  <!-- solid service icons -->
+  <symbol id="lv-ic-expired" viewBox="0 0 48 48"><circle cx="19" cy="14" r="8"/><path d="M3 41c0-9.4 7.2-16 16-16 2.3 0 4.4.4 6.3 1.3-2 2.3-3.3 5.3-3.3 8.7 0 2.2.6 4.3 1.6 6H5a2 2 0 0 1-2-2z"/><circle cx="36" cy="33" r="9"/><path d="M36 27.5V33l3.5 2.2" fill="none" stroke="var(--lv-icon-cut)" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="lv-ic-fsbo" viewBox="0 0 48 48"><path d="M7 4h5v40H7z"/><path d="M12 7h31v5H12z"/><rect x="17" y="12" width="22" height="15" rx="1"/></symbol>
+  <symbol id="lv-ic-pre" viewBox="0 0 48 48"><path d="M24 4 2 24h6v20h14V30h4v14h14V24h6z"/></symbol>
+  <symbol id="lv-ic-nbhd" viewBox="0 0 48 48"><path d="M2 11l13-5v31L2 42zM17 6l14 5v31l-14-5zM33 11l13-5v31l-13 5z"/></symbol>
+  <symbol id="lv-ic-frbo" viewBox="0 0 48 48"><path fill-rule="evenodd" d="M14 12a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/><rect x="24" y="21" width="22" height="6"/><rect x="36" y="27" width="4" height="8"/><rect x="42" y="27" width="4" height="6"/></symbol>
+  <!-- social icons (footer) -->
+  <symbol id="lv-s-facebook" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></symbol>
+  <symbol id="lv-s-youtube" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></symbol>
+  <symbol id="lv-s-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="lv-s-instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></symbol>
+  <symbol id="lv-s-tiktok" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></symbol>
+  <symbol id="lv-s-x" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></symbol>
+</defs></svg>
+
+<!-- ===== HEADER  (WP: header.php) ===== -->
+<header class="lv-header">
+  <div class="lv-header__inner">
+    <a class="lv-logo" href="/" aria-label="Landvoice home">
+      <img class="lv-logo__mark" src="" alt="" width="34" height="34">
+      <span class="lv-logo__word"><b>LAND</b>VOICE</span>
+    </a>
+    <nav class="lv-nav" aria-label="Primary">
+      <ul class="lv-nav__list">
+        <li class="lv-nav__item lv-nav__item--mega" data-lv-mega>
+          <a href="#products" aria-haspopup="true">Products</a>
+          <div class="lv-mega">
+            <div class="lv-mega__inner">
+              <div class="lv-mega__main">
+                <p class="lv-eyebrow">Lead data</p>
+                <ul class="lv-mega__grid">
+            <li><a class="lv-mega__link" href="expired-listings.html"><svg class="lv-mega__icon" aria-hidden="true"><use href="#lv-ic-expired"/></svg><span class="lv-mega__title">Expired Listings</span><span class="lv-mega__desc">Homeowners who listed, didn’t sell, and still want to move.</span></a></li>
+            <li><a class="lv-mega__link" href="#products"><svg class="lv-mega__icon" aria-hidden="true"><use href="#lv-ic-fsbo"/></svg><span class="lv-mega__title">FSBO Data</span><span class="lv-mega__desc">Owners selling on their own, updated every morning.</span></a></li>
+            <li><a class="lv-mega__link" href="#products"><svg class="lv-mega__icon" aria-hidden="true"><use href="#lv-ic-pre"/></svg><span class="lv-mega__title">Pre-Foreclosure &amp; Distressed</span><span class="lv-mega__desc">Notice of Default, Lis Pendens and bank-owned records.</span></a></li>
+            <li><a class="lv-mega__link" href="#products"><svg class="lv-mega__icon" aria-hidden="true"><use href="#lv-ic-nbhd"/></svg><span class="lv-mega__title">Neighborhood Search</span><span class="lv-mega__desc">Search any area and pull the homeowners in it.</span></a></li>
+            <li><span class="lv-mega__link lv-mega__link--soon"><svg class="lv-mega__icon" aria-hidden="true"><use href="#lv-ic-frbo"/></svg><span class="lv-mega__title">FRBO Data</span><span class="lv-mega__desc">Coming soon</span></span></li>
+                </ul>
+              </div>
+              <div class="lv-mega__side">
+                <p class="lv-eyebrow">Add-ons</p>
+                <ul class="lv-mega__list">
+            <li><a href="#addons">Inked Cards</a></li>
+            <li><a href="#addons">Call Capture</a></li>
+            <li><a href="#addons">Data Genie</a></li>
+                </ul>
+                <a class="lv-mega__all" href="#products">See all products</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+    <a class="lv-btn lv-btn--sm" href="#pricing"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Buy Now</span></a>
+    <button class="lv-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="lv-menu" data-lv-menu-toggle><span></span><span></span><span></span></button>
+  </div>
+  <div class="lv-menu" id="lv-menu" hidden>
+    <ul>
+      <li><a href="#products">Products</a><ul class="lv-menu__sub"><li><a href="expired-listings.html">Expired Listings</a></li><li><a href="#products">FSBO Data</a></li><li><a href="#products">Pre-Foreclosure &amp; Distressed</a></li><li><a href="#products">Neighborhood Search</a></li></ul></li><li><a href="#pricing">Pricing</a></li><li><a href="#training">Training</a></li><li><a href="#contact">Contact</a></li><li><a href="#login">Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  {% dnd_area "dnd_area" label="Main section" %}
+  {% end_dnd_area %}
+</main>
+
+<!-- ===== FOOTER  (WP: footer.php) ===== -->
+<footer class="lv-band lv-band--dark lv-footer" id="contact">
+  <div class="lv-container lv-footer__grid">
+    <div class="lv-footer__brand">
+      <a class="lv-logo" href="/" aria-label="Landvoice home"><img class="lv-logo__mark" src="" alt="" width="34" height="34"><span class="lv-logo__word"><b>LAND</b>VOICE</span></a>
+      <address class="lv-footer__address">12215 South 900 East<br>Draper, UT 84020</address>
+      <p class="lv-footer__line">Call us: <a href="tel:+18018454383">801.845.4383</a> or <a href="tel:+18886780905">888-678-0905</a></p>
+      <p class="lv-footer__line"><a href="#terms">Terms &amp; Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+      <div class="lv-footer__socials"><a class="lv-footer__social" href="#facebook" aria-label="Facebook" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#lv-s-facebook"/></svg></a><a class="lv-footer__social" href="#youtube" aria-label="YouTube" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#lv-s-youtube"/></svg></a><a class="lv-footer__social" href="#linkedin" aria-label="LinkedIn" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#lv-s-linkedin"/></svg></a><a class="lv-footer__social" href="#instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#lv-s-instagram"/></svg></a><a class="lv-footer__social" href="#tiktok" aria-label="TikTok" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#lv-s-tiktok"/></svg></a><a class="lv-footer__social" href="#x" aria-label="X" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#lv-s-x"/></svg></a></div>
+      <p class="lv-footer__copy">Copyright © 2026 Landvoice. All Rights Reserved.</p>
+    </div>
+    <nav class="lv-footer__col" aria-label="Products"><ul><li><a href="expired-listings.html">Expireds</a></li><li><a href="#products">FSBOs</a></li><li><a href="#products">Neighborhood Search</a></li><li><a href="#products">Pre-Foreclosures</a></li><li><a href="#addons">Call Capture</a></li><li><a href="expired-listings.html#pg-old">Old Expireds</a></li></ul></nav>
+    <nav class="lv-footer__col" aria-label="Company"><ul><li><a href="#blog">Blog</a></li><li><a href="#help">Help</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#ccpa">Do not Sell My Info (CCPA)</a></li></ul></nav>
+  </div>
+</footer>
+
+<script src="{{ get_asset_url('../../JS/2026main.js') }}"></script>
+{{ standard_footer_includes }}
+</body>
+</html>

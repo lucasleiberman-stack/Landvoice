@@ -1,0 +1,41 @@
+[ {
+  "id" : "6bdff33a-6d35-f36b-9463-f200201e8fae",
+  "name" : "trust_heading_before",
+  "label" : "Trust Heading (before number)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Trusted by"
+}, {
+  "id" : "d03362d3-a23d-c9c1-a4ec-c050d84fef7d",
+  "name" : "trust_heading_after",
+  "label" : "Trust Heading (after number) copy",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "agents across the industry"
+}, {
+  "id" : "4ba30dd4-8066-1430-d750-47aaf470d22b",
+  "name" : "trust_accent",
+  "label" : "Trust Accent (Number)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "200K"
+}, {
+  "id" : "4acdd1e1-dc23-74ad-64a6-95692edc93ea",
+  "name" : "logo_strip_for_screen_readers_",
+  "label" : "Logo strip ( for screen readers)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Brokerages that use Landvoice"
+} ]

@@ -1,0 +1,15 @@
+{
+  "label": "Homepage stats",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Dark band: Who we are scroll story with a lead paragraph and stats. Place it after the Logo Slider and before the tablet section.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
