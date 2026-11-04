@@ -8,21 +8,6 @@
     "default": "Client success"
   },
   {
-    "name": "photo",
-    "label": "Photo (circle on the left)",
-    "type": "image",
-    "required": false,
-    "locked": false,
-    "responsive": true,
-    "resizable": true,
-    "show_loading": false,
-    "default": {
-      "src": "",
-      "alt": "",
-      "loading": "disabled"
-    }
-  },
-  {
     "name": "seconds_per_slide",
     "label": "Seconds per testimonial",
     "type": "number",
@@ -42,6 +27,21 @@
       "default": 3
     },
     "children": [
+      {
+        "name": "photo",
+        "label": "Photo (circle on the left)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
       {
         "name": "quote",
         "label": "Quote",
