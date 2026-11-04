@@ -2,3 +2,14 @@
 .lv-device__screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
 /* square bottom corners: this band is followed by Lead Manager Slider (also light), so they join without dark notches */
 .lv-band--light.lv-band--flat-bottom { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+/* ROAD STYLE (matches the supplied road SVG): a soft grey-blue glow track, a blue 9px drawn line with a pale hairline,
+   hollow ring nodes, and 6px arms with round ends. Same scroll-draw animation, new look. */
+.lv-road .lv-road__line { width: 14px; background: rgba(143, 163, 191, .16); border-radius: 7px; }
+.lv-road .lv-road__fill { left: 50%; width: 9px; transform: translateX(-50%); background: rgba(0, 111, 255, .8); border-radius: 5px; box-shadow: none; }
+.lv-road .lv-road__fill::after { width: 1.4px; background: rgba(227, 236, 247, .6); }
+.lv-road .lv-road__arm { background: rgba(0, 111, 255, .8); border-radius: 3px; box-shadow: 0 0 0 2px rgba(0, 111, 255, .16); }
+.lv-road .lv-road__arm::after { height: 1.15px; background: rgba(227, 236, 247, .6); }
+.lv-road .lv-road__node { width: 44px; height: 44px; border: 9px solid rgba(0, 111, 255, .8); background: var(--lv-paper);
+  box-shadow: 0 0 0 2px rgba(0, 111, 255, .16), inset 0 0 0 2px rgba(0, 111, 255, .16); }
+.lv-road .lv-road__node::after { content: ""; position: absolute; inset: -4.6px; border: 1.2px solid rgba(227, 236, 247, .6); border-radius: 50%; }
