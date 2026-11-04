@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% if content.html_title %}<title>{{ content.html_title }}</title>{% endif %}
 <meta name="description" content="{{ content.meta_description }}">
-{% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% else %}<link rel="icon" href="{{ get_asset_url('../../images/landvoice-mark.svg') }}">{% endif %}
+{% if brand_settings.primaryFavicon.src %}<link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />{% else %}<link rel="icon" href="{{ get_asset_url('/Landvoice - 2026 Redesign/images/landvoice-mark.svg') }}">{% endif %}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ get_asset_url('/Landvoice - 2026 Redesign/CSS/2026main.css') }}">
@@ -115,7 +115,7 @@
   </div>
 </footer>
 
-<script src="{{ get_asset_url('../../JS/2026main.js') }}"></script>
+<script src="{{ get_asset_url('/Landvoice - 2026 Redesign/JS/2026main.js') }}"></script>
 {{ standard_footer_includes }}
 </body>
 </html>
