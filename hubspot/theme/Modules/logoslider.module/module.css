@@ -1,0 +1,2 @@
+/* keep the logo strip moving on hover (the shared marquee CSS pauses it) */
+.lv-marquee:hover .lv-marquee__track { animation-play-state: running; }
