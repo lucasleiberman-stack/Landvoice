@@ -1,0 +1,57 @@
+{# Light band: tablet (video) + "The Smarter Way" heading + the product road (products in rows of two) + the FRBO coming-soon end. Place it right after Homepage stats. #}
+<div class="lv-band lv-band--light">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+
+  <div class="lv-showcase" id="demo">
+    <div class="lv-container">
+      <figure class="lv-device" data-lv-video-frame>
+        <div class="lv-device__screen">
+          {% if module.screen_image.src %}<img src="{{ module.screen_image.src }}" alt="{{ module.screen_image.alt }}" loading="lazy">{% else %}<div class="lv-ph" data-label="Screenshot: Neighborhood Search map (video poster)"></div>{% endif %}
+          <button class="lv-play" type="button" data-lv-video="{{ module.video_url }}" aria-label="{{ module.play_label }}"><span class="lv-play__dot"><svg class="lv-icon"><use href="#lv-i-play"/></svg></span>{{ module.play_label }}</button>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <section class="lv-section lv-services" id="products" aria-labelledby="services-title">
+    <div class="lv-container lv-container--wide">
+      <header class="lv-services__head" data-lv-reveal>
+        <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+        <h2 class="lv-h2" id="services-title">{{ module.heading }}</h2>
+        <p class="lv-lede">{{ module.lede }}</p>
+      </header>
+
+      <div class="lv-road" data-lv-road>
+        <div class="lv-road__rows">
+          <div class="lv-road__line" aria-hidden="true"><div class="lv-road__fill"></div></div>
+          {% for item in module.products %}
+          {% if loop.index is odd %}
+          <div class="lv-road__row" data-lv-road-row>
+            <article class="lv-svc lv-svc--left">
+          {% else %}
+            <article class="lv-svc lv-svc--right">
+          {% endif %}
+              <svg class="lv-svc__icon" aria-hidden="true"><use href="#lv-ic-{{ item.icon }}"/></svg>
+              <h3 class="lv-h3 lv-svc__title">{{ item.title }}</h3>
+              <p class="lv-svc__text">{{ item.text }}</p>
+              {% if item.button_label %}<a class="lv-btn" href="{{ item.link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ item.button_label }}</span></a>{% endif %}
+            </article>
+          {% if loop.index is odd %}
+            <div class="lv-road__mid" aria-hidden="true"><span class="lv-road__arm lv-road__arm--l"></span><span class="lv-road__node"></span><span class="lv-road__arm lv-road__arm--r"></span></div>
+          {% endif %}
+          {% if loop.index is even or loop.last %}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="lv-services__end" data-lv-reveal>
+          <svg class="lv-svc__icon" aria-hidden="true"><use href="#lv-ic-frbo"/></svg>
+          <h3 class="lv-h3">{{ module.end_title }}</h3>
+          {% if module.end_badge %}<p class="lv-services__soon">{{ module.end_badge }}</p>{% endif %}
+          <p class="lv-svc__text">{{ module.end_text }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,15 @@
+{
+  "label": "Product Showcase",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Light band: tablet with video, the Smarter Way heading, four products on the road, and the FRBO coming-soon end.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

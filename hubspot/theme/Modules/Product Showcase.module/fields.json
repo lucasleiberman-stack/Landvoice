@@ -1,0 +1,232 @@
+[
+  {
+    "name": "screen_image",
+    "label": "Tablet screenshot (video poster)",
+    "type": "image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "video_url",
+    "label": "Video embed URL (e.g. https://player.vimeo.com/video/123)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": ""
+  },
+  {
+    "name": "play_label",
+    "label": "Play button text",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Play video"
+  },
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Unmatched seller data"
+  },
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "The Smarter Way for Real Estate Agents to Get More Listings."
+  },
+  {
+    "name": "lede",
+    "label": "Supporting paragraph",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "The agents who list more homes usually have one thing in common: they consistently talk to more motivated sellers. Landvoice helps you build a more predictable listing pipeline by giving you access to real estate seller data that is aligned with how top agents list more homes."
+  },
+  {
+    "name": "products",
+    "label": "Products",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "icon",
+        "label": "Icon",
+        "type": "choice",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "multiple": false,
+        "choices": [
+          [
+            "expired",
+            "Expired"
+          ],
+          [
+            "fsbo",
+            "FSBO"
+          ],
+          [
+            "pre",
+            "Pre-foreclosure"
+          ],
+          [
+            "nbhd",
+            "Neighborhood"
+          ],
+          [
+            "frbo",
+            "FRBO"
+          ]
+        ],
+        "default": "expired"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Product name"
+      },
+      {
+        "name": "text",
+        "label": "Description",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Description"
+      },
+      {
+        "name": "button_label",
+        "label": "Button text",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Learn More"
+      },
+      {
+        "name": "link",
+        "label": "Button link",
+        "type": "link",
+        "required": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS"
+        ],
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "icon": "expired",
+        "title": "Expired Listings",
+        "text": "Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#expired",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "icon": "fsbo",
+        "title": "FSBO Data",
+        "text": "Owners selling on their own. Most eventually list with an agent - reach them before three competitors do. Updated every morning.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#fsbo",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "icon": "pre",
+        "title": "Pre-Foreclosure & Distressed",
+        "text": "Notice of Default, Lis Pendens, Notice of Trustee Sale, and bank-owned records from county filings. Owners on a deadline who need a real solution.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#pre",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "icon": "nbhd",
+        "title": "Neighborhood Search",
+        "text": "Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#nbhd",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "end_title",
+    "label": "Last product: title",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "FRBO Data"
+  },
+  {
+    "name": "end_badge",
+    "label": "Last product: badge (leave empty to hide)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Coming soon"
+  },
+  {
+    "name": "end_text",
+    "label": "Last product: description",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Every day a rental sits vacant, the owner pays the mortgage out of pocket. FRBO leads put you in front of that owner while the pressure is still new."
+  }
+]
