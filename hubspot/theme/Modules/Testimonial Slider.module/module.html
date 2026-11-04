@@ -1,0 +1,17 @@
+{# Dark band: client-success testimonial slider with dots. Auto-advances every 8 seconds (pauses on hover). #}
+<section class="lv-band lv-band--dark lv-testimonial" aria-label="{{ module.eyebrow }}" data-lv-slider data-lv-interval="{{ (module.seconds_per_slide|default(8)) * 1000 }}">
+  <div class="lv-container lv-quote">
+    <svg class="lv-quote__mark" aria-hidden="true"><use href="#lv-i-quote"/></svg>
+    <div class="lv-quote__avatar">{% if module.photo.src %}<img src="{{ module.photo.src }}" alt="{{ module.photo.alt }}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover">{% endif %}</div>
+    <div class="lv-quote__body">
+      <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+      {% for item in module.testimonials %}
+      <div class="lv-quote__slide" data-lv-slide{% if not loop.first %} hidden{% endif %}>
+        <blockquote class="lv-quote__text">{{ item.quote }}</blockquote>
+        <p class="lv-quote__who">{{ item.name }}<span>{{ item.role }}</span></p>
+      </div>
+      {% endfor %}
+      <div class="lv-quote__dots">{% for item in module.testimonials %}<button class="lv-quote__dot{% if loop.first %} is-active{% endif %}" type="button" aria-label="Testimonial {{ loop.index }}" data-lv-dot></button>{% endfor %}</div>
+    </div>
+  </div>
+</section>

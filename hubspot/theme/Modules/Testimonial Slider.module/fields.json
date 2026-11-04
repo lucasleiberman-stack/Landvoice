@@ -1,0 +1,88 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Client success"
+  },
+  {
+    "name": "photo",
+    "label": "Photo (circle on the left)",
+    "type": "image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "seconds_per_slide",
+    "label": "Seconds per testimonial",
+    "type": "number",
+    "required": false,
+    "locked": false,
+    "default": 8,
+    "min": 3,
+    "max": 30
+  },
+  {
+    "name": "testimonials",
+    "label": "Testimonials",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "quote",
+        "label": "Quote",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Quote"
+      },
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Name"
+      },
+      {
+        "name": "role",
+        "label": "Business and city",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "City, ST"
+      }
+    ],
+    "default": [
+      {
+        "quote": "I got 3 listings in my very first month with Landvoice! It has been a game-changer for my business.",
+        "name": "Sheri Jackson",
+        "role": "Jackson Team, Las Vegas"
+      },
+      {
+        "quote": "Landvoice integrates seamlessly with the other apps. It's a no-brainer.",
+        "name": "Agent Name",
+        "role": "City, ST"
+      },
+      {
+        "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice.",
+        "name": "Agent Name",
+        "role": "City, ST"
+      }
+    ]
+  }
+]
