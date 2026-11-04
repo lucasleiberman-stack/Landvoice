@@ -51,7 +51,7 @@
         "default": "Quote"
       },
       {
-        "name": "name",
+        "name": "person",
         "label": "Name",
         "type": "text",
         "required": false,
@@ -70,18 +70,18 @@
     "default": [
       {
         "quote": "I got 3 listings in my very first month with Landvoice! It has been a game-changer for my business.",
-        "name": "Sheri Jackson",
-        "role": "Jackson Team, Las Vegas"
+        "role": "Jackson Team, Las Vegas",
+        "person": "Sheri Jackson"
       },
       {
         "quote": "Landvoice integrates seamlessly with the other apps. It's a no-brainer.",
-        "name": "Agent Name",
-        "role": "City, ST"
+        "role": "City, ST",
+        "person": "Agent Name"
       },
       {
         "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice.",
-        "name": "Agent Name",
-        "role": "City, ST"
+        "role": "City, ST",
+        "person": "Agent Name"
       }
     ]
   }
