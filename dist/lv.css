@@ -189,6 +189,7 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-btn--sm { --btn-icon-w: 2.5rem; }
 .lv-btn--sm .lv-btn__icon { font-size: 1.1rem; }
 .lv-btn--sm .lv-btn__label { min-height: 2.5rem; padding: 0 1rem; }
+@media (min-width: 1798px) { .lv-btn:not(.lv-btn--sm) { font-size: 1.125rem; } }   /* 18px on large screens; the small header button stays put */
 .lv-btn--block { display: flex; width: 100%; }
 .lv-btn--block .lv-btn__label { flex: 1; }
 .lv-actions { display: flex; flex-wrap: wrap; gap: .9rem; }
