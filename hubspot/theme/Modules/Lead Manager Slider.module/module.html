@@ -1,0 +1,31 @@
+{# Light band: "Your data, organized" heading + slider of product graphics + two buttons. Square top corners so it joins the Product Showcase band above it. #}
+<div class="lv-band lv-band--light lv-band--flat-top">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+
+  <section class="lv-section lv-lm" data-lv-carousel aria-labelledby="lm-title">
+    <div class="lv-container lv-lm__head">
+      <div class="lv-lm__intro" data-lv-reveal>
+        <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+        <h2 class="lv-h2" id="lm-title">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}</h2>
+        <p class="lv-lede">{{ module.lede }}</p>
+      </div>
+      <div class="lv-carousel__controls">
+        <button class="lv-carousel__btn" type="button" aria-label="Previous" data-lv-carousel-prev><svg class="lv-icon lv-icon--flip"><use href="#lv-i-arrow-solid"/></svg></button>
+        <button class="lv-carousel__btn" type="button" aria-label="Next" data-lv-carousel-next><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></button>
+      </div>
+    </div>
+    <div class="lv-carousel__track" data-lv-carousel-track>
+      {% for slide in module.slides %}
+      {% set slide_src = slide.image.src or get_asset_url('/Landvoice - 2026 Redesign/images/lead-manager/' ~ slide.file) %}
+      <article class="lv-carousel__slide lv-fcard">
+        <div class="lv-fcard__body"><h3 class="lv-fcard__title">{{ slide.title }}</h3><p class="lv-fcard__text">{{ slide.text }}</p></div>
+        <div class="lv-fcard__media"><img class="lv-fcard__img" src="{{ slide_src }}" alt="{{ slide.alt }}" loading="lazy"></div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="lv-container lv-lm__actions lv-actions">
+      {% if module.button_1_label %}<a class="lv-btn" href="{{ module.button_1_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_1_label }}</span></a>{% endif %}
+      {% if module.button_2_label %}<a class="lv-btn lv-btn--dark" href="{{ module.button_2_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_2_label }}</span></a>{% endif %}
+    </div>
+  </section>
+</div>

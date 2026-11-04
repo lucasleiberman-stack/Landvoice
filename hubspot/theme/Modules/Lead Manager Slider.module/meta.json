@@ -1,0 +1,15 @@
+{
+  "label": "Lead Manager Slider",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Light band: heading, paragraph, slider of product graphics and two buttons. Place directly after Product Showcase.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

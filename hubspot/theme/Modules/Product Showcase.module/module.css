@@ -1,2 +1,4 @@
 /* screenshot inside the tablet frame */
 .lv-device__screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* square bottom corners: this band is followed by Lead Manager Slider (also light), so they join without dark notches */
+.lv-band--light.lv-band--flat-bottom { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
