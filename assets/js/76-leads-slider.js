@@ -34,8 +34,13 @@ LV.ready(function () {
     window.addEventListener('resize', LV.raf(measure));
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { card.classList.add('is-running'); show(0); return; }
-    var start = (parseFloat(getComputedStyle(map).getPropertyValue('--lv-leads-start')) || 3.7) * 1000 + 400;
-    setTimeout(function () { card.classList.add('is-running'); show(0); setInterval(next, step); }, start);
+    all[0].classList.add('is-active');   // resting look from the start; the entrance animation fades the cards in to it
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { show(0); return; }
+    // start in step with the CSS entrance (not a separate timer, which could drift from it): the first card's entrance animation begins when the card appears
+    var started = false;
+    function go() { if (started) return; started = true; show(0); setInterval(next, step); }
+    all[0].addEventListener('animationstart', go);
+    var start = (parseFloat(getComputedStyle(map).getPropertyValue('--lv-leads-start')) || 3.2) * 1000 + 1500;
+    setTimeout(function () { if (!all[0].getAnimations().length) go(); }, start);   // safety net only if there is no entrance animation at all (e.g. animations disabled)
   });
 });

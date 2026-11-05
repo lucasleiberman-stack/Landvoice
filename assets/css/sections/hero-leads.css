@@ -1,7 +1,7 @@
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
-.lv-hero__map { --lv-leads-w: clamp(230px, 31cqw, 370px); --lv-leads-start: 3.7s; --lv-leads-step: .12s; }   /* the pins finish landing at ~2.65s; the list starts 1s later */
+.lv-hero__map { --lv-leads-w: clamp(230px, 31cqw, 370px); --lv-leads-start: 3.2s; --lv-leads-step: .12s; }   /* the pins finish landing at ~2.65s; the list starts 1s later */
 .lv-leads { --lv-call: #2FB863;
   position: absolute; left: min(76.5%, calc(100% - var(--lv-leads-w) - 5cqw)); top: 6%; width: var(--lv-leads-w); padding: 0; overflow: hidden;   /* centred on the drawn territory circle (circle centre = 49% of the map), starting near the top and running down to the bottom of the hero (JS sets the height so the list runs off the bottom edge of the hero) */
   border-radius: 32px; background: none; color: var(--lv-ink);   /* the card itself has no fill (every lead is its own bubble); the radius shapes the glass behind them: 32px = the 16px bubbles + the 16px of padding round them */
