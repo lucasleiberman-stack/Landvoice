@@ -244,7 +244,7 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-herocopy { max-width: min(46rem, 100%); }
 .lv-herocopy .lv-eyebrow { margin-bottom: 1.6rem; }
 .lv-herocopy .lv-h1 { margin-bottom: 1.6rem; }
-.lv-herocopy .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; }
+.lv-herocopy .lv-lede { margin-bottom: 2.4rem; max-width: 44rem; text-wrap: pretty; }   /* pretty = no single word left alone on the last line */
 /* optional second block under the hero lede (a small heading + paragraph), still inside .lv-herocopy */
 .lv-herocopy__more { display: grid; gap: .8rem; margin-top: .4rem; }
 .lv-herocopy__more .lv-lede { margin-bottom: 0; }
@@ -342,10 +342,33 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @media (max-width: 480px) { .lv-header__inner > .lv-btn { display: none; } .lv-burger { margin-left: auto; } }
 .lv-mega::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }   /* hover bridge across the gap when the bar floats */
 .lv-header.is-stuck .lv-mega { top: calc(100% + 10px); border-radius: 12px; border-bottom: 0; box-shadow: 0 0 0 1px var(--lv-line), 0 10px 20px -14px rgba(13,17,23,.22); }
+/* HERO LEADS SLIDER (v2, local experiment): after the pins land, ONE lead at a time in a vertical slider that shows 1.5 cards.
+   Each pin takes a turn being highlighted (JS toggles .is-active on the pin + its pill) and the matching lead slides into view.
+   Loads after hero-leads.css and overrides it for .lv-leads--slider. The 10-lead list is git tag hero-list-v1-hubspot. */
+.lv-leads--slider { top: 56.1%; translate: 0 -50%; overflow: hidden; }   /* vertically centred on the territory circle; height is set by JS (1.5 cards) */
+.lv-leads--slider .lv-leads__glass { -webkit-mask-image: none; mask-image: none; }
+.lv-leads--slider .lv-leads__list { display: flex; flex-direction: column; height: auto; -webkit-mask-image: none; mask-image: none; overflow: visible;
+  gap: clamp(12px, 1.7cqw, 20px); transition: transform .8s cubic-bezier(.65,0,.25,1); will-change: transform; }
+.lv-leads--slider.is-snap .lv-leads__list, .lv-leads--slider.is-snap .lv-lead { transition: none; }
+.lv-leads--slider .lv-lead { flex: none; opacity: .5; animation: lv-slide-in .5s var(--lv-ease) calc(var(--lv-leads-start) + .3s) backwards;   /* all cards enter together; only one is in full view */
+  transition: opacity .6s ease, box-shadow .6s ease; }
+/* resting look is set from page load (.is-active on the first card, others dimmed) and the entrance only animates FROM invisible to that look, so nothing jumps when the rotation starts */
+@keyframes lv-slide-in { from { opacity: 0; transform: translateX(10px); } }
+.lv-leads--slider .lv-lead.is-active { opacity: 1; box-shadow: 0 10px 26px rgba(13,17,23,.16), 0 0 0 1px var(--tag-bg); }   /* ring in the lead's pin colour ties it to its point */
+
+/* the highlighted pin: dot grows, pill grows and gets a ring in its colour (individual scale property, so it doesn't fight the entrance animations) */
+.lv-pin__dot { transition: scale .4s var(--lv-ease); }
+.lv-pin.is-active .lv-pin__dot { scale: 1.4; }
+.lv-prop-card { transition: scale .45s var(--lv-ease), box-shadow .45s ease; }
+.lv-prop-card.is-active { scale: 1.36; z-index: 2; box-shadow: 0 calc(10 * var(--u)) calc(26 * var(--u)) rgba(13,17,23,.28), 0 0 0 calc(1.2 * var(--u)) var(--tag-bg); }
+
+@media (prefers-reduced-motion: reduce) { .lv-leads--slider .lv-leads__list, .lv-pin__dot, .lv-prop-card { transition: none; } }
+@media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
+  .lv-leads--slider { top: auto; translate: none; } }
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
-.lv-hero__map { --lv-leads-w: clamp(230px, 31cqw, 370px); --lv-leads-start: 3.7s; --lv-leads-step: .12s; }   /* the pins finish landing at ~2.65s; the list starts 1s later */
+.lv-hero__map { --lv-leads-w: clamp(230px, 31cqw, 370px); --lv-leads-start: 3.2s; --lv-leads-step: .12s; }   /* the pins finish landing at ~2.65s; the list starts 1s later */
 .lv-leads { --lv-call: #2FB863;
   position: absolute; left: min(76.5%, calc(100% - var(--lv-leads-w) - 5cqw)); top: 6%; width: var(--lv-leads-w); padding: 0; overflow: hidden;   /* centred on the drawn territory circle (circle centre = 49% of the map), starting near the top and running down to the bottom of the hero (JS sets the height so the list runs off the bottom edge of the hero) */
   border-radius: 32px; background: none; color: var(--lv-ink);   /* the card itself has no fill (every lead is its own bubble); the radius shapes the glass behind them: 32px = the 16px bubbles + the 16px of padding round them */
