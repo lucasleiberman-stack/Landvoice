@@ -347,7 +347,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
 .lv-hero__map { --lv-leads-start: 6.4s; --lv-leads-step: .28s; }   /* the list starts once the pins are in; the pins fade back once the list is in */
 .lv-leads { --lv-call: #2FB863;
-  position: absolute; left: 69.5%; top: 50%; translate: 0 -50%; width: clamp(190px, 24.5cqw, 300px); padding: 0; overflow: hidden;   /* centred vertically on the map, right of the pins, inside the map's right edge */
+  position: absolute; left: 49%; top: 56.1%; translate: -50% -50%; width: clamp(190px, 24.5cqw, 300px); padding: 0; overflow: hidden;   /* dead centre of the drawn territory circle (circle centre = 49% / 56.1% of the map) */
   border-radius: 16px; background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   box-shadow: 0 18px 44px rgba(13,17,23,.2), 0 0 0 1px rgba(255,255,255,.7); color: var(--lv-ink);
   animation: lv-leads-in .8s var(--lv-ease) var(--lv-leads-start) both; }
@@ -370,10 +370,10 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-lead__call .lv-icon { width: .95em; height: .95em; }
 @keyframes lv-leads-in { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
 @keyframes lv-lead-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
-/* once the whole list is in (last row lands ~.5s after its start), the pins and pills fade back a little so the list leads */
-.lv-props { animation: lv-points-fade .9s ease calc(var(--lv-leads-start) + .5s + 4 * var(--lv-leads-step) + .6s) both; }
-@keyframes lv-points-fade { to { opacity: .45; } }
-@media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props { animation: none; } }
+/* once the whole list is in (last row lands ~.5s after its start), the territory circle and the pins blur slightly so the list leads */
+.lv-props, .lv-circle { animation: lv-points-blur .9s ease calc(var(--lv-leads-start) + .5s + 4 * var(--lv-leads-step) + .6s) both; }
+@keyframes lv-points-blur { to { filter: blur(2.5px); } }
+@media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props, .lv-circle { animation: none; } }
 @media (max-width: 1100px) { .lv-leads { position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
 
 /* HERO: copy on the left, tilted territory map on the right with colour-coded record pins */
