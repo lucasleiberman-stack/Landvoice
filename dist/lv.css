@@ -347,13 +347,18 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
 .lv-hero__map { --lv-leads-start: 6.4s; --lv-leads-step: .12s; }   /* the list starts once the pins are in; the circle and pins blur as the white box appears */
 .lv-leads { --lv-call: #2FB863;
-  position: absolute; left: 49%; top: 56.1%; translate: -50% -50%; width: clamp(190px, 24.5cqw, 300px); padding: 0; overflow: hidden;   /* dead centre of the drawn territory circle (circle centre = 49% / 56.1% of the map) */
+  position: absolute; left: 49%; top: 6%; translate: -50% 0; width: clamp(200px, 26cqw, 310px); padding: 0; overflow: hidden;   /* centred on the drawn territory circle (circle centre = 49% of the map), starting near the top and running down to the bottom of the hero (JS sets the height; the list fades and blurs as it reaches the edge) */
   border-radius: 16px; background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   box-shadow: 0 18px 44px rgba(13,17,23,.2), 0 0 0 1px rgba(255,255,255,.7); color: var(--lv-ink);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 50%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0, #000 50%, transparent 100%);
   animation: lv-leads-in .8s var(--lv-ease) var(--lv-leads-start) both; }
+/* progressive blur over the lower part of the list */
+.lv-leads::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 42%; pointer-events: none;
+  -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 85%); mask-image: linear-gradient(to bottom, transparent, #000 85%); }
 .lv-leads__list { display: grid; margin: 0; padding: clamp(6px, .9cqw, 12px) 0; list-style: none; }   /* breathing room above the first and below the last lead */
 .lv-lead { --tag-bg: #C9E9D3; --tag-ink: #073D13; display: grid; justify-items: start; gap: .17em;
-  padding: .85em clamp(13px, 1.8cqw, 22px); border-top: 1px solid rgba(13,17,23,.1); font-size: clamp(11px, calc(1.25cqw + 1px), 13.5px);
+  padding: .85em clamp(13px, 1.8cqw, 22px); border-top: 1px solid rgba(13,17,23,.1); font-size: clamp(13px, calc(1.25cqw + 3px), 15.5px);
   animation: lv-lead-in .35s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) both; }
 .lv-lead:first-child { border-top: 0; }
 .lv-lead--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59; }
@@ -374,7 +379,9 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-props, .lv-circle { animation: lv-points-blur .8s ease var(--lv-leads-start) both; }
 @keyframes lv-points-blur { to { filter: blur(2.5px); } }
 @media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props, .lv-circle { animation: none; } }
-@media (max-width: 1100px) { .lv-leads { position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
+@media (max-width: 1100px) { .lv-lead:nth-child(n+6) { display: none; }
+  .lv-leads::after { display: none; }
+  .lv-leads { -webkit-mask-image: none; mask-image: none; position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
 
 /* HERO: copy on the left, tilted territory map on the right with colour-coded record pins */
 .lv-hero { overflow: hidden; display: flex; align-items: center; min-height: min(88vh, 860px); padding-block: clamp(64px, 8vw, 120px); }
