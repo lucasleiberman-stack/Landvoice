@@ -470,8 +470,8 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @keyframes lv-circle-fill { to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .lv-circle__sweep { animation: none; stroke-dashoffset: 0; } .lv-circle__fill { animation: none; opacity: 1; } }
 
-/* homepage hero: on wide screens let the text block run past its grid column (it starts over the faded left edge of the map) so the sub paragraph sets in 2 lines instead of 3 with a lone last line */
-@media (min-width: 1360px) { .lv-hero .lv-herocopy { width: 46rem; max-width: none; } .lv-hero .lv-herocopy .lv-lede { max-width: 44rem; } }
+/* homepage hero sub paragraph: max width 550px */
+.lv-hero .lv-herocopy .lv-lede { max-width: 550px; }
 /* INTEGRATIONS: logo cluster + "And Everything Else" connector */
 .lv-integrations__head { display: grid; gap: 1.4rem; justify-items: center; text-align: center; max-width: 60rem; margin-inline: auto; }
 .lv-integrations__main { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
