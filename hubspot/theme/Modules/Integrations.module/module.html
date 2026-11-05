@@ -1,5 +1,5 @@
 {# Light band: CRM integrations (logo cluster) + "And everything else" (API / CSV). Place after the Testimonial Slider (dark). #}
-{% set cluster_src = module.cluster_image.src or get_asset_url('/Landvoice - 2026 Redesign/images/integrations/integrations-cluster-v2.webp') %}
+{% set cluster_src = module.cluster_image.src or get_asset_url('/Landvoice - 2026 Redesign/images/integrations/integrations-cluster-v2.png') %}
 {% set else_src = module.else_image.src or get_asset_url('/Landvoice - 2026 Redesign/images/integrations/integrations-else.png') %}
 <section class="lv-band lv-band--light lv-section" aria-labelledby="int-title">
   <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
@@ -13,7 +13,7 @@
     <div class="lv-integrations__main">
       <div class="lv-integrations__copy" data-lv-reveal>
         <h3 class="lv-h3">{{ module.subheading }}</h3>
-        <p class="lv-muted">{{ module.body }}</p>
+        <p class="lv-muted">{{ module.subbody }}</p>
         <div class="lv-actions">
           {% if module.button_1_label %}<a class="lv-btn" href="{{ module.button_1_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_1_label }}</span></a>{% endif %}
           {% if module.button_2_label %}<a class="lv-btn lv-btn--dark" href="{{ module.button_2_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_2_label }}</span></a>{% endif %}

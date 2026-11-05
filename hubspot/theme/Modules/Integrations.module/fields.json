@@ -32,7 +32,7 @@
     "default": "Works with the CRMs and Dialers agents actually use"
   },
   {
-    "name": "body",
+    "name": "subbody",
     "label": "Left block: paragraph",
     "type": "text",
     "required": false,
