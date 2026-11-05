@@ -1,0 +1,25 @@
+{# Dark band: plan cards. Variants: standard, pro (highlighted, with a badge), byo (build your own: lines of text instead of a checklist, dark button). #}
+<section class="lv-band lv-band--dark lv-section" id="pricing" aria-labelledby="pricing-title">
+  <div class="lv-container lv-container--wide">
+    <header class="lv-pricing__head" data-lv-reveal>
+      <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+      <h2 class="lv-h2 lv-h2--xl" id="pricing-title">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}</h2>
+    </header>
+    <div class="lv-plans">
+      {% for plan in module.plans %}
+      <article class="lv-plan{% if plan.variant == 'pro' %} lv-plan--pro{% elif plan.variant == 'byo' %} lv-plan--byo{% endif %}" data-lv-reveal{% if loop.index0 > 0 %} style="--lv-delay:{{ loop.index0 * 0.08 }}s"{% endif %}>
+        {% if plan.badge %}<span class="lv-plan__badge">{{ plan.badge }}</span>{% endif %}
+        <p class="lv-plan__name">{{ plan.plan_name }}</p>
+        <p class="lv-plan__price">{{ plan.price }}{% if plan.price_suffix %} <small>{{ plan.price_suffix }}</small>{% endif %}</p>{% if plan.save_text %}<p class="lv-plan__save">{{ plan.save_text }}</p>{% endif %}
+        {% if plan.note %}<p class="lv-plan__note">{{ plan.note }}</p>{% endif %}
+        {% if plan.variant == 'byo' %}
+        {% for line in plan.features|split(',') %}<p>{{ line|trim }}</p>{% endfor %}
+        {% else %}
+        <ul class="lv-plan__list">{% for feature in plan.features|split(',') %}<li>{{ feature|trim }} <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>{% endfor %}</ul>
+        {% endif %}
+        <a class="lv-btn{% if plan.variant == 'byo' %} lv-btn--dark{% endif %} lv-btn--block" href="{{ plan.button_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ plan.button_label }}</span></a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

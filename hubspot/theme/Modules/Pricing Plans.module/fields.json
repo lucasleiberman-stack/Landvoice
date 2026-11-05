@@ -1,0 +1,229 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Flexible plans"
+  },
+  {
+    "name": "headline_line_1",
+    "label": "Headline, line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Choose the Right Plan"
+  },
+  {
+    "name": "headline_line_2",
+    "label": "Headline, line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "to Power Your Workflow"
+  },
+  {
+    "name": "plans",
+    "label": "Plans",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "variant",
+        "label": "Style",
+        "type": "choice",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "multiple": false,
+        "choices": [
+          [
+            "standard",
+            "Standard"
+          ],
+          [
+            "pro",
+            "Highlighted (Most popular)"
+          ],
+          [
+            "byo",
+            "Build your own (text lines, dark button)"
+          ]
+        ],
+        "default": "standard"
+      },
+      {
+        "name": "plan_name",
+        "label": "Plan name",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Plan"
+      },
+      {
+        "name": "badge",
+        "label": "Badge (e.g. Most popular, optional)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "$0"
+      },
+      {
+        "name": "price_suffix",
+        "label": "Small text after the price (e.g. /mo, optional)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      },
+      {
+        "name": "save_text",
+        "label": "Savings line (optional)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      },
+      {
+        "name": "note",
+        "label": "Note under the price (optional)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      },
+      {
+        "name": "features",
+        "label": "What's included (separate items with commas)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Item one, Item two"
+      },
+      {
+        "name": "button_label",
+        "label": "Button label",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Get started"
+      },
+      {
+        "name": "button_link",
+        "label": "Button link",
+        "type": "link",
+        "required": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS"
+        ],
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "variant": "standard",
+        "plan_name": "Starter",
+        "badge": "",
+        "price": "$797",
+        "price_suffix": "",
+        "save_text": "Pay Annually and Save $247",
+        "note": "",
+        "features": "Expired Listings, FSBO Data, Pre-Foreclosure, Neighborhood Search, Scripts",
+        "button_label": "Get Starter",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#checkout-starter",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "variant": "pro",
+        "plan_name": "Pro",
+        "badge": "Most popular",
+        "price": "$1,770",
+        "price_suffix": "",
+        "save_text": "Pay Annually and Save $514",
+        "note": "Includes Expired Pro, which is an enhanced data set that gets up to 6 months of listing data for Expireds.",
+        "features": "Everything in Starter, Area Pro, Remine",
+        "button_label": "Get Pro",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#checkout-pro",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "variant": "standard",
+        "plan_name": "Elite",
+        "badge": "",
+        "price": "$1,997",
+        "price_suffix": "",
+        "save_text": "Pay Annually and Save $737",
+        "note": "",
+        "features": "Everything in Pro, Divorce, Probate, Pre-Probate",
+        "button_label": "Get Elite",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#checkout-elite",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "variant": "byo",
+        "plan_name": "Build your own",
+        "badge": "",
+        "price": "$49",
+        "price_suffix": "/mo",
+        "save_text": "",
+        "note": "",
+        "features": "Starts at $49/mo, Choose individual lead types, Add on: (list needed)",
+        "button_label": "Build Your Own",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#checkout-byo",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ]
+  }
+]
