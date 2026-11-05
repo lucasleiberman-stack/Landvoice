@@ -26,6 +26,10 @@ Homepage and the Expired Listings product page are built; remaining work is fill
 - [ ] Team statement below pricing (like REDX). NEEDS copy and maybe a photo
 - [ ] Footer: real profile URLs for Facebook, YouTube, LinkedIn, Instagram, TikTok, X (all `#` now); also Blog, Help, CCPA, Terms, Privacy links
 
+## Hero animation versions (HubSpot)
+- **Current** (`Home Hero` module): faster ring, all pins land together, then 1s later the leads list (bubbles with glass blur behind, last bubble fades) fills in. Code: `assets/css/sections/hero.css`, `hero-leads.css`, `assets/js/75-leads.js`; module in `hubspot/theme/Modules/Home Hero.module`.
+- **OG** (`OG HERO ANIMATION HUBSPOT` module): the original hero (no leads list, slower ring, pins one after another). Its own copy of the old timing is in that module's `module.css`. Also tagged in git: `og-hero-animation-hubspot`.
+
 ## Gotchas
 - Header and footer markup is duplicated in `index.html` and `expired-listings.html`; edit both (or build a shared include when moving to WordPress).
 - Hero map circle is live SVG over `hero-map-clean.png` (old baked circle removed; one street label, Fulton St, slightly blemished). Pill positions use map units (`--dx`/`--dy`).

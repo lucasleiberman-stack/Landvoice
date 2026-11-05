@@ -1,0 +1,40 @@
+{# OG HERO ANIMATION HUBSPOT: the original hero (no leads list; slower circle, pins one after another). Kept as a record; own copy of the timing in module.css so the shared css can move on. #}
+{% set map_src = module.map_image.src or get_asset_url('../../images/hero-map-clean.png') %}
+<section class="lv-band lv-band--light lv-band--flat-top lv-hero lv-hero--og" aria-labelledby="hero-title">
+  <div class="lv-hero__stage">
+    <div class="lv-hero__copy lv-herocopy">
+      <p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }} <span class="lv-accent">{{ module.eyebrow_accent }}</span></p>
+      <h1 class="lv-h1" id="hero-title" data-lv-reveal style="--lv-delay:.08s">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}</h1>
+      <p class="lv-lede" data-lv-reveal style="--lv-delay:.16s">{{ module.lede }}</p>
+      <div class="lv-actions" data-lv-reveal style="--lv-delay:.24s">
+        {% if module.button_1_label %}<a class="lv-btn" href="{{ module.button_1_link.url.href }}"{% if module.button_1_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_1_label }}</span></a>{% endif %}
+        {% if module.button_2_label %}<a class="lv-btn lv-btn--dark" href="{{ module.button_2_link.url.href }}"{% if module.button_2_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_2_label }}</span></a>{% endif %}
+      </div>
+    </div>
+  <!-- map graphic. Pins are positioned in % of the image (--x / --y). Edit text freely. -->
+  <div class="lv-hero__map" aria-hidden="true">
+    <img src="{{ map_src }}" alt="" width="2000" height="1286">
+    <!-- the territory circle is drawn here (not baked into the map): ring sweeps in, fill fades up, then the pins below animate in -->
+    <svg class="lv-circle" viewBox="0 0 2000 1286" aria-hidden="true">
+      <defs><mask id="lv-ring-reveal" maskUnits="userSpaceOnUse" x="0" y="0" width="2000" height="1286"><path class="lv-circle__sweep" d="M980.5 316A603.5 405 0 1 1 980.5 1126A603.5 405 0 1 1 980.5 316Z" pathLength="1" fill="none" stroke="#fff" stroke-width="70"/></mask></defs>
+      <ellipse class="lv-circle__fill" cx="980.5" cy="721" rx="603.5" ry="405"/>
+      <path class="lv-circle__dots" d="M980.5 316A603.5 405 0 1 1 980.5 1126A603.5 405 0 1 1 980.5 316Z" fill="none" mask="url(#lv-ring-reveal)"/>
+    </svg>
+    <!-- property pins: footprints + frosted cards, drawn in one by one (order = --i). Coordinates are a 525x414 grid. -->
+    <div class="lv-props">
+      <svg class="lv-props__feet" viewBox="0 0 525 414" aria-hidden="true">
+        <g class="lv-pin lv-pin--pre" style="--i:0"><line class="lv-pin__ray" x1="371.25" y1="66.9" x2="371.25" y2="36.9"/><circle class="lv-pin__dot" cx="371.25" cy="66.9" r="5"/></g>
+        <g class="lv-pin lv-pin--fsbo" style="--i:1"><line class="lv-pin__ray" x1="63.4" y1="238.7" x2="63.4" y2="208.7"/><circle class="lv-pin__dot" cx="63.4" cy="238.7" r="5"/></g>
+        <g class="lv-pin lv-pin--dist" style="--i:2"><line class="lv-pin__ray" x1="487.1" y1="227.9" x2="487.1" y2="197.9"/><circle class="lv-pin__dot" cx="487.1" cy="227.9" r="5"/></g>
+        <g class="lv-pin lv-pin--exp" style="--i:3"><line class="lv-pin__ray" x1="251.4" y1="394.4" x2="251.4" y2="364.4"/><circle class="lv-pin__dot" cx="251.4" cy="394.4" r="5"/></g>
+        <g class="lv-pin lv-pin--frbo" style="--i:4"><line class="lv-pin__ray" x1="174.3" y1="124.9" x2="174.3" y2="94.9"/><circle class="lv-pin__dot" cx="174.3" cy="124.9" r="5"/></g>
+      </svg>
+      <div class="lv-prop-card lv-prop-card--pre" style="--i:0;--dx:371.25;--dy:66.9;--tw:90"><span class="lv-prop-card__tag">Pre-foreclosure</span><span class="lv-prop-card__addr">438 H St.</span></div>
+      <div class="lv-prop-card lv-prop-card--fsbo" style="--i:1;--dx:63.4;--dy:238.7;--tw:46"><span class="lv-prop-card__tag">FSBO</span><span class="lv-prop-card__addr">438 Irving St.</span></div>
+      <div class="lv-prop-card lv-prop-card--dist" style="--i:2;--dx:487.1;--dy:227.9;--tw:72"><span class="lv-prop-card__tag">Distressed</span><span class="lv-prop-card__addr">45 H St.</span></div>
+      <div class="lv-prop-card lv-prop-card--exp" style="--i:3;--dx:251.4;--dy:394.4;--tw:57"><span class="lv-prop-card__tag">Expired</span><span class="lv-prop-card__addr">439 Irving St.</span></div>
+      <div class="lv-prop-card lv-prop-card--frbo" style="--i:4;--dx:174.3;--dy:124.9;--tw:46"><span class="lv-prop-card__tag">FRBO</span><span class="lv-prop-card__addr">27 Mission St.</span></div>
+    </div>
+  </div>
+  </div>
+</section>

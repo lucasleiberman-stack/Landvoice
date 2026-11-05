@@ -1,4 +1,4 @@
-{# Hero: text, buttons and map image are editable; the animated circle and pins are fixed markup. #}
+{# Hero: text, buttons, map image and the leads list are editable; the animated circle and pins are fixed markup. The original version is kept as the module "OG HERO ANIMATION HUBSPOT". #}
 {% set map_src = module.map_image.src or get_asset_url('../../images/hero-map-clean.png') %}
 <section class="lv-band lv-band--light lv-band--flat-top lv-hero" aria-labelledby="hero-title">
   <div class="lv-hero__stage">
@@ -35,6 +35,17 @@
       <div class="lv-prop-card lv-prop-card--exp" style="--i:3;--dx:251.4;--dy:394.4;--tw:57"><span class="lv-prop-card__tag">Expired</span><span class="lv-prop-card__addr">439 Irving St.</span></div>
       <div class="lv-prop-card lv-prop-card--frbo" style="--i:4;--dx:174.3;--dy:124.9;--tw:46"><span class="lv-prop-card__tag">FRBO</span><span class="lv-prop-card__addr">27 Mission St.</span></div>
     </div>
+    {# Leads list: appears after the pins land. Each lead is one bubble; edit the people, addresses and phone numbers in the "Leads" field. #}
+    {% if module.leads %}
+    <div class="lv-leads" data-lv-leads>
+      <div class="lv-leads__glass" aria-hidden="true"></div>
+      <ul class="lv-leads__list">
+        {% for lead in module.leads %}
+        <li class="lv-lead lv-lead--{{ lead.kind }}" style="--i:{{ loop.index0 }}"><span class="lv-lead__tag">{{ lead.kind_label }}</span><p class="lv-lead__name">{{ lead.person }}</p><p class="lv-lead__addr">{{ lead.street }}<br>{{ lead.city_zip }}</p><p class="lv-lead__phone"><b>{{ lead.phone }}</b><span class="lv-lead__call"><svg class="lv-icon"><use href="#lv-i-phone"/></svg></span></p></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
   </div>
   </div>
 </section>

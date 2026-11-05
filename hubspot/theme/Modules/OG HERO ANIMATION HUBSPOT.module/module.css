@@ -1,0 +1,5 @@
+/* ORIGINAL hero timing (before the tighter timeline): ring sweeps in 0.35s-2.25s, tint fades up at 1.7s, then the five pins land one after another from 2.5s, 0.6s apart. */
+.lv-hero--og .lv-props { --step: .6s; --start: 2.5s; }
+.lv-hero--og .lv-circle__fill { animation: lv-circle-fill .9s ease-out 1.7s both; }
+.lv-hero--og .lv-circle__sweep { animation: lv-circle-draw 1.9s cubic-bezier(.65,0,.25,1) .35s both; }
+@media (prefers-reduced-motion: reduce) { .lv-hero--og .lv-circle__sweep { animation: none; stroke-dashoffset: 0; } .lv-hero--og .lv-circle__fill { animation: none; opacity: 1; } }
