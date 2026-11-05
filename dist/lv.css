@@ -376,8 +376,6 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props { animation: none; } }
 @media (max-width: 1100px) { .lv-leads { position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
 
-/* the top pill hangs to the left of its ray (like the Distressed one) so the list never covers it */
-.lv-prop-card--pre { left: auto; right: calc((525 - var(--dx) - 16) / 525 * 100%); transform-origin: calc(100% - 16 * var(--u)) 100%; }
 /* HERO: copy on the left, tilted territory map on the right with colour-coded record pins */
 .lv-hero { overflow: hidden; display: flex; align-items: center; min-height: min(88vh, 860px); padding-block: clamp(64px, 8vw, 120px); }
 .lv-hero__stage { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(16px, 3vw, 56px); align-items: center;
