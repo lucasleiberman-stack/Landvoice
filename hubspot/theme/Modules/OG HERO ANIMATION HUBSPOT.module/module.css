@@ -5,3 +5,5 @@
 @media (prefers-reduced-motion: reduce) { .lv-hero--og .lv-circle__sweep { animation: none; stroke-dashoffset: 0; } .lv-hero--og .lv-circle__fill { animation: none; opacity: 1; } }
 /* the OG hero keeps its original look: no push-in before a list that this version does not have */
 .lv-hero--og .lv-circle, .lv-hero--og .lv-props { animation: none; }
+/* the OG hero keeps its original dotted ring */
+.lv-hero--og .lv-circle__dots { stroke-dasharray: 0 11; }
