@@ -17,7 +17,7 @@
 .lv-lead--dist { --tag-bg: #B79CFA; --tag-ink: #2A1A52; }
 .lv-lead--exp  { --tag-bg: #7ED8A0; --tag-ink: #06361A; }
 .lv-lead--frbo { --tag-bg: #FF9CC8; --tag-ink: #5C1239; }
-.lv-lead__tag { display: inline-flex; align-items: center; padding: .4em .8em; border-radius: 999px; background: var(--tag-bg); color: var(--tag-ink); font: 600 .78em/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); white-space: nowrap; }   /* line-height 1 + even padding so the label text sits dead centre in its pill */
+.lv-lead__tag { display: inline-flex; align-items: center; padding: .4em .8em; border-radius: 999px; background: var(--tag-bg); color: var(--tag-ink); font: 600 calc(.78em + 2px)/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); white-space: nowrap; }   /* line-height 1 + even padding so the label text sits dead centre in its pill */
 .lv-lead__name { font-size: 1.2em; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
 .lv-lead__addr { line-height: 1.2; color: #4A5260; }
 .lv-lead__phone { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: .1em; padding: .25em .3em .25em .7em; border: 1px solid rgba(13,17,23,.15); border-radius: 8px; line-height: 1.15; font-variant-numeric: tabular-nums; }
