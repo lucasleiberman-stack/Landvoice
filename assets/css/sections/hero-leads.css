@@ -5,11 +5,11 @@
 .lv-leads { --lv-call: #2FB863;
   position: absolute; left: 49%; top: 6%; translate: -50% 0; width: clamp(230px, 31cqw, 370px); padding: 0; overflow: hidden;   /* centred on the drawn territory circle (circle centre = 49% of the map), starting near the top and running down to the bottom of the hero (JS sets the height so the list runs off the bottom edge of the hero) */
   background: none; color: var(--lv-ink);   /* no box of its own: every lead is its own bubble */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 45%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0, #000 45%, transparent 100%);   /* the list fades to nothing as it reaches the bottom of the hero */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 var(--lv-fade-from, 60%), transparent 100%); mask-image: linear-gradient(to bottom, #000 0, #000 var(--lv-fade-from, 60%), transparent 100%);   /* only the very last bubble fades out; JS sets --lv-fade-from to where that bubble starts */
   animation: lv-leads-in .8s var(--lv-ease) var(--lv-leads-start) both; }
 .lv-leads__list { display: grid; gap: clamp(12px, 1.7cqw, 20px); margin: 0; padding: clamp(10px, 1.5cqw, 18px); list-style: none; }   /* space between the bubbles and room round them for their shadows */
 .lv-lead { --tag-bg: #C9E9D3; --tag-ink: #073D13; display: grid; justify-items: start; gap: .17em;
-  padding: .85em clamp(13px, 1.8cqw, 22px); border-radius: 16px; background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  padding: clamp(14px, 1.9cqw, 22px); border-radius: 16px;   /* the same padding on all four sides of every bubble */ background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   box-shadow: 0 10px 26px rgba(13,17,23,.16), 0 0 0 1px rgba(255,255,255,.7); font-size: clamp(13px, calc(1.25cqw + 3px), 15.5px);
   animation: lv-lead-in .35s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) both; }
 .lv-lead--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59; }
