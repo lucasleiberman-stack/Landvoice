@@ -1,0 +1,18 @@
+{# Dark band: copy on the left (heading, paragraphs, button), four big stats over a dotted US/Canada map on the right. #}
+<style>.lv-longevity__stats::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/us-canada-dots.svg") }}'); }</style>
+<section class="lv-band lv-band--dark lv-section lv-longevity" aria-labelledby="long-title">
+  <div class="lv-container lv-container--wide lv-longevity__grid">
+    <div class="lv-longevity__copy" data-lv-reveal>
+      <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+      <h2 class="lv-h2 lv-h2--xl" id="long-title">{{ module.heading }}</h2>
+      {% for para in module.paragraphs %}<p class="lv-body">{{ para.text }}</p>
+      {% endfor %}
+      {% if module.button_label %}<a class="lv-btn" href="{{ module.button_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a>{% endif %}
+    </div>
+    <div class="lv-longevity__stats" data-lv-reveal style="--lv-delay:.12s">
+      {% for stat in module.stats %}
+      <div class="lv-big-stat"><p class="lv-big-stat__label">{{ stat.caption }}</p><p class="lv-big-stat__value">{{ stat.value }}</p>{% if stat.note %}<p class="lv-big-stat__note">{{ stat.note }}</p>{% endif %}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,136 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Longevity"
+  },
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "No One Has Been Doing This Longer."
+  },
+  {
+    "name": "paragraphs",
+    "label": "Paragraphs",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "text",
+        "label": "Paragraph",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Paragraph"
+      }
+    ],
+    "default": [
+      {
+        "text": "Landvoice was founded in 1991 - before the modern MLS, before online listing portals, before the iPhone, and before every other seller data provider in this industry existed. The first FSBO lists were built by hand from newspaper classifieds and faxed to agents. Delivery moved to email, then CD-ROM, then to the cloud platform agents use today."
+      },
+      {
+        "text": "Thirty-five years later, we're still doing the same job: finding homeowners who need to sell now and verifying how to reach them."
+      },
+      {
+        "text": "That history isn't nostalgia - it's the entire reason our data is more accurate. Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
+      }
+    ]
+  },
+  {
+    "name": "button_label",
+    "label": "Button label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Get Started"
+  },
+  {
+    "name": "button_link",
+    "label": "Button link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "stats",
+    "label": "Stats (4 shown in a 2 x 2 grid)",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "caption",
+        "label": "Small heading",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Caption"
+      },
+      {
+        "name": "value",
+        "label": "Big number",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "0"
+      },
+      {
+        "name": "note",
+        "label": "Note under the number (optional)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      }
+    ],
+    "default": [
+      {
+        "caption": "Founded in",
+        "value": "1991",
+        "note": ""
+      },
+      {
+        "caption": "Years In Business",
+        "value": "35+",
+        "note": ""
+      },
+      {
+        "caption": "Markets Covered",
+        "value": "3.3K",
+        "note": "Counties across US & Canada"
+      },
+      {
+        "caption": "Clients Helped",
+        "value": "5M",
+        "note": ""
+      }
+    ]
+  }
+]
