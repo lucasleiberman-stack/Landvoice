@@ -6,6 +6,7 @@
   position: absolute; left: 49%; top: 6%; translate: -50% 0; width: clamp(230px, 31cqw, 370px); padding: 0; overflow: hidden;   /* centred on the drawn territory circle (circle centre = 49% of the map), starting near the top and running down to the bottom of the hero (JS sets the height so the list runs off the bottom edge of the hero) */
   border-radius: 16px 16px 0 0; background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   box-shadow: 0 18px 44px rgba(13,17,23,.2), 0 0 0 1px rgba(255,255,255,.7); color: var(--lv-ink);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 45%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0, #000 45%, transparent 100%);   /* the list fades to nothing as it reaches the bottom of the hero */
   animation: lv-leads-in .8s var(--lv-ease) var(--lv-leads-start) both; }
 .lv-leads__list { display: grid; margin: 0; padding: clamp(6px, .9cqw, 12px) 0; list-style: none; }   /* breathing room above the first and below the last lead */
 .lv-lead { --tag-bg: #C9E9D3; --tag-ink: #073D13; display: grid; justify-items: start; gap: .17em;
@@ -32,5 +33,5 @@
 @media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props, .lv-circle { animation: none; } }
 @media (max-width: 1100px) { .lv-lead:nth-child(n+6) { display: none; }
   .lv-leads { border-radius: 16px; }
-  .lv-leads { position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
+  .lv-leads { -webkit-mask-image: none; mask-image: none; position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
 
