@@ -17,7 +17,7 @@
 <style>
 /* grid patches: one road-map picture (straight street grid with rounded corners), scaled up and anchored in the band corner; the shared radial mask fades it toward the middle of the band. */
 .lv-gridplane__patch { aspect-ratio: 823 / 598; }
-.lv-gridplane__patch::before { inset: 0; transform: none; mix-blend-mode: darken; background: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-patch.png") }}') center / 100% 100% no-repeat; }
+.lv-gridplane__patch::before { inset: 0; transform: none; mix-blend-mode: darken; background: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/road-patch-v2.svg") }}') center / 100% 100% no-repeat; }
 .lv-gridplane__patch--br::before { transform: scaleX(-1); }   /* mirrored for the bottom-right corner */
 @media (min-width: 761px) { .lv-gridplane__patch { --lv-patch: clamp(480px, 56vw, 900px); } }
 </style>
