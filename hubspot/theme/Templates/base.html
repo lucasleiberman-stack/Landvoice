@@ -15,11 +15,11 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ get_asset_url('/Landvoice - 2026 Redesign/CSS/2026main.css') }}">
 <style>
-/* tilted grid patches behind the bands: the shared CSS points at ../img/, so point them at the theme's images folder */
-.lv-gridplane__patch::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-light.svg") }}'), url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-light.svg") }}'); }
-.lv-band--dark .lv-gridplane__patch::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-dark.svg") }}'), url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-dark.svg") }}'); }
-/* grid patches 30% then 80% bigger than the shared size (about 2.3x) (phones keep the small size) */
-@media (min-width: 761px) { .lv-gridplane__patch { --lv-patch: clamp(421px, 46.8vw, 796px); } }
+/* grid patches: one picture (not a repeating tile), scaled up and anchored in the band corner. It has a near-paper background, so multiply keeps it seamless on the band colour. */
+.lv-gridplane__patch { aspect-ratio: 823 / 598; }
+.lv-gridplane__patch::before { inset: 0; transform: none; mix-blend-mode: multiply; background: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-patch.png") }}') center / 100% 100% no-repeat; }
+.lv-gridplane__patch--br::before { transform: scaleX(-1); }   /* mirrored for the bottom-right corner */
+@media (min-width: 761px) { .lv-gridplane__patch { --lv-patch: clamp(480px, 56vw, 900px); } }
 </style>
 {{ standard_header_includes }}
 </head>
