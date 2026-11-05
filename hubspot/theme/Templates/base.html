@@ -14,6 +14,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ get_asset_url('/Landvoice - 2026 Redesign/CSS/2026main.css') }}">
+<style>
+/* tilted grid patches behind the bands: the shared CSS points at ../img/, so point them at the theme's images folder */
+.lv-gridplane__patch::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-light.svg") }}'), url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-light.svg") }}'); }
+.lv-band--dark .lv-gridplane__patch::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-dark.svg") }}'), url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-dark.svg") }}'); }
+</style>
 {{ standard_header_includes }}
 </head>
 <body>
