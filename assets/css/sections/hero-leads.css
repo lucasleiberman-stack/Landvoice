@@ -7,9 +7,9 @@
   border-radius: 16px; background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   box-shadow: 0 18px 44px rgba(13,17,23,.2), 0 0 0 1px rgba(255,255,255,.7); color: var(--lv-ink);
   animation: lv-leads-in .8s var(--lv-ease) var(--lv-leads-start) both; }
-.lv-leads__list { display: grid; margin: 0; padding: 0; list-style: none; }
+.lv-leads__list { display: grid; margin: 0; padding: clamp(6px, .9cqw, 12px) 0; list-style: none; }   /* breathing room above the first and below the last lead */
 .lv-lead { --tag-bg: #C9E9D3; --tag-ink: #073D13; display: grid; justify-items: start; gap: .17em;
-  padding: .6em clamp(10px, 1.3cqw, 16px); border-top: 1px solid rgba(13,17,23,.1); font-size: clamp(10px, 1.25cqw, 12.5px);
+  padding: .85em clamp(13px, 1.8cqw, 22px); border-top: 1px solid rgba(13,17,23,.1); font-size: clamp(11px, calc(1.25cqw + 1px), 13.5px);
   animation: lv-lead-in .35s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) both; }
 .lv-lead:first-child { border-top: 0; }
 .lv-lead--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59; }
