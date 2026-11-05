@@ -345,7 +345,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
-.lv-hero__map { --lv-leads-start: 6.4s; --lv-leads-step: .28s; }   /* the list starts once the pins are in; the pins fade back once the list is in */
+.lv-hero__map { --lv-leads-start: 6.4s; --lv-leads-step: .12s; }   /* the list starts once the pins are in; the circle and pins blur as the white box appears */
 .lv-leads { --lv-call: #2FB863;
   position: absolute; left: 49%; top: 56.1%; translate: -50% -50%; width: clamp(190px, 24.5cqw, 300px); padding: 0; overflow: hidden;   /* dead centre of the drawn territory circle (circle centre = 49% / 56.1% of the map) */
   border-radius: 16px; background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
@@ -354,7 +354,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-leads__list { display: grid; margin: 0; padding: 0; list-style: none; }
 .lv-lead { --tag-bg: #C9E9D3; --tag-ink: #073D13; display: grid; justify-items: start; gap: .17em;
   padding: .6em clamp(10px, 1.3cqw, 16px); border-top: 1px solid rgba(13,17,23,.1); font-size: clamp(10px, 1.25cqw, 12.5px);
-  animation: lv-lead-in .5s var(--lv-ease) calc(var(--lv-leads-start) + .5s + var(--i) * var(--lv-leads-step)) both; }
+  animation: lv-lead-in .35s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) both; }
 .lv-lead:first-child { border-top: 0; }
 .lv-lead--pre  { --tag-bg: #5B9BF0; --tag-ink: #0B2A59; }
 .lv-lead--fsbo { --tag-bg: #FFA24D; --tag-ink: #6B2D00; }
@@ -370,8 +370,8 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-lead__call .lv-icon { width: .95em; height: .95em; }
 @keyframes lv-leads-in { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
 @keyframes lv-lead-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
-/* once the whole list is in (last row lands ~.5s after its start), the territory circle and the pins blur slightly so the list leads */
-.lv-props, .lv-circle { animation: lv-points-blur .9s ease calc(var(--lv-leads-start) + .5s + 4 * var(--lv-leads-step) + .6s) both; }
+/* the territory circle and the pins blur slightly the moment the white box starts to appear, so the list leads */
+.lv-props, .lv-circle { animation: lv-points-blur .8s ease var(--lv-leads-start) both; }
 @keyframes lv-points-blur { to { filter: blur(2.5px); } }
 @media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props, .lv-circle { animation: none; } }
 @media (max-width: 1100px) { .lv-leads { position: relative; left: auto; top: auto; translate: none; width: min(100% - 2rem, 340px); margin: 1.2rem auto 0; } }
