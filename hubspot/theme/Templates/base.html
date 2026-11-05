@@ -18,8 +18,8 @@
 /* tilted grid patches behind the bands: the shared CSS points at ../img/, so point them at the theme's images folder */
 .lv-gridplane__patch::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-light.svg") }}'), url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-light.svg") }}'); }
 .lv-band--dark .lv-gridplane__patch::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-dark.svg") }}'), url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/grid-dark.svg") }}'); }
-/* grid patches 30% bigger than the shared size (phones keep the small size) */
-@media (min-width: 761px) { .lv-gridplane__patch { --lv-patch: clamp(234px, 26vw, 442px); } }
+/* grid patches 30% then 80% bigger than the shared size (about 2.3x) (phones keep the small size) */
+@media (min-width: 761px) { .lv-gridplane__patch { --lv-patch: clamp(421px, 46.8vw, 796px); } }
 </style>
 {{ standard_header_includes }}
 </head>
