@@ -1,0 +1,38 @@
+/* STEPS ANIMATION (plays once, the first time the list scrolls into view: data-lv-draw -> .is-drawn, see 25-draw.js)
+   The line draws across from circle 1 to circle 3; each circle pops in as the line reaches it, then its text and picture rise in.
+   Tweak: --lv-steps-time is how long the line takes to cross (circle 2 lands halfway). */
+.lv-steps__list { --lv-steps-time: 2.4s; --lv-steps-start: .35s; }
+.lv-step__num { position: relative; z-index: 1; }
+/* the faint track stays; the blue part (::after) is what draws */
+.lv-steps__list::before { background: rgba(10, 102, 255, .16); border-radius: 2px; }
+.lv-steps__list::after { content: ""; position: absolute; left: calc(100% / 6); right: calc(100% / 6); top: 33px; height: 3px; background: var(--lv-blue); border-radius: 2px; transform-origin: left center; }
+
+/* start state: only when JS runs and the list has not been drawn yet */
+html:not(.no-js) .lv-steps__list[data-lv-draw]:not(.is-drawn)::after { transform: scaleX(0); }
+html:not(.no-js) .lv-steps__list[data-lv-draw]:not(.is-drawn) .lv-step__num { opacity: 0; transform: scale(.4); }
+html:not(.no-js) .lv-steps__list[data-lv-draw]:not(.is-drawn) .lv-step__title,
+html:not(.no-js) .lv-steps__list[data-lv-draw]:not(.is-drawn) .lv-step__text,
+html:not(.no-js) .lv-steps__list[data-lv-draw]:not(.is-drawn) .lv-step__media { opacity: 0; transform: translateY(16px); }
+
+/* drawn: step i starts when the line reaches it (0, half, end) */
+.lv-steps__list.is-drawn::after { animation: lv-steps-line var(--lv-steps-time) linear var(--lv-steps-start) both; }
+.lv-steps__list.is-drawn .lv-step { --lv-step-at: calc(var(--lv-steps-start) + var(--i, 0) * var(--lv-steps-time) / 2); }
+.lv-steps__list.is-drawn .lv-step__num { animation: lv-steps-pop .7s var(--lv-ease) var(--lv-step-at) both; }
+.lv-steps__list.is-drawn .lv-step__title { animation: lv-steps-rise .8s var(--lv-ease) calc(var(--lv-step-at) + .2s) both; }
+.lv-steps__list.is-drawn .lv-step__text { animation: lv-steps-rise .8s var(--lv-ease) calc(var(--lv-step-at) + .3s) both; }
+.lv-steps__list.is-drawn .lv-step__media { animation: lv-steps-rise .9s var(--lv-ease) calc(var(--lv-step-at) + .4s) both; }
+@keyframes lv-steps-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes lv-steps-pop { 0% { opacity: 0; transform: scale(.4); box-shadow: 0 0 0 0 rgba(10, 102, 255, .35); } 55% { opacity: 1; transform: scale(1.12); } 100% { opacity: 1; transform: none; box-shadow: 0 0 0 10px rgba(10, 102, 255, 0); } }
+@keyframes lv-steps-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+/* phones: the line runs down the side, so it draws downward and the steps land one after another */
+@media (max-width: 800px) {
+  .lv-steps__list::after { left: 33px; right: auto; top: 33px; bottom: 33px; width: 3px; height: auto; transform-origin: center top; }
+  html:not(.no-js) .lv-steps__list[data-lv-draw]:not(.is-drawn)::after { transform: scaleY(0); }
+  .lv-steps__list.is-drawn::after { animation-name: lv-steps-line-down; }
+}
+@keyframes lv-steps-line-down { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .lv-steps__list.is-drawn::after, .lv-steps__list.is-drawn .lv-step__num, .lv-steps__list.is-drawn .lv-step__title,
+  .lv-steps__list.is-drawn .lv-step__text, .lv-steps__list.is-drawn .lv-step__media { animation: none; }
+}

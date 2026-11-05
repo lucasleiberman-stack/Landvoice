@@ -1,0 +1,28 @@
+{# Light band: three numbered steps joined by a line. On first scroll the line draws across and each circle pops in as the line reaches it (plays once, see module.css + data-lv-draw). Exactly 3 steps. #}
+<section class="lv-band lv-band--light lv-section" aria-labelledby="steps-title">
+  <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i><i class="lv-gridplane__patch lv-gridplane__patch--tr"></i><i class="lv-gridplane__patch lv-gridplane__patch--ml"></i><i class="lv-gridplane__patch lv-gridplane__patch--mr"></i><i class="lv-gridplane__patch lv-gridplane__patch--bl"></i><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
+  <div class="lv-container lv-container--wide">
+    <header class="lv-steps__head" data-lv-reveal>
+      <p class="lv-eyebrow">{{ module.eyebrow }}</p>
+      <h2 class="lv-h2" id="steps-title">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}</h2>
+    </header>
+    <ol class="lv-steps__list" data-lv-draw>
+      {% for step in module.steps %}
+      {% set step_src = step.image.src or get_asset_url('/Landvoice - 2026 Redesign/images/steps/' ~ step.file) %}
+      <li class="lv-step" style="--i:{{ loop.index0 }}">
+        <span class="lv-step__num">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <h3 class="lv-h3 lv-step__title">{{ step.title }}</h3>
+        <p class="lv-step__text">{{ step.text }}</p>
+        <div class="lv-step__media"><img class="lv-step__img" src="{{ step_src }}" alt="{{ step.alt }}" loading="lazy"></div>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="lv-steps__foot" data-lv-reveal>
+      <h3 class="lv-steps__lead">{{ module.closer_line_1 }}<br>{{ module.closer_line_2 }} <span class="lv-accent">{{ module.closer_accent }}</span></h3>
+      <div class="lv-actions">
+        {% if module.button_1_label %}<a class="lv-btn" href="{{ module.button_1_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_1_label }}</span></a>{% endif %}
+        {% if module.button_2_label %}<a class="lv-btn lv-btn--dark" href="{{ module.button_2_link.url.href }}"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_2_label }}</span></a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>

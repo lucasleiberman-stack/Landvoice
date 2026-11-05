@@ -1,0 +1,15 @@
+{
+  "label": "How It Works Steps",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Light band: three numbered steps joined by a line that draws in on first scroll, with a closing line and two buttons.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

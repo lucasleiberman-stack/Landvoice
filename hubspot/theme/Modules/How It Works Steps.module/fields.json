@@ -1,0 +1,187 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "How Landvoice works | 3 simple steps"
+  },
+  {
+    "name": "headline_line_1",
+    "label": "Headline, line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Seamless Prospecting Built"
+  },
+  {
+    "name": "headline_line_2",
+    "label": "Headline, line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "For Your Daily Routine"
+  },
+  {
+    "name": "steps",
+    "label": "Steps (exactly 3)",
+    "type": "group",
+    "occurrence": {
+      "min": 3,
+      "max": 3,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Step title"
+      },
+      {
+        "name": "text",
+        "label": "Description",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Description"
+      },
+      {
+        "name": "file",
+        "label": "Theme image file name (in images/steps/)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "step-1-territory.png"
+      },
+      {
+        "name": "image",
+        "label": "Step image (optional: overrides the theme file)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "name": "alt",
+        "label": "Image description (alt text)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Screenshot"
+      }
+    ],
+    "default": [
+      {
+        "title": "Choose your territory",
+        "text": "Select the counties, ZIP codes, MLS, or map areas you need in your business. Add, swap, or expand coverage anytime.",
+        "file": "step-1-territory.png",
+        "alt": "Neighborhood Search map with Square, Circle and Polygon tools for choosing a territory"
+      },
+      {
+        "title": "Get verified data every morning",
+        "text": "New Expireds and FSBOs land in your account daily - verified, human-reviewed, de-duplicated, and scrubbed against the State and National DNC Registry.",
+        "file": "step-2-daily-list.png",
+        "alt": "A daily list of new FSBO, Expired and Withdrawn leads with addresses"
+      },
+      {
+        "title": "Filter, work, export",
+        "text": "Build your data list in Landvoice Lead Manager, mark your outcomes, and export into the CRM and dialer you already use.",
+        "file": "export-list.png",
+        "alt": "Leads selected with checkboxes, ready to export"
+      }
+    ]
+  },
+  {
+    "name": "closer_line_1",
+    "label": "Closing line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Setup takes minutes."
+  },
+  {
+    "name": "closer_line_2",
+    "label": "Closing line 2 (plain part)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Most agents work their"
+  },
+  {
+    "name": "closer_accent",
+    "label": "Closing line 2 (blue part)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "first list the same day they sign up."
+  },
+  {
+    "name": "button_1_label",
+    "label": "Button 1 label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Get Started"
+  },
+  {
+    "name": "button_1_link",
+    "label": "Button 1 link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "button_2_label",
+    "label": "Button 2 label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Live Demo"
+  },
+  {
+    "name": "button_2_link",
+    "label": "Button 2 link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#demo",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  }
+]
