@@ -1,2 +1,5 @@
 /* the API / CSV image is 15% smaller than the shared size */
 .lv-else .lv-else__img { width: min(72.25%, 37.57rem); }
+
+/* top-left grid patch: flipped upside down so its large (near) streets sit in the corner, the same zoom as the bottom-right patch under Neighborhood Search */
+.lv-gridplane__patch--tl::before { transform: scaleY(-1); }
