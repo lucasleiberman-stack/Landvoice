@@ -14,3 +14,6 @@
   box-shadow: 0 0 0 2px rgba(0, 111, 255, .16), inset 0 0 0 2px rgba(0, 111, 255, .16); }
 .lv-road .lv-road__node::after { content: ""; position: absolute; inset: -4.6px; border: 1.2px solid rgba(227, 236, 247, .6); border-radius: 50%; }
 
+
+/* top-right grid patch in this band faces the opposite way to the top-left one */
+.lv-band--flat-bottom .lv-gridplane__patch--tr::before { transform: scaleX(-1); }
