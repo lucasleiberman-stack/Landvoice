@@ -1,0 +1,186 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Top eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Integrations"
+  },
+  {
+    "name": "heading",
+    "label": "Top heading",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "The Most Accurate Data, Inside the CRM You Already Use."
+  },
+  {
+    "name": "lede",
+    "label": "Top paragraph",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
+  },
+  {
+    "name": "subheading",
+    "label": "Left block: heading",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Works with the CRMs and Dialers agents actually use"
+  },
+  {
+    "name": "body",
+    "label": "Left block: paragraph",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
+  },
+  {
+    "name": "cluster_image",
+    "label": "Logo cluster image (leave empty for the default)",
+    "type": "image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "cluster_alt",
+    "label": "Logo cluster description (alt text, used with the default image)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Landvoice integrates with Brivity, Lofty, Follow Up Boss, BoldTrail, Wise Agent, HighLevel and MOJO, with CINC, BoomTown, reside, Sierra Interactive, SureSend and more coming soon."
+  },
+  {
+    "name": "else_eyebrow",
+    "label": "Bottom eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Integrations"
+  },
+  {
+    "name": "else_heading",
+    "label": "Bottom heading",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "And Everything Else."
+  },
+  {
+    "name": "else_lede",
+    "label": "Bottom paragraph",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
+  },
+  {
+    "name": "else_image",
+    "label": "API / CSV image (leave empty for the default)",
+    "type": "image",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "else_alt",
+    "label": "API / CSV description (alt text, used with the default image)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Connect through an API integration or a CSV import."
+  },
+  {
+    "name": "closer_line_1",
+    "label": "Closing line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Your brokerage CRM stays your CRM."
+  },
+  {
+    "name": "closer_line_2",
+    "label": "Closing line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Landvoice just fills it with better data."
+  },
+  {
+    "name": "button_1_label",
+    "label": "Button 1 label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Integrations"
+  },
+  {
+    "name": "button_1_link",
+    "label": "Button 1 link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#integrations",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "button_2_label",
+    "label": "Button 2 label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Get Started"
+  },
+  {
+    "name": "button_2_link",
+    "label": "Button 2 link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  }
+]
