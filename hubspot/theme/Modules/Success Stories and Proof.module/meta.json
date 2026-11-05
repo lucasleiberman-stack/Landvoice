@@ -1,0 +1,15 @@
+{
+  "label": "Success Stories and Proof",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Light band: video stories slider, coach logo strip, two proof cards and the Ask AI row.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

@@ -1,0 +1,429 @@
+[
+  {
+    "name": "stories_eyebrow",
+    "label": "Stories: eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Testimonials"
+  },
+  {
+    "name": "stories_line_1",
+    "label": "Stories: heading line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Success Stories."
+  },
+  {
+    "name": "stories_line_2",
+    "label": "Stories: heading line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Hear It From Clients."
+  },
+  {
+    "name": "stories",
+    "label": "Video stories",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "poster",
+        "label": "Video poster image (grey placeholder if empty)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "name": "video_url",
+        "label": "Video embed URL (e.g. https://player.vimeo.com/video/123)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      },
+      {
+        "name": "quote",
+        "label": "Quote",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Quote"
+      }
+    ],
+    "default": [
+      {
+        "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice",
+        "video_url": ""
+      },
+      {
+        "quote": "Landvoice integrates seamlessly with the other apps. It's a no-brainer",
+        "video_url": ""
+      },
+      {
+        "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice",
+        "video_url": ""
+      }
+    ]
+  },
+  {
+    "name": "coaches_before",
+    "label": "Coaches: before the highlight",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Trusted by the"
+  },
+  {
+    "name": "coaches_accent",
+    "label": "Coaches: highlight (blue)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "top coaches"
+  },
+  {
+    "name": "coaches_after",
+    "label": "Coaches: after the highlight",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "in the industry"
+  },
+  {
+    "name": "coaches",
+    "label": "Coach logos",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 4
+    },
+    "children": [
+      {
+        "name": "file",
+        "label": "Theme file name (in images/coaches/)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "coach-tom-ferry.png"
+      },
+      {
+        "name": "image",
+        "label": "Logo image (optional: overrides the theme file)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "name": "alt",
+        "label": "Coach name (alt text)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Coach"
+      }
+    ],
+    "default": [
+      {
+        "file": "coach-tom-ferry.png",
+        "alt": "Tom Ferry"
+      },
+      {
+        "file": "coach-forward-coaching.png",
+        "alt": "Debbie De Grote, Forward Coaching"
+      },
+      {
+        "file": "coach-tom-ferry.png",
+        "alt": "Tom Ferry"
+      },
+      {
+        "file": "coach-forward-coaching.png",
+        "alt": "Debbie De Grote, Forward Coaching"
+      }
+    ]
+  },
+  {
+    "name": "rank",
+    "label": "Rating card: big rank",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "#1"
+  },
+  {
+    "name": "rank_title_line_1",
+    "label": "Rating card: title line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Rated Real Estate"
+  },
+  {
+    "name": "rank_title_line_2",
+    "label": "Rating card: title line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Data Provider On Google"
+  },
+  {
+    "name": "rating_text",
+    "label": "Rating card: stars line",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "4.9 Stars | 630+ Reviews"
+  },
+  {
+    "name": "rank_text",
+    "label": "Rating card: paragraph",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Rated higher on Google than any other provider in our market—backed by hundreds of real estate professionals who rely on our accuracy daily."
+  },
+  {
+    "name": "rank_button_label",
+    "label": "Rating card: button label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Get Started"
+  },
+  {
+    "name": "rank_button_link",
+    "label": "Rating card: button link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "cta_title",
+    "label": "Orange card: title",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Power Your Prospecting With The Highest-Rated Data In Real Estate"
+  },
+  {
+    "name": "cta_text",
+    "label": "Orange card: paragraph",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Join thousands of top-producing agents who rely on Landvoice for unbeatable data quality, accurate phone numbers, and industry-leading Google reviews."
+  },
+  {
+    "name": "cta_button_label",
+    "label": "Orange card: button label",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Get Started"
+  },
+  {
+    "name": "cta_button_link",
+    "label": "Orange card: button link",
+    "type": "link",
+    "required": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "name": "ai_heading",
+    "label": "AI row: heading",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Ask Your Favorite AI About Landvoice"
+  },
+  {
+    "name": "ai_links",
+    "label": "AI links",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 5
+    },
+    "children": [
+      {
+        "name": "file",
+        "label": "Theme file name (in images/ai/)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "ai-claude.png"
+      },
+      {
+        "name": "image",
+        "label": "Icon (optional: overrides the theme file)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "name": "aria",
+        "label": "Screen reader label",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Ask Claude"
+      },
+      {
+        "name": "link",
+        "label": "Link",
+        "type": "link",
+        "required": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS"
+        ],
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "file": "ai-claude.png",
+        "aria": "Ask Claude",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://claude.ai/new?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "file": "ai-chatgpt.png",
+        "aria": "Ask ChatGPT",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://chatgpt.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "file": "ai-gemini.png",
+        "aria": "Ask Gemini",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://gemini.google.com/app",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "file": "ai-grok.png",
+        "aria": "Ask Grok",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://grok.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "file": "ai-perplexity.png",
+        "aria": "Ask Perplexity",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://www.perplexity.ai/search?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ]
+  },
+  {
+    "name": "ai_note",
+    "label": "AI row: note",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "You'll be redirected to the AI when you tap on one."
+  }
+]

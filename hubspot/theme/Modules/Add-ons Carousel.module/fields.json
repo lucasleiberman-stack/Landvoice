@@ -1,0 +1,175 @@
+[
+  {
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Add-ons"
+  },
+  {
+    "name": "headline_line_1",
+    "label": "Headline, line 1",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "More Than Just Data."
+  },
+  {
+    "name": "headline_line_2",
+    "label": "Headline, line 2 (optional)",
+    "type": "text",
+    "required": false,
+    "locked": false,
+    "default": "Add To Your Tool Kit."
+  },
+  {
+    "name": "cards",
+    "label": "Add-on cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Add-on name"
+      },
+      {
+        "name": "tags",
+        "label": "Tags (separate with commas)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Tag one, Tag two, Tag three, Tag four"
+      },
+      {
+        "name": "text",
+        "label": "Description",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Description"
+      },
+      {
+        "name": "button_label",
+        "label": "Button label",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": "Get Started"
+      },
+      {
+        "name": "button_link",
+        "label": "Button link",
+        "type": "link",
+        "required": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS"
+        ],
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "name": "file",
+        "label": "Theme image file name (in images/addons/, optional)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      },
+      {
+        "name": "image",
+        "label": "Image (optional: overrides the theme file)",
+        "type": "image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "name": "alt",
+        "label": "Image description (alt text)",
+        "type": "text",
+        "required": false,
+        "locked": false,
+        "default": ""
+      }
+    ],
+    "default": [
+      {
+        "title": "Inked Cards",
+        "tags": "Automated, Hand-written style, On-demand fulfillment, Unlimited",
+        "text": "Bypass the crowded email inbox entirely. Launch high-converting outreach with custom marketing assets designed to land right on the seller's kitchen table and force them to take notice.",
+        "button_label": "Get Started",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#inked",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        "file": "addon-inked-cards.png",
+        "alt": "Handwritten-style mailer card beside a printed postcard reading This market is still hot"
+      },
+      {
+        "title": "Call Capture",
+        "tags": "Lead routing, 24/7 tracking, Toll-free numbers, Logging",
+        "text": "Automatically captures and logs the caller ID of every lead who dials your sign riders or toll-free numbers, ensuring you never miss a prospective seller.",
+        "button_label": "Get Started",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#capture",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        "file": "addon-call-capture.png",
+        "alt": "Call Capture dashboard with a call log shown on a laptop, tablet and phone"
+      },
+      {
+        "title": "Data Genie",
+        "tags": "Skip tracing, Nationwide data, Lead enrichment, Verified",
+        "text": "Get emails, phone numbers and addresses of incomplete leads throughout the nation.",
+        "button_label": "Get Started",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#genie",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        "file": "",
+        "alt": ""
+      }
+    ]
+  }
+]
