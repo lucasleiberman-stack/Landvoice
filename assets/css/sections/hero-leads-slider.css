@@ -1,0 +1,22 @@
+/* HERO LEADS SLIDER (v2, local experiment): after the pins land, ONE lead at a time in a vertical slider that shows 1.5 cards.
+   Each pin takes a turn being highlighted (JS toggles .is-active on the pin + its pill) and the matching lead slides into view.
+   Loads after hero-leads.css and overrides it for .lv-leads--slider. The 10-lead list is git tag hero-list-v1-hubspot. */
+.lv-leads--slider { top: 56.1%; translate: 0 -50%; overflow: hidden; }   /* vertically centred on the territory circle; height is set by JS (1.5 cards) */
+.lv-leads--slider .lv-leads__glass { -webkit-mask-image: none; mask-image: none; }
+.lv-leads--slider .lv-leads__list { display: flex; flex-direction: column; height: auto; -webkit-mask-image: none; mask-image: none; overflow: visible;
+  gap: clamp(12px, 1.7cqw, 20px); transition: transform .8s cubic-bezier(.65,0,.25,1); will-change: transform; }
+.lv-leads--slider.is-snap .lv-leads__list, .lv-leads--slider.is-snap .lv-lead { transition: none; }
+.lv-leads--slider .lv-lead { flex: none; animation: lv-lead-in .5s var(--lv-ease) calc(var(--lv-leads-start) + .3s) both;   /* all cards enter together; only one is in full view */
+  transition: opacity .6s ease, box-shadow .6s ease; }
+.lv-leads--slider.is-running .lv-lead { opacity: .5; animation: none; }   /* the half-visible next card is dimmed; the current one is full strength */
+.lv-leads--slider.is-running .lv-lead.is-active { opacity: 1; box-shadow: 0 10px 26px rgba(13,17,23,.16), 0 0 0 2px var(--tag-bg); }   /* ring in the lead's pin colour ties it to its point */
+
+/* the highlighted pin: dot grows, pill grows and gets a ring in its colour (individual scale property, so it doesn't fight the entrance animations) */
+.lv-pin__dot { transition: scale .4s var(--lv-ease); }
+.lv-pin.is-active .lv-pin__dot { scale: 1.8; }
+.lv-prop-card { transition: scale .45s var(--lv-ease), box-shadow .45s ease; }
+.lv-prop-card.is-active { scale: 1.45; z-index: 2; box-shadow: 0 calc(10 * var(--u)) calc(26 * var(--u)) rgba(13,17,23,.28), 0 0 0 calc(2.5 * var(--u)) var(--tag-bg); }
+
+@media (prefers-reduced-motion: reduce) { .lv-leads--slider .lv-leads__list, .lv-pin__dot, .lv-prop-card { transition: none; } }
+@media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
+  .lv-leads--slider { top: auto; translate: none; } }
