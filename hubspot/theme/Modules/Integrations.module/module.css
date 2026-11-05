@@ -1,3 +1,2 @@
-/* both images 15% smaller than the shared sizes */
-.lv-integrations__main .lv-cluster__img { width: 85%; }
+/* the API / CSV image is 15% smaller than the shared size */
 .lv-else .lv-else__img { width: min(72.25%, 37.57rem); }
