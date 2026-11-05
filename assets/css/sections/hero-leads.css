@@ -33,7 +33,7 @@
 @keyframes lv-lead-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
 /* the territory circle (ring and tint only, the pins stay put) eases down a touch just before the list starts, a quiet cue that something is coming next.
    It finishes exactly as the list begins and holds the smaller size. */
-.lv-circle { transform-origin: 49% 56.1%; animation: lv-circle-settle .6s ease-in-out calc(var(--lv-leads-start) - .6s) both; }
+.lv-circle { transform-origin: 49% 56.1%; animation: lv-circle-settle .4s ease-in-out calc(var(--lv-leads-start) - .4s) both; }
 @keyframes lv-circle-settle { to { transform: scale(.955); } }
 @media (prefers-reduced-motion: reduce) { .lv-leads__glass, .lv-lead, .lv-circle { animation: none; } }
 @media (max-width: 1100px) { .lv-lead:nth-child(n+6) { display: none; }
