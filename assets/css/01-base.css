@@ -43,6 +43,9 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-muted { color: var(--lv-fg-muted); }
 .lv-center { text-align: center; }
 .lv-center .lv-lede { margin-inline: auto; }
+/* centred sub paragraphs under an h2: all share one max width (--lv-sub-max) */
+.lv-center .lv-lede, .lv-services__head .lv-lede, .lv-integrations__head .lv-lede, .lv-else .lv-lede, .lv-stories__head .lv-lede, .lv-steps__head .lv-lede,
+.lv-pg__head--center .lv-pg__sub, .lv-pg__head--center .lv-lede { max-width: var(--lv-sub-max); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

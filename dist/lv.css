@@ -40,6 +40,7 @@
   --lv-fs-stat: clamp(4rem, 11vw, 200px);         /* big stats, 200px max */
   --lv-lh-stat: 1.5;
   --lv-ls-sub: -0.3px;                         /* letter spacing for sub paragraphs (.lv-lede, .lv-pg__sub, .lv-pg__body) and pills (.lv-tag, .lv-pill) */
+  --lv-sub-max: 836px;                           /* max width of the centred sub paragraph under an h2 */
 
   /* layout */
   --lv-max: 1240px;                              /* content width */
@@ -101,6 +102,9 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-muted { color: var(--lv-fg-muted); }
 .lv-center { text-align: center; }
 .lv-center .lv-lede { margin-inline: auto; }
+/* centred sub paragraphs under an h2: all share one max width (--lv-sub-max) */
+.lv-center .lv-lede, .lv-services__head .lv-lede, .lv-integrations__head .lv-lede, .lv-else .lv-lede, .lv-stories__head .lv-lede, .lv-steps__head .lv-lede,
+.lv-pg__head--center .lv-pg__sub, .lv-pg__head--center .lv-lede { max-width: var(--lv-sub-max); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -486,7 +490,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-split > .lv-mock { padding-top: 0; }
 .lv-pg__stack { display: grid; gap: 1.4rem; justify-items: start; }
 .lv-pg__center { display: grid; justify-items: center; gap: 1.6rem; text-align: center; max-width: 62rem; }
-.lv-pg__center .lv-pg__sub { max-width: 50rem; text-wrap: balance; }   /* wide enough for two balanced lines on desktop */
+.lv-pg__center .lv-pg__sub { max-width: var(--lv-sub-max); text-wrap: balance; }   /* wide enough for two balanced lines on desktop */
 .lv-mock--sm { width: min(100%, 520px); margin-top: 1.2rem; }
 
 /* big-number facts */
@@ -568,7 +572,6 @@ html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__item::a
    Tweak: --lv-arm (arm length), --lv-arm-y (arm height from row top), --lv-road-w (line thickness) */
 .lv-services { padding-top: 0; }
 .lv-services__head { max-width: 56rem; margin-inline: auto; display: grid; gap: 1.4rem; justify-items: center; text-align: center; }
-.lv-services__head .lv-lede { max-width: 54rem; }
 
 .lv-road { --lv-arm: clamp(200px, 20vw, 300px); --lv-arm-y: 84px; --lv-road-w: 6px; --lv-road-progress: 0px; margin-top: clamp(72px, 9vw, 130px); }
 .lv-road__rows { position: relative; display: grid; row-gap: clamp(72px, 9vw, 130px); }
