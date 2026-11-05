@@ -14,8 +14,3 @@
   box-shadow: 0 0 0 2px rgba(0, 111, 255, .16), inset 0 0 0 2px rgba(0, 111, 255, .16); }
 .lv-road .lv-road__node::after { content: ""; position: absolute; inset: -4.6px; border: 1.2px solid rgba(227, 236, 247, .6); border-radius: 50%; }
 
-/* grid patches in this band: the two at the very top are removed (in the markup); the rest are 30% bigger */
-@media (min-width: 761px) {
-  .lv-band--flat-bottom .lv-gridplane__patch--bl, .lv-band--flat-bottom .lv-gridplane__patch--br { --lv-patch: clamp(234px, 26vw, 442px); }
-  .lv-band--flat-bottom .lv-gridplane__patch--ml, .lv-band--flat-bottom .lv-gridplane__patch--mr { --lv-patch: clamp(156px, 16.9vw, 286px); }
-}
