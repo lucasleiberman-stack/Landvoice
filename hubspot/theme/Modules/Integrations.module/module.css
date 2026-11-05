@@ -1,0 +1,3 @@
+/* both images 15% smaller than the shared sizes */
+.lv-integrations__main .lv-cluster__img { width: 85%; }
+.lv-else .lv-else__img { width: min(72.25%, 37.57rem); }
