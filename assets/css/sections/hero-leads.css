@@ -1,7 +1,7 @@
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
-.lv-hero__map { --lv-leads-start: 6.4s; --lv-leads-step: .12s; }   /* the list starts once the pins are in; the circle and pins blur as the white box appears */
+.lv-hero__map { --lv-leads-start: 3.7s; --lv-leads-step: .12s; }   /* the pins finish landing at ~2.65s; the list starts 1s later; the circle and pins blur as the white box appears */
 .lv-leads { --lv-call: #2FB863;
   position: absolute; left: 49%; top: 6%; translate: -50% 0; width: clamp(230px, 31cqw, 370px); padding: 0; overflow: hidden;   /* centred on the drawn territory circle (circle centre = 49% of the map), starting near the top and running down to the bottom of the hero (JS sets the height so the list runs off the bottom edge of the hero) */
   background: none; color: var(--lv-ink);   /* no box of its own: every lead is its own bubble */
@@ -28,7 +28,7 @@
 @keyframes lv-lead-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
 /* the territory circle and the pins blur slightly the moment the white box starts to appear, so the list leads */
 .lv-props, .lv-circle { animation: lv-points-blur .8s ease var(--lv-leads-start) both; }
-@keyframes lv-points-blur { to { filter: blur(2.5px); } }
+@keyframes lv-points-blur { to { filter: blur(5px); } }
 @media (prefers-reduced-motion: reduce) { .lv-leads, .lv-lead, .lv-props, .lv-circle { animation: none; } }
 @media (max-width: 1100px) { .lv-lead:nth-child(n+6) { display: none; }
   .lv-leads { }
