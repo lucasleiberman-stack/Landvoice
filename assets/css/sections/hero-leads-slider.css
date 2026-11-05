@@ -1,7 +1,7 @@
 /* HERO LEADS SLIDER (v2, local experiment): after the pins land, ONE lead at a time in a vertical slider that shows 1.5 cards.
    Each pin takes a turn being highlighted (JS toggles .is-active on the pin + its pill) and the matching lead slides into view.
    Loads after hero-leads.css and overrides it for .lv-leads--slider. The 10-lead list is git tag hero-list-v1-hubspot. */
-.lv-leads--slider { top: 56.1%; translate: 0 -50%; overflow: hidden; }   /* vertically centred on the territory circle; height is set by JS (1.5 cards) */
+.lv-leads.lv-leads--slider { top: 56.1%; translate: 0 -50%; overflow: hidden; }   /* vertically centred on the territory circle; height is set by JS (1.5 cards) */
 .lv-leads--slider .lv-leads__glass { -webkit-mask-image: none; mask-image: none; }
 .lv-leads--slider .lv-leads__list { display: flex; flex-direction: column; height: auto; -webkit-mask-image: none; mask-image: none; overflow: visible;
   gap: clamp(12px, 1.7cqw, 20px); transition: transform .8s cubic-bezier(.65,0,.25,1); will-change: transform; }
@@ -20,4 +20,4 @@
 
 @media (prefers-reduced-motion: reduce) { .lv-leads--slider .lv-leads__list, .lv-pin__dot, .lv-prop-card { transition: none; } }
 @media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
-  .lv-leads--slider { top: auto; translate: none; } }
+  .lv-leads.lv-leads--slider { top: auto; translate: none; } }

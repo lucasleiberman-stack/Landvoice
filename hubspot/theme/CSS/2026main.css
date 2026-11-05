@@ -345,7 +345,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 /* HERO LEADS SLIDER (v2, local experiment): after the pins land, ONE lead at a time in a vertical slider that shows 1.5 cards.
    Each pin takes a turn being highlighted (JS toggles .is-active on the pin + its pill) and the matching lead slides into view.
    Loads after hero-leads.css and overrides it for .lv-leads--slider. The 10-lead list is git tag hero-list-v1-hubspot. */
-.lv-leads--slider { top: 56.1%; translate: 0 -50%; overflow: hidden; }   /* vertically centred on the territory circle; height is set by JS (1.5 cards) */
+.lv-leads.lv-leads--slider { top: 56.1%; translate: 0 -50%; overflow: hidden; }   /* vertically centred on the territory circle; height is set by JS (1.5 cards) */
 .lv-leads--slider .lv-leads__glass { -webkit-mask-image: none; mask-image: none; }
 .lv-leads--slider .lv-leads__list { display: flex; flex-direction: column; height: auto; -webkit-mask-image: none; mask-image: none; overflow: visible;
   gap: clamp(12px, 1.7cqw, 20px); transition: transform .8s cubic-bezier(.65,0,.25,1); will-change: transform; }
@@ -364,7 +364,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 @media (prefers-reduced-motion: reduce) { .lv-leads--slider .lv-leads__list, .lv-pin__dot, .lv-prop-card { transition: none; } }
 @media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
-  .lv-leads--slider { top: auto; translate: none; } }
+  .lv-leads.lv-leads--slider { top: auto; translate: none; } }
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
@@ -469,6 +469,9 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @keyframes lv-circle-draw { to { stroke-dashoffset: 0; } }
 @keyframes lv-circle-fill { to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .lv-circle__sweep { animation: none; stroke-dashoffset: 0; } .lv-circle__fill { animation: none; opacity: 1; } }
+
+/* homepage hero: on wide screens let the text block run past its grid column (it starts over the faded left edge of the map) so the sub paragraph sets in 2 lines instead of 3 with a lone last line */
+@media (min-width: 1360px) { .lv-hero .lv-herocopy { width: 46rem; max-width: none; } .lv-hero .lv-herocopy .lv-lede { max-width: 44rem; } }
 /* INTEGRATIONS: logo cluster + "And Everything Else" connector */
 .lv-integrations__head { display: grid; gap: 1.4rem; justify-items: center; text-align: center; max-width: 60rem; margin-inline: auto; }
 .lv-integrations__main { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
