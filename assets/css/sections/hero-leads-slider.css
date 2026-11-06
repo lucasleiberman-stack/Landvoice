@@ -10,7 +10,7 @@
   transition: opacity .6s ease, box-shadow .6s ease; }
 /* resting look is set from page load (.is-active on the first card, others dimmed) and the entrance only animates FROM invisible to that look, so nothing jumps when the rotation starts */
 @keyframes lv-slide-in { from { opacity: 0; transform: translateX(10px); } }
-.lv-leads--slider .lv-lead.is-active { opacity: 1; box-shadow: 0 10px 26px rgba(13,17,23,.16), 0 0 0 1px var(--tag-bg); }   /* ring in the lead's pin colour ties it to its point */
+.lv-leads--slider .lv-lead.is-active { opacity: 1; }   /* the active card is just full strength (no coloured ring); the base bubble shadow stays */
 
 /* the highlighted pin: dot grows, pill grows and gets a ring in its colour (individual scale property, so it doesn't fight the entrance animations) */
 .lv-pin__dot { transition: scale .4s var(--lv-ease); }
