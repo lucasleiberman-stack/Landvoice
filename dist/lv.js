@@ -271,31 +271,27 @@ LV.ready(function () {
       card.style.height = Math.round(pad + h + gap + h / 2) + 'px';
       list.style.transform = 'translateY(' + -(all[idx].offsetTop - pad) + 'px)';
     }
-    // address blurb next to the highlighted marker: one floating label inside .lv-props, moved + re-filled for each pin
-    var props = LV.$('.lv-props', map), tip = null, tipTimer = 0, spots = pins.map(function (p) {
-      var g = LV.$('g[transform]', p), m = g && /translate\(([\d.]+)[ ,]+([\d.]+)\)/.exec(g.getAttribute('transform'));
-      return m ? { x: +m[1], y: +m[2] } : null;
+    // glass markers (HTML, drawn at each SVG pin's spot): a round glass badge with a coloured dot; the highlighted one slides its address out of itself like a small card.
+    // The SVG pins stay in the markup as the no-JS fallback and as the source of each spot + kind.
+    var props = LV.$('.lv-props', map), mks = [];
+    pins.forEach(function (p, k) {
+      var g = LV.$('g[transform]', p), m = g && /translate\(([\d.]+)[ ,]+([\d.]+)\)/.exec(g.getAttribute('transform')), kind = /lv-pin--(\w+)/.exec(p.getAttribute('class'));
+      if (!props || !m || !kind || !leads[k]) return;
+      var a = LV.$('.lv-lead__addr', leads[k]), street = a && a.firstChild ? a.firstChild.textContent : '';
+      var el = document.createElement('div'), body = document.createElement('span'), dot = document.createElement('span'), addr = document.createElement('span'), txt = document.createElement('span'), pulse = document.createElement('span');
+      el.className = 'lv-mk lv-mk--' + kind[1] + (+m[1] > 330 ? ' is-left' : '');   // markers on the right slide out to their left, away from the list card
+      el.style.setProperty('--tx', m[1]); el.style.setProperty('--ty', m[2]); el.setAttribute('aria-hidden', 'true');
+      body.className = 'lv-mk__body'; dot.className = 'lv-mk__dot'; addr.className = 'lv-mk__addr'; pulse.className = 'lv-mk__pulse'; txt.textContent = street;
+      addr.appendChild(txt); body.appendChild(dot); body.appendChild(addr); el.appendChild(body); el.appendChild(pulse); props.appendChild(el); mks[k] = el;
     });
-    if (props) { tip = document.createElement('div'); tip.className = 'lv-pin-tip'; tip.setAttribute('aria-hidden', 'true'); props.appendChild(tip); }
-    function showTip(k) {
-      if (!tip || !spots[k]) return;
-      clearTimeout(tipTimer); tip.classList.remove('is-on');
-      tipTimer = setTimeout(function () {   // fade the old one out, then move + refill + fade in
-        var a = LV.$('.lv-lead__addr', leads[k]), street = a && a.firstChild ? a.firstChild.textContent : '';
-        tip.textContent = street;
-        tip.style.setProperty('--tx', spots[k].x); tip.style.setProperty('--ty', spots[k].y);
-        tip.style.setProperty('--c', getComputedStyle(pins[k]).getPropertyValue('--c'));
-        tip.classList.toggle('is-left', spots[k].x > 330);   // markers on the right put the blurb on their left, away from the list card
-        tip.classList.add('is-on');
-      }, 220);
-    }
+    if (mks.length) props.classList.add('has-mk');
     function show(i) {
       idx = i; measure();
       var k = i % n;
-      showTip(k);
       all.forEach(function (li, j) { li.classList.toggle('is-active', j === i); });
       pins.forEach(function (p, j) { p.classList.toggle('is-active', j === k); });
       pills.forEach(function (p, j) { p.classList.toggle('is-active', j === k); });
+      mks.forEach(function (m, j) { if (m) m.classList.toggle('is-active', j === k); });
     }
     function next() {
       if (document.hidden) return;

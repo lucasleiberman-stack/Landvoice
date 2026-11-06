@@ -22,30 +22,43 @@
 @media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
   .lv-leads.lv-leads--slider { top: auto; translate: none; } }
 
-/* EXPERIMENT (local only, not on HubSpot): the points carry no text and are modern way-point markers (round head, short point, tip on the location; no outline, transparent centre hole).
-   Colours are exactly the list's tag colours (--c = tag background, --ink = tag text) so a marker and its lead card match. Pills and rays are hidden.
-   The highlighted marker scales up from its tip, glows, and sends out a ground ripple. */
+/* EXPERIMENT (local only, not on HubSpot): glass way-point markers. JS (76-leads-slider.js) draws one .lv-mk per SVG pin and hides the SVG pins (.has-mk).
+   Each is a round frosted-glass badge with a coloured dot (the list's tag colour) on a thin stem; the highlighted one slides its address out of itself like a small card
+   and sends a ripple from its tip. x/y (--tx/--ty) are the tip in the 525-unit pin space; --u is the unit set on .lv-props. */
 .lv-prop-card, .lv-pin__ray { display: none; }
-.lv-pin.lv-pin--pre  { --c: #5B9BF0; --ink: #0B2A59; }
-.lv-pin.lv-pin--fsbo { --c: #FFA24D; --ink: #6B2D00; }
-.lv-pin.lv-pin--dist { --c: #B79CFA; --ink: #2A1A52; }
-.lv-pin.lv-pin--exp  { --c: #7ED8A0; --ink: #06361A; }
-.lv-pin.lv-pin--frbo { --c: #FF9CC8; --ink: #5C1239; }
-.lv-pin .lv-pin__dot { stroke: none; transform-origin: 50% 100%; scale: 1.25; transition: scale .5s var(--lv-ease), filter .5s ease; }   /* hero.css gives it transform-box: fill-box; origin = bottom centre = the tip */
-.lv-pin.is-active .lv-pin__dot { scale: 1.9; filter: drop-shadow(0 0 6px var(--c)) drop-shadow(0 2px 3px rgba(13,17,23,.4)); }
-.lv-pin__pulse { fill: none; stroke: var(--c); stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0; transform-box: fill-box; transform-origin: center; }
-.lv-pin.is-active .lv-pin__pulse { animation: lv-pin-pulse 1.8s ease-out infinite; }
-@keyframes lv-pin-pulse { from { opacity: .9; transform: scale(.4); } to { opacity: 0; transform: scale(3.4); } }
-@media (prefers-reduced-motion: reduce) { .lv-pin.is-active .lv-pin__pulse { animation: none; } }
-
-/* address blurb beside the highlighted marker (JS moves one .lv-pin-tip inside .lv-props; x/y are the marker tip in the 525-unit pin space) */
-.lv-pin-tip { position: absolute; left: calc((var(--tx) + 14) * var(--u)); top: calc((var(--ty) - 24) * var(--u)); translate: 0 -50%;
-  display: flex; align-items: center; gap: calc(6 * var(--u)); padding: calc(5 * var(--u)) calc(11 * var(--u)) calc(5 * var(--u)) calc(8 * var(--u)); border-radius: 999px; white-space: nowrap;
-  background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(calc(8 * var(--u))); backdrop-filter: blur(calc(8 * var(--u)));
-  box-shadow: 0 calc(6 * var(--u)) calc(16 * var(--u)) rgba(13,17,23,.2), 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.7);
-  font: 700 calc(14.5 * var(--u))/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); color: var(--lv-ink);
-  opacity: 0; transform: translateX(calc(-6 * var(--u))); transition: opacity .25s ease, transform .35s var(--lv-ease); pointer-events: none; z-index: 3; }
-.lv-pin-tip::before { content: ""; flex: none; width: calc(7 * var(--u)); height: calc(7 * var(--u)); border-radius: 50%; background: var(--c); }
-.lv-pin-tip.is-left { left: calc((var(--tx) - 14) * var(--u)); translate: -100% -50%; transform: translateX(calc(6 * var(--u))); }
-.lv-pin-tip.is-on { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .lv-pin-tip { transition: none; } }
+.lv-props.has-mk .lv-pin { display: none; }
+.lv-mk { --c: #5B9BF0; --body-h: 30; --stem: 9;
+  position: absolute; z-index: 2; left: calc((var(--tx) - var(--body-h) / 2) * var(--u)); top: calc((var(--ty) - var(--body-h) - var(--stem)) * var(--u)); height: calc((var(--body-h) + var(--stem)) * var(--u)); }
+.lv-mk--pre  { --c: #5B9BF0; }
+.lv-mk--fsbo { --c: #FFA24D; }
+.lv-mk--dist { --c: #B79CFA; }
+.lv-mk--exp  { --c: #7ED8A0; }
+.lv-mk--frbo { --c: #FF9CC8; }
+.lv-mk.is-left { left: auto; right: calc((525 - var(--tx) - var(--body-h) / 2) * var(--u)); }
+.lv-mk.is-active { z-index: 4; }
+.lv-mk__body { display: flex; align-items: center; height: calc(var(--body-h) * var(--u)); padding: 0 calc((var(--body-h) - 13) / 2 * var(--u)); border-radius: 999px; width: max-content;
+  background: rgba(255,255,255,.55); -webkit-backdrop-filter: blur(calc(9 * var(--u))) saturate(1.4); backdrop-filter: blur(calc(9 * var(--u))) saturate(1.4);
+  box-shadow: 0 calc(6 * var(--u)) calc(18 * var(--u)) rgba(13,17,23,.16), inset 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.8);
+  transition: background .4s ease, box-shadow .4s ease;
+  animation: lv-mk-in .55s var(--lv-ease) var(--start) backwards; }   /* the glass element animates itself, so its blur fades in with it */
+.lv-mk.is-left .lv-mk__body { margin-left: auto; flex-direction: row-reverse; }   /* slides out to the left; the badge stays over the point */
+.lv-mk__dot { flex: none; width: calc(13 * var(--u)); height: calc(13 * var(--u)); border-radius: 50%; background: var(--c);
+  box-shadow: 0 0 0 calc(3.5 * var(--u)) color-mix(in srgb, var(--c) 32%, transparent); transition: scale .4s var(--lv-ease); }
+.lv-mk__addr { display: grid; grid-template-columns: 0fr; opacity: 0; margin: 0; transition: grid-template-columns .55s cubic-bezier(.65,0,.25,1), opacity .35s ease, margin .55s cubic-bezier(.65,0,.25,1); }
+.lv-mk__addr > span { min-width: 0; overflow: hidden; white-space: nowrap; font: 700 calc(14 * var(--u))/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); color: var(--lv-ink); }
+.lv-mk.is-active .lv-mk__body { background: rgba(255,255,255,.78); box-shadow: 0 calc(8 * var(--u)) calc(22 * var(--u)) rgba(13,17,23,.2), inset 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.9); }
+.lv-mk.is-active .lv-mk__dot { scale: 1.12; }
+.lv-mk.is-active .lv-mk__addr { grid-template-columns: 1fr; opacity: 1; margin: 0 calc(5 * var(--u)) 0 calc(8 * var(--u)); transition-delay: 0s, .12s, 0s; }
+.lv-mk.is-left .lv-mk__addr { margin: 0; }
+.lv-mk.is-left.is-active .lv-mk__addr { margin: 0 calc(8 * var(--u)) 0 calc(5 * var(--u)); }
+.lv-mk::after { content: ""; position: absolute; left: calc(var(--body-h) / 2 * var(--u)); top: calc(var(--body-h) * var(--u)); width: calc(1.6 * var(--u)); height: calc(var(--stem) * var(--u)); translate: -50% 0; border-radius: 2px;
+  background: linear-gradient(var(--c), color-mix(in srgb, var(--c) 40%, transparent)); animation: lv-mk-stem .4s ease-out calc(var(--start) + .2s) backwards; }
+.lv-mk.is-left::after { left: auto; right: calc(var(--body-h) / 2 * var(--u)); translate: 50% 0; }
+.lv-mk__pulse { position: absolute; left: calc(var(--body-h) / 2 * var(--u)); top: calc((var(--body-h) + var(--stem)) * var(--u)); width: calc(10 * var(--u)); height: calc(4 * var(--u)); translate: -50% -50%; border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 55%, transparent); }
+.lv-mk.is-left .lv-mk__pulse { left: auto; right: calc(var(--body-h) / 2 * var(--u)); translate: 50% -50%; }
+.lv-mk.is-active .lv-mk__pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--c); animation: lv-mk-pulse 1.8s ease-out infinite; }
+@keyframes lv-mk-in { from { opacity: 0; transform: translateY(calc(-8 * var(--u))) scale(.6); } }
+@keyframes lv-mk-stem { from { scale: 1 0; transform-origin: top; opacity: 0; } }
+@keyframes lv-mk-pulse { from { opacity: .9; transform: scale(.5); } to { opacity: 0; transform: scale(4); } }
+@media (prefers-reduced-motion: reduce) { .lv-mk__body, .lv-mk::after, .lv-mk__addr, .lv-mk__dot { transition: none; animation: none; } .lv-mk.is-active .lv-mk__pulse::after { animation: none; } }
