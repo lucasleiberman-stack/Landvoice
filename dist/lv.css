@@ -366,10 +366,11 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
   .lv-leads.lv-leads--slider { top: auto; translate: none; } }
 
-/* EXPERIMENT (local only, not on HubSpot): the points carry no text. The pills and rays are hidden; each point is just its coloured dot, and the highlighted one scales up with a soft glow */
+/* EXPERIMENT (local only, not on HubSpot): the points carry no text and are little way-point markers (teardrop + white centre, tip on the location). Pills and rays are hidden;
+   the highlighted marker scales up from its tip with a soft glow. */
 .lv-prop-card, .lv-pin__ray { display: none; }
-.lv-pin__dot { scale: 1.5; transition: scale .5s var(--lv-ease), filter .5s ease; }
-.lv-pin.is-active .lv-pin__dot { scale: 2.6; filter: drop-shadow(0 0 7px var(--c)) drop-shadow(0 1px 2px rgba(13,17,23,.35)); }
+.lv-pin__dot { transform-origin: 50% 100%; scale: 1.35; stroke-linejoin: round; transition: scale .5s var(--lv-ease), filter .5s ease; }   /* hero.css gives it transform-box: fill-box; origin = bottom centre = the tip */
+.lv-pin.is-active .lv-pin__dot { scale: 2.1; filter: drop-shadow(0 0 7px var(--c)) drop-shadow(0 1px 2px rgba(13,17,23,.35)); }
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */
