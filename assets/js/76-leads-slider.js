@@ -13,6 +13,7 @@ LV.ready(function () {
     var pins = LV.$$('.lv-pin', map), pills = LV.$$('.lv-prop-card', map);
     var all = leads.slice(), idx = 0, step = 2800, hero = card.closest('.lv-hero'), calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!follow) { var clone = leads[0].cloneNode(true); clone.setAttribute('aria-hidden', 'true'); list.appendChild(clone); all.push(clone); }
+    else leads.forEach(function (l) { var c = l.cloneNode(true); c.setAttribute('aria-hidden', 'true'); list.appendChild(c); all.push(c); });   // list mode loops forever: a second copy of the list follows the first, and the view snaps back unseen (see snap())
 
     function measure() {
       if (follow) {   // list mode: the card runs from its top down to the bottom of the hero (stacked under the map on small screens, where CSS sets the height)
@@ -39,13 +40,21 @@ LV.ready(function () {
       addr.appendChild(txt); body.appendChild(dot); body.appendChild(kindEl); body.appendChild(addr); el.appendChild(body); el.appendChild(pulse); props.appendChild(el); mks[k] = el;
     });
     if (mks.length) { props.classList.add('has-mk'); if (follow) props.classList.add('is-list-mode'); }
-    function scrollTo(i) {   // list mode: keep the highlighted lead no higher than the third row, by scrolling the list up as the highlight moves down (and back to the top on the loop)
-      if (!follow || list.scrollHeight <= list.clientHeight + 1) return;
-      var anchor = all[Math.min(2, n - 1)];
-      list.scrollTo({ top: Math.max(0, all[i].offsetTop - anchor.offsetTop), behavior: calm ? 'auto' : 'smooth' });
+    var scrollRaf = 0;
+    function scrollTo(i, instant) {   // list mode: the highlight steps down the first three rows, then the list scrolls up under it so the highlight stays on row 3 (eased, 0.8s)
+      if (!follow) return;
+      var to = Math.max(0, all[i].offsetTop - all[2].offsetTop), from = list.scrollTop;
+      cancelAnimationFrame(scrollRaf);
+      if (instant || calm || Math.abs(to - from) < 1) { list.scrollTop = to; return; }
+      var t0 = 0;
+      scrollRaf = requestAnimationFrame(function step(t) {
+        t0 = t0 || t; var p = Math.min(1, (t - t0) / 800), e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        list.scrollTop = from + (to - from) * e;
+        if (p < 1) scrollRaf = requestAnimationFrame(step);
+      });
     }
-    function show(i) {
-      idx = i; measure(); scrollTo(i);
+    function show(i, instant) {
+      idx = i; measure(); scrollTo(i, instant);
       var k = i % n;
       all.forEach(function (li, j) { li.classList.toggle('is-active', j === i); });
       pins.forEach(function (p, j) { p.classList.toggle('is-active', j === k); });
@@ -54,7 +63,12 @@ LV.ready(function () {
     }
     function next() {
       if (document.hidden) return;
-      if (follow) { show((idx + 1) % n); return; }
+      if (follow) {
+        show(idx + 1);
+        // the highlight is on the copy of lead 3 (row 3) when idx = n + 2: that view is identical to the real list with lead 3 highlighted, so jump back to it unseen
+        if (idx === n + 2) setTimeout(function () { card.classList.add('is-snap'); show(2, true); void list.offsetHeight; card.classList.remove('is-snap'); }, 950);
+        return;
+      }
       show(idx + 1);
       if (idx === n) setTimeout(function () {   // landed on the clone: jump back to the real first card, unseen
         card.classList.add('is-snap'); show(0); void list.offsetHeight; card.classList.remove('is-snap');

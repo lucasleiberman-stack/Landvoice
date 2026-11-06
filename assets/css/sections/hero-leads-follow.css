@@ -1,26 +1,30 @@
 /* HERO LEADS "FOLLOW" VERSION (v3, local experiment; v2 slider = git tag hero-slider-v2-glass-markers). Loads after hero-leads.css / hero-leads-slider.css.
    Timeline: the ring draws (no points yet) -> the whole map + circle zoom out (scale down) -> the full lead list appears with the first lead highlighted (brighter, others dimmed)
    and that lead's marker + address pop onto the map -> the highlight steps down the list, one marker on the map at a time. JS: 76-leads-slider.js (mode [data-lv-leads-follow]). */
-.lv-hero__map:has(.lv-leads--follow) { --lv-zoom: .8; --lv-zoom-start: 1.45s; --lv-zoom-dur: 1s; --lv-leads-start: 2.65s; }   /* zoom ends at 2.45s; the list starts .2s later */
+.lv-hero__map:has(.lv-leads--follow) { --lv-zoom: .76; --lv-zoom-ox: 100%; --lv-zoom-start: 1.45s; --lv-zoom-dur: 1s; --lv-leads-start: 2.65s; }   /* zoom ends at 2.45s; the list starts .2s later */
 .lv-hero__map:has(.lv-leads--follow) > img,
 .lv-hero__map:has(.lv-leads--follow) > .lv-circle,
-.lv-hero__map:has(.lv-leads--follow) > .lv-props { transform-origin: 49% 56.1%; animation: lv-map-zoom var(--lv-zoom-dur) cubic-bezier(.65,0,.25,1) var(--lv-zoom-start) both; }   /* all three layers scale together about the circle's centre (replaces the circle-only settle) */
+.lv-hero__map:has(.lv-leads--follow) > .lv-props { transform-origin: var(--lv-zoom-ox) 56.1%; animation: lv-map-zoom var(--lv-zoom-dur) cubic-bezier(.65,0,.25,1) var(--lv-zoom-start) both; }   /* all three layers scale together about a point on the map's right edge, so the circle shrinks toward the right and leaves room for the list on its left (replaces the circle-only settle) */
 @keyframes lv-map-zoom { to { transform: scale(var(--lv-zoom)); } }
 
-/* the list: all leads, bottom fading out; the highlighted one is brighter */
+/* the list: all leads, bottom fading out; the highlighted one is brighter. It sits on the LEFT of the circle: its right edge overlaps the ring's left edge a touch.
+   Ring left edge after the zoom = 100% - zoom * 81.2% of the map width (the ring's left edge is at 18.8% before the zoom, the origin is the right edge). */
 .lv-leads--follow { --lv-fade-from: calc(100% - 80px); }
+@media (min-width: 1101px) { .lv-leads--follow { left: calc((100 - var(--lv-zoom) * 81.2) * 1% + 1.3cqw - var(--lv-leads-w)); } }
+@media (min-width: 1101px) and (prefers-reduced-motion: reduce) { .lv-leads--follow { left: min(76.5%, calc(100% - var(--lv-leads-w) - 5cqw)); } }   /* no zoom: keep it on the right where there is room */
 .lv-leads--follow .lv-lead { opacity: .5; animation: lv-slide-in .4s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) backwards; transition: opacity .5s ease; }
 .lv-leads--follow .lv-lead.is-active { opacity: 1; }
+.lv-leads--follow.is-snap .lv-lead { transition: none; }
 
 /* markers: only the highlighted lead's marker is shown; it pops in (its own glass body animates, so the blur comes with it) and the old one fades out.
    The map layers are scaled by --lv-zoom, so the markers get the inverse scale from their tip to keep their size. */
-.lv-props.is-list-mode .lv-mk { scale: calc(1 / var(--lv-zoom, 1)); transform-origin: calc(var(--body-h) / 2 * var(--u)) 100%; visibility: hidden; transition: visibility 0s .25s; }
+.lv-props.is-list-mode .lv-mk { scale: calc(1 / var(--lv-zoom, 1)); transform-origin: calc(var(--body-h) / 2 * var(--u)) 100%; visibility: hidden; transition: visibility 0s .35s; }
 .lv-props.is-list-mode .lv-mk.is-left { transform-origin: calc(100% - var(--body-h) / 2 * var(--u)) 100%; }
 .lv-props.is-list-mode .lv-mk.is-active { visibility: visible; transition-delay: 0s; }
-.lv-props.is-list-mode .lv-mk__body { animation: none; opacity: 0; transition: opacity .25s ease, background .4s ease, box-shadow .4s ease; }
-.lv-props.is-list-mode .lv-mk.is-active .lv-mk__body { opacity: 1; animation: lv-mk-in .5s var(--lv-ease) backwards; }
+.lv-props.is-list-mode .lv-mk__body { animation: none; opacity: 0; transition: opacity .35s ease, background .4s ease, box-shadow .4s ease; }
+.lv-props.is-list-mode .lv-mk.is-active .lv-mk__body { opacity: 1; animation: lv-mk-in .6s var(--lv-ease) .15s backwards; }   /* the old marker fades out while the new one pops in just behind it: a continuous hand-off */
 .lv-props.is-list-mode .lv-mk::after { animation: none; opacity: 0; }
-.lv-props.is-list-mode .lv-mk.is-active::after { opacity: 1; animation: lv-mk-stem .4s ease-out .1s backwards; }
+.lv-props.is-list-mode .lv-mk.is-active::after { opacity: 1; animation: lv-mk-stem .4s ease-out .3s backwards; }
 .lv-props.is-list-mode .lv-mk__pulse { opacity: 0; }
 .lv-props.is-list-mode .lv-mk.is-active .lv-mk__pulse { opacity: 1; }
 
