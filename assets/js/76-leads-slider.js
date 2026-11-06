@@ -11,14 +11,20 @@ LV.ready(function () {
     var leads = LV.$$('.lv-lead', list), n = leads.length;
     if (!map || !n) return;
     var pins = LV.$$('.lv-pin', map), pills = LV.$$('.lv-prop-card', map);
-    var all = leads.slice(), idx = 0, step = 2800, hero = card.closest('.lv-hero'), calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var all = leads.slice(), idx = 0, step = 2800, calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!follow) { var clone = leads[0].cloneNode(true); clone.setAttribute('aria-hidden', 'true'); list.appendChild(clone); all.push(clone); }
-    else leads.forEach(function (l) { var c = l.cloneNode(true); c.setAttribute('aria-hidden', 'true'); list.appendChild(c); all.push(c); });   // list mode loops forever: a second copy of the list follows the first, and the view snaps back unseen (see snap())
+    else {   // list mode loops forever in both directions: a copy of the list before and after the real one, the highlight starts on the first real lead (index n), and the view snaps back unseen (see next())
+      var before = [], after = [];
+      leads.forEach(function (l) { var c = l.cloneNode(true); c.setAttribute('aria-hidden', 'true'); before.push(c); list.insertBefore(c, leads[0]); });
+      leads.forEach(function (l) { var c = l.cloneNode(true); c.setAttribute('aria-hidden', 'true'); after.push(c); list.appendChild(c); });
+      all = before.concat(leads, after); idx = n;
+    }
 
     function measure() {
-      if (follow) {   // list mode: the card runs from its top down to the bottom of the hero (stacked under the map on small screens, where CSS sets the height)
-        if (window.innerWidth <= 1100 || !hero) { card.style.height = ''; return; }
-        card.style.height = Math.max(0, hero.getBoundingClientRect().bottom - (map.getBoundingClientRect().top + card.offsetTop)) + 'px';
+      if (follow) {   // list mode: the card shows 3.5 leads (the highlighted one in the middle, a full lead above and below it, slivers fading out at the top and bottom edges)
+        var h0 = leads[0].offsetHeight, g0 = leads[1].offsetTop - leads[0].offsetTop - h0;
+        card.style.height = Math.round(3.5 * h0 + 3 * g0) + 'px';
+        card.style.setProperty('--lv-fade-len', Math.round(h0 * .62) + 'px');
         return;
       }
       // slider mode: card height = padding + current card + gap + half of the next one; the list is moved so the current card sits at the top
@@ -41,9 +47,9 @@ LV.ready(function () {
     });
     if (mks.length) { props.classList.add('has-mk'); if (follow) props.classList.add('is-list-mode'); }
     var scrollRaf = 0;
-    function scrollTo(i, instant) {   // list mode: the highlight steps down the first three rows, then the list scrolls up under it so the highlight stays on row 3 (eased, 0.8s)
+    function scrollTo(i, instant) {   // list mode: scroll (eased, 0.8s) so the highlighted lead is vertically centred in the card
       if (!follow) return;
-      var to = Math.max(0, all[i].offsetTop - all[2].offsetTop), from = list.scrollTop;
+      var to = all[i].offsetTop + all[i].offsetHeight / 2 - list.clientHeight / 2, from = list.scrollTop;
       cancelAnimationFrame(scrollRaf);
       if (instant || calm || Math.abs(to - from) < 1) { list.scrollTop = to; return; }
       var t0 = 0;
@@ -65,8 +71,8 @@ LV.ready(function () {
       if (document.hidden) return;
       if (follow) {
         show(idx + 1);
-        // the highlight is on the copy of lead 3 (row 3) when idx = n + 2: that view is identical to the real list with lead 3 highlighted, so jump back to it unseen
-        if (idx === n + 2) setTimeout(function () { card.classList.add('is-snap'); show(2, true); void list.offsetHeight; card.classList.remove('is-snap'); }, 950);
+        // on the first lead of the second copy (index 2n) the view is identical to the real list with the first lead highlighted (index n): jump back to it unseen
+        if (idx === 2 * n) setTimeout(function () { card.classList.add('is-snap'); show(n, true); void list.offsetHeight; card.classList.remove('is-snap'); }, 950);
         return;
       }
       show(idx + 1);
@@ -74,18 +80,19 @@ LV.ready(function () {
         card.classList.add('is-snap'); show(0); void list.offsetHeight; card.classList.remove('is-snap');
       }, 900);
     }
-    measure();
-    window.addEventListener('load', measure);
-    window.addEventListener('resize', LV.raf(measure));
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    function place() { measure(); scrollTo(idx, true); }   // (re)size, and for list mode put the highlighted lead in the middle without animating
+    place();
+    window.addEventListener('load', place);
+    window.addEventListener('resize', LV.raf(place));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
 
-    all[0].classList.add('is-active');   // resting look from the start; the entrance animation fades the cards in to it
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { show(0); return; }
+    all[idx].classList.add('is-active');   // resting look from the start; the entrance animation fades the cards in to it
+    if (calm) { show(idx, true); return; }
     // start in step with the CSS entrance (not a separate timer, which could drift from it): the first card's entrance animation begins when the card appears
     var started = false;
-    function go() { if (started) return; started = true; show(0); setInterval(next, step); }
-    all[0].addEventListener('animationstart', go);
+    function go() { if (started) return; started = true; show(idx); setInterval(next, step); }
+    all[idx].addEventListener('animationstart', go);
     var start = (parseFloat(getComputedStyle(map).getPropertyValue('--lv-leads-start')) || 3.2) * 1000 + 1500;
-    setTimeout(function () { if (!all[0].getAnimations().length) go(); }, start);   // safety net only if there is no entrance animation at all (e.g. animations disabled)
+    setTimeout(function () { if (!all[idx].getAnimations().length) go(); }, start);   // safety net only if there is no entrance animation at all (e.g. animations disabled)
   });
 });
