@@ -1,16 +1,26 @@
 /* lv-leads slider: rotates the highlighted pin (+ its pill) and slides the matching lead into view, one at a time, 1.5 cards visible.
    Markup: [data-lv-leads-slider] (inside .lv-hero__map) > .lv-leads__list > li.lv-lead (one per pin, same order as .lv-pin / .lv-prop-card).
-   A clone of the first lead is appended so the loop wraps seamlessly. Starts when the CSS --lv-leads-start (+.4s) has passed. No JS = first card only, no highlight. */
+   A clone of the first lead is appended so the loop wraps seamlessly. Starts when the CSS --lv-leads-start (+.4s) has passed. No JS = first card only, no highlight.
+   MODE 2, [data-lv-leads-follow] (the "list" version): ALL leads are listed (card runs from the top of the map to the hero's bottom edge, last one fading out); the first is highlighted
+   (brighter, the rest dimmed) and its marker + address appear on the map; then the highlight steps down the list one lead at a time (the list scrolls to keep it in view), only ever
+   showing the marker of the highlighted lead. Needs hero-leads-follow.css. */
 LV.ready(function () {
-  LV.$$('[data-lv-leads-slider]').forEach(function (card) {
+  LV.$$('[data-lv-leads-slider], [data-lv-leads-follow]').forEach(function (card) {
+    var follow = card.hasAttribute('data-lv-leads-follow');
     var map = card.closest('.lv-hero__map'), list = LV.$('.lv-leads__list', card);
     var leads = LV.$$('.lv-lead', list), n = leads.length;
     if (!map || !n) return;
     var pins = LV.$$('.lv-pin', map), pills = LV.$$('.lv-prop-card', map);
-    var clone = leads[0].cloneNode(true); clone.setAttribute('aria-hidden', 'true'); list.appendChild(clone);
-    var all = leads.concat([clone]), idx = 0, step = 2800;
+    var all = leads.slice(), idx = 0, step = 2800, hero = card.closest('.lv-hero'), calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!follow) { var clone = leads[0].cloneNode(true); clone.setAttribute('aria-hidden', 'true'); list.appendChild(clone); all.push(clone); }
 
-    function measure() {   // card height = padding + current card + gap + half of the next one; the list is moved so the current card sits at the top
+    function measure() {
+      if (follow) {   // list mode: the card runs from its top down to the bottom of the hero (stacked under the map on small screens, where CSS sets the height)
+        if (window.innerWidth <= 1100 || !hero) { card.style.height = ''; return; }
+        card.style.height = Math.max(0, hero.getBoundingClientRect().bottom - (map.getBoundingClientRect().top + card.offsetTop)) + 'px';
+        return;
+      }
+      // slider mode: card height = padding + current card + gap + half of the next one; the list is moved so the current card sits at the top
       var h = all[0].offsetHeight, pad = all[0].offsetTop, gap = all[1].offsetTop - all[0].offsetTop - h;
       card.style.height = Math.round(pad + h + gap + h / 2) + 'px';
       list.style.transform = 'translateY(' + -(all[idx].offsetTop - pad) + 'px)';
@@ -28,9 +38,14 @@ LV.ready(function () {
       body.className = 'lv-mk__body'; dot.className = 'lv-mk__dot'; kindEl.className = 'lv-mk__kind'; kindEl.textContent = tag ? tag.textContent : ''; addr.className = 'lv-mk__addr'; pulse.className = 'lv-mk__pulse'; txt.textContent = street;
       addr.appendChild(txt); body.appendChild(dot); body.appendChild(kindEl); body.appendChild(addr); el.appendChild(body); el.appendChild(pulse); props.appendChild(el); mks[k] = el;
     });
-    if (mks.length) props.classList.add('has-mk');
+    if (mks.length) { props.classList.add('has-mk'); if (follow) props.classList.add('is-list-mode'); }
+    function scrollTo(i) {   // list mode: keep the highlighted lead no higher than the third row, by scrolling the list up as the highlight moves down (and back to the top on the loop)
+      if (!follow || list.scrollHeight <= list.clientHeight + 1) return;
+      var anchor = all[Math.min(2, n - 1)];
+      list.scrollTo({ top: Math.max(0, all[i].offsetTop - anchor.offsetTop), behavior: calm ? 'auto' : 'smooth' });
+    }
     function show(i) {
-      idx = i; measure();
+      idx = i; measure(); scrollTo(i);
       var k = i % n;
       all.forEach(function (li, j) { li.classList.toggle('is-active', j === i); });
       pins.forEach(function (p, j) { p.classList.toggle('is-active', j === k); });
@@ -39,6 +54,7 @@ LV.ready(function () {
     }
     function next() {
       if (document.hidden) return;
+      if (follow) { show((idx + 1) % n); return; }
       show(idx + 1);
       if (idx === n) setTimeout(function () {   // landed on the clone: jump back to the real first card, unseen
         card.classList.add('is-snap'); show(0); void list.offsetHeight; card.classList.remove('is-snap');
