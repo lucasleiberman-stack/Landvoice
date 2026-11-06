@@ -1,322 +1,278 @@
-[
-  {
-    "id": "cbe38c01-fc3c-e1bb-dab1-b86db62b0eda",
-    "name": "eyebrow",
-    "label": "Eyebrow",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Serving listing agents"
-  },
-  {
-    "id": "57492292-6111-95fd-e160-0e7c083ae1c2",
-    "name": "eyebrow_accent",
-    "label": "Eyebrow highlight",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "since 1991"
-  },
-  {
-    "id": "94f03a50-1369-6463-d15a-22f02315c3ea",
-    "name": "headline_line_1",
-    "label": "Headline, line 1",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "The Most Accurate"
-  },
-  {
-    "id": "f8184a53-2933-e2c0-6719-8e65b109b4db",
-    "name": "headline_line_2",
-    "label": "Headline, line 2 (optional)",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Seller Data In Real Estate."
-  },
-  {
-    "id": "e8f4efef-4ed2-df9d-830e-c19ddf5aec09",
-    "name": "lede",
-    "label": "Supporting paragraph",
-    "required": false,
-    "locked": false,
-    "type": "richtext",
-    "display_width": null,
-    "default": "Landvoice provides every Expired, FSBO, Pre-Foreclosure, FRBO, and Neighborhood record you need to connect with motivated sellers and list more homes."
-  },
-  {
-    "id": "4904e94e-f39f-52a6-6c8f-7a38f67d15f6",
-    "name": "button_1_label",
-    "label": "Button 1 label",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Get Started"
-  },
-  {
-    "id": "0f4907e8-7b91-af23-0ed4-44662a554706",
-    "name": "button_1_link",
-    "label": "Button 1 link\t",
-    "required": false,
-    "locked": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS",
-      "BLOG",
-      "CALL_TO_ACTION",
-      "PHONE_NUMBER",
-      "WHATSAPP_NUMBER",
-      "PAYMENT"
-    ],
-    "show_advanced_rel_options": false,
-    "type": "link",
-    "display_width": null,
-    "default": {
-      "url": {
-        "content_id": null,
-        "href": "#pricing",
-        "type": "EXTERNAL"
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-    }
-  },
-  {
-    "id": "4179a005-fd22-0360-9188-b24c2b66fa0c",
-    "name": "button_2_label",
-    "label": "Button 2 label",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Live Demo"
-  },
-  {
-    "id": "e91937da-badf-b8d1-4553-a08c949382df",
-    "name": "button_2_link",
-    "label": "Button 2 link",
-    "required": false,
-    "locked": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS",
-      "BLOG",
-      "CALL_TO_ACTION",
-      "PHONE_NUMBER",
-      "WHATSAPP_NUMBER",
-      "PAYMENT"
-    ],
-    "show_advanced_rel_options": false,
-    "type": "link",
-    "display_width": null,
-    "default": {
-      "url": {
-        "content_id": null,
-        "href": "#demo",
-        "type": "EXTERNAL"
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-    }
-  },
-  {
-    "id": "1cca57b8-3878-da34-d434-ad30d747c9d5",
-    "name": "map_image",
-    "label": "Map image",
-    "required": false,
-    "locked": false,
-    "responsive": true,
-    "resizable": true,
-    "show_loading": false,
-    "type": "image",
-    "display_width": null,
-    "default": {
-      "size_type": "auto",
-      "src": "",
-      "alt": null,
-      "loading": "lazy"
-    }
-  },
-  {
-    "name": "leads",
-    "label": "Leads list (the bubbles that fill in after the pins)",
-    "type": "group",
-    "occurrence": {
-      "min": 0,
-      "max": 14,
-      "default": 10
+[ {
+  "id" : "cbe38c01-fc3c-e1bb-dab1-b86db62b0eda",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Serving listing agents"
+}, {
+  "id" : "57492292-6111-95fd-e160-0e7c083ae1c2",
+  "name" : "eyebrow_accent",
+  "label" : "Eyebrow highlight",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "since 1991"
+}, {
+  "id" : "94f03a50-1369-6463-d15a-22f02315c3ea",
+  "name" : "headline_line_1",
+  "label" : "Headline, line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "The Most Accurate"
+}, {
+  "id" : "f8184a53-2933-e2c0-6719-8e65b109b4db",
+  "name" : "headline_line_2",
+  "label" : "Headline, line 2 (optional)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Seller Data In Real Estate."
+}, {
+  "id" : "e8f4efef-4ed2-df9d-830e-c19ddf5aec09",
+  "name" : "lede",
+  "label" : "Supporting paragraph",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Landvoice provides every Expired, FSBO, Pre-Foreclosure, FRBO, and Neighborhood record you need to connect with motivated sellers and list more homes."
+}, {
+  "id" : "4904e94e-f39f-52a6-6c8f-7a38f67d15f6",
+  "name" : "button_1_label",
+  "label" : "Button 1 label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started"
+}, {
+  "id" : "0f4907e8-7b91-af23-0ed4-44662a554706",
+  "name" : "button_1_link",
+  "label" : "Button 1 link\t",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "#pricing",
+      "type" : "EXTERNAL"
     },
-    "children": [
-      {
-        "name": "kind",
-        "label": "Colour / property type",
-        "type": "choice",
-        "required": false,
-        "locked": false,
-        "display": "select",
-        "multiple": false,
-        "choices": [
-          [
-            "pre",
-            "Pre-foreclosure (blue)"
-          ],
-          [
-            "fsbo",
-            "FSBO (orange)"
-          ],
-          [
-            "dist",
-            "Distressed (purple)"
-          ],
-          [
-            "exp",
-            "Expired (green)"
-          ],
-          [
-            "frbo",
-            "FRBO (pink)"
-          ]
-        ],
-        "default": "pre"
-      },
-      {
-        "name": "kind_label",
-        "label": "Label shown on the bubble",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Pre-foreclosure"
-      },
-      {
-        "name": "person",
-        "label": "Person",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Name"
-      },
-      {
-        "name": "street",
-        "label": "Street address",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "123 Main St."
-      },
-      {
-        "name": "city_zip",
-        "label": "City and zip",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "City, ST 00000"
-      },
-      {
-        "name": "phone",
-        "label": "Phone number",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "(415) 555-0100"
-      }
-    ],
-    "default": [
-      {
-        "kind": "pre",
-        "kind_label": "Pre-foreclosure",
-        "person": "Marcus Delgado",
-        "street": "438 H St.",
-        "city_zip": "Mos Eisley, TA 99001",
-        "phone": "(415) 555-0142"
-      },
-      {
-        "kind": "fsbo",
-        "kind_label": "FSBO",
-        "person": "Priya Raman",
-        "street": "438 Irving St.",
-        "city_zip": "Mos Eisley, TA 99001",
-        "phone": "(415) 555-0119"
-      },
-      {
-        "kind": "dist",
-        "kind_label": "Distressed",
-        "person": "Tom & Linda Hayes",
-        "street": "45 H St.",
-        "city_zip": "Mos Eisley, TA 99002",
-        "phone": "(415) 555-0128"
-      },
-      {
-        "kind": "exp",
-        "kind_label": "Expired",
-        "person": "Angela Brooks",
-        "street": "439 Irving St.",
-        "city_zip": "Mos Eisley, TA 99002",
-        "phone": "(415) 555-0136"
-      },
-      {
-        "kind": "frbo",
-        "kind_label": "FRBO",
-        "person": "Jordan Whitfield",
-        "street": "27 Mission St.",
-        "city_zip": "Mos Eisley, TA 99003",
-        "phone": "(415) 555-0154"
-      },
-      {
-        "kind": "exp",
-        "kind_label": "Expired",
-        "person": "Calla Voss",
-        "street": "112 Jenkins St.",
-        "city_zip": "Mos Eisley, TA 99003",
-        "phone": "(415) 555-0168"
-      },
-      {
-        "kind": "fsbo",
-        "kind_label": "FSBO",
-        "person": "Darius Okonkwo",
-        "street": "87 Fulton St.",
-        "city_zip": "Mos Eisley, TA 99001",
-        "phone": "(415) 555-0173"
-      },
-      {
-        "kind": "pre",
-        "kind_label": "Pre-foreclosure",
-        "person": "Rosa Whitaker",
-        "street": "301 Irving St.",
-        "city_zip": "Mos Eisley, TA 99002",
-        "phone": "(415) 555-0121"
-      },
-      {
-        "kind": "frbo",
-        "kind_label": "FRBO",
-        "person": "Hana Mizuno",
-        "street": "9 Mission St.",
-        "city_zip": "Mos Eisley, TA 99003",
-        "phone": "(415) 555-0148"
-      },
-      {
-        "kind": "dist",
-        "kind_label": "Distressed",
-        "person": "Eli Brandt",
-        "street": "520 H St.",
-        "city_zip": "Mos Eisley, TA 99001",
-        "phone": "(415) 555-0194"
-      }
-    ]
+    "open_in_new_tab" : false,
+    "no_follow" : false
   }
-]
+}, {
+  "id" : "4179a005-fd22-0360-9188-b24c2b66fa0c",
+  "name" : "button_2_label",
+  "label" : "Button 2 label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Live Demo"
+}, {
+  "id" : "e91937da-badf-b8d1-4553-a08c949382df",
+  "name" : "button_2_link",
+  "label" : "Button 2 link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "#demo",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "1cca57b8-3878-da34-d434-ad30d747c9d5",
+  "name" : "map_image",
+  "label" : "Map image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "leads",
+  "name" : "leads",
+  "label" : "Leads list (the bubbles that fill in after the pins)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : 14,
+    "sorting_label_field" : null,
+    "default" : 10
+  },
+  "children" : [ {
+    "id" : "leads.kind",
+    "name" : "kind",
+    "label" : "Colour / property type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "pre", "Pre-foreclosure (blue)" ], [ "fsbo", "FSBO (orange)" ], [ "dist", "Distressed (purple)" ], [ "exp", "Expired (green)" ], [ "frbo", "FRBO (pink)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "pre"
+  }, {
+    "id" : "leads.kind_label",
+    "name" : "kind_label",
+    "label" : "Label shown on the bubble",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Pre-foreclosure"
+  }, {
+    "id" : "leads.person",
+    "name" : "person",
+    "label" : "Person",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Name"
+  }, {
+    "id" : "leads.street",
+    "name" : "street",
+    "label" : "Street address",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "123 Main St."
+  }, {
+    "id" : "leads.city_zip",
+    "name" : "city_zip",
+    "label" : "City and zip",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "City, ST 00000"
+  }, {
+    "id" : "leads.phone",
+    "name" : "phone",
+    "label" : "Phone number",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "(415) 555-0100"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "kind" : "pre",
+    "kind_label" : "Pre-foreclosure",
+    "person" : "Marcus Delgado",
+    "street" : "438 H St.",
+    "city_zip" : "Mos Eisley, TA 99001",
+    "phone" : "(415) 555-0142"
+  }, {
+    "kind" : "fsbo",
+    "kind_label" : "FSBO",
+    "person" : "Priya Raman",
+    "street" : "438 Irving St.",
+    "city_zip" : "Mos Eisley, TA 99001",
+    "phone" : "(415) 555-0119"
+  }, {
+    "kind" : "dist",
+    "kind_label" : "Distressed",
+    "person" : "Tom & Linda Hayes",
+    "street" : "45 H St.",
+    "city_zip" : "Mos Eisley, TA 99002",
+    "phone" : "(415) 555-0128"
+  }, {
+    "kind" : "exp",
+    "kind_label" : "Expired",
+    "person" : "Angela Brooks",
+    "street" : "439 Irving St.",
+    "city_zip" : "Mos Eisley, TA 99002",
+    "phone" : "(415) 555-0136"
+  }, {
+    "kind" : "frbo",
+    "kind_label" : "FRBO",
+    "person" : "Jordan Whitfield",
+    "street" : "27 Mission St.",
+    "city_zip" : "Mos Eisley, TA 99003",
+    "phone" : "(415) 555-0154"
+  }, {
+    "kind" : "exp",
+    "kind_label" : "Expired",
+    "person" : "Calla Voss",
+    "street" : "112 Jenkins St.",
+    "city_zip" : "Mos Eisley, TA 99003",
+    "phone" : "(415) 555-0168"
+  }, {
+    "kind" : "fsbo",
+    "kind_label" : "FSBO",
+    "person" : "Darius Okonkwo",
+    "street" : "87 Fulton St.",
+    "city_zip" : "Mos Eisley, TA 99001",
+    "phone" : "(415) 555-0173"
+  }, {
+    "kind" : "pre",
+    "kind_label" : "Pre-foreclosure",
+    "person" : "Rosa Whitaker",
+    "street" : "301 Irving St.",
+    "city_zip" : "Mos Eisley, TA 99002",
+    "phone" : "(415) 555-0121"
+  }, {
+    "kind" : "frbo",
+    "kind_label" : "FRBO",
+    "person" : "Hana Mizuno",
+    "street" : "9 Mission St.",
+    "city_zip" : "Mos Eisley, TA 99003",
+    "phone" : "(415) 555-0148"
+  }, {
+    "kind" : "dist",
+    "kind_label" : "Distressed",
+    "person" : "Eli Brandt",
+    "street" : "520 H St.",
+    "city_zip" : "Mos Eisley, TA 99001",
+    "phone" : "(415) 555-0194"
+  } ]
+} ]

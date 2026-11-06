@@ -1,4 +1,4 @@
-{# Hero: text, buttons, map image and the leads slider are editable (the slider shows the first 5 leads, one per pin, in pin order: pre-foreclosure, FSBO, distressed, expired, FRBO); the animated circle and pins are fixed markup. The original version is kept as the module "OG HERO ANIMATION HUBSPOT". #}
+{# Hero: text, buttons, map image and the leads list are editable (the list shows the first 6 leads, one per map marker, in order; each marker takes its colour and street from its lead); the animated circle and pins are fixed markup. The original version is kept as the module "OG HERO ANIMATION HUBSPOT". #}
 {% set map_src = module.map_image.src or get_asset_url('../../images/hero-map-clean.png') %}
 <section class="lv-band lv-band--light lv-band--flat-top lv-hero" aria-labelledby="hero-title">
   <div class="lv-hero__stage">
@@ -23,24 +23,20 @@
     <!-- property pins: footprints + frosted cards, drawn in one by one (order = --i). Coordinates are a 525x414 grid. -->
     <div class="lv-props">
       <svg class="lv-props__feet" viewBox="0 0 525 414" aria-hidden="true">
-        <g class="lv-pin lv-pin--pre" style="--i:0"><line class="lv-pin__ray" x1="371.25" y1="66.9" x2="371.25" y2="36.9"/><circle class="lv-pin__dot" cx="371.25" cy="66.9" r="5"/></g>
-        <g class="lv-pin lv-pin--fsbo" style="--i:1"><line class="lv-pin__ray" x1="63.4" y1="238.7" x2="63.4" y2="208.7"/><circle class="lv-pin__dot" cx="63.4" cy="238.7" r="5"/></g>
-        <g class="lv-pin lv-pin--dist" style="--i:2"><line class="lv-pin__ray" x1="487.1" y1="227.9" x2="487.1" y2="197.9"/><circle class="lv-pin__dot" cx="487.1" cy="227.9" r="5"/></g>
-        <g class="lv-pin lv-pin--exp" style="--i:3"><line class="lv-pin__ray" x1="251.4" y1="394.4" x2="251.4" y2="364.4"/><circle class="lv-pin__dot" cx="251.4" cy="394.4" r="5"/></g>
-        <g class="lv-pin lv-pin--frbo" style="--i:4"><line class="lv-pin__ray" x1="174.3" y1="124.9" x2="174.3" y2="94.9"/><circle class="lv-pin__dot" cx="174.3" cy="124.9" r="5"/></g>
+        <g class="lv-pin lv-pin--pre" data-side="right" style="--i:0"><line class="lv-pin__ray" x1="321" y1="150.6" x2="321" y2="120.6"/><g transform="translate(321 150.6)"><ellipse class="lv-pin__pulse" rx="6" ry="2.4"/><g class="lv-pin__dot"><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></g></g></g>
+        <g class="lv-pin lv-pin--fsbo" data-side="right" style="--i:1"><line class="lv-pin__ray" x1="183.5" y1="210.6" x2="183.5" y2="180.6"/><g transform="translate(183.5 210.6)"><ellipse class="lv-pin__pulse" rx="6" ry="2.4"/><g class="lv-pin__dot"><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></g></g></g>
+        <g class="lv-pin lv-pin--dist" data-side="right" style="--i:2"><line class="lv-pin__ray" x1="321" y1="249.8" x2="321" y2="219.8"/><g transform="translate(321 249.8)"><ellipse class="lv-pin__pulse" rx="6" ry="2.4"/><g class="lv-pin__dot"><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></g></g></g>
+        <g class="lv-pin lv-pin--exp" data-side="right" style="--i:3"><line class="lv-pin__ray" x1="176.6" y1="330.6" x2="176.6" y2="300.6"/><g transform="translate(176.6 330.6)"><ellipse class="lv-pin__pulse" rx="6" ry="2.4"/><g class="lv-pin__dot"><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></g></g></g>
+        <g class="lv-pin lv-pin--frbo" data-side="right" style="--i:4"><line class="lv-pin__ray" x1="224.8" y1="187.5" x2="224.8" y2="157.5"/><g transform="translate(224.8 187.5)"><ellipse class="lv-pin__pulse" rx="6" ry="2.4"/><g class="lv-pin__dot"><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></g></g></g>
+        <g class="lv-pin lv-pin--pre" data-side="right" style="--i:5"><line class="lv-pin__ray" x1="286.6" y1="302.9" x2="286.6" y2="272.9"/><g transform="translate(286.6 302.9)"><ellipse class="lv-pin__pulse" rx="6" ry="2.4"/><g class="lv-pin__dot"><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd" vector-effect="non-scaling-stroke"/></g></g></g>
       </svg>
-      <div class="lv-prop-card lv-prop-card--pre" style="--i:0;--dx:371.25;--dy:66.9;--tw:90"><span class="lv-prop-card__tag">Pre-foreclosure</span><span class="lv-prop-card__addr">438 H St.</span></div>
-      <div class="lv-prop-card lv-prop-card--fsbo" style="--i:1;--dx:63.4;--dy:238.7;--tw:46"><span class="lv-prop-card__tag">FSBO</span><span class="lv-prop-card__addr">438 Irving St.</span></div>
-      <div class="lv-prop-card lv-prop-card--dist" style="--i:2;--dx:487.1;--dy:227.9;--tw:72"><span class="lv-prop-card__tag">Distressed</span><span class="lv-prop-card__addr">45 H St.</span></div>
-      <div class="lv-prop-card lv-prop-card--exp" style="--i:3;--dx:251.4;--dy:394.4;--tw:57"><span class="lv-prop-card__tag">Expired</span><span class="lv-prop-card__addr">439 Irving St.</span></div>
-      <div class="lv-prop-card lv-prop-card--frbo" style="--i:4;--dx:174.3;--dy:124.9;--tw:46"><span class="lv-prop-card__tag">FRBO</span><span class="lv-prop-card__addr">27 Mission St.</span></div>
     </div>
     {# Leads list: appears after the pins land. Each lead is one bubble; edit the people, addresses and phone numbers in the "Leads" field. #}
     {% if module.leads %}
-    <div class="lv-leads lv-leads--slider" data-lv-leads-slider>
+    <div class="lv-leads lv-leads--follow" data-lv-leads-follow>
       <div class="lv-leads__glass" aria-hidden="true"></div>
       <ul class="lv-leads__list">
-        {% for lead in module.leads %}{% if loop.index <= 5 %}
+        {% for lead in module.leads %}{% if loop.index <= 6 %}
         <li class="lv-lead lv-lead--{{ lead.kind }}" style="--i:{{ loop.index0 }}"><span class="lv-lead__tag">{{ lead.kind_label }}</span><p class="lv-lead__name">{{ lead.person }}</p><p class="lv-lead__addr">{{ lead.street }}<br>{{ lead.city_zip }}</p><p class="lv-lead__phone"><b>{{ lead.phone }}</b><span class="lv-lead__call"><svg class="lv-icon"><use href="#lv-i-phone"/></svg></span></p></li>
         {% endif %}{% endfor %}
       </ul>

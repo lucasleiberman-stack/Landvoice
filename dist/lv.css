@@ -355,9 +355,9 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
    Ring left edge after the zoom = 100% - zoom * 81.2% of the map width (the ring's left edge is at 18.8% before the zoom, the origin is the right edge). */
 .lv-leads--follow { --lv-fade-len: 100px; }   /* JS sets the real value (about 60% of a card). The card is 3.5 leads tall with the highlighted one centred, and the top and bottom fade out completely. */
 .lv-leads--follow .lv-leads__glass, .lv-leads--follow .lv-leads__list { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--lv-fade-len), #000 calc(100% - var(--lv-fade-len)), transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 var(--lv-fade-len), #000 calc(100% - var(--lv-fade-len)), transparent 100%); }
-@media (min-width: 1101px) { .lv-leads--follow { top: 50%; translate: 0 -50%; } }   /* vertically centred in the hero, level with the text block (the map box is centred on it) */
-@media (min-width: 1101px) { .lv-leads--follow { left: calc((100 - var(--lv-zoom) * 81.2) * 1% + 5.5cqw - var(--lv-leads-w)); } }
-@media (min-width: 1101px) and (prefers-reduced-motion: reduce) { .lv-leads--follow { left: min(76.5%, calc(100% - var(--lv-leads-w) - 5cqw)); } }   /* no zoom: keep it on the right where there is room */
+@media (min-width: 1101px) { .lv-leads.lv-leads--follow { top: 50%; translate: 0 -50%; } }   /* vertically centred in the hero, level with the text block (the map box is centred on it) */
+@media (min-width: 1101px) { .lv-leads.lv-leads--follow { left: calc((100 - var(--lv-zoom) * 81.2) * 1% + 5.5cqw - var(--lv-leads-w)); } }
+@media (min-width: 1101px) and (prefers-reduced-motion: reduce) { .lv-leads.lv-leads--follow { left: min(76.5%, calc(100% - var(--lv-leads-w) - 5cqw)); } }   /* no zoom: keep it on the right where there is room */
 .lv-leads--follow .lv-lead { opacity: .5; animation: lv-slide-in .4s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) backwards; transition: opacity .5s ease; }
 .lv-leads--follow .lv-lead.is-active { opacity: 1; }
 .lv-leads--follow.is-snap .lv-lead { transition: none; }
@@ -382,7 +382,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
   .lv-hero__map:has(.lv-leads--follow) > img, .lv-hero__map:has(.lv-leads--follow) > .lv-circle, .lv-hero__map:has(.lv-leads--follow) > .lv-props { animation: none; }
   .lv-leads--follow .lv-lead { animation: none; transition: none; }
 }
-@media (max-width: 1100px) { .lv-leads--follow .lv-lead:nth-child(n+6) { display: grid; } }
+@media (max-width: 1100px) { .lv-leads--follow .lv-lead:nth-child(n+6) { display: grid; } }   /* two classes: beats hero-leads.css's phone rule whatever the file order */
 /* HERO LEADS SLIDER (v2, local experiment): after the pins land, ONE lead at a time in a vertical slider that shows 1.5 cards.
    Each pin takes a turn being highlighted (JS toggles .is-active on the pin + its pill) and the matching lead slides into view.
    Loads after hero-leads.css and overrides it for .lv-leads--slider. The 10-lead list is git tag hero-list-v1-hubspot. */
@@ -410,7 +410,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 /* EXPERIMENT (local only, not on HubSpot): glass way-point markers. JS (76-leads-slider.js) draws one .lv-mk per SVG pin and hides the SVG pins (.has-mk).
    Each is a round frosted-glass badge with a coloured dot (the list's tag colour) on a thin stem; the highlighted one slides its address out of itself like a small card
    and sends a ripple from its tip. x/y (--tx/--ty) are the tip in the 525-unit pin space; --u is the unit set on .lv-props. */
-.lv-prop-card, .lv-pin__ray { display: none; }
+.lv-props .lv-prop-card, .lv-props .lv-pin__ray { display: none; }   /* two classes: beats hero.css whatever the file order */
 .lv-props.has-mk .lv-pin { display: none; }
 .lv-mk { --c: #5B9BF0; --body-h: 30; --stem: 9;
   position: absolute; z-index: 2; left: calc((var(--tx) - var(--body-h) / 2) * var(--u)); top: calc((var(--ty) - var(--body-h) - var(--stem)) * var(--u)); height: calc((var(--body-h) + var(--stem)) * var(--u)); }

@@ -38,7 +38,7 @@ LV.ready(function () {
     // The SVG pins stay in the markup as the no-JS fallback and as the source of each spot + kind.
     var props = LV.$('.lv-props', map), mks = [];
     pins.forEach(function (p, k) {
-      var g = LV.$('g[transform]', p), m = g && /translate\(([\d.]+)[ ,]+([\d.]+)\)/.exec(g.getAttribute('transform')), kind = /lv-pin--(\w+)/.exec(p.getAttribute('class'));
+      var g = LV.$('g[transform]', p), m = g && /translate\(([\d.]+)[ ,]+([\d.]+)\)/.exec(g.getAttribute('transform')), kind = leads[k] && /lv-lead--(\w+)/.exec(leads[k].className);   // the marker takes its colour from its lead, so editing a lead's property type recolours its marker
       if (!props || !m || !kind || !leads[k]) return;
       var a = LV.$('.lv-lead__addr', leads[k]), street = a && a.firstChild ? a.firstChild.textContent : '';
       var el = document.createElement('div'), body = document.createElement('span'), dot = document.createElement('span'), addr = document.createElement('span'), txt = document.createElement('span'), pulse = document.createElement('span'), kindEl = document.createElement('span'), tag = LV.$('.lv-lead__tag', leads[k]);
