@@ -29,11 +29,11 @@
 .lv-props.has-mk .lv-pin { display: none; }
 .lv-mk { --c: #5B9BF0; --body-h: 30; --stem: 9;
   position: absolute; z-index: 2; left: calc((var(--tx) - var(--body-h) / 2) * var(--u)); top: calc((var(--ty) - var(--body-h) - var(--stem)) * var(--u)); height: calc((var(--body-h) + var(--stem)) * var(--u)); }
-.lv-mk--pre  { --c: #5B9BF0; }
-.lv-mk--fsbo { --c: #FFA24D; }
-.lv-mk--dist { --c: #B79CFA; }
-.lv-mk--exp  { --c: #7ED8A0; }
-.lv-mk--frbo { --c: #FF9CC8; }
+.lv-mk--pre { --c: #5B9BF0; --ink: #0B2A59; }
+.lv-mk--fsbo { --c: #FFA24D; --ink: #6B2D00; }
+.lv-mk--dist { --c: #B79CFA; --ink: #2A1A52; }
+.lv-mk--exp { --c: #7ED8A0; --ink: #06361A; }
+.lv-mk--frbo { --c: #FF9CC8; --ink: #5C1239; }
 .lv-mk.is-left { left: auto; right: calc((525 - var(--tx) - var(--body-h) / 2) * var(--u)); }
 .lv-mk.is-active { z-index: 4; }
 .lv-mk__body { display: flex; align-items: center; height: calc(var(--body-h) * var(--u)); padding: 0 calc((var(--body-h) - 13) / 2 * var(--u)); border-radius: 999px; width: max-content;
@@ -44,6 +44,8 @@
 .lv-mk.is-left .lv-mk__body { margin-left: auto; flex-direction: row-reverse; }   /* slides out to the left; the badge stays over the point */
 .lv-mk__dot { flex: none; width: calc(13 * var(--u)); height: calc(13 * var(--u)); border-radius: 50%; background: var(--c);
   box-shadow: 0 0 0 calc(3.5 * var(--u)) color-mix(in srgb, var(--c) 32%, transparent); transition: scale .4s var(--lv-ease); }
+.lv-mk__kind { margin: 0 0 0 calc(7 * var(--u)); font: 600 calc(12.5 * var(--u))/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); color: var(--ink, var(--lv-ink)); white-space: nowrap; }   /* the property type, always visible */
+.lv-mk.is-left .lv-mk__kind { margin: 0 calc(7 * var(--u)) 0 0; }
 .lv-mk__addr { display: grid; grid-template-columns: 0fr; opacity: 0; margin: 0; transition: grid-template-columns .55s cubic-bezier(.65,0,.25,1), opacity .35s ease, margin .55s cubic-bezier(.65,0,.25,1); }
 .lv-mk__addr > span { min-width: 0; overflow: hidden; white-space: nowrap; font: 700 calc(14 * var(--u))/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); color: var(--lv-ink); }
 .lv-mk.is-active .lv-mk__body { background: rgba(255,255,255,.78); box-shadow: 0 calc(8 * var(--u)) calc(22 * var(--u)) rgba(13,17,23,.2), inset 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.9); }

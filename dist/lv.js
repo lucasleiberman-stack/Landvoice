@@ -278,11 +278,11 @@ LV.ready(function () {
       var g = LV.$('g[transform]', p), m = g && /translate\(([\d.]+)[ ,]+([\d.]+)\)/.exec(g.getAttribute('transform')), kind = /lv-pin--(\w+)/.exec(p.getAttribute('class'));
       if (!props || !m || !kind || !leads[k]) return;
       var a = LV.$('.lv-lead__addr', leads[k]), street = a && a.firstChild ? a.firstChild.textContent : '';
-      var el = document.createElement('div'), body = document.createElement('span'), dot = document.createElement('span'), addr = document.createElement('span'), txt = document.createElement('span'), pulse = document.createElement('span');
-      el.className = 'lv-mk lv-mk--' + kind[1] + (+m[1] > 330 ? ' is-left' : '');   // markers on the right slide out to their left, away from the list card
+      var el = document.createElement('div'), body = document.createElement('span'), dot = document.createElement('span'), addr = document.createElement('span'), txt = document.createElement('span'), pulse = document.createElement('span'), kindEl = document.createElement('span'), tag = LV.$('.lv-lead__tag', leads[k]);
+      el.className = 'lv-mk lv-mk--' + kind[1] + (p.getAttribute('data-side') === 'left' ? ' is-left' : '');   // data-side on each SVG pin says which way its card opens (hand-set so neighbouring markers never overlap and none runs under the list card)
       el.style.setProperty('--tx', m[1]); el.style.setProperty('--ty', m[2]); el.setAttribute('aria-hidden', 'true');
-      body.className = 'lv-mk__body'; dot.className = 'lv-mk__dot'; addr.className = 'lv-mk__addr'; pulse.className = 'lv-mk__pulse'; txt.textContent = street;
-      addr.appendChild(txt); body.appendChild(dot); body.appendChild(addr); el.appendChild(body); el.appendChild(pulse); props.appendChild(el); mks[k] = el;
+      body.className = 'lv-mk__body'; dot.className = 'lv-mk__dot'; kindEl.className = 'lv-mk__kind'; kindEl.textContent = tag ? tag.textContent : ''; addr.className = 'lv-mk__addr'; pulse.className = 'lv-mk__pulse'; txt.textContent = street;
+      addr.appendChild(txt); body.appendChild(dot); body.appendChild(kindEl); body.appendChild(addr); el.appendChild(body); el.appendChild(pulse); props.appendChild(el); mks[k] = el;
     });
     if (mks.length) props.classList.add('has-mk');
     function show(i) {
