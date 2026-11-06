@@ -1,0 +1,21 @@
+{# Split block, standard: the product-page hero (copied from expired-listings.html). Text on one side, an image on the other. Only text and the image are editable; layout and type come from the shared CSS. #}
+{% set band = module.band or 'light' %}
+{% set side = module.image_side or 'right' %}
+<section class="lv-band lv-band--{{ band }}{% if module.flat_top %} lv-band--flat-top{% endif %} lv-pg-hero lv-pg-hero--media-{{ side }}" aria-labelledby="split-title-{{ name }}">
+  <div class="lv-pg-hero__stage">
+    <div class="lv-herocopy">
+      {% if module.eyebrow %}<p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }}</p>{% endif %}
+      <h1 class="lv-h1" id="split-title-{{ name }}" data-lv-reveal style="--lv-delay:.08s">{{ module.headline }}</h1>
+      {% if module.subtext %}<h3 class="lv-lede" data-lv-reveal style="--lv-delay:.16s">{{ module.subtext }}</h3>{% endif %}
+      {% if module.button_1_label or module.button_2_label %}
+      <div class="lv-actions" data-lv-reveal style="--lv-delay:.24s">
+        {% if module.button_1_label %}<a class="lv-btn" href="{{ module.button_1_link.url.href }}"{% if module.button_1_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_1_label }}</span></a>{% endif %}
+        {% if module.button_2_label %}<a class="lv-btn lv-btn--dark" href="{{ module.button_2_link.url.href }}"{% if module.button_2_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_2_label }}</span></a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="lv-pg-hero__media" data-lv-reveal style="--lv-delay:.2s">
+      {% if module.image.src %}<img src="{{ module.image.src }}" alt="{{ module.image.alt }}"{% if module.image.width %} width="{{ module.image.width }}" height="{{ module.image.height }}"{% endif %} loading="eager" style="width:100%;height:100%;object-fit:cover;">{% else %}<div class="lv-ph" data-label="Image: add one in the module settings"></div>{% endif %}
+    </div>
+  </div>
+</section>

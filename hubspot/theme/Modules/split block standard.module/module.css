@@ -1,0 +1,5 @@
+/* split block standard: image on the left puts the text column second on wide screens; below 900px it stacks (text first) like the right-hand version */
+@media (min-width: 901px) {
+  .lv-pg-hero--media-left .lv-pg-hero__stage { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); }
+  .lv-pg-hero--media-left .lv-pg-hero__media { order: -1; }
+}

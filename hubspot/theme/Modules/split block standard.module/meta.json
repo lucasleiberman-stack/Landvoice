@@ -1,0 +1,15 @@
+{
+  "label": "split block standard",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Standard split hero for product pages (Expired Listings, FSBO, Pre-Foreclosure...): eyebrow, headline and supporting line with optional buttons on one side, an image on the other. Light or dark band, image left or right.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
