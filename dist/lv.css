@@ -382,6 +382,18 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-pin.is-active .lv-pin__pulse { animation: lv-pin-pulse 1.8s ease-out infinite; }
 @keyframes lv-pin-pulse { from { opacity: .9; transform: scale(.4); } to { opacity: 0; transform: scale(3.4); } }
 @media (prefers-reduced-motion: reduce) { .lv-pin.is-active .lv-pin__pulse { animation: none; } }
+
+/* address blurb beside the highlighted marker (JS moves one .lv-pin-tip inside .lv-props; x/y are the marker tip in the 525-unit pin space) */
+.lv-pin-tip { position: absolute; left: calc((var(--tx) + 14) * var(--u)); top: calc((var(--ty) - 24) * var(--u)); translate: 0 -50%;
+  display: flex; align-items: center; gap: calc(6 * var(--u)); padding: calc(5 * var(--u)) calc(11 * var(--u)) calc(5 * var(--u)) calc(8 * var(--u)); border-radius: 999px; white-space: nowrap;
+  background: rgba(255,255,255,.95); -webkit-backdrop-filter: blur(calc(8 * var(--u))); backdrop-filter: blur(calc(8 * var(--u)));
+  box-shadow: 0 calc(6 * var(--u)) calc(16 * var(--u)) rgba(13,17,23,.2), 0 0 0 calc(1 * var(--u)) rgba(255,255,255,.7);
+  font: 700 calc(14.5 * var(--u))/1 var(--lv-font-body); letter-spacing: var(--lv-ls-sub); color: var(--lv-ink);
+  opacity: 0; transform: translateX(calc(-6 * var(--u))); transition: opacity .25s ease, transform .35s var(--lv-ease); pointer-events: none; z-index: 3; }
+.lv-pin-tip::before { content: ""; flex: none; width: calc(7 * var(--u)); height: calc(7 * var(--u)); border-radius: 50%; background: var(--c); }
+.lv-pin-tip.is-left { left: calc((var(--tx) - 14) * var(--u)); translate: -100% -50%; transform: translateX(calc(6 * var(--u))); }
+.lv-pin-tip.is-on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .lv-pin-tip { transition: none; } }
 /* HERO LEADS LIST: a glass card on the map that lists the leads at the five pinned addresses. It fades in once the pins have drawn in
    (last pin pill finishes ~6.3s), then the rows appear one by one in pin order. Sizes scale with the map width (cqw).
    Each row: property label, name, address, then the two phone numbers stacked, each with a green call button. Dividers run edge to edge. */

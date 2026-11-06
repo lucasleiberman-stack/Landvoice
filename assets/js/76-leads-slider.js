@@ -15,9 +15,28 @@ LV.ready(function () {
       card.style.height = Math.round(pad + h + gap + h / 2) + 'px';
       list.style.transform = 'translateY(' + -(all[idx].offsetTop - pad) + 'px)';
     }
+    // address blurb next to the highlighted marker: one floating label inside .lv-props, moved + re-filled for each pin
+    var props = LV.$('.lv-props', map), tip = null, tipTimer = 0, spots = pins.map(function (p) {
+      var g = LV.$('g[transform]', p), m = g && /translate\(([\d.]+)[ ,]+([\d.]+)\)/.exec(g.getAttribute('transform'));
+      return m ? { x: +m[1], y: +m[2] } : null;
+    });
+    if (props) { tip = document.createElement('div'); tip.className = 'lv-pin-tip'; tip.setAttribute('aria-hidden', 'true'); props.appendChild(tip); }
+    function showTip(k) {
+      if (!tip || !spots[k]) return;
+      clearTimeout(tipTimer); tip.classList.remove('is-on');
+      tipTimer = setTimeout(function () {   // fade the old one out, then move + refill + fade in
+        var a = LV.$('.lv-lead__addr', leads[k]), street = a && a.firstChild ? a.firstChild.textContent : '';
+        tip.textContent = street;
+        tip.style.setProperty('--tx', spots[k].x); tip.style.setProperty('--ty', spots[k].y);
+        tip.style.setProperty('--c', getComputedStyle(pins[k]).getPropertyValue('--c'));
+        tip.classList.toggle('is-left', spots[k].x > 330);   // markers on the right put the blurb on their left, away from the list card
+        tip.classList.add('is-on');
+      }, 220);
+    }
     function show(i) {
       idx = i; measure();
       var k = i % n;
+      showTip(k);
       all.forEach(function (li, j) { li.classList.toggle('is-active', j === i); });
       pins.forEach(function (p, j) { p.classList.toggle('is-active', j === k); });
       pills.forEach(function (p, j) { p.classList.toggle('is-active', j === k); });
