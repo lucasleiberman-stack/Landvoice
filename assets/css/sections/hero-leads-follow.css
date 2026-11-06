@@ -40,11 +40,11 @@
 }
 @media (max-width: 1100px) { .lv-leads--follow .lv-lead:nth-child(n+6) { display: grid; } }   /* two classes: beats hero-leads.css's phone rule whatever the file order */
 
-/* EXPERIMENT (local only): a blue blur behind the list, the same colour as the glow behind the app logos in the integrations image (#006FFE, sampled from integrations-cluster-v2; softened to 28%, shifted so it only shows a little on the left of the list).
-   It sits behind the glass, so the glass frosts it. It fades in with the list. */
+/* EXPERIMENT (local only): a blue blur behind the list, the same colour as the glow behind the app logos in the integrations image (#006FFE, sampled from integrations-cluster-v2; softened to 28%, centred behind the list, and fades in only after the whole list has animated in).
+   It sits behind the glass, so the glass frosts it.  */
 .lv-leads--follow { overflow: visible; isolation: isolate; }
-.lv-leads--follow::before { content: ""; position: absolute; z-index: -1; inset: 12% 10% 12% -9%; border-radius: 50%; background: #006FFE; opacity: .28; filter: blur(clamp(36px, 5.5cqw, 64px)); pointer-events: none;
-  animation: lv-leads-glow .9s var(--lv-ease) var(--lv-leads-start) backwards; }
+.lv-leads--follow::before { content: ""; position: absolute; z-index: -1; inset: 10% -4%; border-radius: 50%; background: #006FFE; opacity: .28; filter: blur(clamp(36px, 5.5cqw, 64px)); pointer-events: none;
+  animation: lv-leads-glow .9s var(--lv-ease) calc(var(--lv-leads-start) + .3s + 5 * var(--lv-leads-step) + .4s) backwards; }   /* starts once the last visible card has finished coming in */
 @keyframes lv-leads-glow { from { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .lv-leads--follow::before { animation: none; } }
 
