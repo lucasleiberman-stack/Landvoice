@@ -355,7 +355,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
    Ring left edge after the zoom = 100% - zoom * 81.2% of the map width (the ring's left edge is at 18.8% before the zoom, the origin is the right edge). */
 .lv-leads--follow { --lv-fade-len: 100px; }   /* JS sets the real value (about 60% of a card). The card is 3.5 leads tall with the highlighted one centred, and the top and bottom fade out completely. */
 .lv-leads--follow .lv-leads__glass, .lv-leads--follow .lv-leads__list { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 var(--lv-fade-len), #000 calc(100% - var(--lv-fade-len)), transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 var(--lv-fade-len), #000 calc(100% - var(--lv-fade-len)), transparent 100%); }
-@media (min-width: 1101px) { .lv-leads--follow { top: 56.1%; translate: 0 -50%; } }   /* vertically centred on the circle */
+@media (min-width: 1101px) { .lv-leads--follow { top: 50%; translate: 0 -50%; } }   /* vertically centred in the hero, level with the text block (the map box is centred on it) */
 @media (min-width: 1101px) { .lv-leads--follow { left: calc((100 - var(--lv-zoom) * 81.2) * 1% + 1.3cqw - var(--lv-leads-w)); } }
 @media (min-width: 1101px) and (prefers-reduced-motion: reduce) { .lv-leads--follow { left: min(76.5%, calc(100% - var(--lv-leads-w) - 5cqw)); } }   /* no zoom: keep it on the right where there is room */
 .lv-leads--follow .lv-lead { opacity: .5; animation: lv-slide-in .4s var(--lv-ease) calc(var(--lv-leads-start) + .3s + var(--i) * var(--lv-leads-step)) backwards; transition: opacity .5s ease; }
