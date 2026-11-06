@@ -25,8 +25,7 @@
 /* EXPERIMENT (local only, not on HubSpot): glass way-point markers. JS (76-leads-slider.js) draws one .lv-mk per SVG pin and hides the SVG pins (.has-mk).
    Each is a round frosted-glass badge with a coloured dot (the list's tag colour) on a thin stem; the highlighted one slides its address out of itself like a small card
    and sends a ripple from its tip. x/y (--tx/--ty) are the tip in the 525-unit pin space; --u is the unit set on .lv-props. */
-.lv-props .lv-prop-card, .lv-props .lv-pin__ray { display: none; }   /* two classes: beats hero.css whatever the file order */
-.lv-props.has-mk .lv-pin { display: none; }
+.lv-props.has-mk .lv-prop-card, .lv-props.has-mk .lv-pin__ray, .lv-props.has-mk .lv-pin { display: none; }   /* only once JS has drawn the glass markers (.has-mk), so the OG hero module keeps its pills; three classes beat hero.css whatever the file order */
 .lv-mk { --c: #5B9BF0; --body-h: 30; --stem: 9;
   position: absolute; z-index: 2; left: calc((var(--tx) - var(--body-h) / 2) * var(--u)); top: calc((var(--ty) - var(--body-h) - var(--stem)) * var(--u)); height: calc((var(--body-h) + var(--stem)) * var(--u)); }
 .lv-mk--pre { --c: #5B9BF0; --ink: #0B2A59; }
