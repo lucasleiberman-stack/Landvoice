@@ -22,8 +22,19 @@
 @media (max-width: 1100px) { .lv-leads--slider .lv-lead:nth-child(n+6) { display: grid; }   /* v1 hid the 6th+ card on small screens; the slider's loop clone is the 6th */
   .lv-leads.lv-leads--slider { top: auto; translate: none; } }
 
-/* EXPERIMENT (local only, not on HubSpot): the points carry no text and are little way-point markers (teardrop + white centre, tip on the location). Pills and rays are hidden;
-   the highlighted marker scales up from its tip with a soft glow. */
+/* EXPERIMENT (local only, not on HubSpot): the points carry no text and are modern way-point markers (round head, short point, tip on the location; white edge, dark centre).
+   Colours are exactly the list's tag colours (--c = tag background, --ink = tag text) so a marker and its lead card match. Pills and rays are hidden.
+   The highlighted marker scales up from its tip, glows, and sends out a ground ripple. */
 .lv-prop-card, .lv-pin__ray { display: none; }
-.lv-pin__dot { transform-origin: 50% 100%; scale: 1.35; stroke-linejoin: round; transition: scale .5s var(--lv-ease), filter .5s ease; }   /* hero.css gives it transform-box: fill-box; origin = bottom centre = the tip */
-.lv-pin.is-active .lv-pin__dot { scale: 2.1; filter: drop-shadow(0 0 7px var(--c)) drop-shadow(0 1px 2px rgba(13,17,23,.35)); }
+.lv-pin.lv-pin--pre  { --c: #5B9BF0; --ink: #0B2A59; }
+.lv-pin.lv-pin--fsbo { --c: #FFA24D; --ink: #6B2D00; }
+.lv-pin.lv-pin--dist { --c: #B79CFA; --ink: #2A1A52; }
+.lv-pin.lv-pin--exp  { --c: #7ED8A0; --ink: #06361A; }
+.lv-pin.lv-pin--frbo { --c: #FF9CC8; --ink: #5C1239; }
+.lv-pin__dot { transform-origin: 50% 100%; scale: 1.25; stroke-width: 1.6; stroke-linejoin: round; transition: scale .5s var(--lv-ease), filter .5s ease; }   /* hero.css gives it transform-box: fill-box; origin = bottom centre = the tip */
+.lv-pin__dot circle { fill: var(--ink); stroke: none; }
+.lv-pin.is-active .lv-pin__dot { scale: 1.9; filter: drop-shadow(0 0 6px var(--c)) drop-shadow(0 2px 3px rgba(13,17,23,.4)); }
+.lv-pin__pulse { fill: none; stroke: var(--c); stroke-width: 1.5; vector-effect: non-scaling-stroke; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.lv-pin.is-active .lv-pin__pulse { animation: lv-pin-pulse 1.8s ease-out infinite; }
+@keyframes lv-pin-pulse { from { opacity: .9; transform: scale(.4); } to { opacity: 0; transform: scale(3.4); } }
+@media (prefers-reduced-motion: reduce) { .lv-pin.is-active .lv-pin__pulse { animation: none; } }
