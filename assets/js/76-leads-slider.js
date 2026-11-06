@@ -18,6 +18,8 @@ LV.ready(function () {
       leads.forEach(function (l) { var c = l.cloneNode(true); c.setAttribute('aria-hidden', 'true'); before.push(c); list.insertBefore(c, leads[0]); });
       leads.forEach(function (l) { var c = l.cloneNode(true); c.setAttribute('aria-hidden', 'true'); after.push(c); list.appendChild(c); });
       all = before.concat(leads, after); idx = n;
+      // entrance order = top to bottom as seen: stagger by position from the sliver above the highlighted lead (the copies share their originals' --i, which made the list fill in out of order)
+      all.forEach(function (li, j) { li.style.setProperty('--i', Math.min(5, Math.max(0, j - (idx - 2)))); });
     }
 
     function measure() {
