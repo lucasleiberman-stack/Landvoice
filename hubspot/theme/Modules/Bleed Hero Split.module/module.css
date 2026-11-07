@@ -5,7 +5,7 @@
   padding-left: max(var(--lv-gutter), calc((100% - var(--lv-max-hero)) / 2 + var(--lv-gutter))); padding-right: 0; }
 .lv-bleed-hero__media { min-width: 0; }
 .lv-bleed-hero .lv-herocopy { position: relative; z-index: 1; }
-.lv-bleed-hero__media img { display: block; width: 52vw; max-width: none; margin-left: min(0px, calc(100% - 52vw)); height: auto; pointer-events: none; }   /* 52vw wide, right edge on the screen edge; if the column is narrower than that it grows to the left only (the image's own empty margin) */
+.lv-bleed-hero__media img { display: block; width: 52vw; max-width: none; margin-left: calc(100% - 52vw); height: auto; pointer-events: none; }   /* 52vw wide and always pushed against the right edge of its column (= the screen edge): on very wide screens the column is wider than the image, so the margin is positive and the image hugs the right; on narrower ones the margin is negative and it grows to the left only (the image's own empty margin) */
 @media (max-width: 900px) {
   .lv-bleed-hero__stage { grid-template-columns: 1fr; padding-left: var(--lv-gutter); }
   .lv-bleed-hero__media img { width: 100%; margin-left: 0; }
