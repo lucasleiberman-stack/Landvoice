@@ -1,6 +1,6 @@
 /* Bleed Hero Split: text column on the left, aligned with the page's content edge; the image column runs from there to the right edge of the screen (no right padding),
    and the image is wide, so it hangs off the edge. Below 900px the two stack and the image still runs to the right edge. */
-/* vertical padding: none set here, so it uses the standard product-hero padding (.lv-pg-hero) like the split block standard */
+.lv-bleed-hero { padding-block: clamp(8px, 1.2vw, 20px); }   /* small: the image has about 18% of empty (transparent) space above and below the device, which already acts as the standard hero padding */
 .lv-bleed-hero__stage { display: grid; grid-template-columns: minmax(0, min(42rem, 48%)) minmax(0, 1fr); gap: clamp(16px, 2.5vw, 48px); align-items: center;
   padding-left: max(var(--lv-gutter), calc((100% - var(--lv-max-hero)) / 2 + var(--lv-gutter))); padding-right: 0; }
 .lv-bleed-hero__media { min-width: 0; }
