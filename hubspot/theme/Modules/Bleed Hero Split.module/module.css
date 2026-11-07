@@ -1,11 +1,11 @@
 /* Bleed Hero Split: text column on the left, aligned with the page's content edge; the image column runs from there to the right edge of the screen (no right padding),
    and the image is wide, so it hangs off the edge. Below 900px the two stack and the image still runs to the right edge. */
 .lv-bleed-hero { padding-block: clamp(24px, 3vw, 56px); }
-.lv-bleed-hero__stage { display: grid; grid-template-columns: minmax(0, min(34rem, 42%)) minmax(0, 1fr); gap: clamp(16px, 2.5vw, 48px); align-items: center;
+.lv-bleed-hero__stage { display: grid; grid-template-columns: minmax(0, min(42rem, 48%)) minmax(0, 1fr); gap: clamp(16px, 2.5vw, 48px); align-items: center;
   padding-left: max(var(--lv-gutter), calc((100% - var(--lv-max-hero)) / 2 + var(--lv-gutter))); padding-right: 0; }
 .lv-bleed-hero__media { min-width: 0; }
 .lv-bleed-hero .lv-herocopy { position: relative; z-index: 1; }
-.lv-bleed-hero__media img { display: block; width: calc(100% + 14%); max-width: none; margin-left: -14%; height: auto; pointer-events: none; }   /* a bit wider than its column, growing to the left only (that part is the image's own empty margin); the right edge stays at the screen edge */
+.lv-bleed-hero__media img { display: block; width: 52vw; max-width: none; margin-left: min(0px, calc(100% - 52vw)); height: auto; pointer-events: none; }   /* 52vw wide, right edge on the screen edge; if the column is narrower than that it grows to the left only (the image's own empty margin) */
 @media (max-width: 900px) {
   .lv-bleed-hero__stage { grid-template-columns: 1fr; padding-left: var(--lv-gutter); }
   .lv-bleed-hero__media img { width: 100%; margin-left: 0; }
