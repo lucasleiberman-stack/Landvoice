@@ -1,0 +1,15 @@
+{
+  "label": "Bleed Hero Split",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Split hero for product pages: eyebrow, headline, supporting line and two optional buttons on the left; a large image on the right that runs off the edge of the screen. Light or dark band.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}

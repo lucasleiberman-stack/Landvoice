@@ -1,0 +1,130 @@
+[ {
+  "id" : "band",
+  "name" : "band",
+  "label" : "Band colour",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "light"
+}, {
+  "id" : "flat_top",
+  "name" : "flat_top",
+  "label" : "Flat top (use when this block sits right under the header)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Expired listings"
+}, {
+  "id" : "headline",
+  "name" : "headline",
+  "label" : "Headline",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Why Expired Listings Are the Fastest Path to More Listings"
+}, {
+  "id" : "subtext",
+  "name" : "subtext",
+  "label" : "Supporting paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Expired leads are homeowners who have already decided to move. The majority of expireds make a decision to relist their home within the first thirty days."
+}, {
+  "id" : "button_1_label",
+  "name" : "button_1_label",
+  "label" : "Primary button label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started"
+}, {
+  "id" : "button_1_link",
+  "name" : "button_1_link",
+  "label" : "Primary button link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "#pricing",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "button_2_label",
+  "name" : "button_2_label",
+  "label" : "Secondary button label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Live Demo"
+}, {
+  "id" : "button_2_link",
+  "name" : "button_2_link",
+  "label" : "Secondary button link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "#demo",
+      "type" : "EXTERNAL"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "image",
+  "name" : "image",
+  "label" : "Image (leave empty for the default tablet screenshot)",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

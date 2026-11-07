@@ -1,0 +1,22 @@
+{# Bleed Hero Split: same type and spacing as the standard split hero, but the image is larger and runs off the right edge of the screen. The default image is the Expireds list on a tablet (theme images/bleed-hero-tablet.png). #}
+{% set band = module.band or 'light' %}
+{% set img_src = module.image.src or get_asset_url('/Landvoice - 2026 Redesign/images/bleed-hero-tablet.png') %}
+{% set img_alt = module.image.alt or 'Landvoice Lead Manager showing a list of expired listings with owner names and phone numbers' %}
+<section class="lv-band lv-band--{{ band }}{% if module.flat_top %} lv-band--flat-top{% endif %} lv-pg-hero lv-bleed-hero" aria-labelledby="bleed-title-{{ name }}">
+  <div class="lv-bleed-hero__stage">
+    <div class="lv-herocopy">
+      {% if module.eyebrow %}<p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }}</p>{% endif %}
+      <h1 class="lv-h1" id="bleed-title-{{ name }}" data-lv-reveal style="--lv-delay:.08s">{{ module.headline }}</h1>
+      {% if module.subtext %}<h3 class="lv-lede" data-lv-reveal style="--lv-delay:.16s">{{ module.subtext }}</h3>{% endif %}
+      {% if module.button_1_label or module.button_2_label %}
+      <div class="lv-actions" data-lv-reveal style="--lv-delay:.24s">
+        {% if module.button_1_label %}<a class="lv-btn" href="{{ module.button_1_link.url.href }}"{% if module.button_1_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_1_label }}</span></a>{% endif %}
+        {% if module.button_2_label %}<a class="lv-btn lv-btn--dark" href="{{ module.button_2_link.url.href }}"{% if module.button_2_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_2_label }}</span></a>{% endif %}
+      </div>
+      {% endif %}
+    </div>
+    <div class="lv-bleed-hero__media" data-lv-reveal style="--lv-delay:.2s">
+      <img src="{{ img_src }}" alt="{{ img_alt }}" loading="eager">
+    </div>
+  </div>
+</section>
