@@ -563,10 +563,17 @@
       <p class="lv-eyebrow">Flexible plans</p>
       <h2 class="lv-h2 lv-h2--xl" id="pricing-title">Choose the Right Plan<br>to Power Your Workflow</h2>
     </header>
-    <div class="lv-plans">
+    <div class="lv-pricing__billing" data-lv-reveal>
+      <div class="lv-billing" role="tablist" aria-label="Billing period" data-lv-billing>
+        <button class="lv-billing__tab" type="button" role="tab" data-lv-period="monthly" aria-selected="false" tabindex="-1">Monthly</button>
+        <button class="lv-billing__tab" type="button" role="tab" data-lv-period="quarterly" aria-selected="false" tabindex="-1">Quarterly</button>
+        <button class="lv-billing__tab" type="button" role="tab" data-lv-period="annual" aria-selected="true">Annually</button>
+      </div>
+    </div>
+    <div class="lv-plans" data-lv-plans data-period="annual">
       <article class="lv-plan" data-lv-reveal>
         <p class="lv-plan__name">Starter</p>
-        <p class="lv-plan__price">$797</p><p class="lv-plan__save">Pay Annually and Save $247</p>
+        <p class="lv-plan__price"><span class="lv-plan__amt lv-plan__amt--monthly">$87 <small>/mo</small></span><span class="lv-plan__amt lv-plan__amt--quarterly">$237 <small>/qtr</small></span><span class="lv-plan__amt lv-plan__amt--annual">$797 <small>/yr</small></span></p><p class="lv-plan__save">Pay Annually and Save $247</p>
         <ul class="lv-plan__list">
           <li>Expired Listings <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>FSBO Data <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Pre-Foreclosure <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Neighborhood Search <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Scripts <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>
         </ul>
@@ -575,7 +582,7 @@
       <article class="lv-plan lv-plan--pro" data-lv-reveal style="--lv-delay:.08s">
         <span class="lv-plan__badge">Most popular</span>
         <p class="lv-plan__name">Pro</p>
-        <p class="lv-plan__price">$1,770</p><p class="lv-plan__save">Pay Annually and Save $514</p>
+        <p class="lv-plan__price"><span class="lv-plan__amt lv-plan__amt--monthly">$177 <small>/mo</small></span><span class="lv-plan__amt lv-plan__amt--quarterly">$500 <small>/qtr</small></span><span class="lv-plan__amt lv-plan__amt--annual">$1,770 <small>/yr</small></span></p><p class="lv-plan__save">Pay Annually and Save $354</p>
         <p class="lv-plan__note">Includes Expired Pro, which is an enhanced data set that gets up to 6 months of listing data for Expireds.</p>
         <ul class="lv-plan__list">
           <li>Everything in Starter <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Area Pro <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Remine <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>
@@ -584,7 +591,7 @@
       </article>
       <article class="lv-plan" data-lv-reveal style="--lv-delay:.16s">
         <p class="lv-plan__name">Elite</p>
-        <p class="lv-plan__price">$1,997</p><p class="lv-plan__save">Pay Annually and Save $737</p>
+        <p class="lv-plan__price"><span class="lv-plan__amt lv-plan__amt--monthly">$227 <small>/mo</small></span><span class="lv-plan__amt lv-plan__amt--quarterly">$597 <small>/qtr</small></span><span class="lv-plan__amt lv-plan__amt--annual">$1,997 <small>/yr</small></span></p><p class="lv-plan__save">Pay Annually and Save $727</p>
         <ul class="lv-plan__list">
           <li>Everything in Pro <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Divorce <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Probate <svg class="lv-icon"><use href="#lv-i-check"/></svg></li><li>Pre-Probate <svg class="lv-icon"><use href="#lv-i-check"/></svg></li>
         </ul>
@@ -667,5 +674,6 @@
 <script src="assets/js/75-leads.js"></script>
 <script src="assets/js/76-leads-slider.js"></script>
 <script src="assets/js/80-media.js"></script>
+<script src="assets/js/85-billing.js"></script>
 </body>
 </html>

@@ -1,16 +1,34 @@
-{# Dark band: plan cards. Variants: standard, pro (highlighted, with a badge), byo (build your own: lines of text instead of a checklist, dark button). #}
+{# Dark band: plan cards with Monthly / Quarterly / Annually tabs. Variants: standard, pro (highlighted, with a badge), byo (build your own: lines of text instead of a checklist, dark button).
+   A plan with a monthly or quarterly price changes with the tabs (its "Annual price" field is the annual one); a plan without them (e.g. Build your own) shows its one price on every tab. #}
+{% set period = module.default_period or 'annual' %}
 <section class="lv-band lv-band--dark lv-section" id="pricing" aria-labelledby="pricing-title">
   <div class="lv-container lv-container--wide">
     <header class="lv-pricing__head" data-lv-reveal>
       <p class="lv-eyebrow">{{ module.eyebrow }}</p>
       <h2 class="lv-h2 lv-h2--xl" id="pricing-title">{{ module.headline_line_1 }}{% if module.headline_line_2 %}<br>{{ module.headline_line_2 }}{% endif %}</h2>
     </header>
-    <div class="lv-plans">
+    <div class="lv-pricing__billing" data-lv-reveal>
+      <div class="lv-billing" role="tablist" aria-label="Billing period" data-lv-billing>
+        <button class="lv-billing__tab" type="button" role="tab" data-lv-period="monthly" aria-selected="{{ 'true' if period == 'monthly' else 'false' }}"{% if period != 'monthly' %} tabindex="-1"{% endif %}>{{ module.tab_monthly or 'Monthly' }}</button>
+        <button class="lv-billing__tab" type="button" role="tab" data-lv-period="quarterly" aria-selected="{{ 'true' if period == 'quarterly' else 'false' }}"{% if period != 'quarterly' %} tabindex="-1"{% endif %}>{{ module.tab_quarterly or 'Quarterly' }}</button>
+        <button class="lv-billing__tab" type="button" role="tab" data-lv-period="annual" aria-selected="{{ 'true' if period == 'annual' else 'false' }}"{% if period != 'annual' %} tabindex="-1"{% endif %}>{{ module.tab_annual or 'Annually' }}</button>
+      </div>
+    </div>
+    <div class="lv-plans" data-lv-plans data-period="{{ period }}">
       {% for plan in module.plans %}
       <article class="lv-plan{% if plan.variant == 'pro' %} lv-plan--pro{% elif plan.variant == 'byo' %} lv-plan--byo{% endif %}" data-lv-reveal{% if loop.index0 > 0 %} style="--lv-delay:{{ loop.index0 * 0.08 }}s"{% endif %}>
         {% if plan.badge %}<span class="lv-plan__badge">{{ plan.badge }}</span>{% endif %}
         <p class="lv-plan__name">{{ plan.plan_name }}</p>
-        <p class="lv-plan__price">{{ plan.price }}{% if plan.price_suffix %} <small>{{ plan.price_suffix }}</small>{% endif %}</p>{% if plan.save_text %}<p class="lv-plan__save">{{ plan.save_text }}</p>{% endif %}
+        {% if plan.price_monthly or plan.price_quarterly %}
+        <p class="lv-plan__price">
+          <span class="lv-plan__amt lv-plan__amt--monthly">{{ plan.price_monthly }}{% if module.suffix_monthly %} <small>{{ module.suffix_monthly }}</small>{% endif %}</span>
+          <span class="lv-plan__amt lv-plan__amt--quarterly">{{ plan.price_quarterly }}{% if module.suffix_quarterly %} <small>{{ module.suffix_quarterly }}</small>{% endif %}</span>
+          <span class="lv-plan__amt lv-plan__amt--annual">{{ plan.price }}{% if plan.price_suffix or module.suffix_annual %} <small>{{ plan.price_suffix or module.suffix_annual }}</small>{% endif %}</span>
+        </p>
+        {% if plan.save_text %}<p class="lv-plan__save">{{ plan.save_text }}</p>{% endif %}
+        {% else %}
+        <p class="lv-plan__price">{{ plan.price }}{% if plan.price_suffix %} <small>{{ plan.price_suffix }}</small>{% endif %}</p>{% if plan.save_text %}<p class="lv-plan__save lv-plan__save--always">{{ plan.save_text }}</p>{% endif %}
+        {% endif %}
         {% if plan.note %}<p class="lv-plan__note">{{ plan.note }}</p>{% endif %}
         {% if plan.variant == 'byo' %}
         {% for line in plan.features|split(',') %}<p>{{ line|trim }}</p>{% endfor %}

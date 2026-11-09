@@ -609,6 +609,24 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-plan--byo p { margin-top: .9rem; }
 @media (max-width: 1100px) { .lv-plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px)  { .lv-plans { grid-template-columns: 1fr; } }
+
+/* BILLING TABS (Monthly / Quarterly / Annually): a segmented control under the heading. Plans carry all three prices in the markup (.lv-plan__amt--monthly/--quarterly/--annual);
+   [data-period] on .lv-plans (set by assets/js/85-billing.js, and in the HTML for no-JS) decides which one shows. A plan with a single price (no .lv-plan__amt spans) is unaffected. */
+.lv-pricing__billing { display: flex; justify-content: flex-start; margin-top: clamp(28px, 3.5vw, 44px); }
+.lv-billing { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); }
+.lv-billing__tab { padding: .8em 1.7em; border: 0; border-radius: 999px; background: transparent; color: var(--lv-fg-muted); font: 500 .98rem/1 var(--lv-font-display); letter-spacing: -.01em; cursor: pointer; transition: background .3s var(--lv-ease), color .3s var(--lv-ease); }
+.lv-billing__tab:hover { color: var(--lv-fg); }
+.lv-billing__tab[aria-selected="true"] { background: var(--lv-blue); color: #fff; }
+.lv-billing__tab:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lv-plan__price .lv-plan__amt { display: inline-block; }
+.lv-plans[data-period="monthly"] .lv-plan__amt:not(.lv-plan__amt--monthly),
+.lv-plans[data-period="quarterly"] .lv-plan__amt:not(.lv-plan__amt--quarterly),
+.lv-plans[data-period="annual"] .lv-plan__amt:not(.lv-plan__amt--annual) { display: none; }
+.lv-plans:not([data-period="annual"]) .lv-plan__save:not(.lv-plan__save--always) { visibility: hidden; }   /* the "pay annually and save" line only belongs to the annual tab; hidden (not removed) so the cards don't change height */
+.lv-plan__amt { animation: lv-plan-amt-in .4s var(--lv-ease) both; }
+@keyframes lv-plan-amt-in { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .lv-plan__amt { animation: none; } .lv-billing__tab { transition: none; } }
+@media (max-width: 480px) { .lv-billing__tab { padding: .8em 1.1em; font-size: .9rem; } }
 /* PRODUCT PAGE: shared layout for every product page (expired-listings.html is the template).
    Reuses bands, type, buttons, tags, steps and the FAQ accordion; only the pieces below are new. */
 .lv-pg-hero { overflow: hidden; padding-block: clamp(64px, 9vw, 140px); }
