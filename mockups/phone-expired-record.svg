@@ -1,0 +1,109 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>Landvoice: expired lead record (phone, phone numbers highlighted)</title>
+<rect id="Screen" width="390" height="844" rx="0" fill="#FFFFFF"/>
+<g id="Status + MLS"><rect x="16" y="16" width="178" height="32" rx="8" fill="#DDF2E4"/>
+<text x="28" y="37" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#2FB863">Expired: 11/10/2026</text>
+<text x="232" y="30" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#8A94A6">MLS ID:</text>
+<text x="232" y="48" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#8A94A6">66138420</text>
+<g transform="translate(338 34) scale(0.75)" fill="none" stroke="#8A94A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
+</g>
+<g id="Link icons">
+<g transform="translate(16 66) scale(1.15)" fill="none" stroke="#555E6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></g>
+<g transform="translate(50 66) scale(1.15)" fill="none" stroke="#555E6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10M9 16h6l-6-4h6"/></g>
+<g transform="translate(84 66) scale(1.15)" fill="none" stroke="#555E6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 9V4h10v5M7 17H4v-7h16v7h-3M7 14h10v6H7z"/></g>
+<g transform="translate(118 66) scale(1.15)" fill="none" stroke="#555E6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></g>
+<g transform="translate(152 66) scale(1.15)" fill="none" stroke="#555E6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 16h5"/></g>
+<g transform="translate(186 66) scale(1.15)" fill="none" stroke="#555E6B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h.01M12 12h.01M12 18h.01"/></g>
+</g>
+<g id="Address">
+<text x="16" y="118" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#1B2230">42 Binary Sunset Lane,</text>
+<text x="16" y="145" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#1B2230">Mos Eisley, TA 99001</text>
+</g>
+<g id="Specs">
+<g transform="translate(16 166) scale(0.78)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V7M3 14h18v4M21 14v-2.5a2.5 2.5 0 0 0-2.5-2.5H11v5M6.5 12.5h.01"/></g>
+<text x="39" y="180" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5260">3 Bed</text>
+<g transform="translate(100 166) scale(0.78)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM6 12V6a2 2 0 0 1 4 0M8 19l-1 2M16 19l1 2"/></g>
+<text x="123" y="180" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5260">2.00 Bath</text>
+<g transform="translate(204 166) scale(0.78)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></g>
+<text x="227" y="180" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5260">1,840 Sq Ft</text>
+<g transform="translate(16 198) scale(0.78)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5zM9 15l6-6M12 9h3v3"/></g>
+<text x="39" y="212" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5260">LtSz .21</text>
+<g transform="translate(112 198) scale(0.78)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></g>
+<text x="135" y="212" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5260">Built 1977</text>
+<g transform="translate(216 198) scale(0.78)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7v9H4zM10 20v-6h4v6"/></g>
+<text x="239" y="212" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#4A5260">Single Family</text>
+</g>
+<g id="Price / DOM / Publish date">
+<text x="16" y="250" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#7B8494">Price</text>
+<text x="16" y="276" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#1B2230">$425,000</text>
+<text x="112" y="250" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#7B8494">DOM</text>
+<text x="112" y="276" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#1B2230">112</text>
+<text x="170" y="250" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#7B8494">Publish Date</text>
+<text x="170" y="276" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#1B2230">11/10/2026</text>
+</g><g id="Notes + Tags">
+<text x="16" y="314" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#7B8494">Notes</text>
+<text x="136" y="314" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#7B8494">Tags</text>
+<rect x="16" y="322" width="104" height="28" rx="14" stroke="#4A5260" stroke-width="1"/>
+<text x="68.0" y="341" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4A5260" text-anchor="middle">Add Note</text>
+<rect x="136" y="322" width="94" height="28" rx="14" stroke="#4A5260" stroke-width="1"/>
+<text x="183.0" y="341" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#4A5260" text-anchor="middle">Add Tag</text>
+</g><g id="Owner information">
+<text x="16" y="388" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#8A94A6">Owner's Information</text>
+<text x="16" y="414" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#1B2230">Organa Leia</text>
+<text x="16" y="444" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5260">42 Binary Sunset Ln, Mos Eisley, TA 99001</text>
+<g transform="translate(16 457) scale(0.8)" fill="none" stroke="#4A5260" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM3 7l9 7 9-7"/></g>
+<text x="40" y="473" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#4A5260">leia@alderaan.net</text>
+<line x1="40" y1="477" x2="150" y2="477" stroke="#4A5260" stroke-width="1"/>
+<line x1="16" y1="492" x2="374" y2="492" stroke="#D5D9E0" stroke-width="1"/>
+<g id="Social icons"><g transform="translate(-53.923 499.923) scale(0.6923)" fill="#0D1117"><path d="M126.927 3.01953H103.067C101.924 3.01953 101 3.85742 101 4.89336V27.1406C101 28.1766 101.924 29.0195 103.067 29.0195H126.927C128.07 29.0195 129 28.1766 129 27.1457V4.89336C129 3.85742 128.07 3.01953 126.927 3.01953ZM109.307 25.1754H105.151V12.7645H109.307V25.1754ZM107.229 11.0734C105.895 11.0734 104.817 10.073 104.817 8.83906C104.817 7.60508 105.895 6.60469 107.229 6.60469C108.558 6.60469 109.635 7.60508 109.635 8.83906C109.635 10.068 108.558 11.0734 107.229 11.0734ZM124.86 25.1754H120.709V19.1426C120.709 17.7055 120.682 15.852 118.549 15.852C116.389 15.852 116.061 17.4211 116.061 19.041V25.1754H111.916V12.7645H115.897V14.4605H115.952C116.504 13.4855 117.86 12.4547 119.878 12.4547C124.084 12.4547 124.86 15.0242 124.86 18.3656V25.1754V25.1754Z"/></g><g transform="translate(52.000 501.057) scale(0.6207)" fill="#0D1117"><path d="M14.4997 1.51953C6.49181 1.51953 0 8.03532 0 16.0728C0 22.8977 4.68167 28.6247 10.9972 30.1976V20.5203H8.00732V16.0728H10.9972V14.1564C10.9972 9.20307 13.2307 6.90715 18.0759 6.90715C18.9946 6.90715 20.5797 7.08819 21.2282 7.26865V11.2999C20.886 11.2638 20.2915 11.2458 19.5531 11.2458C17.1758 11.2458 16.2571 12.1498 16.2571 14.4999V16.0728H20.9933L20.1795 20.5203H16.2571V30.5195C23.4368 29.6492 29 23.5136 29 16.0728C28.9994 8.03532 22.5076 1.51953 14.4997 1.51953Z"/></g><g transform="translate(5.312 502.000) scale(0.5625)" fill="#0D1117"><path d="M163.023 2.88547C167.305 2.88547 167.812 2.90425 169.495 2.97936C171.06 3.04821 171.905 3.3111 172.469 3.53017C173.213 3.81809 173.752 4.1686 174.309 4.72567C174.872 5.28899 175.216 5.82102 175.504 6.56586C175.723 7.12918 175.986 7.98043 176.055 9.53896C176.13 11.2289 176.149 11.7359 176.149 16.0109C176.149 20.2922 176.13 20.7992 176.055 22.4829C175.986 24.0477 175.723 24.8927 175.504 25.456C175.216 26.2008 174.866 26.7391 174.309 27.2962C173.745 27.8595 173.213 28.2038 172.469 28.4917C171.905 28.7108 171.054 28.9737 169.495 29.0425C167.805 29.1176 167.298 29.1364 163.023 29.1364C158.742 29.1364 158.235 29.1176 156.551 29.0425C154.987 28.9737 154.142 28.7108 153.578 28.4917C152.834 28.2038 152.295 27.8533 151.738 27.2962C151.175 26.7329 150.831 26.2008 150.543 25.456C150.324 24.8927 150.061 24.0414 149.992 22.4829C149.917 20.7929 149.898 20.2859 149.898 16.0109C149.898 11.7297 149.917 11.2227 149.992 9.53896C150.061 7.97417 150.324 7.12918 150.543 6.56586C150.831 5.82102 151.181 5.28273 151.738 4.72567C152.302 4.16234 152.834 3.81809 153.578 3.53017C154.142 3.3111 154.993 3.04821 156.551 2.97936C158.235 2.90425 158.742 2.88547 163.023 2.88547ZM163.023 0C158.673 0 158.129 0.0187775 156.42 0.0938874C154.718 0.168997 153.547 0.4444 152.533 0.838727C151.475 1.25183 150.58 1.79638 149.691 2.69144C148.796 3.58024 148.252 4.4753 147.839 5.52684C147.444 6.54708 147.169 7.71128 147.094 9.41378C147.019 11.1288 147 11.6733 147 16.0234C147 20.3736 147.019 20.9181 147.094 22.6269C147.169 24.3294 147.444 25.4998 147.839 26.5138C148.252 27.5716 148.796 28.4667 149.691 29.3555C150.58 30.2443 151.475 30.7951 152.527 31.2019C153.547 31.5962 154.711 31.8716 156.414 31.9468C158.123 32.0219 158.667 32.0406 163.017 32.0406C167.367 32.0406 167.912 32.0219 169.621 31.9468C171.323 31.8716 172.494 31.5962 173.508 31.2019C174.559 30.7951 175.454 30.2443 176.343 29.3555C177.232 28.4667 177.783 27.5716 178.189 26.5201C178.584 25.4998 178.859 24.3356 178.934 22.6331C179.009 20.9244 179.028 20.3798 179.028 16.0297C179.028 11.6796 179.009 11.135 178.934 9.4263C178.859 7.7238 178.584 6.55334 178.189 5.53936C177.795 4.4753 177.251 3.58024 176.355 2.69144C175.467 1.80264 174.572 1.25183 173.52 0.844987C172.5 0.450659 171.336 0.175256 169.633 0.100147C167.918 0.0187775 167.374 0 163.023 0ZM163.024 7.79297C158.48 7.79297 154.793 11.4796 154.793 16.0238C154.793 20.5679 158.48 24.2546 163.024 24.2546C167.568 24.2546 171.255 20.5679 171.255 16.0238C171.255 11.4796 167.568 7.79297 163.024 7.79297ZM163.024 21.3628C160.076 21.3628 157.685 18.9718 157.685 16.0238C157.685 13.0757 160.076 10.6847 163.024 10.6847C165.972 10.6847 168.363 13.0757 168.363 16.0238C168.363 18.9718 165.972 21.3628 163.024 21.3628ZM173.501 7.46844C173.501 8.5325 172.638 9.39 171.58 9.39C170.516 9.39 169.658 8.52624 169.658 7.46844C169.658 6.40438 170.522 5.54688 171.58 5.54688C172.638 5.54688 173.501 6.41064 173.501 7.46844Z"/></g><g transform="translate(94.277 500.875) scale(0.6324)" fill="#0D1117"><path d="M82.6414 8.82461C82.6414 8.82461 82.2898 6.34258 81.207 5.25273C79.8359 3.81836 78.3031 3.81133 77.6 3.72695C72.5656 3.36133 65.007 3.36133 65.007 3.36133H64.993C64.993 3.36133 57.4344 3.36133 52.4 3.72695C51.6969 3.81133 50.1641 3.81836 48.793 5.25273C47.7102 6.34258 47.3656 8.82461 47.3656 8.82461C47.3656 8.82461 47 11.7426 47 14.6535V17.3816C47 20.2926 47.3586 23.2105 47.3586 23.2105C47.3586 23.2105 47.7102 25.6926 48.7859 26.7824C50.157 28.2168 51.957 28.1676 52.7586 28.3223C55.6414 28.5965 65 28.6809 65 28.6809C65 28.6809 72.5656 28.6668 77.6 28.3082C78.3031 28.2238 79.8359 28.2168 81.207 26.7824C82.2898 25.6926 82.6414 23.2105 82.6414 23.2105C82.6414 23.2105 83 20.2996 83 17.3816V14.6535C83 11.7426 82.6414 8.82461 82.6414 8.82461ZM61.2805 20.6934V10.5754L71.0047 15.652L61.2805 20.6934Z"/></g></g></g>
+<g id="Contacts">
+<g id="Contact 1: Leia Organa"><rect x="16.5" y="536.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="560" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LEIA ORGANA</text>
+<g id="Phone number 1 (highlight)"><rect x="25" y="567" width="158" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 570) scale(0.66)" fill="none" stroke="#E2403A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="582" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#E2403A">(415) 555-0142</text>
+<text x="144" y="582" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#E2403A">DNC</text>
+</g>
+<rect x="240" y="555" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="567" r="9" fill="#FFFFFF"/>
+<rect x="296.5" y="549.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(305 558) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
+<rect x="334.5" y="549.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(343 558) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
+</g>
+<g id="Contact 2: Han Solo"><rect x="16.5" y="610.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="634" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">HAN SOLO</text>
+<g id="Phone number 2 (highlight)"><rect x="25" y="641" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 644) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="656" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0119</text>
+</g>
+<rect x="240" y="629" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="641" r="9" fill="#FFFFFF"/>
+<rect x="296.5" y="623.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(305 632) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
+<rect x="334.5" y="623.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(343 632) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
+</g>
+<g id="Contact 3: Lando Calrissian"><rect x="16.5" y="684.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="708" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LANDO CALRISSIAN</text>
+<g id="Phone number 3 (highlight)"><rect x="25" y="715" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 718) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="730" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0128</text>
+</g>
+<rect x="240" y="703" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="715" r="9" fill="#FFFFFF"/>
+<rect x="296.5" y="697.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(305 706) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
+<rect x="334.5" y="697.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(343 706) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
+</g>
+<g id="Contact 4: Padme Amidala"><rect x="16.5" y="758.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="782" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">PADME AMIDALA</text>
+<g id="Phone number 4 (highlight)"><rect x="25" y="789" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 792) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="804" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0173</text>
+</g>
+<rect x="240" y="777" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="789" r="9" fill="#FFFFFF"/>
+<rect x="296.5" y="771.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(305 780) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
+<rect x="334.5" y="771.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
+<g transform="translate(343 780) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
+</g>
+</g></svg>
