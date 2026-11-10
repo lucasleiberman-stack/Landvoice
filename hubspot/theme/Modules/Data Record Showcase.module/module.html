@@ -2,7 +2,7 @@
    The pills turn solid blue one after another and the record zooms in on the matching piece (assets: shared CSS record.css + JS 90-record.js in the theme).
    The seven pills map, in order, to: Name, Phone numbers, Email, Social media links, Current status, Price, Days on market. Rename them freely; keep them in that order. #}
 {% set rec_keys = ['name','phones','email','links','status','price','dom'] %}
-<section class="lv-band lv-band--light lv-section" aria-labelledby="rec-title-{{ name }}">
+<section class="lv-band lv-band--light lv-section lv-rec-showcase" aria-labelledby="rec-title-{{ name }}">
   <div class="lv-container lv-container--wide lv-split lv-split--center">
     <div class="lv-pg__stack" data-lv-reveal>
       <h2 class="lv-h2" id="rec-title-{{ name }}">{{ module.heading }}</h2>

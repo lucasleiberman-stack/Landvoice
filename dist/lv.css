@@ -858,6 +858,9 @@ html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__item::a
 /* text column and record centred against each other (the default .lv-split top-aligns them) */
 .lv-split.lv-split--center { align-items: center; }
 .lv-split.lv-split--center > :last-child { padding-top: 0; }
+
+/* Data Record Showcase: square bottom corners (the light band is rounded by default). Two classes so it wins whatever the file order. */
+.lv-band.lv-rec-showcase { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 /* SERVICES: a road drawn down the page with a junction + straight arms at each row. JS: lv-road.js
    Tweak: --lv-arm (arm length), --lv-arm-y (arm height from row top), --lv-road-w (line thickness) */
 .lv-services { padding-top: 0; }

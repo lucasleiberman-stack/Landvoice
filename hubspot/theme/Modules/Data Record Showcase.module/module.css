@@ -1,0 +1,2 @@
+/* Data Record Showcase: square bottom corners (the light band is rounded by default). Two classes so it wins whatever the file order. */
+.lv-band.lv-rec-showcase { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
