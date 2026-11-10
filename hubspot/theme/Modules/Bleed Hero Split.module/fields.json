@@ -35,7 +35,7 @@
 }, {
   "id" : "heading_tag",
   "name" : "heading_tag",
-  "label" : "Heading tag (h1 = the page's main title, use once per page; h2 = a section heading; looks the same)",
+  "label" : "Heading tag (h1 = the page's main title, use once per page, hero size; h2 = a section heading, h2 size)",
   "required" : false,
   "locked" : false,
   "display" : "select",

@@ -7,7 +7,7 @@
   <div class="lv-bleed-hero__stage">
     <div class="lv-herocopy">
       {% if module.eyebrow %}<p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }}</p>{% endif %}
-      <{{ htag }} class="lv-h1" id="bleed-title-{{ name }}" data-lv-reveal style="--lv-delay:.08s">{{ module.headline }}</{{ htag }}>
+      <{{ htag }} class="lv-{{ htag }}" id="bleed-title-{{ name }}" data-lv-reveal style="--lv-delay:.08s">{{ module.headline }}</{{ htag }}>
       {% if module.subtext %}<h3 class="lv-lede" data-lv-reveal style="--lv-delay:.16s">{{ module.subtext }}</h3>{% endif %}
       {% if module.button_1_label or module.button_2_label %}
       <div class="lv-actions" data-lv-reveal style="--lv-delay:.24s">

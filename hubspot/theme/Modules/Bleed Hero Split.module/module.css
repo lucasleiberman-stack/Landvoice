@@ -10,3 +10,6 @@
   .lv-bleed-hero__stage { grid-template-columns: 1fr; padding-left: var(--lv-gutter); }
   .lv-bleed-hero__media img { width: 100%; margin-left: 0; }
 }
+
+/* heading tag option: an h2 gets the h2 size (.lv-h2); inside a hero copy block it needs the same spacing under it that the h1 gets (03-components.css only sets it for .lv-h1) */
+.lv-herocopy .lv-h2 { margin-bottom: 1.6rem; }

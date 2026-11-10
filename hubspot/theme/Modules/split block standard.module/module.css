@@ -7,3 +7,6 @@
 /* "Mockup image" checkbox: show the whole image (object-fit: contain, no crop), with no grey frame, rounded corners or fixed 5:4 shape, so a mockup / transparent PNG sits directly on the band. */
 .lv-pg-hero .lv-pg-hero__media--contain { aspect-ratio: auto; background: none; border-radius: 0; overflow: visible; }
 .lv-pg-hero .lv-pg-hero__media--contain img { display: block; width: 100%; height: auto; object-fit: contain; }
+
+/* heading tag option: an h2 gets the h2 size (.lv-h2); inside a hero copy block it needs the same spacing under it that the h1 gets (03-components.css only sets it for .lv-h1) */
+.lv-herocopy .lv-h2 { margin-bottom: 1.6rem; }
