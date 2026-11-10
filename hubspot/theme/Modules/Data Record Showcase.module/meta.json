@@ -1,0 +1,15 @@
+{
+  "label": "Data Record Showcase",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Light band: heading, paragraph and seven pills on the left; on the right an animated look-alike of the Expired lead record. The pills light up one by one and the record zooms to the matching detail. Keep the pills in this order: Name, Phone numbers, Email, Social media links, Current status, Price, Days on market.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
