@@ -61,4 +61,52 @@
   }, {
     "pill_text" : "Days on market"
   } ]
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
 } ]

@@ -1,128 +1,164 @@
-[
-  {
-    "name": "heading",
-    "label": "Heading",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "FAQs"
+[ {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "FAQs"
+}, {
+  "id" : "faqs",
+  "name" : "faqs",
+  "label" : "Questions and answers (the list splits into two columns)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 60,
+    "sorting_label_field" : null,
+    "default" : 22
   },
-  {
-    "name": "faqs",
-    "label": "Questions and answers (the list splits into two columns)",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 60,
-      "default": 22
-    },
-    "children": [
-      {
-        "name": "question",
-        "label": "Question",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Question"
-      },
-      {
-        "name": "answer",
-        "label": "Answer",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Answer"
-      }
-    ],
-    "default": [
-      {
-        "question": "What is Landvoice?",
-        "answer": "Landvoice is a real estate seller data provider delivering verified expired listing, FSBO, pre-foreclosure, FRBO, and neighborhood homeowner records to agents in the United States and Canada. Founded in 1991, Landvoice is the longest-operating seller data provider in real estate."
-      },
-      {
-        "question": "Where does Landvoice get its data?",
-        "answer": "Landvoice aggregates from thousands of public sources including MLS activity, local and national listing sites, county recorder filings, and phone records. Records are sorted by geography, type, and date, then verified through combined automated processing and human review before daily delivery."
-      },
-      {
-        "question": "Can I test the data before I subscribe?",
-        "answer": "Yes. Landvoice provides a free sample file for your ZIP code so you can dial real records and measure your own connect rate before paying. No other major seller data provider offers this."
-      },
-      {
-        "question": "Is Landvoice a CRM?",
-        "answer": "No. Landvoice includes Lead Manager, a workspace for organizing, filtering, tagging, and exporting seller data — but it is not a customer relationship manager. Landvoice handles the data stage of prospecting; your CRM handles the relationship stage after contact is made."
-      },
-      {
-        "question": "Which CRMs does Landvoice work with?",
-        "answer": "Landvoice exports into the CRMs agents already use, including [Follow Up Boss], [BoldTrail/kvCORE], [Sierra Interactive], [Lofty], [Wise Agent], and [Top Producer], plus dialers including [Mojo] and [PhoneBurner]. CSV and API exports are available for any other system."
-      },
-      {
-        "question": "How does Landvoice save agents money?",
-        "answer": "Landvoice charges for data only. Bundled platforms include a dialer, CRM, and marketing tools in every subscription whether you use them or not — so agents who already have a brokerage CRM pay twice. Landvoice lets you keep the tools you own."
-      },
-      {
-        "question": "What is a FSBO lead?",
-        "answer": "A FSBO (\"for sale by owner\") lead is a homeowner marketing their property without an agent. Most FSBO sellers eventually list with an agent after encountering the pricing, marketing, and negotiation demands of selling alone — which makes early, consistent contact valuable."
-      },
-      {
-        "question": "What is circle prospecting?",
-        "answer": "Circle prospecting is calling homeowners around a recent listing or sale to generate new business. Landvoice Neighborhood Search returns owner names and phone numbers for any map area or address radius, so agents can run just-listed and just-sold campaigns."
-      },
-      {
-        "question": "Is Landvoice DNC and TCPA compliant?",
-        "answer": "Every Landvoice record is scrubbed against the National Do Not Call Registry before delivery, and Lead Manager stores your own do-not-call requests and suppresses those records permanently. Agents remain responsible for following applicable federal and state calling regulations."
-      },
-      {
-        "question": "Can I export my leads?",
-        "answer": "Yes. Export filtered lists from Lead Manager at any time in a format that imports cleanly into your CRM or dialer. Landvoice does not lock your data inside the platform."
-      },
-      {
-        "question": "How is Landvoice different from REDX and Vulcan7?",
-        "answer": "Landvoice has operated since 1991 — longer than either — and stays focused on data instead of bundling dialers, CRMs, and marketing tools. Landvoice publishes pricing openly, offers a free sample file, and requires no contract, so agents pay for accurate data rather than software they already own."
-      },
-      {
-        "question": "How long has Landvoice been in business?",
-        "answer": "Landvoice was founded in 1991 and has provided seller data to real estate agents for 35 years. That predates REDX by twelve years and Vulcan7 by six, making Landvoice the most tenured seller data provider in the industry."
-      },
-      {
-        "question": "How accurate are Landvoice's phone numbers?",
-        "answer": "Landvoice delivers a verified phone match rate of [X]%. Every number is validated and de-duplicated before delivery, and disconnected or wrong-party numbers are filtered out. Thirty-five years of continuously retiring dead numbers and scoring source reliability is why accuracy holds up."
-      },
-      {
-        "question": "Does Landvoice include a dialer?",
-        "answer": "No. Landvoice is a seller data company and does not sell a dialer. Filtered lead lists export cleanly into whichever dialer you already use, so you aren't paying twice for calling software."
-      },
-      {
-        "question": "What is Landvoice Lead Manager?",
-        "answer": "Lead Manager is the workspace inside Landvoice where you filter seller records by date, price, days on market, neighborhood, and property type; mark call outcomes; add notes and tags; maintain your personal do-not-call list; and export clean lists to your own CRM or dialer."
-      },
-      {
-        "question": "Do I have to switch CRMs to use Landvoice?",
-        "answer": "No. Landvoice is a data provider, not a CRM. Your filtered lists export into the CRM and dialer you already pay for, so you don't buy duplicate software or migrate your existing pipeline."
-      },
-      {
-        "question": "What are expired listing leads?",
-        "answer": "Expired listing leads are homeowners whose listing agreement ended without the property selling. These sellers have already demonstrated intent to move and are typically evaluating a new agent, making them one of the highest-converting seller lead sources available."
-      },
-      {
-        "question": "What are pre-foreclosure leads?",
-        "answer": "Pre-foreclosure leads are homeowners who have received a Notice of Default, Lis Pendens, or Notice of Trustee Sale. These records come from county public filings and identify owners facing a deadline who may need to sell quickly to protect their equity."
-      },
-      {
-        "question": "How often is Landvoice data updated?",
-        "answer": "Expired listings and FSBOs are updated daily and appear in your account each morning. Pre-foreclosure records update as county filings post. Neighborhood data refreshes on an ongoing basis."
-      },
-      {
-        "question": "How much does Landvoice cost?",
-        "answer": "Landvoice plans start at $[X] per month and vary by lead type and territory size. Every plan includes Lead Manager, daily delivery, DNC scrubbing, and unlimited exports, with no long-term contract. Full pricing is published on the pricing page."
-      },
-      {
-        "question": "Does Landvoice work in Canada?",
-        "answer": "Yes. Landvoice provides seller data for markets in both the United States and Canada."
-      },
-      {
-        "question": "How quickly can I start calling?",
-        "answer": "Most agents work their first list the same day. After choosing your territory, records populate immediately in Lead Manager — no setup fee, no onboarding delay, no import step."
-      }
-    ]
-  }
-]
+  "children" : [ {
+    "id" : "faqs.question",
+    "name" : "question",
+    "label" : "Question",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Question"
+  }, {
+    "id" : "faqs.answer",
+    "name" : "answer",
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Answer"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "question" : "What is Landvoice?",
+    "answer" : "Landvoice is a real estate seller data provider delivering verified expired listing, FSBO, pre-foreclosure, FRBO, and neighborhood homeowner records to agents in the United States and Canada. Founded in 1991, Landvoice is the longest-operating seller data provider in real estate."
+  }, {
+    "question" : "Where does Landvoice get its data?",
+    "answer" : "Landvoice aggregates from thousands of public sources including MLS activity, local and national listing sites, county recorder filings, and phone records. Records are sorted by geography, type, and date, then verified through combined automated processing and human review before daily delivery."
+  }, {
+    "question" : "Can I test the data before I subscribe?",
+    "answer" : "Yes. Landvoice provides a free sample file for your ZIP code so you can dial real records and measure your own connect rate before paying. No other major seller data provider offers this."
+  }, {
+    "question" : "Is Landvoice a CRM?",
+    "answer" : "No. Landvoice includes Lead Manager, a workspace for organizing, filtering, tagging, and exporting seller data — but it is not a customer relationship manager. Landvoice handles the data stage of prospecting; your CRM handles the relationship stage after contact is made."
+  }, {
+    "question" : "Which CRMs does Landvoice work with?",
+    "answer" : "Landvoice exports into the CRMs agents already use, including [Follow Up Boss], [BoldTrail/kvCORE], [Sierra Interactive], [Lofty], [Wise Agent], and [Top Producer], plus dialers including [Mojo] and [PhoneBurner]. CSV and API exports are available for any other system."
+  }, {
+    "question" : "How does Landvoice save agents money?",
+    "answer" : "Landvoice charges for data only. Bundled platforms include a dialer, CRM, and marketing tools in every subscription whether you use them or not — so agents who already have a brokerage CRM pay twice. Landvoice lets you keep the tools you own."
+  }, {
+    "question" : "What is a FSBO lead?",
+    "answer" : "A FSBO (\"for sale by owner\") lead is a homeowner marketing their property without an agent. Most FSBO sellers eventually list with an agent after encountering the pricing, marketing, and negotiation demands of selling alone — which makes early, consistent contact valuable."
+  }, {
+    "question" : "What is circle prospecting?",
+    "answer" : "Circle prospecting is calling homeowners around a recent listing or sale to generate new business. Landvoice Neighborhood Search returns owner names and phone numbers for any map area or address radius, so agents can run just-listed and just-sold campaigns."
+  }, {
+    "question" : "Is Landvoice DNC and TCPA compliant?",
+    "answer" : "Every Landvoice record is scrubbed against the National Do Not Call Registry before delivery, and Lead Manager stores your own do-not-call requests and suppresses those records permanently. Agents remain responsible for following applicable federal and state calling regulations."
+  }, {
+    "question" : "Can I export my leads?",
+    "answer" : "Yes. Export filtered lists from Lead Manager at any time in a format that imports cleanly into your CRM or dialer. Landvoice does not lock your data inside the platform."
+  }, {
+    "question" : "How is Landvoice different from REDX and Vulcan7?",
+    "answer" : "Landvoice has operated since 1991 — longer than either — and stays focused on data instead of bundling dialers, CRMs, and marketing tools. Landvoice publishes pricing openly, offers a free sample file, and requires no contract, so agents pay for accurate data rather than software they already own."
+  }, {
+    "question" : "How long has Landvoice been in business?",
+    "answer" : "Landvoice was founded in 1991 and has provided seller data to real estate agents for 35 years. That predates REDX by twelve years and Vulcan7 by six, making Landvoice the most tenured seller data provider in the industry."
+  }, {
+    "question" : "How accurate are Landvoice's phone numbers?",
+    "answer" : "Landvoice delivers a verified phone match rate of [X]%. Every number is validated and de-duplicated before delivery, and disconnected or wrong-party numbers are filtered out. Thirty-five years of continuously retiring dead numbers and scoring source reliability is why accuracy holds up."
+  }, {
+    "question" : "Does Landvoice include a dialer?",
+    "answer" : "No. Landvoice is a seller data company and does not sell a dialer. Filtered lead lists export cleanly into whichever dialer you already use, so you aren't paying twice for calling software."
+  }, {
+    "question" : "What is Landvoice Lead Manager?",
+    "answer" : "Lead Manager is the workspace inside Landvoice where you filter seller records by date, price, days on market, neighborhood, and property type; mark call outcomes; add notes and tags; maintain your personal do-not-call list; and export clean lists to your own CRM or dialer."
+  }, {
+    "question" : "Do I have to switch CRMs to use Landvoice?",
+    "answer" : "No. Landvoice is a data provider, not a CRM. Your filtered lists export into the CRM and dialer you already pay for, so you don't buy duplicate software or migrate your existing pipeline."
+  }, {
+    "question" : "What are expired listing leads?",
+    "answer" : "Expired listing leads are homeowners whose listing agreement ended without the property selling. These sellers have already demonstrated intent to move and are typically evaluating a new agent, making them one of the highest-converting seller lead sources available."
+  }, {
+    "question" : "What are pre-foreclosure leads?",
+    "answer" : "Pre-foreclosure leads are homeowners who have received a Notice of Default, Lis Pendens, or Notice of Trustee Sale. These records come from county public filings and identify owners facing a deadline who may need to sell quickly to protect their equity."
+  }, {
+    "question" : "How often is Landvoice data updated?",
+    "answer" : "Expired listings and FSBOs are updated daily and appear in your account each morning. Pre-foreclosure records update as county filings post. Neighborhood data refreshes on an ongoing basis."
+  }, {
+    "question" : "How much does Landvoice cost?",
+    "answer" : "Landvoice plans start at $[X] per month and vary by lead type and territory size. Every plan includes Lead Manager, daily delivery, DNC scrubbing, and unlimited exports, with no long-term contract. Full pricing is published on the pricing page."
+  }, {
+    "question" : "Does Landvoice work in Canada?",
+    "answer" : "Yes. Landvoice provides seller data for markets in both the United States and Canada."
+  }, {
+    "question" : "How quickly can I start calling?",
+    "answer" : "Most agents work their first list the same day. After choosing your territory, records populate immediately in Lead Manager — no setup fee, no onboarding delay, no import step."
+  } ]
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]

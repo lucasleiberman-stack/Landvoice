@@ -1,6 +1,6 @@
 {# Light band: FAQ accordion in two columns (native details/summary, no JS). The list is split in half automatically. #}
 {% set half = (module.faqs|length + 1) // 2 %}
-<section class="lv-band lv-band--light lv-section" id="faq" aria-labelledby="faq-title">
+<section class="lv-band lv-band--light lv-section{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" id="faq" aria-labelledby="faq-title">
   <div class="lv-container lv-container--wide">
     <h2 class="lv-h2 lv-center" id="faq-title" data-lv-reveal>{{ module.heading }}</h2>
     <div class="lv-faq">

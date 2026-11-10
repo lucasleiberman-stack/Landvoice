@@ -1,0 +1,9 @@
+/* BAND OPTIONS: style settings that the reusable HubSpot modules expose in their Style tab (Remove top padding / Remove bottom padding, Top corners / Bottom corners).
+   The module adds these classes to its section.lv-band; `section.lv-band.x` (3 selectors deep) beats the band's own padding and radius rules whatever the file order.
+   Corners: round = the site's band radius (--lv-radius-band), square = 0. Without a class the band keeps its default (light bands rounded, dark bands square). */
+section.lv-band.lv-pad-top-0 { padding-top: 0; }
+section.lv-band.lv-pad-bottom-0 { padding-bottom: 0; }
+section.lv-band.lv-corner-top-round { border-top-left-radius: var(--lv-radius-band); border-top-right-radius: var(--lv-radius-band); }
+section.lv-band.lv-corner-top-square { border-top-left-radius: 0; border-top-right-radius: 0; }
+section.lv-band.lv-corner-bottom-round { border-bottom-left-radius: var(--lv-radius-band); border-bottom-right-radius: var(--lv-radius-band); }
+section.lv-band.lv-corner-bottom-square { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }

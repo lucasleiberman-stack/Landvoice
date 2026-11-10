@@ -1,7 +1,7 @@
 {# Dark band: plan cards with Monthly / Quarterly / Annually tabs. Variants: standard, pro (highlighted, with a badge), byo (build your own: lines of text instead of a checklist, dark button).
    A plan with a monthly or quarterly price changes with the tabs (its "Annual price" field is the annual one); a plan without them (e.g. Build your own) shows its one price on every tab. #}
 {% set period = module.default_period or 'annual' %}
-<section class="lv-band lv-band--dark lv-section" id="pricing" aria-labelledby="pricing-title">
+<section class="lv-band lv-band--dark lv-section{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" id="pricing" aria-labelledby="pricing-title">
   <div class="lv-container lv-container--wide">
     <header class="lv-pricing__head" data-lv-reveal>
       <p class="lv-eyebrow">{{ module.eyebrow }}</p>

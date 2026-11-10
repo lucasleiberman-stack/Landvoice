@@ -1,6 +1,6 @@
 {# Dark band: copy on the left (heading, paragraphs, button), four big stats over a dotted US/Canada map on the right. #}
 <style>.lv-longevity__stats::before { background-image: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/us-canada-dots.svg") }}'); }</style>
-<section class="lv-band lv-band--dark lv-section lv-longevity" aria-labelledby="long-title">
+<section class="lv-band lv-band--dark lv-section lv-longevity{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="long-title">
   <div class="lv-container lv-container--wide lv-longevity__grid">
     <div class="lv-longevity__copy" data-lv-reveal>
       <p class="lv-eyebrow">{{ module.eyebrow }}</p>

@@ -1,187 +1,257 @@
-[
-  {
-    "name": "eyebrow",
-    "label": "Eyebrow",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "How Landvoice works | 3 simple steps"
+[ {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "How Landvoice works | 3 simple steps"
+}, {
+  "id" : "headline_line_1",
+  "name" : "headline_line_1",
+  "label" : "Headline, line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Seamless Prospecting Built"
+}, {
+  "id" : "headline_line_2",
+  "name" : "headline_line_2",
+  "label" : "Headline, line 2 (optional)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "For Your Daily Routine"
+}, {
+  "id" : "steps",
+  "name" : "steps",
+  "label" : "Steps (exactly 3)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : 3
   },
-  {
-    "name": "headline_line_1",
-    "label": "Headline, line 1",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Seamless Prospecting Built"
-  },
-  {
-    "name": "headline_line_2",
-    "label": "Headline, line 2 (optional)",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "For Your Daily Routine"
-  },
-  {
-    "name": "steps",
-    "label": "Steps (exactly 3)",
-    "type": "group",
-    "occurrence": {
-      "min": 3,
-      "max": 3,
-      "default": 3
+  "children" : [ {
+    "id" : "steps.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Step title"
+  }, {
+    "id" : "steps.text",
+    "name" : "text",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Description"
+  }, {
+    "id" : "steps.file",
+    "name" : "file",
+    "label" : "Theme image file name (in images/steps/)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "step-1-territory.png"
+  }, {
+    "id" : "steps.image",
+    "name" : "image",
+    "label" : "Step image (optional: overrides the theme file)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "steps.alt",
+    "name" : "alt",
+    "label" : "Image description (alt text)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Screenshot"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Choose your territory",
+    "text" : "Select the counties, ZIP codes, MLS, or map areas you need in your business. Add, swap, or expand coverage anytime.",
+    "file" : "step-1-territory.png",
+    "alt" : "Neighborhood Search map with Square, Circle and Polygon tools for choosing a territory"
+  }, {
+    "title" : "Get verified data every morning",
+    "text" : "New Expireds and FSBOs land in your account daily - verified, human-reviewed, de-duplicated, and scrubbed against the State and National DNC Registry.",
+    "file" : "step-2-daily-list.png",
+    "alt" : "A daily list of new FSBO, Expired and Withdrawn leads with addresses"
+  }, {
+    "title" : "Filter, work, export",
+    "text" : "Build your data list in Landvoice Lead Manager, mark your outcomes, and export into the CRM and dialer you already use.",
+    "file" : "export-list.png",
+    "alt" : "Leads selected with checkboxes, ready to export"
+  } ]
+}, {
+  "id" : "closer_line_1",
+  "name" : "closer_line_1",
+  "label" : "Closing line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Setup takes minutes."
+}, {
+  "id" : "closer_line_2",
+  "name" : "closer_line_2",
+  "label" : "Closing line 2 (plain part)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Most agents work their"
+}, {
+  "id" : "closer_accent",
+  "name" : "closer_accent",
+  "label" : "Closing line 2 (blue part)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "first list the same day they sign up."
+}, {
+  "id" : "button_1_label",
+  "name" : "button_1_label",
+  "label" : "Button 1 label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started"
+}, {
+  "id" : "button_1_link",
+  "name" : "button_1_link",
+  "label" : "Button 1 link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "#pricing",
+      "content_id" : null
     },
-    "children": [
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Step title"
-      },
-      {
-        "name": "text",
-        "label": "Description",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Description"
-      },
-      {
-        "name": "file",
-        "label": "Theme image file name (in images/steps/)",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "step-1-territory.png"
-      },
-      {
-        "name": "image",
-        "label": "Step image (optional: overrides the theme file)",
-        "type": "image",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "show_loading": false,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "name": "alt",
-        "label": "Image description (alt text)",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Screenshot"
-      }
-    ],
-    "default": [
-      {
-        "title": "Choose your territory",
-        "text": "Select the counties, ZIP codes, MLS, or map areas you need in your business. Add, swap, or expand coverage anytime.",
-        "file": "step-1-territory.png",
-        "alt": "Neighborhood Search map with Square, Circle and Polygon tools for choosing a territory"
-      },
-      {
-        "title": "Get verified data every morning",
-        "text": "New Expireds and FSBOs land in your account daily - verified, human-reviewed, de-duplicated, and scrubbed against the State and National DNC Registry.",
-        "file": "step-2-daily-list.png",
-        "alt": "A daily list of new FSBO, Expired and Withdrawn leads with addresses"
-      },
-      {
-        "title": "Filter, work, export",
-        "text": "Build your data list in Landvoice Lead Manager, mark your outcomes, and export into the CRM and dialer you already use.",
-        "file": "export-list.png",
-        "alt": "Leads selected with checkboxes, ready to export"
-      }
-    ]
-  },
-  {
-    "name": "closer_line_1",
-    "label": "Closing line 1",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Setup takes minutes."
-  },
-  {
-    "name": "closer_line_2",
-    "label": "Closing line 2 (plain part)",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Most agents work their"
-  },
-  {
-    "name": "closer_accent",
-    "label": "Closing line 2 (blue part)",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "first list the same day they sign up."
-  },
-  {
-    "name": "button_1_label",
-    "label": "Button 1 label",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Get Started"
-  },
-  {
-    "name": "button_1_link",
-    "label": "Button 1 link",
-    "type": "link",
-    "required": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS"
-    ],
-    "default": {
-      "url": {
-        "type": "EXTERNAL",
-        "href": "#pricing",
-        "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-    }
-  },
-  {
-    "name": "button_2_label",
-    "label": "Button 2 label",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Live Demo"
-  },
-  {
-    "name": "button_2_link",
-    "label": "Button 2 link",
-    "type": "link",
-    "required": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS"
-    ],
-    "default": {
-      "url": {
-        "type": "EXTERNAL",
-        "href": "#demo",
-        "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-    }
+    "open_in_new_tab" : false,
+    "no_follow" : false
   }
-]
+}, {
+  "id" : "button_2_label",
+  "name" : "button_2_label",
+  "label" : "Button 2 label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Live Demo"
+}, {
+  "id" : "button_2_link",
+  "name" : "button_2_link",
+  "label" : "Button 2 link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "#demo",
+      "content_id" : null
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]
