@@ -71,6 +71,38 @@
   "display_width" : null,
   "default" : "default"
 }, {
+  "id" : "corner_graphic",
+  "name" : "corner_graphic",
+  "label" : "Corner map graphic (the faint road map from the homepage, behind the text and image)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corner_graphic_position",
+  "name" : "corner_graphic_position",
+  "label" : "Graphic position",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "corner_graphic",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "tl", "Top left" ], [ "tr", "Top right" ], [ "bl", "Bottom left" ], [ "br", "Bottom right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "tr"
+}, {
   "id" : "image_side",
   "name" : "image_side",
   "label" : "Image side",

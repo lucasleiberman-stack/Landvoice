@@ -3,6 +3,7 @@
 {% set htag = 'h2' if module.heading_tag == 'h2' else 'h1' %}
 {% set side = module.image_side or 'right' %}
 <section class="lv-band lv-band--{{ band }}{% if module.flat_top %} lv-band--flat-top{% endif %} lv-pg-hero lv-pg-hero--media-{{ side }}{% if module.no_padding_top %} lv-pg-hero--no-top{% endif %}{% if module.no_padding_bottom %} lv-pg-hero--no-bottom{% endif %}{% if module.corners_top in ['round','square'] %} lv-pg-hero--top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-pg-hero--bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="split-title-{{ name }}">
+  {% if module.corner_graphic %}{% set gpos = module.corner_graphic_position or 'tr' %}<div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/road-patch-v4.svg") }}')"><i class="lv-gridplane__patch lv-gridplane__patch--{{ gpos }}"></i></div>{% endif %}
   <div class="lv-pg-hero__stage">
     <div class="lv-herocopy">
       {% if module.eyebrow %}<p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }}</p>{% endif %}

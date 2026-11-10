@@ -21,3 +21,12 @@
 .lv-band.lv-pg-hero.lv-pg-hero--top-square { border-top-left-radius: 0; border-top-right-radius: 0; }
 .lv-band.lv-pg-hero.lv-pg-hero--bottom-round { border-bottom-left-radius: var(--lv-radius-band); border-bottom-right-radius: var(--lv-radius-band); }
 .lv-band.lv-pg-hero.lv-pg-hero--bottom-square { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+/* corner map graphic (checkbox "Corner map graphic" + position): the faint road-map patch from the homepage, anchored in one corner of the band and sitting behind the text and the image
+   (the shared CSS puts the band's content above .lv-gridplane). The base template already supplies the picture, its fade and the bottom-right mirror; this sets the mirror for the other corners
+   and a light-on-dark version for dark bands (the shared blend mode would hide it there). */
+.lv-pg-hero .lv-gridplane__patch--tr::before { transform: none; }
+.lv-pg-hero .lv-gridplane__patch--tl::before { transform: scaleY(-1); }
+.lv-pg-hero .lv-gridplane__patch--bl::before { transform: scale(-1, -1); }
+.lv-pg-hero .lv-gridplane__patch--br::before { transform: scaleX(-1); }
+.lv-band--dark.lv-pg-hero .lv-gridplane__patch::before { background: var(--lv-road) center / 100% 100% no-repeat; mix-blend-mode: normal; opacity: .12; }
