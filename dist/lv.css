@@ -30,8 +30,8 @@
   --lv-font-mono: 'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* type: sizes */
-  --lv-fs-h1: clamp(2.4rem, 4.6vw, 54px);
-  --lv-fs-h2: clamp(2rem, 3.9vw, 47px);          /* every h2 */
+  --lv-fs-h1: clamp(2.4rem, max(min(4.6vw, 54px), calc(54px + (100vw - 1728px) * .01271)), 60px);   /* 54px at 1728px (10% under the old 60px cap), easing back up to 60px at 2200px and wider */
+  --lv-fs-h2: clamp(2rem, max(min(3.9vw, 47px), calc(47px + (100vw - 1728px) * .010593)), 52px);   /* 47px at 1728px, easing back up to 52px at 2200px and wider */          /* every h2 */
   --lv-fs-h2-xl: var(--lv-fs-h2);                /* kept as an alias: same size as every h2 */
   --lv-fs-h3: clamp(1.35rem, 2vw, 1.9rem);
   --lv-fs-body: 1.0625rem;
