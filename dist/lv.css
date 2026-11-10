@@ -30,8 +30,8 @@
   --lv-font-mono: 'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* type: sizes */
-  --lv-fs-h1: clamp(2.4rem, 4.6vw, 60px);
-  --lv-fs-h2: clamp(2rem, 3.9vw, 52px);          /* every h2 */
+  --lv-fs-h1: clamp(2.4rem, 4.6vw, 54px);
+  --lv-fs-h2: clamp(2rem, 3.9vw, 47px);          /* every h2 */
   --lv-fs-h2-xl: var(--lv-fs-h2);                /* kept as an alias: same size as every h2 */
   --lv-fs-h3: clamp(1.35rem, 2vw, 1.9rem);
   --lv-fs-body: 1.0625rem;

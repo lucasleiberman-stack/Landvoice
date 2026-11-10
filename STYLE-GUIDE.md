@@ -10,8 +10,8 @@ All values live in `assets/css/00-tokens.css`. Change a token, never hard-code a
 ## Type scale (global classes in `01-base.css`)
 | Class | Size token | Weight | Letter spacing | Line height |
 |---|---|---|---|---|
-| `lv-h1` | `--lv-fs-h1` clamp(2.4rem, 4.6vw, 60px) | 600 | -.04em | 1.05 |
-| `lv-h2` | `--lv-fs-h2` clamp(2rem, 3.9vw, 52px), every h2 | 600 | -.035em | 1.05 |
+| `lv-h1` | `--lv-fs-h1` clamp(2.4rem, 4.6vw, 54px) | 600 | -.04em | 1.05 |
+| `lv-h2` | `--lv-fs-h2` clamp(2rem, 3.9vw, 47px), every h2 | 600 | -.035em | 1.05 |
 | `lv-h3` | `--lv-fs-h3` clamp(1.35rem, 2vw, 1.9rem) | 600 | -.025em | 1.15 |
 | `lv-lede` (sub paragraph) | `--lv-fs-lede` clamp(1.05rem, 1.3vw, 1.2rem) | 400 | **`--lv-ls-sub` = -0.3px** | 1.65, muted colour |
 | `lv-eyebrow` | `--lv-fs-eyebrow` .8rem, mono, uppercase | 400 | .08em | |
