@@ -1,12 +1,13 @@
 {# Bleed Hero Split: same type and spacing as the standard split hero, but the image is larger and runs off the right edge of the screen. The default image is the Expireds list on a tablet (theme images/bleed-hero-tablet.png). #}
 {% set band = module.band or 'light' %}
+{% set htag = 'h2' if module.heading_tag == 'h2' else 'h1' %}
 {% set img_src = module.image.src or get_asset_url('/Landvoice - 2026 Redesign/images/bleed-hero-tablet.png') %}
 {% set img_alt = module.image.alt or 'Landvoice Lead Manager showing a list of expired listings with owner names and phone numbers' %}
 <section class="lv-band lv-band--{{ band }}{% if module.flat_top %} lv-band--flat-top{% endif %} lv-pg-hero lv-bleed-hero" aria-labelledby="bleed-title-{{ name }}">
   <div class="lv-bleed-hero__stage">
     <div class="lv-herocopy">
       {% if module.eyebrow %}<p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }}</p>{% endif %}
-      <h1 class="lv-h1" id="bleed-title-{{ name }}" data-lv-reveal style="--lv-delay:.08s">{{ module.headline }}</h1>
+      <{{ htag }} class="lv-h1" id="bleed-title-{{ name }}" data-lv-reveal style="--lv-delay:.08s">{{ module.headline }}</{{ htag }}>
       {% if module.subtext %}<h3 class="lv-lede" data-lv-reveal style="--lv-delay:.16s">{{ module.subtext }}</h3>{% endif %}
       {% if module.button_1_label or module.button_2_label %}
       <div class="lv-actions" data-lv-reveal style="--lv-delay:.24s">
