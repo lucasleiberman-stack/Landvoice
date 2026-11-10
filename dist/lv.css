@@ -854,6 +854,10 @@ html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__item::a
 [data-lv-rec-pill].is-active { background: var(--lv-blue); color: #fff; }
 @media (prefers-reduced-motion: reduce) { .lv-rec__stage, .lv-rec__spot, [data-lv-rec-pill] { transition: none; } }
 @media (max-width: 900px) { .lv-rec__stage { left: 3%; top: 3%; } }
+
+/* text column and record centred against each other (the default .lv-split top-aligns them) */
+.lv-split.lv-split--center { align-items: center; }
+.lv-split.lv-split--center > :last-child { padding-top: 0; }
 /* SERVICES: a road drawn down the page with a junction + straight arms at each row. JS: lv-road.js
    Tweak: --lv-arm (arm length), --lv-arm-y (arm height from row top), --lv-road-w (line thickness) */
 .lv-services { padding-top: 0; }

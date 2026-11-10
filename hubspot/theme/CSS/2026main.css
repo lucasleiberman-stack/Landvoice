@@ -948,3 +948,7 @@ html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__item::a
 [data-lv-rec-pill].is-active { background: var(--lv-blue); color: #fff; }
 @media (prefers-reduced-motion: reduce) { .lv-rec__stage, .lv-rec__spot, [data-lv-rec-pill] { transition: none; } }
 @media (max-width: 900px) { .lv-rec__stage { left: 3%; top: 3%; } }
+
+/* text column and record centred against each other (the default .lv-split top-aligns them) */
+.lv-split.lv-split--center { align-items: center; }
+.lv-split.lv-split--center > :last-child { padding-top: 0; }
