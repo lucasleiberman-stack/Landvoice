@@ -1,6 +1,8 @@
 <svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
 <title>Landvoice: expired lead record (phone, phone numbers highlighted)</title>
 <rect id="Screen" width="390" height="844" rx="0" fill="#FFFFFF"/>
+<defs><filter id="lv-blur" x="-8%" y="-8%" width="116%" height="116%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3.5"/></filter></defs>
+<g id="Blurred info (everything except the phone numbers)" filter="url(#lv-blur)">
 <g id="Status + MLS"><rect x="16" y="16" width="178" height="32" rx="8" fill="#DDF2E4"/>
 <text x="28" y="37" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#2FB863">Expired: 11/10/2026</text>
 <text x="232" y="30" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#8A94A6">MLS ID:</text>
@@ -59,51 +61,56 @@
 <g id="Contacts">
 <g id="Contact 1: Leia Organa"><rect x="16.5" y="536.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
 <text x="30" y="560" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LEIA ORGANA</text>
-<g id="Phone number 1 (highlight)"><rect x="25" y="567" width="158" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
-<g transform="translate(30 570) scale(0.66)" fill="none" stroke="#E2403A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
-<text x="46" y="582" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#E2403A">(415) 555-0142</text>
-<text x="144" y="582" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#E2403A">DNC</text>
-</g>
+
 <rect x="240" y="555" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="567" r="9" fill="#FFFFFF"/>
 <rect x="296.5" y="549.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(305 558) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
 <rect x="334.5" y="549.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(343 558) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
 </g>
-<g id="Contact 2: Han Solo"><rect x="16.5" y="610.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
-<text x="30" y="634" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">HAN SOLO</text>
-<g id="Phone number 2 (highlight)"><rect x="25" y="641" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
-<g transform="translate(30 644) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
-<text x="46" y="656" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0119</text>
-</g>
+<g id="Contact 2: Leia Organa"><rect x="16.5" y="610.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="634" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LEIA ORGANA</text>
+
 <rect x="240" y="629" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="641" r="9" fill="#FFFFFF"/>
 <rect x="296.5" y="623.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(305 632) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
 <rect x="334.5" y="623.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(343 632) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
 </g>
-<g id="Contact 3: Lando Calrissian"><rect x="16.5" y="684.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
-<text x="30" y="708" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LANDO CALRISSIAN</text>
-<g id="Phone number 3 (highlight)"><rect x="25" y="715" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
-<g transform="translate(30 718) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
-<text x="46" y="730" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0128</text>
-</g>
+<g id="Contact 3: Leia Organa"><rect x="16.5" y="684.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="708" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LEIA ORGANA</text>
+
 <rect x="240" y="703" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="715" r="9" fill="#FFFFFF"/>
 <rect x="296.5" y="697.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(305 706) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
 <rect x="334.5" y="697.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(343 706) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
 </g>
-<g id="Contact 4: Padme Amidala"><rect x="16.5" y="758.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
-<text x="30" y="782" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">PADME AMIDALA</text>
-<g id="Phone number 4 (highlight)"><rect x="25" y="789" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
-<g transform="translate(30 792) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
-<text x="46" y="804" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0173</text>
-</g>
+<g id="Contact 4: Leia Organa"><rect x="16.5" y="758.5" width="357" height="62" rx="10" stroke="#8F96A3" stroke-width="1"/>
+<text x="30" y="782" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#3C4658">LEIA ORGANA</text>
+
 <rect x="240" y="777" width="44" height="24" rx="12" fill="#1FBF55"/><circle cx="272" cy="789" r="9" fill="#FFFFFF"/>
 <rect x="296.5" y="771.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(305 780) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9h10v10H9zM5 15V5h10"/></g>
 <rect x="334.5" y="771.5" width="35" height="35" rx="6" stroke="#C9CED6" stroke-width="1"/>
 <g transform="translate(343 780) scale(0.7)" fill="none" stroke="#5A6372" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></g>
 </g>
-</g></svg>
+</g></g>
+<g id="Phone numbers (sharp, highlighted)"><g id="Phone number 1 (highlight)"><rect x="25" y="567" width="122" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 570) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="582" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0142</text>
+
+</g>
+<g id="Phone number 2 (highlight)"><rect x="25" y="641" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 644) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="656" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0119</text>
+</g>
+<g id="Phone number 3 (highlight)"><rect x="25" y="715" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 718) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="730" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0128</text>
+</g>
+<g id="Phone number 4 (highlight)"><rect x="25" y="789" width="121" height="22" rx="6" fill="#0A66FF" fill-opacity="0.12" stroke="#0A66FF" stroke-width="1.25"/>
+<g transform="translate(30 792) scale(0.66)" fill="none" stroke="#1FA84F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8v18H8zM11 18h2"/></g>
+<text x="46" y="804" font-family="DM Sans, Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="500" fill="#1FA84F">(415) 555-0173</text>
+</g></g>
+</svg>
