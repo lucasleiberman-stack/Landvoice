@@ -3,3 +3,7 @@
   .lv-pg-hero--media-left .lv-pg-hero__stage { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); }
   .lv-pg-hero--media-left .lv-pg-hero__media { order: -1; }
 }
+
+/* "Mockup image" checkbox: show the whole image (object-fit: contain, no crop), with no grey frame, rounded corners or fixed 5:4 shape, so a mockup / transparent PNG sits directly on the band. */
+.lv-pg-hero .lv-pg-hero__media--contain { aspect-ratio: auto; background: none; border-radius: 0; overflow: visible; }
+.lv-pg-hero .lv-pg-hero__media--contain img { display: block; width: 100%; height: auto; object-fit: contain; }
