@@ -1,11 +1,12 @@
-/* TERRITORY + HOUSE: the hero's map with a dotted "Your territory" ring and a few way-point markers on a light rounded card, and a photo of a home overlapping its lower-right corner.
+/* TERRITORY + PROPERTY CARD: the hero's map (fading out into the band) with a dotted "Your territory" ring and a few way-point markers, and a property card (look-alike of the app's pop-up) in front of it.
    Used in the product pages' "what are ..." block (figure on the left, text on the right via .lv-split--media-left). The ring sweeps in, the markers drop in and the photo rises in
    once, when it scrolls into view (data-lv-draw); no JS / reduced motion = finished state. The map and the SVG share a 2000x1286 space (same as the hero), both "cover" the card. */
 .lv-split--media-left { align-items: center; }
 .lv-split--media-left > :last-child { padding-top: 0; }
-.lv-housemap { position: relative; margin: 0; width: min(100%, 40rem); justify-self: center; aspect-ratio: 6 / 5; overflow: hidden; border-radius: var(--lv-radius-card); background: var(--lv-paper); box-shadow: 0 30px 60px rgba(0,0,0,.35); }
-.lv-housemap__map, .lv-housemap__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.lv-housemap__map { object-fit: cover; }
+.lv-housemap { position: relative; margin: 0; width: min(100%, 44rem); justify-self: center; aspect-ratio: 6 / 5; }
+.lv-housemap::before { content: ""; position: absolute; inset: -8%; background: radial-gradient(ellipse 46% 46% at 50% 50%, var(--lv-paper) 26%, transparent 100%); opacity: .85; }   /* a light patch behind the map that fades into the dark band, so the map reads on the dark background */
+.lv-housemap__map, .lv-housemap__svg { position: absolute; inset: -8%; width: 116%; height: 116%; }   /* the map layers are 8% larger on every side than the box so their faded edges are never cut off by it */
+.lv-housemap__map { object-fit: cover; -webkit-mask-image: radial-gradient(ellipse 46% 46% at 50% 50%, #000 34%, transparent 100%); mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 30%, transparent 100%); }   /* the map fades out into the dark band */
 .lv-housemap__svg { overflow: visible; }
 .lv-housemap__fill { fill: #4089E4; fill-opacity: .11; }
 .lv-housemap__ring { fill: none; stroke: rgba(62,139,232,.75); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 0 15; }   /* dotted, like the territory circle in the reference */
@@ -15,21 +16,41 @@
 .lv-housemap__pin--pre  { --c: #5B9BF0; }
 .lv-housemap__pin--fsbo { --c: #FFA24D; }
 .lv-housemap__pulse { fill: color-mix(in srgb, var(--c) 45%, transparent); stroke: none; transform-box: fill-box; transform-origin: center; }
-.lv-housemap__photo { position: absolute; right: 5%; bottom: 6%; width: 54%; height: auto; aspect-ratio: 662 / 478; object-fit: cover; border-radius: 26px; box-shadow: 0 24px 50px rgba(13,17,23,.3); }
+/* the property card in front (a look-alike of the app's property pop-up: photo with tags, address, owner, specs, contacts) */
+.lv-pcard { position: absolute; right: 0; bottom: -3%; width: 50%; padding: 4.2% 4.2% 4%; border-radius: 20px; background: #fff; color: var(--lv-ink); box-shadow: 0 30px 60px rgba(0,0,0,.45); font-size: clamp(11px, 1.15vw, 14.5px); }
+.lv-pcard__x { position: absolute; top: -12px; right: -12px; display: grid; place-items: center; width: 2.4em; height: 2.4em; border-radius: 6px; background: #fff; box-shadow: 0 0 0 2px var(--lv-blue); color: #4A5260; }
+.lv-pcard__x svg { width: 1.2em; height: 1.2em; }
+.lv-pcard svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.lv-pcard__photo { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 16 / 9; }
+.lv-pcard__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lv-pcard__tag { position: absolute; top: 0; left: 0; padding: .45em .8em; background: #2FB863; color: #fff; font: 700 .85em/1 var(--lv-font-body); border-bottom-right-radius: 10px; }
+.lv-pcard__type { position: absolute; top: 0; left: 3.1em; padding: .45em .8em; background: rgba(255,255,255,.88); color: #4A5260; font: 500 .85em/1 var(--lv-font-body); }
+.lv-pcard__addr { margin-top: 1em; font: 700 1.12em/1.25 var(--lv-font-body); letter-spacing: -.01em; }
+.lv-pcard__owner { margin-top: .45em; color: #6B7A93; font-size: .98em; }
+.lv-pcard__specs { display: flex; flex-wrap: wrap; gap: .5em .9em; margin-top: .8em; color: #4A5260; font-size: .8em; }
+.lv-pcard__specs li { display: inline-flex; align-items: center; gap: .35em; }
+.lv-pcard__specs svg { width: 1.45em; height: 1.45em; }
+.lv-pcard__h { margin-top: 1.1em; font: 700 1em/1 var(--lv-font-body); }
+.lv-pcard__contact { display: flex; align-items: center; gap: .5em; margin-top: .6em; padding: .55em .6em .55em .8em; border: 1px solid rgba(13,17,23,.35); border-radius: 10px; }
+.lv-pcard__who { display: grid; gap: .25em; margin-right: auto; font-size: .85em; }
+.lv-pcard__who b { font-weight: 700; letter-spacing: .01em; }
+.lv-pcard__who span { color: #D9332B; font-weight: 600; }
+.lv-pcard__btn { display: grid; place-items: center; width: 2.4em; height: 2.4em; border: 1px solid rgba(13,17,23,.25); border-radius: 6px; color: #4A5260; }
+.lv-pcard__btn svg { width: 1.1em; height: 1.1em; }
 /* before it scrolls into view (JS only): ring undrawn, tint, markers and photo hidden; then they animate in */
 html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__sweep { stroke-dashoffset: 1; }
 html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__fill,
 html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__label,
 html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__pin,
-html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__photo { opacity: 0; }
+html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-pcard { opacity: 0; }
 .lv-housemap.is-drawn .lv-housemap__sweep { animation: lv-hm-ring 1.3s cubic-bezier(.65,0,.25,1) .2s both; }
 .lv-housemap.is-drawn .lv-housemap__fill { animation: lv-hm-fade .7s ease-out 1s both; }
 .lv-housemap.is-drawn .lv-housemap__label { animation: lv-hm-fade .6s ease-out 1.2s both; }
 .lv-housemap.is-drawn .lv-housemap__pin { animation: lv-hm-pin .6s var(--lv-ease) calc(1.5s + var(--i) * .2s) both; }
-.lv-housemap.is-drawn .lv-housemap__photo { animation: lv-hm-photo .9s var(--lv-ease) 1.1s both; }
+.lv-housemap.is-drawn .lv-pcard { animation: lv-hm-photo .9s var(--lv-ease) 1.1s both; }
 @keyframes lv-hm-ring { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @keyframes lv-hm-fade { from { opacity: 0; } }
 @keyframes lv-hm-pin { from { opacity: 0; transform: translateY(-26px); } 60% { opacity: 1; } }
 @keyframes lv-hm-photo { from { opacity: 0; transform: translateY(30px); } }
-@media (prefers-reduced-motion: reduce) { .lv-housemap.is-drawn .lv-housemap__sweep, .lv-housemap.is-drawn .lv-housemap__fill, .lv-housemap.is-drawn .lv-housemap__label, .lv-housemap.is-drawn .lv-housemap__pin, .lv-housemap.is-drawn .lv-housemap__photo { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .lv-housemap.is-drawn .lv-housemap__sweep, .lv-housemap.is-drawn .lv-housemap__fill, .lv-housemap.is-drawn .lv-housemap__label, .lv-housemap.is-drawn .lv-housemap__pin, .lv-housemap.is-drawn .lv-pcard { animation: none; } }
 @media (max-width: 900px) { .lv-housemap { width: min(100%, 30rem); } }
