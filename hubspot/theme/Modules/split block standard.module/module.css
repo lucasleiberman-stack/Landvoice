@@ -10,3 +10,7 @@
 
 /* heading tag option: an h2 gets the h2 size (.lv-h2); inside a hero copy block it needs the same spacing under it that the h1 gets (03-components.css only sets it for .lv-h1) */
 .lv-herocopy .lv-h2 { margin-bottom: 1.6rem; }
+
+/* padding options: tick "Remove top padding" / "Remove bottom padding" (or both) to set that side's padding to 0. Two classes so it beats the standard .lv-pg-hero padding whatever the file order. */
+.lv-pg-hero.lv-pg-hero--no-top { padding-top: 0; }
+.lv-pg-hero.lv-pg-hero--no-bottom { padding-bottom: 0; }

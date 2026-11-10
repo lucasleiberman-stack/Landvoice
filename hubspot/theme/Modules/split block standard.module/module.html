@@ -2,7 +2,7 @@
 {% set band = module.band or 'light' %}
 {% set htag = 'h2' if module.heading_tag == 'h2' else 'h1' %}
 {% set side = module.image_side or 'right' %}
-<section class="lv-band lv-band--{{ band }}{% if module.flat_top %} lv-band--flat-top{% endif %} lv-pg-hero lv-pg-hero--media-{{ side }}" aria-labelledby="split-title-{{ name }}">
+<section class="lv-band lv-band--{{ band }}{% if module.flat_top %} lv-band--flat-top{% endif %} lv-pg-hero lv-pg-hero--media-{{ side }}{% if module.no_padding_top %} lv-pg-hero--no-top{% endif %}{% if module.no_padding_bottom %} lv-pg-hero--no-bottom{% endif %}" aria-labelledby="split-title-{{ name }}">
   <div class="lv-pg-hero__stage">
     <div class="lv-herocopy">
       {% if module.eyebrow %}<p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }}</p>{% endif %}
