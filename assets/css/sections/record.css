@@ -30,9 +30,14 @@
 .lv-rec__oaddr { margin-top: 1.5em; color: #4A5260; font-size: .85em; line-height: 1.3; }
 .lv-rec__email { display: flex; align-items: center; gap: .5em; margin-top: .9em; font-size: .85em; color: #4A5260; }
 .lv-rec__email svg { width: 1.3em; height: 1.3em; flex: none; }
+.lv-rec__soc { display: flex; align-items: center; gap: .8em; margin-top: .9em; padding-top: .7em; border-top: 1px solid #D5D9E0; }
+.lv-rec__in { color: #0A66C2; font: 800 1.45em/1 var(--lv-font-body); letter-spacing: -.04em; }
+.lv-rec__fb { display: grid; place-items: center; width: 1.45em; height: 1.45em; border-radius: 50%; background: #1877F2; color: #fff; font: 800 1em/1 var(--lv-font-body); }
+.lv-rec__ig { color: #D6249F; }
+.lv-rec__ig svg { display: block; width: 1.5em; height: 1.5em; }
 .lv-rec__contacts { display: grid; gap: .55em; align-content: start; }
 .lv-rec__contact { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: .5em; padding: .45em .55em .45em .75em; border: 1px solid #8F96A3; border-radius: .6em; }
-.lv-rec__contact--on { border: 2px solid #2FB863; }
+.lv-rec__contact--on { border-color: #2FB863; }   /* same 1px line as the others, just green */
 .lv-rec__cwho { display: grid; gap: .15em; font-size: .74em; line-height: 1.15; }
 .lv-rec__cwho b { text-transform: uppercase; color: #3C4658; font-weight: 700; }
 .lv-rec__cwho span { display: inline-flex; align-items: center; gap: .3em; font-weight: 500; }
@@ -46,7 +51,7 @@
 .lv-rec__btn svg { width: 1.05em; height: 1.05em; }
 
 /* spotlight: a blue ring round the piece being explained; its huge soft shadow dims the rest of the record */
-.lv-rec__spot { position: absolute; left: 0; top: 0; width: 0; height: 0; border-radius: .6em; box-shadow: 0 0 0 2px var(--lv-blue), 0 0 0 100vmax rgba(240,239,236,.62); opacity: 0; pointer-events: none;
+.lv-rec__spot { position: absolute; left: 0; top: 0; width: 0; height: 0; border-radius: .6em; box-shadow: 0 0 0 calc(1.25px / var(--z, 1)) var(--lv-blue), 0 0 0 100vmax rgba(240,239,236,.62);   /* the ring stays about 1.25px on screen however far the camera zooms (the stage is scaled by --z) */ opacity: 0; pointer-events: none;
   transition: left .95s cubic-bezier(.65,0,.25,1), top .95s cubic-bezier(.65,0,.25,1), width .95s cubic-bezier(.65,0,.25,1), height .95s cubic-bezier(.65,0,.25,1), opacity .5s ease; }
 .lv-rec.is-live .lv-rec__spot { opacity: 1; }
 .lv-rec__spot { z-index: 3; }

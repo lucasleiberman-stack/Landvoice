@@ -413,6 +413,7 @@ LV.ready(function () {
       var g = geo(target), pad = 10, vw = frame.clientWidth, vh = frame.clientHeight, L = stage.offsetLeft, T = stage.offsetTop;   // L/T = where the stage sits in the frame
       var z = Math.max(1, Math.min(vw * .72 / (g.w + 2 * pad), vh * .62 / (g.h + 2 * pad), 3.4));
       var cx = g.x + g.w / 2, cy = g.y + g.h / 2;
+      stage.style.setProperty('--z', z);
       stage.style.transform = 'translate(' + (vw / 2 - L - z * cx) + 'px,' + (vh / 2 - T - z * cy) + 'px) scale(' + z + ')';
       spot.style.left = (g.x - pad) + 'px'; spot.style.top = (g.y - pad) + 'px'; spot.style.width = (g.w + 2 * pad) + 'px'; spot.style.height = (g.h + 2 * pad) + 'px';   // the spotlight is inside the stage, so it rides the camera
     }
