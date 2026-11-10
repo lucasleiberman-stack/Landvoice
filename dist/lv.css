@@ -566,6 +566,32 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 
 /* homepage hero sub paragraph: max width 550px */
 .lv-hero .lv-herocopy .lv-lede { max-width: 550px; }
+/* HOUSE MAP: a house-shaped cut-out (SVG clipPath) with the hero's map and territory ring showing through it, and a few glass-coloured way-point markers.
+   Used in the product pages' "what are ..." block (figure on the left, text on the right via .lv-split--media-left). The ring draws and the markers pop in once, when it scrolls into view (data-lv-draw). */
+.lv-split--media-left { align-items: center; }
+.lv-split--media-left > :last-child { padding-top: 0; }
+.lv-housemap { margin: 0; width: min(100%, 36rem); justify-self: center; }
+.lv-housemap svg { display: block; width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 28px 44px rgba(0,0,0,.45)); }
+.lv-housemap__bg { fill: var(--lv-paper); }
+.lv-housemap__fill { fill: #4089E4; fill-opacity: .12; }
+.lv-housemap__ring { fill: none; stroke: rgba(62,139,232,.65); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.lv-housemap__rim { fill: none; stroke: rgba(255,255,255,.22); stroke-width: 2; stroke-linejoin: round; }
+.lv-housemap__pin { --c: #7ED8A0; fill: var(--c); transform-box: fill-box; transform-origin: 50% 100%; scale: 2.3; filter: drop-shadow(0 2px 3px rgba(13,17,23,.35)); }
+.lv-housemap__pin--pre  { --c: #5B9BF0; }
+.lv-housemap__pin--fsbo { --c: #FFA24D; }
+.lv-housemap__pulse { fill: color-mix(in srgb, var(--c) 45%, transparent); stroke: none; transform-box: fill-box; transform-origin: center; }
+/* before it scrolls into view (JS only): ring undrawn, markers hidden; then they animate in */
+html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__ring { stroke-dashoffset: 1; }
+html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__fill { opacity: 0; }
+html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-housemap__pin { opacity: 0; }
+.lv-housemap.is-drawn .lv-housemap__ring { animation: lv-hm-ring 1.3s cubic-bezier(.65,0,.25,1) .2s both; }
+.lv-housemap.is-drawn .lv-housemap__fill { animation: lv-hm-fade .7s ease-out 1s both; }
+.lv-housemap.is-drawn .lv-housemap__pin { animation: lv-hm-pin .6s var(--lv-ease) calc(1.5s + var(--i) * .2s) both; }
+@keyframes lv-hm-ring { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes lv-hm-fade { from { opacity: 0; } }
+@keyframes lv-hm-pin { from { opacity: 0; transform: translateY(-14px) scale(.6); } 60% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .lv-housemap.is-drawn .lv-housemap__ring, .lv-housemap.is-drawn .lv-housemap__fill, .lv-housemap.is-drawn .lv-housemap__pin { animation: none; } }
+@media (max-width: 900px) { .lv-housemap { width: min(100%, 26rem); } }
 /* INTEGRATIONS: logo cluster + "And Everything Else" connector */
 .lv-integrations__head { display: grid; gap: 1.4rem; justify-items: center; text-align: center; max-width: 60rem; margin-inline: auto; }
 .lv-integrations__main { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 100px); align-items: center; margin-top: clamp(56px, 7vw, 100px); }
@@ -622,8 +648,8 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 @media (max-width: 620px)  { .lv-plans { grid-template-columns: 1fr; } }
 
 /* BILLING TABS (Monthly / Quarterly / Annually): a segmented control under the heading. Plans carry all three prices in the markup (.lv-plan__amt--monthly/--quarterly/--annual);
-   [data-period] on .lv-plans (set by assets/js/85-billing.js, and in the HTML for no-JS) decides which one shows. A plan with a single price (no .lv-price spans) is unaffected. */
-.lv-pricing__billing { display: flex; justify-content: center; margin-top: clamp(28px, 3.5vw, 44px); }
+   [data-period] on .lv-plans (set by assets/js/85-billing.js, and in the HTML for no-JS) decides which one shows. A plan with a single price (no .lv-plan__amt spans) is unaffected. */
+.lv-pricing__billing { display: flex; justify-content: flex-start; margin-top: clamp(28px, 3.5vw, 44px); }
 .lv-billing { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); }
 .lv-billing__tab { padding: .8em 1.7em; border: 0; border-radius: 999px; background: transparent; color: var(--lv-fg-muted); font: 500 .98rem/1 var(--lv-font-display); letter-spacing: -.01em; cursor: pointer; transition: background .3s var(--lv-ease), color .3s var(--lv-ease); }
 .lv-billing__tab:hover { color: var(--lv-fg); }

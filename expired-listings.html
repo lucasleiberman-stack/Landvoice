@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="assets/css/sections/pricing.css">
 <link rel="stylesheet" href="assets/css/sections/faq.css">
 <link rel="stylesheet" href="assets/css/sections/product.css">
+<link rel="stylesheet" href="assets/css/sections/housemap.css">
 <link rel="stylesheet" href="assets/css/sections/footer.css">
 </head>
 <body>
@@ -125,11 +126,26 @@
 </section>
 
 
-<!-- ===== DARK BAND: what are expired, canceled and withdrawn listings ===== -->
+<!-- ===== DARK BAND: what are expired, canceled and withdrawn listings (graphic left: a house cut-out showing the map; text right) ===== -->
 <section class="lv-band lv-band--dark lv-section" aria-labelledby="pg-what">
-  <div class="lv-container lv-container--wide lv-split">
-    <h2 class="lv-h2" id="pg-what" data-lv-reveal>What Are Expired, Canceled, and Withdrawn Listings?</h2>
-    <p class="lv-pg__body" data-lv-reveal style="--lv-delay:.1s">Expired, Canceled, and Withdrawn Listings are homes that came off the market without selling. Terminology varies between MLSs, so the same situation can carry different labels in different markets. For prospecting purposes the practical difference is small, because in every one of these cases a homeowner tried to sell and was unsuccessful.</p>
+  <div class="lv-container lv-container--wide lv-split lv-split--media-left">
+    <figure class="lv-housemap" data-lv-draw data-lv-reveal aria-hidden="true">
+      <svg viewBox="0 0 520 520" focusable="false">
+        <defs><clipPath id="lv-housemap-clip"><path d="M260 40L360 124.5V70H408V165L492 236H440V462Q440 476 426 476H94Q80 476 80 462V236H28Z"/></clipPath></defs>
+        <g clip-path="url(#lv-housemap-clip)">
+          <rect class="lv-housemap__bg" x="0" y="0" width="520" height="520"/>
+          <image href="assets/img/hero-map-clean.png" x="-90" y="30" width="700" height="450" preserveAspectRatio="xMidYMid slice"/>
+          <ellipse class="lv-housemap__fill" cx="260" cy="305" rx="150" ry="105"/>
+          <ellipse class="lv-housemap__ring" cx="260" cy="305" rx="150" ry="105" pathLength="1"/>
+          <g transform="translate(205 336)"><g class="lv-housemap__pin lv-housemap__pin--exp" style="--i:0"><ellipse class="lv-housemap__pulse" rx="6" ry="2.4"/><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd"/></g></g><g transform="translate(305 292)"><g class="lv-housemap__pin lv-housemap__pin--pre" style="--i:1"><ellipse class="lv-housemap__pulse" rx="6" ry="2.4"/><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd"/></g></g><g transform="translate(268 388)"><g class="lv-housemap__pin lv-housemap__pin--fsbo" style="--i:2"><ellipse class="lv-housemap__pulse" rx="6" ry="2.4"/><path d="M0 0L-5.7-7.9A7 7 0 1 1 5.7-7.9ZM-3-12a3 3 0 1 0 6 0a3 3 0 1 0-6 0Z" fill-rule="evenodd"/></g></g>
+        </g>
+        <path class="lv-housemap__rim" d="M260 40L360 124.5V70H408V165L492 236H440V462Q440 476 426 476H94Q80 476 80 462V236H28Z"/>
+      </svg>
+    </figure>
+    <div class="lv-pg__stack">
+      <h2 class="lv-h2" id="pg-what" data-lv-reveal>What Are Expired, Canceled, and Withdrawn Listings?</h2>
+      <p class="lv-pg__body" data-lv-reveal style="--lv-delay:.1s">Expired, Canceled, and Withdrawn Listings are homes that came off the market without selling. Terminology varies between MLSs, so the same situation can carry different labels in different markets. For prospecting purposes the practical difference is small, because in every one of these cases a homeowner tried to sell and was unsuccessful.</p>
+    </div>
   </div>
 </section>
 
