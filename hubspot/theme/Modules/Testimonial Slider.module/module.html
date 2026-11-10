@@ -1,5 +1,6 @@
-{# Dark band: client-success testimonial slider with dots. Auto-advances every 3.5 seconds (pauses on hover). #}
-<section class="lv-band lv-band--dark lv-testimonial" aria-label="{{ module.eyebrow }}" data-lv-slider data-lv-interval="{{ (module.seconds_per_slide|default(3.5)) * 1000 }}">
+{# Client-success testimonial slider with dots. Auto-advances every 3.5 seconds (pauses on hover). Theme: dark (default) or light band. Headshot on the left (default) or the right. #}
+{% set theme = 'light' if module.theme == 'light' else 'dark' %}
+<section class="lv-band lv-band--{{ theme }} lv-testimonial{% if module.orientation == 'right' %} lv-testimonial--photo-right{% endif %}" aria-label="{{ module.eyebrow }}" data-lv-slider data-lv-interval="{{ (module.seconds_per_slide|default(3.5)) * 1000 }}">
   <div class="lv-container lv-quote">
     <svg class="lv-quote__mark" viewBox="130 150 485 420" aria-hidden="true"><path d="M150 158H346Q358 158 358 170V372C358 470 292 545 190 559L156 562Q142 562 142 548V462Q142 453 152 451C204 446 233 420 233 375H150Q138 375 138 363V170Q138 158 150 158Z"/><path transform="translate(247 0)" d="M150 158H346Q358 158 358 170V372C358 470 292 545 190 559L156 562Q142 562 142 548V462Q142 453 152 451C204 446 233 420 233 375H150Q138 375 138 363V170Q138 158 150 158Z"/></svg>
     <div class="lv-quote__avatars">{% for item in module.testimonials %}<div class="lv-quote__avatar">{% if item.photo.src %}<img src="{{ item.photo.src }}" alt="{{ item.photo.alt }}" loading="lazy">{% endif %}</div>{% endfor %}</div>

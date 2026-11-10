@@ -25,3 +25,13 @@
 .lv-testimonial .lv-quote:has(.lv-quote__slide:nth-of-type(8):not([hidden])) .lv-quote__avatar:first-child { opacity: 0; }
 .lv-testimonial .lv-quote:has(.lv-quote__slide:nth-of-type(8):not([hidden])) .lv-quote__avatar:nth-child(8) { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .lv-testimonial .lv-quote__avatars .lv-quote__avatar { transition: none; } }
+
+/* headshot on the right: swap the two columns (wide screens only; on phones the photo stays on top), and move the faint quote mark to the opposite corner */
+@media (min-width: 761px) {
+  .lv-testimonial--photo-right .lv-quote { grid-template-columns: minmax(0, 1fr) auto; }
+  .lv-testimonial--photo-right .lv-quote__avatars { order: 2; }
+  .lv-testimonial--photo-right .lv-quote__mark { right: auto; left: 2%; }
+}
+/* light theme: the progress dots need a visible resting colour on the light band (the shared grey is fine on dark) and the faint quote mark uses the band's ink */
+.lv-testimonial.lv-band--light .lv-quote__dot { background: #C9CED6; }
+.lv-testimonial.lv-band--light .lv-quote__dot.is-active { background: var(--lv-blue); }

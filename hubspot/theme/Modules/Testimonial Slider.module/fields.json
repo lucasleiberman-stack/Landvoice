@@ -1,88 +1,129 @@
-[
-  {
-    "name": "eyebrow",
-    "label": "Eyebrow",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Client success"
+[ {
+  "id" : "theme",
+  "name" : "theme",
+  "label" : "Theme",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "dark"
+}, {
+  "id" : "orientation",
+  "name" : "orientation",
+  "label" : "Headshot position (the quote goes on the other side)",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Headshot left, quote right" ], [ "right", "Headshot right, quote left" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "left"
+}, {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Client success"
+}, {
+  "id" : "seconds_per_slide",
+  "name" : "seconds_per_slide",
+  "label" : "Seconds per testimonial",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 2,
+  "max" : 30,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 3.5
+}, {
+  "id" : "testimonials",
+  "name" : "testimonials",
+  "label" : "Testimonials",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 8,
+    "sorting_label_field" : null,
+    "default" : 3
   },
-  {
-    "name": "seconds_per_slide",
-    "label": "Seconds per testimonial",
-    "type": "number",
-    "required": false,
-    "locked": false,
-    "default": 3.5,
-    "min": 2,
-    "max": 30
-  },
-  {
-    "name": "testimonials",
-    "label": "Testimonials",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 8,
-      "default": 3
-    },
-    "children": [
-      {
-        "name": "photo",
-        "label": "Photo (circle on the left)",
-        "type": "image",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "show_loading": false,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "name": "quote",
-        "label": "Quote",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Quote"
-      },
-      {
-        "name": "person",
-        "label": "Name",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Name"
-      },
-      {
-        "name": "role",
-        "label": "Business and city",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "City, ST"
-      }
-    ],
-    "default": [
-      {
-        "quote": "I got 3 listings in my very first month with Landvoice! It has been a game-changer for my business.",
-        "role": "Jackson Team, Las Vegas",
-        "person": "Sheri Jackson"
-      },
-      {
-        "quote": "Landvoice integrates seamlessly with the other apps. It's a no-brainer.",
-        "role": "City, ST",
-        "person": "Agent Name"
-      },
-      {
-        "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice.",
-        "role": "City, ST",
-        "person": "Agent Name"
-      }
-    ]
-  }
-]
+  "children" : [ {
+    "id" : "testimonials.photo",
+    "name" : "photo",
+    "label" : "Photo (circle on the left)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "testimonials.quote",
+    "name" : "quote",
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Quote"
+  }, {
+    "id" : "testimonials.person",
+    "name" : "person",
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Name"
+  }, {
+    "id" : "testimonials.role",
+    "name" : "role",
+    "label" : "Business and city",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "City, ST"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "quote" : "I got 3 listings in my very first month with Landvoice! It has been a game-changer for my business.",
+    "role" : "Jackson Team, Las Vegas",
+    "person" : "Sheri Jackson"
+  }, {
+    "quote" : "Landvoice integrates seamlessly with the other apps. It's a no-brainer.",
+    "role" : "City, ST",
+    "person" : "Agent Name"
+  }, {
+    "quote" : "I've tried other seller lead data softwares but nothing comes close to Landvoice.",
+    "role" : "City, ST",
+    "person" : "Agent Name"
+  } ]
+} ]
