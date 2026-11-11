@@ -992,4 +992,6 @@ section.lv-band .lv-pricing__head { text-align: center; }
 section.lv-band .lv-pricing__billing { justify-content: center; }
 .lv-plans .lv-plan { text-align: center; align-items: center; }
 .lv-plans .lv-plan .lv-plan__list { width: 100%; text-align: left; }
-.lv-plans .lv-plan .lv-btn--block { width: 100%; justify-content: center; }
+/* PRICING: button is the card's bottom edge: full card width, follows the card's bottom corners. */
+.lv-plans .lv-plan { --lv-plan-pad: clamp(22px, 2.4vw, 34px); }
+.lv-plans .lv-plan .lv-btn--block { align-self: stretch; width: auto; margin: auto calc(-1 * var(--lv-plan-pad)) calc(-1 * var(--lv-plan-pad)); border-radius: 0 0 22px 22px; padding-block: .35rem; }
