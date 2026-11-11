@@ -24,3 +24,27 @@
   .lv-ccta .lv-ccta__ring--a { width: 120vw; }
   .lv-ccta .lv-ccta__ring--b { width: 190vw; }
 }
+
+/* GRID GRAPHIC option (the road-map patch used on the hero bands): "center" = one big patch behind the content, fading out to every edge;
+   "sides" = a patch on the left and one on the right, fading toward the content. The picture comes from --lv-road (set inline by the module / page),
+   light bands blend it with `darken` (base.html), dark bands show it as a faint light version. */
+.lv-ccta .lv-gridplane__patch--c,
+.lv-ccta .lv-gridplane__patch--sl,
+.lv-ccta .lv-gridplane__patch--sr { aspect-ratio: 823 / 598; }
+.lv-ccta .lv-gridplane__patch--c { left: 50%; top: 50%; --lv-patch: min(1500px, 120vw); transform: translate(-50%, -50%);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.85) 28%, rgba(0,0,0,.35) 62%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.85) 28%, rgba(0,0,0,.35) 62%, transparent 100%); }
+.lv-ccta .lv-gridplane__patch--sl { left: 0; top: 50%; --lv-patch: clamp(320px, 36vw, 700px); transform: translateY(-50%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 62% at 0 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%);
+          mask-image: radial-gradient(ellipse 100% 62% at 0 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%); }
+.lv-ccta .lv-gridplane__patch--sr { right: 0; top: 50%; --lv-patch: clamp(320px, 36vw, 700px); transform: translateY(-50%);
+  -webkit-mask-image: radial-gradient(ellipse 100% 62% at 100% 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%);
+          mask-image: radial-gradient(ellipse 100% 62% at 100% 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%); }
+.lv-ccta .lv-gridplane__patch--sr::before { transform: scaleX(-1); }
+/* dark band: the picture is beige blocks with slightly darker streets, so it is inverted and pushed to near-white streets, then blended in faintly */
+.lv-band--dark.lv-ccta .lv-gridplane__patch::before { background: var(--lv-road) center / 100% 100% no-repeat; filter: invert(1) brightness(6) contrast(2.2); mix-blend-mode: screen; opacity: .22; }
+.lv-band--dark.lv-ccta .lv-gridplane__patch--c::before { opacity: .26; }
+@media (max-width: 760px) {
+  .lv-ccta .lv-gridplane__patch--sl, .lv-ccta .lv-gridplane__patch--sr { --lv-patch: 70vw; }
+  .lv-ccta .lv-gridplane__patch--c { --lv-patch: 190vw; }
+}

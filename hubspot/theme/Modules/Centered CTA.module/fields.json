@@ -24,6 +24,38 @@
     "default": "dark"
   },
   {
+    "id": "graphic",
+    "name": "graphic",
+    "label": "Background graphic",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "rings",
+        "Two faint rings"
+      ],
+      [
+        "grid_center",
+        "Grid graphic, centre"
+      ],
+      [
+        "grid_sides",
+        "Grid graphic, both sides"
+      ],
+      [
+        "none",
+        "None"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "rings"
+  },
+  {
     "id": "statement_heading",
     "name": "statement_heading",
     "label": "Statement heading",

@@ -36,6 +36,13 @@
 <link rel="stylesheet" href="assets/css/sections/facts-stack.css">
 <link rel="stylesheet" href="assets/css/sections/footer.css">
 <link rel="stylesheet" href="assets/css/sections/centered-cta.css">
+<style>
+/* same as the inline style in hubspot/theme/Templates/base.html (road-map corner patches), local file path */
+.lv-gridplane__patch { aspect-ratio: 823 / 598; }
+.lv-gridplane__patch::before { inset: 0; transform: none; mix-blend-mode: darken; background: url('assets/img/road-patch-v4.svg') center / 100% 100% no-repeat; }
+.lv-gridplane__patch--br::before { transform: scaleX(-1); }
+@media (min-width: 761px) { .lv-gridplane__patch { --lv-patch: clamp(480px, 56vw, 900px); } }
+</style>
 </head>
 <body>
 
@@ -94,12 +101,11 @@
 </header>
 
 <main>
-<!-- Centered CTA experiment: dark theme, then light theme (the module has a Theme option) -->
-<section class="lv-band lv-band--dark lv-section lv-ccta" aria-labelledby="ccta-title-dark">
-  <span class="lv-ccta__ring lv-ccta__ring--a" aria-hidden="true"></span>
-  <span class="lv-ccta__ring lv-ccta__ring--b" aria-hidden="true"></span>
+<!-- dark, center -->
+<section class="lv-band lv-band--dark lv-section lv-ccta" aria-labelledby="ccta-title-dark-center">
+  <div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('/assets/img/road-patch-v4.svg')"><i class="lv-gridplane__patch lv-gridplane__patch--c"></i></div>
   <div class="lv-container lv-ccta__inner">
-    <h2 class="lv-ccta__statement" id="ccta-title-dark" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
+    <h2 class="lv-ccta__statement" id="ccta-title-dark-center" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
     <p class="lv-ccta__text" data-lv-reveal style="--lv-delay:.08s">Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads.</p>
     <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
       <h2 class="lv-ccta__question">How Much Does Landvoice Expired Listing Data Cost?</h2>
@@ -108,12 +114,51 @@
     </div>
   </div>
 </section>
-
-<section class="lv-band lv-band--light lv-section lv-ccta" aria-labelledby="ccta-title-light">
+<!-- dark, sides -->
+<section class="lv-band lv-band--dark lv-section lv-ccta" aria-labelledby="ccta-title-dark-sides">
+  <div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('/assets/img/road-patch-v4.svg')"><i class="lv-gridplane__patch lv-gridplane__patch--sl"></i><i class="lv-gridplane__patch lv-gridplane__patch--sr"></i></div>
+  <div class="lv-container lv-ccta__inner">
+    <h2 class="lv-ccta__statement" id="ccta-title-dark-sides" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
+    <p class="lv-ccta__text" data-lv-reveal style="--lv-delay:.08s">Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads.</p>
+    <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
+      <h2 class="lv-ccta__question">How Much Does Landvoice Expired Listing Data Cost?</h2>
+      <p class="lv-ccta__price">$60 <small>per month</small></p>
+      <div class="lv-actions lv-ccta__actions"><a class="lv-btn" href="#checkout-expired"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Sign up now</span></a></div>
+    </div>
+  </div>
+</section>
+<!-- light, center -->
+<section class="lv-band lv-band--light lv-section lv-ccta" aria-labelledby="ccta-title-light-center">
+  <div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('/assets/img/road-patch-v4.svg')"><i class="lv-gridplane__patch lv-gridplane__patch--c"></i></div>
+  <div class="lv-container lv-ccta__inner">
+    <h2 class="lv-ccta__statement" id="ccta-title-light-center" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
+    <p class="lv-ccta__text" data-lv-reveal style="--lv-delay:.08s">Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads.</p>
+    <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
+      <h2 class="lv-ccta__question">How Much Does Landvoice Expired Listing Data Cost?</h2>
+      <p class="lv-ccta__price">$60 <small>per month</small></p>
+      <div class="lv-actions lv-ccta__actions"><a class="lv-btn" href="#checkout-expired"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Sign up now</span></a></div>
+    </div>
+  </div>
+</section>
+<!-- light, sides -->
+<section class="lv-band lv-band--light lv-section lv-ccta" aria-labelledby="ccta-title-light-sides">
+  <div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('/assets/img/road-patch-v4.svg')"><i class="lv-gridplane__patch lv-gridplane__patch--sl"></i><i class="lv-gridplane__patch lv-gridplane__patch--sr"></i></div>
+  <div class="lv-container lv-ccta__inner">
+    <h2 class="lv-ccta__statement" id="ccta-title-light-sides" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
+    <p class="lv-ccta__text" data-lv-reveal style="--lv-delay:.08s">Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads.</p>
+    <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
+      <h2 class="lv-ccta__question">How Much Does Landvoice Expired Listing Data Cost?</h2>
+      <p class="lv-ccta__price">$60 <small>per month</small></p>
+      <div class="lv-actions lv-ccta__actions"><a class="lv-btn" href="#checkout-expired"><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">Sign up now</span></a></div>
+    </div>
+  </div>
+</section>
+<!-- dark, rings -->
+<section class="lv-band lv-band--dark lv-section lv-ccta" aria-labelledby="ccta-title-dark-rings">
   <span class="lv-ccta__ring lv-ccta__ring--a" aria-hidden="true"></span>
   <span class="lv-ccta__ring lv-ccta__ring--b" aria-hidden="true"></span>
   <div class="lv-container lv-ccta__inner">
-    <h2 class="lv-ccta__statement" id="ccta-title-light" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
+    <h2 class="lv-ccta__statement" id="ccta-title-dark-rings" data-lv-reveal>Does Prospecting Expired Listings Still Work in Today's Market?</h2>
     <p class="lv-ccta__text" data-lv-reveal style="--lv-delay:.08s">Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads.</p>
     <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
       <h2 class="lv-ccta__question">How Much Does Landvoice Expired Listing Data Cost?</h2>
