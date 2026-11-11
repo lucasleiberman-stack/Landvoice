@@ -48,3 +48,14 @@
   .lv-ccta .lv-gridplane__patch--sl, .lv-ccta .lv-gridplane__patch--sr { --lv-patch: 70vw; }
   .lv-ccta .lv-gridplane__patch--c { --lv-patch: 190vw; }
 }
+
+/* GRID, STRAIGHT-ON (option "Grid graphic, centre, straight-on"): the same rounded city blocks, but a flat front view instead of the tilted road map.
+   Drawn in CSS (a rounded-square tile used as a mask, so one rule colours it for dark and light bands); the patch's radial mask fades it out toward every edge. */
+.lv-band.lv-ccta .lv-gridplane__patch--f { --blk: clamp(84px, 7.4vw, 128px); left: 50%; top: 50%; --lv-patch: min(1800px, 135vw); aspect-ratio: 16 / 9; transform: translate(-50%, -50%);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.8) 30%, rgba(0,0,0,.3) 64%, transparent 100%);
+          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.8) 30%, rgba(0,0,0,.3) 64%, transparent 100%); }
+.lv-band.lv-ccta .lv-gridplane__patch--f::before { inset: 0; transform: none; filter: none; mix-blend-mode: normal; background: var(--lv-fg); opacity: .075;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect x='7' y='7' width='106' height='106' rx='26'/%3E%3C/svg%3E") center / var(--blk) var(--blk) repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect x='7' y='7' width='106' height='106' rx='26'/%3E%3C/svg%3E") center / var(--blk) var(--blk) repeat; }
+.lv-band--dark.lv-ccta .lv-gridplane__patch--f::before { background: var(--lv-fg); filter: none; mix-blend-mode: normal; opacity: .1; }
+@media (max-width: 760px) { .lv-band.lv-ccta .lv-gridplane__patch--f { --blk: 64px; --lv-patch: 220vw; } }

@@ -2,6 +2,7 @@
 <section class="lv-band lv-band--{{ 'light' if module.theme == 'light' else 'dark' }} lv-section lv-ccta{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="ccta-title">
   {% set gfx = module.graphic or 'rings' %}
   {% if gfx == 'grid_center' %}<div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/road-patch-v4.svg") }}')"><i class="lv-gridplane__patch lv-gridplane__patch--c"></i></div>
+  {% elif gfx == 'grid_flat' %}<div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--f"></i></div>
   {% elif gfx == 'grid_sides' %}<div class="lv-gridplane" aria-hidden="true" style="--lv-road: url('{{ get_asset_url("/Landvoice - 2026 Redesign/images/road-patch-v4.svg") }}')"><i class="lv-gridplane__patch lv-gridplane__patch--sl"></i><i class="lv-gridplane__patch lv-gridplane__patch--sr"></i></div>
   {% elif gfx == 'rings' %}<span class="lv-ccta__ring lv-ccta__ring--a" aria-hidden="true"></span>
   <span class="lv-ccta__ring lv-ccta__ring--b" aria-hidden="true"></span>{% endif %}

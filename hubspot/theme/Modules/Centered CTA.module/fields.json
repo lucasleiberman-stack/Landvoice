@@ -40,6 +40,10 @@
         "Grid graphic, centre"
       ],
       [
+        "grid_flat",
+        "Grid graphic, centre, straight-on"
+      ],
+      [
         "grid_sides",
         "Grid graphic, both sides"
       ],
