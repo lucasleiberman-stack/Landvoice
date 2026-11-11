@@ -1,62 +1,88 @@
-/* BENTO, "SHOWCASE" VARIANT (experiment, expired-listings-bento-apple.html). Loaded after bento.css (NOT bento-full.css); every rule has 3 classes.
-   Feel taken from big product-showcase pages: edge-to-edge tiles with a thin gap, ONE idea per tile, centred headline + a short line on top, the visual
-   bottom-anchored and bleeding off the tile. Rows alternate full-width and two-up so the story reads top to bottom:
-   data (full, dark) / phones + old expireds / why they expire (full) / steps (full, tint) / still works + compared / price (full, blue). */
+/* BENTO, "SHOWCASE" VARIANT (expired-listings-bento-apple.html). Loaded after bento.css; every rule has 3 classes so it wins on file order.
+   Edge-to-edge tiles with a thin gap, ONE idea per tile, centred headline + one short paragraph on top, the visual bottom-anchored.
+   Tile colours: white, paper (--lv-paper-2) and ink only. Rows:
+   data (full) / phones + old expireds / why they expire + how to turn data into listings / still works + compared / price (full). */
 .lv-band.lv-bento-band--apple { padding-block: clamp(10px, .8vw, 14px); }
 .lv-bento-band--apple .lv-bento-wrap { max-width: none; padding-inline: clamp(10px, .8vw, 14px); }
-.lv-bento-wrap .lv-bento.lv-bento--apple { --lv-bento-gap: clamp(10px, .8vw, 14px); --lv-bento-pad: clamp(24px, 3vw, 56px); --lv-bento-p: clamp(1.02rem, 1.15vw, 1.25rem);
+.lv-bento-wrap .lv-bento.lv-bento--apple { --lv-bento-gap: clamp(10px, .8vw, 14px); --lv-bento-pad: clamp(24px, 3vw, 56px); --lv-bento-p: clamp(1.02rem, 1.15vw, 1.25rem); --lv-bento-pt: clamp(36px, 3.6vw, 68px);
   grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.lv-bento--apple .lv-bento__tile { align-items: center; text-align: center; gap: .9rem; border-radius: clamp(12px, 1.2vw, 20px); padding: clamp(32px, 3.2vw, 60px) var(--lv-bento-pad) 0; }
-.lv-bento--apple .lv-bento__tile--tint { --lv-fg-muted: #3B4558; background: var(--lv-blue-soft); }
-.lv-bento--apple .lv-bento__h { font-size: clamp(1.8rem, 2.6vw, 3rem); letter-spacing: -.04em; max-width: 28ch; margin-inline: auto; }
+.lv-bento--apple .lv-bento__tile { align-items: center; text-align: center; gap: .9rem; border-radius: clamp(12px, 1.2vw, 20px); padding: var(--lv-bento-pt) var(--lv-bento-pad) 0; }
+.lv-bento--apple .lv-bento__tile--paper { --lv-fg: var(--lv-ink); --lv-fg-muted: #454D5B; --lv-hairline: rgba(13,17,23,.16); background: var(--lv-paper-2); }
+.lv-bento--apple .lv-bento__h { font-size: clamp(1.8rem, 2.6vw, 3rem); letter-spacing: -.04em; max-width: 26ch; margin-inline: auto; }
 .lv-bento--apple .lv-bento__text { max-width: 54ch; margin-inline: auto; }
 .lv-bento--apple .lv-bento__copy { display: grid; justify-items: center; gap: .9rem; }
-
-/* every tile = headline block on top, visual pinned to the bottom edge */
 .lv-bento--apple .lv-bento__tile > :last-child { margin-bottom: 0; }
 .lv-bento--apple .lv-bento__tile--ink .lv-tag, .lv-bento--apple .lv-bento__tile--ink .lv-pill { color: var(--lv-blue-on-dark); border-color: var(--lv-blue-on-dark); }
 .lv-bento--apple .lv-tags { justify-content: center; margin-top: .6rem; }
 
-/* spans + heights (shallow, like a showcase: roughly 1:2 for two-up, 1:3 for full width at 1728px) */
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--data { grid-column: 1 / -1; grid-row: auto; display: flex; padding-bottom: 0; }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--phones { grid-column: auto; grid-row: auto; }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--old { grid-column: auto; }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--why { grid-column: 1 / -1; display: flex; flex-direction: column; grid-template-columns: none; }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--steps { grid-column: 1 / -1; padding-bottom: clamp(32px, 3.2vw, 60px); }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--works { grid-column: auto; padding-bottom: clamp(32px, 3.2vw, 60px); justify-content: center; }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--compare { grid-column: auto; display: flex; padding-bottom: clamp(32px, 3.2vw, 60px); justify-content: center; }
-.lv-bento--apple .lv-bento__tile.lv-bento__tile--price { grid-column: 1 / -1; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-block: clamp(36px, 3.6vw, 68px); gap: 1rem; }
+/* spans */
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--data { grid-column: 1 / -1; grid-row: auto; display: flex; }
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--phones,
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--old,
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--why,
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--steps,
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--works,
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--compare { grid-column: auto; grid-row: auto; display: flex; flex-direction: column; grid-template-columns: none; }
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--steps,
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--works { padding-bottom: var(--lv-bento-pt); }
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--works { justify-content: center; }
+.lv-bento--apple .lv-bento__tile.lv-bento__tile--price { grid-column: 1 / -1; flex-direction: column; align-items: center; justify-content: center; flex-wrap: nowrap; padding-block: clamp(40px, 4vw, 72px); gap: 1rem; }
 
-/* data (hero): the record mock is the "product shot", wide, bleeding off the bottom */
-.lv-bento--apple .lv-bento__tile--data .lv-mock { width: min(1100px, 70%); margin: clamp(22px, 2.2vw, 40px) auto 0; aspect-ratio: 3.1 / 1; border-radius: 18px 18px 0 0; }
+/* data (hero, light): the record mock is the product shot, wide, bleeding off the bottom */
+.lv-bento--apple .lv-bento__tile--data .lv-mock { width: min(1100px, 70%); margin: clamp(22px, 2.2vw, 40px) auto 0; aspect-ratio: 3.1 / 1; border-radius: 18px 18px 0 0; background: var(--lv-paper); }
 
-/* phones: the photo graphic, bottom-anchored, large */
-.lv-bento--apple .lv-bento__tile--phones .lv-bento__img { width: min(100%, 600px); margin: clamp(18px, 2vw, 36px) auto 0; }
+/* phones: the photo graphic, bottom-anchored */
+.lv-bento--apple .lv-bento__tile--phones .lv-bento__img { width: min(100%, 600px); margin: auto auto 0; padding-top: clamp(18px, 2vw, 36px); box-sizing: content-box; }
 
-/* old expireds: the three stats are the visual */
-.lv-bento--apple .lv-bento__tile--old .lv-facts { margin: auto 0 0; padding-top: clamp(20px, 2.2vw, 40px); width: 100%; text-align: center; padding-bottom: clamp(32px, 3.2vw, 60px); }
+/* old expireds: 12-month strip (the database) + the three stats, both anchored to the bottom */
+.lv-bento--apple .lv-bento__months { width: min(100%, 520px); margin: auto auto 0; padding-top: clamp(20px, 2.2vw, 40px); }
+.lv-bento__bars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; align-items: end; height: clamp(44px, 4vw, 64px); }
+.lv-bento__bars span { position: relative; display: block; height: 100%; border-radius: 5px; background: var(--lv-fg); opacity: calc(.14 + var(--i) * .035); }
+.lv-bento__bars span.is-live { opacity: 1; background: var(--lv-paper); }
+.lv-bento__bars span.is-live::after { content: ""; position: absolute; inset: -4px; border-radius: 8px; border: 1.5px solid var(--lv-paper); opacity: 0; animation: lv-bento-ping 2.4s var(--lv-ease) infinite; }
+@keyframes lv-bento-ping { 0% { opacity: .9; transform: scale(.8); } 70%, 100% { opacity: 0; transform: scale(1.25); } }
+.lv-bento__axis { display: flex; justify-content: space-between; margin-top: .6rem; font-family: var(--lv-font-body); font-size: .85rem; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); }
+.lv-bento--apple .lv-bento__tile--old .lv-facts { margin: clamp(22px, 2.4vw, 44px) 0 0; width: 100%; text-align: center; padding-bottom: var(--lv-bento-pt); }
 .lv-bento--apple .lv-bento__tile--old .lv-fact__value { font-size: clamp(2.8rem, 4.4vw, 5rem); }
 .lv-bento--apple .lv-bento__tile--old .lv-fact__label { margin-inline: auto; max-width: 16ch; }
+@media (prefers-reduced-motion: reduce) { .lv-bento__bars span.is-live::after { animation: none; opacity: 0; } }
 
 /* why: pills row, then the house photo bleeding off the bottom */
-.lv-bento--apple .lv-bento__tile--why .lv-bento__body { justify-items: center; }
+.lv-bento--apple .lv-bento__tile--why .lv-bento__body { justify-items: center; margin-bottom: clamp(18px, 2vw, 36px); }
 .lv-bento--apple .lv-bento__tile--why .lv-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
-.lv-bento--apple .lv-bento__tile--why .lv-bento__img { width: min(100%, 560px); justify-self: auto; margin: clamp(18px, 2vw, 36px) auto 0; }
+.lv-bento--apple .lv-bento__tile--why .lv-bento__img { width: min(100%, 560px); justify-self: auto; margin: auto auto 0; }
 
-/* steps: heading centred, three across */
-.lv-bento--apple .lv-bento__steps { width: min(100%, 1240px); text-align: left; }
+/* steps (half width): a vertical timeline, number left, copy right */
+.lv-bento--apple .lv-bento__steps { --dot: 56px; --gap: clamp(22px, 2.4vw, 36px); grid-template-columns: 1fr; width: min(100%, 520px); margin: auto; padding-top: clamp(10px, 1.4vw, 24px); text-align: left; }
+.lv-bento--apple .lv-bento__step { grid-template-columns: var(--dot) minmax(0, 1fr); column-gap: clamp(16px, 1.8vw, 26px); row-gap: .35rem; align-items: start; }
+.lv-bento--apple .lv-bento__num { grid-row: 1 / span 2; }
+.lv-bento--apple .lv-bento__step-t { margin-top: .5rem; max-width: none; font-size: clamp(1.15rem, 1.4vw, 1.45rem); }
+.lv-bento--apple .lv-bento__step .lv-bento__text { grid-column: 2; max-width: none; margin-inline: 0; }
+.lv-bento--apple .lv-bento__step:not(:last-child)::after { left: calc(var(--dot) / 2 - 1.5px); top: calc(var(--dot) + 6px); width: 3px; height: calc(100% + var(--gap) - var(--dot) - 12px); transform-origin: top; }
+html:not(.no-js) .lv-bento--apple .lv-bento__steps[data-lv-draw]:not(.is-drawn) .lv-bento__step::after { transform: scaleY(0); }
+.lv-bento--apple .lv-bento__tile--paper .lv-bento__num { background: #fff; }
 
-/* price: big $60 + the one button */
+/* works: the statement carries the tile */
+.lv-bento--apple .lv-bento__tile--works .lv-bento__h { font-size: clamp(2rem, 3.1vw, 3.5rem); max-width: 18ch; }
+
+/* compared: a quiet visual (illustrative bars, no figures), anchored to the bottom */
+.lv-bento--apple .lv-bento__vs { width: min(100%, 560px); margin: auto auto 0; padding-block: clamp(22px, 2.4vw, 40px) var(--lv-bento-pt); display: grid; gap: clamp(12px, 1.2vw, 18px); text-align: left; }
+.lv-bento__vs-key { display: flex; justify-content: center; gap: 1.6rem; font-family: var(--lv-font-body); font-size: .9rem; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); margin-bottom: .2rem; }
+.lv-bento__vs-key span { display: inline-flex; align-items: center; gap: .5rem; }
+.lv-bento__vs-key i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.lv-bento__vs-key i.is-other, .lv-bento__vs-row span.is-other { background: var(--lv-paper-3); }
+.lv-bento__vs-key i.is-lv, .lv-bento__vs-row span.is-lv { background: var(--lv-ink); }
+.lv-bento__vs-row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: .45rem 1rem; align-items: center; }
+.lv-bento__vs-row b { grid-row: 1 / span 2; font-family: var(--lv-font-body); font-size: .95rem; font-weight: 500; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg); }
+.lv-bento__vs-row span { display: block; height: 10px; width: var(--w); border-radius: 999px; }
 .lv-bento--apple .lv-bento__tile--price .lv-bento__h { max-width: 26ch; font-size: clamp(1.6rem, 2.2vw, 2.4rem); }
 
 @media (max-width: 900px) {
   .lv-bento-wrap .lv-bento.lv-bento--apple { grid-template-columns: 1fr; }
-  .lv-bento--apple .lv-bento__tile.lv-bento__tile--phones, .lv-bento--apple .lv-bento__tile.lv-bento__tile--old,
-  .lv-bento--apple .lv-bento__tile.lv-bento__tile--works, .lv-bento--apple .lv-bento__tile.lv-bento__tile--compare { grid-column: 1 / -1; }
-  .lv-bento--apple .lv-bento__tile--data .lv-mock { width: 100%; }
+  .lv-bento--apple .lv-bento__tile.lv-bento__tile--data .lv-mock { width: 100%; }
 }
 @media (max-width: 760px) {
-  .lv-bento--apple .lv-bento__steps { text-align: center; justify-items: center; }
-  .lv-bento--apple .lv-bento__step { justify-items: center; }
   .lv-bento--apple .lv-bento__tile--old .lv-facts { grid-template-columns: 1fr; }
+  .lv-bento__vs-row { grid-template-columns: 1fr; }
+  .lv-bento__vs-row b { grid-row: auto; }
 }

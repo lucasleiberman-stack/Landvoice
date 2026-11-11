@@ -64,10 +64,10 @@ html:not(.no-js) .lv-bento__steps[data-lv-draw]:not(.is-drawn) .lv-bento__step .
 @media (prefers-reduced-motion: reduce) { .lv-bento__num, .lv-bento__step::after, .lv-bento__step-t, .lv-bento__step .lv-bento__text { transition: none; } }
 
 /* price tile */
-.lv-bento__price { font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(3rem, 5.4vw, 5.2rem); letter-spacing: -.05em; line-height: 1; color: #fff; }
+.lv-bento__price { font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(3rem, 5.4vw, 5.2rem); letter-spacing: -.05em; line-height: 1; color: var(--lv-fg); }
 .lv-bento__price small { font-size: .36em; font-weight: 400; letter-spacing: 0; margin-left: .3em; }
-.lv-bento__tile--price .lv-bento__h { color: #fff; max-width: 22ch; }
-.lv-bento__tile--price .lv-btn { background: #fff; color: var(--lv-ink); }
+.lv-bento__tile--price .lv-bento__h { color: var(--lv-fg); max-width: 22ch; }
+.lv-bento__tile--blue.lv-bento__tile--price .lv-btn { background: #fff; color: var(--lv-ink); }
 
 @media (max-width: 1100px) {
   .lv-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
