@@ -1,0 +1,17 @@
+{# Split Block Stats: the split block layout (text on one side) with the big-number stat cards on the other side instead of an image. Dark or light band; stats right (default) or left.
+   Style options (remove top/bottom padding, top/bottom corners) are at the bottom of the settings. Needs shared CSS: product.css (.lv-split, .lv-fact), facts-stack.css, band-options.css. #}
+{% set band = 'light' if module.band == 'light' else 'dark' %}
+{% set htag = 'h1' if module.heading_tag == 'h1' else 'h2' %}
+<section class="lv-band lv-band--{{ band }} lv-section{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="stats-title-{{ name }}">
+  <div class="lv-container lv-container--wide lv-split lv-split--center{% if module.stats_side == 'left' %} lv-split--stats-left{% endif %}">
+    <div class="lv-pg__stack" data-lv-reveal>
+      <{{ htag }} class="lv-{{ htag }}" id="stats-title-{{ name }}">{{ module.heading }}</{{ htag }}>
+      {% if module.body_text %}<p class="lv-pg__body">{{ module.body_text }}</p>{% endif %}
+    </div>
+    <div class="lv-facts lv-facts--stack">
+      {% for stat in module.stats %}
+      <div class="lv-fact" data-lv-reveal{% if loop.index0 > 0 %} style="--lv-delay:{{ loop.index0 * 0.1 }}s"{% endif %}><p class="lv-fact__value">{{ stat.value }}</p><p class="lv-fact__label">{{ stat.stat_label }}</p></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

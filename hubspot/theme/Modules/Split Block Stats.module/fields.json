@@ -1,0 +1,159 @@
+[ {
+  "id" : "band",
+  "name" : "band",
+  "label" : "Band colour",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "dark"
+}, {
+  "id" : "stats_side",
+  "name" : "stats_side",
+  "label" : "Stats side",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "right", "Right (text left)" ], [ "left", "Left (text right)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "right"
+}, {
+  "id" : "heading_tag",
+  "name" : "heading_tag",
+  "label" : "Heading tag (h2 = a section heading; h1 = the page's main title, once per page)",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "h2", "H2" ], [ "h1", "H1" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "h2"
+}, {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Old Expireds, the Listings Everyone Else Stopped Calling"
+}, {
+  "id" : "body_text",
+  "name" : "body_text",
+  "label" : "Supporting paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Landvoice customers benefit from new Expired listings every day. You will also receive a 12 month database with status updates happening every 15 minutes (more often than any other Expired provider)."
+}, {
+  "id" : "stats",
+  "name" : "stats",
+  "label" : "Stats",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "stats.value",
+    "name" : "value",
+    "label" : "Big value",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "12"
+  }, {
+    "id" : "stats.stat_label",
+    "name" : "stat_label",
+    "label" : "Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Month database of expired listings"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "value" : "12",
+    "stat_label" : "Month database of expired listings"
+  }, {
+    "value" : "15",
+    "stat_label" : "Minutes between status updates"
+  }, {
+    "value" : "Daily",
+    "stat_label" : "New expired listings added"
+  } ]
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]

@@ -1,0 +1,15 @@
+{
+  "label": "Split Block Stats",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Split block with big-number stat cards in place of an image: heading and paragraph on one side, up to four stats (a big value plus a label) on the other. Dark or light band, stats on the right or left. Set a number to e.g. 12, 15 or Daily.",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
