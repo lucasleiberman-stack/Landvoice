@@ -1,207 +1,152 @@
-[
-  {
-    "id": "heading",
-    "name": "heading",
-    "label": "Heading",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Frequently asked questions about expired listings"
+[ {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Frequently asked questions about expired listings"
+}, {
+  "id" : "faqs",
+  "name" : "faqs",
+  "label" : "Questions and answers (the list splits into two columns)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 60,
+    "sorting_label_field" : null,
+    "default" : 18
   },
-  {
-    "id": "faqs",
-    "name": "faqs",
-    "label": "Questions and answers (the list splits into two columns)",
-    "required": false,
-    "locked": false,
-    "occurrence": {
-      "min": 1,
-      "max": 60,
-      "sorting_label_field": null,
-      "default": 18
-    },
-    "children": [
-      {
-        "id": "faqs.question",
-        "name": "question",
-        "label": "Question",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "Question"
-      },
-      {
-        "id": "faqs.answer",
-        "name": "answer",
-        "label": "Answer",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "Answer"
-      }
-    ],
-    "tab": "CONTENT",
-    "expanded": false,
-    "group_occurrence_meta": null,
-    "type": "group",
-    "display_width": null,
-    "default": [
-      {
-        "question": "What are expired listings?",
-        "answer": "An expired listing is a home that was listed for sale on the MLS but did not sell before the listing agreement between the homeowner and the previous agent reached its contractual date. When that happens, the listing comes off the market and the homeowner is left with no agent, no offer, and in many cases they are left with the same reason for moving they had when they started. Expired listings matter to agents because the homeowner has already made the hardest decision, which is the decision to sell. They are not weighing whether to move. They are deciding who to hire next."
-      },
-      {
-        "question": "What is the difference between expired, canceled, and withdrawn listings?",
-        "answer": "All three describe a home that came off the market without selling, but they differ in how it happened. An expired listing reached the end date of its agreement without a sale. A canceled listing was normally ended early, usually because the homeowner and the agent agreed to part ways. A withdrawn listing was pulled from active status while the agreement is often still in force, sometimes to pause showings or to relist later at a different price. Terminology varies between MLSs, so the same situation can carry different labels in different markets. For prospecting purposes the practical difference is small, because in every one of these cases a homeowner tried to sell and it did not work."
-      },
-      {
-        "question": "Why do listings expire?",
-        "answer": "Listings expire for a handful of recurring reasons, and price is by far the most common. A home that comes to market above what buyers will pay generates early showings, then goes quiet, and no amount of marketing fixes it. The second reason is thin marketing and limited exposure, meaning poor photography, weak online presentation, and a listing that never reached the buyers most likely to purchase. The third is communication. Many homeowners will tell you the listing did not fail because of the market, it failed because their agent went quiet after the first few weeks. Condition and difficult showing access account for the remainder, along with the occasional deal that collapsed in financing or inspection. Knowing which of these caused a specific listing to expire is the entire basis of a useful first conversation with that homeowner."
-      },
-      {
-        "question": "Why are expired listings such a good source of listings for agents?",
-        "answer": "Because the hardest part of the sale is already finished. Most prospecting requires you to create motivation in someone who has not thought about moving, which is slow and low yield. An expired homeowner has already set a price, already let strangers walk through their home, already told their family they were leaving, and then watched it fall apart. You are not creating demand. You are competing for a hiring decision that is about to be made anyway. That is why expired data converts into listings taken faster than almost any other source, and why one signed listing tends to produce more business through the sign in the yard, the neighbors who notice, and the second transaction when that seller buys their next home."
-      },
-      {
-        "question": "How soon should I contact the owner of an expired listing?",
-        "answer": "The same day the listing comes off the market, and ideally within the first hour you are able to work. A large share of expired homeowners relist inside the first thirty days, and the first agent who can explain why the home did not sell and lay out a specific plan to fix it has an enormous structural advantage over the agents who call in week three. That said, speed alone is not a strategy. Being first gets you the conversation. Being consistent gets you the listing."
-      },
-      {
-        "question": "How many contacts does it take to list an expired listing?",
-        "answer": "Rarely one, and almost never on the first call. Plan on somewhere between four and twelve meaningful contacts spread across phone calls, direct mail, door knocking, and social media before a homeowner is ready to sit down with you. The reason is simple. When you reach them on day one they are still absorbing the failure, and the answer is usually no. By week four they have gotten honest about price, and by week eight most of the agents who called on day one have quit. The agents who take the most expired listings are usually not the best talkers. They are the most consistent followers up."
-      },
-      {
-        "question": "Are older expired listings still worth calling?",
-        "answer": "Older expired records are often the single best opportunity in the category, precisely because almost nobody works them. Most agents hammer the fresh records for two weeks, collect a few rejections, and move on. Meanwhile that homeowner still wants to move, and by month four the phone has stopped ringing entirely. When you call then, you are not the ninth agent that morning, you are the only one. The homeowner has had time to get realistic about price, and the agent who stayed in touch becomes the obvious choice. Landvoice Old Expireds data lets you work these records well beyond the current month, which means you can build a prospecting territory with almost no competition in it."
-      },
-      {
-        "question": "Does prospecting expired listings work in a slow market?",
-        "answer": "It works better in a slow market, not worse. When days on market rise and buyer demand softens, more listings fail to sell, which means the volume of expired data in your market goes up at exactly the moment other sources of business dry up. Homeowners in that environment are also more willing to have a real conversation about price, because they have watched their own listing sit. The one thing that changes is your message. In a fast market you are explaining what went wrong with the marketing. In a slow market you are explaining what the home is actually worth now and what it will take to sell it. Expired data holds up across cycles better than any other prospecting source for that reason."
-      },
-      {
-        "question": "How does Landvoice get phone numbers for expired listings?",
-        "answer": "Your MLS tells you that a listing expired but does not give you any way to contact the homeowner. Landvoice takes each expired property and matches it against public records and premium databases that are not available to the general public, then ranks every number we find by how likely it is to actually belong to the person who owns that home. You receive up to three numbers per record, including cell phones, presented in that order of likelihood. If our matching tells us a number has no real connection to the property, we do not put it on your screen at all."
-      },
-      {
-        "question": "How accurate is Landvoice expired data?",
-        "answer": "Expired Basic returns up to 60 percent of the phone numbers for the expired records in your market, and Expired Pro returns up to 95 percent in most markets, both including cell phones. The more important point is how we define accuracy. Most providers in this category measure success by how many numbers they can hand you, and their own leadership has said publicly that the goal is to surface every number they can find. In practice that fills your list with numbers belonging to people who have never had any connection to the property. Landvoice measures accuracy by whether a dial reaches the homeowner, because the scarcest thing you own is the ninety minutes a day you spend prospecting."
-      },
-      {
-        "question": "Are the phone numbers checked against the Do Not Call Registry?",
-        "answer": "Yes. Every number in your Landvoice account is flagged against the National Do Not Call Registry, so you always know before you dial which records you can call and which ones you cannot. Records on the registry are not dead ends. Those homeowners are still reachable through direct mail, door knocking, and social media, and because far fewer agents bother with those channels, the response you get is often better. Compliance responsibility ultimately rests with you and your brokerage, so follow your state rules and your brokerage policy alongside the federal registry."
-      },
-      {
-        "question": "How often is expired data updated?",
-        "answer": "Every day. New expired, canceled, and withdrawn records are processed overnight and are waiting in your account each morning, so you are always working the freshest available data rather than a list that other agents have already picked through. This matters more than it sounds, because the window in which an expired homeowner is genuinely undecided is short, and a record that reaches you three days late has usually already had a dozen conversations attached to it."
-      },
-      {
-        "question": "Can I choose my MLS, my zip codes, and my price range?",
-        "answer": "Yes. Each expired plan covers one MLS, and inside it you can filter your data by zip code, city, neighborhood, price range, and expiration date, so you can concentrate on the areas where you actually want listing inventory rather than driving across a metro. You can also view your market on a map, tag the records you care about, and add zip codes or additional MLS coverage as your business grows. If you want to confirm coverage for your specific market before you buy anything, call 888-678-0905 and we will check it for you."
-      },
-      {
-        "question": "Can I use my own dialer or CRM with Landvoice?",
-        "answer": "Yes. You can work your data entirely inside the Landvoice Data Management system, where you can filter, tag, take notes after every conversation, and track your follow up, or you can export your records and work them in whatever dialer and CRM you already use. We do not require you to abandon the tools your business already runs on, and we do not lock your data inside our platform to make leaving harder."
-      },
-      {
-        "question": "How much do expired leads cost with Landvoice?",
-        "answer": "Expired Basic is $60 per month for one MLS and Expired Pro is $120 per month for one MLS, both including cell phones and Do Not Call flagging at no extra charge. If you want expired data alongside For Sale By Owner records, Pre-Foreclosure records, Neighborhood Search, and Call Capture, bundled plans start at $87 per month, and the Elite plan at $227 per month includes Expired Pro. Quarterly and annual billing lowers the monthly cost further. There is no setup fee, and you can also buy any product on its own rather than taking a package you did not ask for."
-      },
-      {
-        "question": "Is there a contract or a setup fee?",
-        "answer": "Neither. Landvoice does not charge a setup fee and does not require a long term contract. You can bill monthly, quarterly, or annually, and if you want to stop, call us before your renewal date and we will cancel it. There is no retention maze and no script designed to wear you down. We would rather earn the next month than trap you in it."
-      },
-      {
-        "question": "How is Landvoice different from REDX?",
-        "answer": "There is a direct history between the two companies, because the CEO of Landvoice was one of the original founders of REDX. The difference today is philosophy rather than feature lists. REDX has said publicly that it provides every phone number it can find in order to create as many opportunities as possible, which means your list includes numbers for people with no connection to the property, and you pay for those numbers twice, once on the invoice and once with your morning. Landvoice gives you a maximum of three numbers per record, ranked by how likely each is to reach the actual homeowner, and withholds the ones we know are wrong. Landvoice also publishes consistent pricing, starts at $60 per month, and lets you buy products individually."
-      },
-      {
-        "question": "How is Landvoice different from Vulcan7?",
-        "answer": "Vulcan7 sells a bundled platform and does not publish its pricing, so you have to book a call before you can find out what you will pay. Landvoice publishes pricing openly, starts at $60 per month for expired data, and lets you buy exactly the data you want instead of a full platform subscription. Cell phones and Do Not Call flagging are included rather than positioned as upgrades, and you are free to export your data into the dialer and CRM you already use. Landvoice has also been building this data since 1994, and when you call 888-678-0905 a person answers."
-      }
-    ]
-  },
-  {
-    "id": "no_padding_top",
-    "name": "no_padding_top",
-    "label": "Remove top padding (set it to 0)",
-    "required": false,
-    "locked": false,
-    "display": "checkbox",
-    "type": "boolean",
-    "display_width": null,
-    "default": false
-  },
-  {
-    "id": "no_padding_bottom",
-    "name": "no_padding_bottom",
-    "label": "Remove bottom padding (set it to 0)",
-    "required": false,
-    "locked": false,
-    "display": "checkbox",
-    "type": "boolean",
-    "display_width": null,
-    "default": false
-  },
-  {
-    "id": "corners_top",
-    "name": "corners_top",
-    "label": "Top corners",
-    "required": false,
-    "locked": false,
-    "display": "select",
-    "choices": [
-      [
-        "default",
-        "Default (light bands rounded, dark bands square)"
-      ],
-      [
-        "round",
-        "Rounded"
-      ],
-      [
-        "square",
-        "Square"
-      ]
-    ],
-    "multiple": false,
-    "reordering_enabled": true,
-    "preset": null,
-    "type": "choice",
-    "display_width": null,
-    "default": "default"
-  },
-  {
-    "id": "corners_bottom",
-    "name": "corners_bottom",
-    "label": "Bottom corners",
-    "required": false,
-    "locked": false,
-    "display": "select",
-    "choices": [
-      [
-        "default",
-        "Default (light bands rounded, dark bands square)"
-      ],
-      [
-        "round",
-        "Rounded"
-      ],
-      [
-        "square",
-        "Square"
-      ]
-    ],
-    "multiple": false,
-    "reordering_enabled": true,
-    "preset": null,
-    "type": "choice",
-    "display_width": null,
-    "default": "default"
-  }
-]
+  "children" : [ {
+    "id" : "faqs.question",
+    "name" : "question",
+    "label" : "Question",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Question"
+  }, {
+    "id" : "faqs.answer",
+    "name" : "answer",
+    "label" : "Answer",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Answer"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "question" : "What are expired listings?",
+    "answer" : "An expired listing is a home that was listed for sale on the MLS but did not sell before the listing agreement between the homeowner and the previous agent reached its contractual date. When that happens, the listing comes off the market and the homeowner is left with no agent, no offer, and in many cases they are left with the same reason for moving they had when they started. Expired listings matter to agents because the homeowner has already made the hardest decision, which is the decision to sell. They are not weighing whether to move. They are deciding who to hire next."
+  }, {
+    "question" : "What is the difference between expired, canceled, and withdrawn listings?",
+    "answer" : "All three describe a home that came off the market without selling, but they differ in how it happened. An expired listing reached the end date of its agreement without a sale. A canceled listing was normally ended early, usually because the homeowner and the agent agreed to part ways. A withdrawn listing was pulled from active status while the agreement is often still in force, sometimes to pause showings or to relist later at a different price. Terminology varies between MLSs, so the same situation can carry different labels in different markets. For prospecting purposes the practical difference is small, because in every one of these cases a homeowner tried to sell and it did not work."
+  }, {
+    "question" : "Why do listings expire?",
+    "answer" : "Listings expire for a handful of recurring reasons, and price is by far the most common. A home that comes to market above what buyers will pay generates early showings, then goes quiet, and no amount of marketing fixes it. The second reason is thin marketing and limited exposure, meaning poor photography, weak online presentation, and a listing that never reached the buyers most likely to purchase. The third is communication. Many homeowners will tell you the listing did not fail because of the market, it failed because their agent went quiet after the first few weeks. Condition and difficult showing access account for the remainder, along with the occasional deal that collapsed in financing or inspection. Knowing which of these caused a specific listing to expire is the entire basis of a useful first conversation with that homeowner."
+  }, {
+    "question" : "Why are expired listings such a good source of listings for agents?",
+    "answer" : "Because the hardest part of the sale is already finished. Most prospecting requires you to create motivation in someone who has not thought about moving, which is slow and low yield. An expired homeowner has already set a price, already let strangers walk through their home, already told their family they were leaving, and then watched it fall apart. You are not creating demand. You are competing for a hiring decision that is about to be made anyway. That is why expired data converts into listings taken faster than almost any other source, and why one signed listing tends to produce more business through the sign in the yard, the neighbors who notice, and the second transaction when that seller buys their next home."
+  }, {
+    "question" : "How soon should I contact the owner of an expired listing?",
+    "answer" : "The same day the listing comes off the market, and ideally within the first hour you are able to work. A large share of expired homeowners relist inside the first thirty days, and the first agent who can explain why the home did not sell and lay out a specific plan to fix it has an enormous structural advantage over the agents who call in week three. That said, speed alone is not a strategy. Being first gets you the conversation. Being consistent gets you the listing."
+  }, {
+    "question" : "How many contacts does it take to list an expired listing?",
+    "answer" : "Rarely one, and almost never on the first call. Plan on somewhere between four and twelve meaningful contacts spread across phone calls, direct mail, door knocking, and social media before a homeowner is ready to sit down with you. The reason is simple. When you reach them on day one they are still absorbing the failure, and the answer is usually no. By week four they have gotten honest about price, and by week eight most of the agents who called on day one have quit. The agents who take the most expired listings are usually not the best talkers. They are the most consistent followers up."
+  }, {
+    "question" : "Are older expired listings still worth calling?",
+    "answer" : "Older expired records are often the single best opportunity in the category, precisely because almost nobody works them. Most agents hammer the fresh records for two weeks, collect a few rejections, and move on. Meanwhile that homeowner still wants to move, and by month four the phone has stopped ringing entirely. When you call then, you are not the ninth agent that morning, you are the only one. The homeowner has had time to get realistic about price, and the agent who stayed in touch becomes the obvious choice. Landvoice Old Expireds data lets you work these records well beyond the current month, which means you can build a prospecting territory with almost no competition in it."
+  }, {
+    "question" : "Does prospecting expired listings work in a slow market?",
+    "answer" : "It works better in a slow market, not worse. When days on market rise and buyer demand softens, more listings fail to sell, which means the volume of expired data in your market goes up at exactly the moment other sources of business dry up. Homeowners in that environment are also more willing to have a real conversation about price, because they have watched their own listing sit. The one thing that changes is your message. In a fast market you are explaining what went wrong with the marketing. In a slow market you are explaining what the home is actually worth now and what it will take to sell it. Expired data holds up across cycles better than any other prospecting source for that reason."
+  }, {
+    "question" : "How does Landvoice get phone numbers for expired listings?",
+    "answer" : "Your MLS tells you that a listing expired but does not give you any way to contact the homeowner. Landvoice takes each expired property and matches it against public records and premium databases that are not available to the general public, then ranks every number we find by how likely it is to actually belong to the person who owns that home. You receive up to four numbers per record, including cell phones, presented in that order of likelihood. If our matching tells us a number has no real connection to the property, we do not put it on your screen at all."
+  }, {
+    "question" : "How accurate is Landvoice expired data?",
+    "answer" : "Expired Basic returns up to 60 percent of the phone numbers for the expired records in your market, and Expired Pro returns up to 95 percent in most markets, both including cell phones. The more important point is how we define accuracy. Most providers in this category measure success by how many numbers they can hand you, and their own leadership has said publicly that the goal is to surface every number they can find. In practice that fills your list with numbers belonging to people who have never had any connection to the property. Landvoice measures accuracy by whether a dial reaches the homeowner, because the scarcest thing you own is the ninety minutes a day you spend prospecting."
+  }, {
+    "question" : "Are the phone numbers checked against the Do Not Call Registry?",
+    "answer" : "Yes. Every number in your Landvoice account is flagged against the National Do Not Call Registry, so you always know before you dial which records you can call and which ones you cannot. Records on the registry are not dead ends. Those homeowners are still reachable through direct mail, door knocking, and social media, and because far fewer agents bother with those channels, the response you get is often better. Compliance responsibility ultimately rests with you and your brokerage, so follow your state rules and your brokerage policy alongside the federal registry."
+  }, {
+    "question" : "How often is expired data updated?",
+    "answer" : "Every day. New expired, canceled, and withdrawn records are processed overnight and are waiting in your account each morning, so you are always working the freshest available data rather than a list that other agents have already picked through. This matters more than it sounds, because the window in which an expired homeowner is genuinely undecided is short, and a record that reaches you three days late has usually already had a dozen conversations attached to it."
+  }, {
+    "question" : "Can I choose my MLS, my zip codes, and my price range?",
+    "answer" : "Yes. Each expired plan covers one MLS, and inside it you can filter your data by zip code, city, neighborhood, price range, and expiration date, so you can concentrate on the areas where you actually want listing inventory rather than driving across a metro. You can also view your market on a map, tag the records you care about, and add zip codes or additional MLS coverage as your business grows. If you want to confirm coverage for your specific market before you buy anything, call 888-678-0905 and we will check it for you."
+  }, {
+    "question" : "Can I use my own dialer or CRM with Landvoice?",
+    "answer" : "Yes. You can work your data entirely inside the Landvoice Data Management system, where you can filter, tag, take notes after every conversation, and track your follow up, or you can export your records and work them in whatever dialer and CRM you already use. We do not require you to abandon the tools your business already runs on, and we do not lock your data inside our platform to make leaving harder."
+  }, {
+    "question" : "How much do expired leads cost with Landvoice?",
+    "answer" : "Expired Basic is $60 per month for one MLS and Expired Pro is $120 per month for one MLS, both including cell phones and Do Not Call flagging at no extra charge. If you want expired data alongside For Sale By Owner records, Pre-Foreclosure records, Neighborhood Search, and Call Capture, bundled plans start at $87 per month, and the Elite plan at $227 per month includes Expired Pro. Quarterly and annual billing lowers the monthly cost further. There is no setup fee, and you can also buy any product on its own rather than taking a package you did not ask for."
+  }, {
+    "question" : "Is there a contract or a setup fee?",
+    "answer" : "Neither. Landvoice does not charge a setup fee and does not require a long term contract. You can bill monthly, quarterly, or annually, and if you want to stop, call us before your renewal date and we will cancel it. There is no retention maze and no script designed to wear you down. We would rather earn the next month than trap you in it."
+  }, {
+    "question" : "How is Landvoice different from REDX?",
+    "answer" : "There is a direct history between the two companies, because the CEO of Landvoice was one of the original founders of REDX. The difference today is philosophy rather than feature lists. REDX has said publicly that it provides every phone number it can find in order to create as many opportunities as possible, which means your list includes numbers for people with no connection to the property, and you pay for those numbers twice, once on the invoice and once with your morning. Landvoice gives you a maximum of four numbers per record, ranked by how likely each is to reach the actual homeowner, and withholds the ones we know are wrong. Landvoice also publishes consistent pricing, starts at $60 per month, and lets you buy products individually."
+  }, {
+    "question" : "How is Landvoice different from Vulcan7?",
+    "answer" : "Vulcan7 sells a bundled platform and does not publish its pricing, so you have to book a call before you can find out what you will pay. Landvoice publishes pricing openly, starts at $60 per month for expired data, and lets you buy exactly the data you want instead of a full platform subscription. Cell phones and Do Not Call flagging are included rather than positioned as upgrades, and you are free to export your data into the dialer and CRM you already use. Landvoice has also been building this data since 1991, and when you call 888-678-0905 a person answers."
+  } ]
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]
