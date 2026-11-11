@@ -1,156 +1,112 @@
-[
-  {
-    "id": "heading",
-    "name": "heading",
-    "label": "Heading",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "What Landvoice expired data includes"
+[ {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What Landvoice expired data includes"
+}, {
+  "id" : "subtext",
+  "name" : "subtext",
+  "label" : "Supporting paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Homeowner information including name, phone numbers, email, and social media links. All phone numbers are scrubbed against the National and State Do Not Call Registry. Landvoice Expired Data also includes current status, price, days on market, as well as other relevant homeowner information."
+}, {
+  "id" : "pills",
+  "name" : "pills",
+  "label" : "Pills (keep this order: Name, Phone numbers, Email, Social media links, Current status, Price, Days on market)",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 7,
+    "sorting_label_field" : null,
+    "default" : 7
   },
-  {
-    "id": "subtext",
-    "name": "subtext",
-    "label": "Supporting paragraph",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Homeowner information including name, phone numbers, email, and social media links. All phone numbers are scrubbed against the National and State Do Not Call Registry. Landvoice Expired Data also includes current status, price, days on market, as well as other relevant homeowner information."
-  },
-  {
-    "id": "pills",
-    "name": "pills",
-    "label": "Pills (keep this order: Name, Phone numbers, Email, Social media links, Current status, Price, Days on market)",
-    "required": false,
-    "locked": false,
-    "occurrence": {
-      "min": 1,
-      "max": 7,
-      "sorting_label_field": null,
-      "default": 7
-    },
-    "children": [
-      {
-        "id": "pills.pill_text",
-        "name": "pill_text",
-        "label": "Pill text",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "Name"
-      }
-    ],
-    "tab": "CONTENT",
-    "expanded": false,
-    "group_occurrence_meta": null,
-    "type": "group",
-    "display_width": null,
-    "default": [
-      {
-        "pill_text": "Name"
-      },
-      {
-        "pill_text": "Phone numbers"
-      },
-      {
-        "pill_text": "Email"
-      },
-      {
-        "pill_text": "Social media links"
-      },
-      {
-        "pill_text": "Current status"
-      },
-      {
-        "pill_text": "Price"
-      },
-      {
-        "pill_text": "Days on market"
-      }
-    ]
-  },
-  {
-    "id": "no_padding_top",
-    "name": "no_padding_top",
-    "label": "Remove top padding (set it to 0)",
-    "required": false,
-    "locked": false,
-    "display": "checkbox",
-    "type": "boolean",
-    "display_width": null,
-    "default": false
-  },
-  {
-    "id": "no_padding_bottom",
-    "name": "no_padding_bottom",
-    "label": "Remove bottom padding (set it to 0)",
-    "required": false,
-    "locked": false,
-    "display": "checkbox",
-    "type": "boolean",
-    "display_width": null,
-    "default": false
-  },
-  {
-    "id": "corners_top",
-    "name": "corners_top",
-    "label": "Top corners",
-    "required": false,
-    "locked": false,
-    "display": "select",
-    "choices": [
-      [
-        "default",
-        "Default (light bands rounded, dark bands square)"
-      ],
-      [
-        "round",
-        "Rounded"
-      ],
-      [
-        "square",
-        "Square"
-      ]
-    ],
-    "multiple": false,
-    "reordering_enabled": true,
-    "preset": null,
-    "type": "choice",
-    "display_width": null,
-    "default": "default"
-  },
-  {
-    "id": "corners_bottom",
-    "name": "corners_bottom",
-    "label": "Bottom corners",
-    "required": false,
-    "locked": false,
-    "display": "select",
-    "choices": [
-      [
-        "default",
-        "Default (light bands rounded, dark bands square)"
-      ],
-      [
-        "round",
-        "Rounded"
-      ],
-      [
-        "square",
-        "Square"
-      ]
-    ],
-    "multiple": false,
-    "reordering_enabled": true,
-    "preset": null,
-    "type": "choice",
-    "display_width": null,
-    "default": "default"
-  }
-]
+  "children" : [ {
+    "id" : "pills.pill_text",
+    "name" : "pill_text",
+    "label" : "Pill text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Name"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "pill_text" : "Name"
+  }, {
+    "pill_text" : "Phone numbers"
+  }, {
+    "pill_text" : "Email"
+  }, {
+    "pill_text" : "Social media links"
+  }, {
+    "pill_text" : "Current status"
+  }, {
+    "pill_text" : "Price"
+  }, {
+    "pill_text" : "Days on market"
+  } ]
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]

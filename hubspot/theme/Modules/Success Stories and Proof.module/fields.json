@@ -1,618 +1,522 @@
-[
-  {
-    "id": "stories_eyebrow",
-    "name": "stories_eyebrow",
-    "label": "Stories: eyebrow",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Testimonials"
+[ {
+  "id" : "stories_eyebrow",
+  "name" : "stories_eyebrow",
+  "label" : "Stories: eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Testimonials"
+}, {
+  "id" : "stories_line_1",
+  "name" : "stories_line_1",
+  "label" : "Stories: heading line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Success stories."
+}, {
+  "id" : "stories_line_2",
+  "name" : "stories_line_2",
+  "label" : "Stories: heading line 2 (optional)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Hear it from clients."
+}, {
+  "id" : "stories",
+  "name" : "stories",
+  "label" : "Video stories",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 8,
+    "sorting_label_field" : null,
+    "default" : 3
   },
-  {
-    "id": "stories_line_1",
-    "name": "stories_line_1",
-    "label": "Stories: heading line 1",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Success stories."
-  },
-  {
-    "id": "stories_line_2",
-    "name": "stories_line_2",
-    "label": "Stories: heading line 2 (optional)",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Hear it from clients."
-  },
-  {
-    "id": "stories",
-    "name": "stories",
-    "label": "Video stories",
-    "required": false,
-    "locked": false,
-    "occurrence": {
-      "min": 1,
-      "max": 8,
-      "sorting_label_field": null,
-      "default": 3
-    },
-    "children": [
-      {
-        "id": "stories.poster",
-        "name": "poster",
-        "label": "Video poster image (grey placeholder if empty)",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "show_loading": false,
-        "type": "image",
-        "display_width": null,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "id": "stories.video_url",
-        "name": "video_url",
-        "label": "Video embed URL (e.g. https://player.vimeo.com/video/123)",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": ""
-      },
-      {
-        "id": "stories.quote",
-        "name": "quote",
-        "label": "Quote",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "Quote"
-      }
-    ],
-    "tab": "CONTENT",
-    "expanded": false,
-    "group_occurrence_meta": null,
-    "type": "group",
-    "display_width": null,
-    "default": [
-      {
-        "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice",
-        "video_url": ""
-      },
-      {
-        "quote": "Landvoice integrates seamlessly with the other apps. It's a no-brainer",
-        "video_url": ""
-      },
-      {
-        "quote": "I've tried other seller lead data softwares but nothing comes close to Landvoice",
-        "video_url": ""
-      }
-    ]
-  },
-  {
-    "id": "coaches_before",
-    "name": "coaches_before",
-    "label": "Coaches: before the highlight",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Trusted by the"
-  },
-  {
-    "id": "coaches_accent",
-    "name": "coaches_accent",
-    "label": "Coaches: highlight (blue)",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "top coaches"
-  },
-  {
-    "id": "coaches_after",
-    "name": "coaches_after",
-    "label": "Coaches: after the highlight",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "in the industry"
-  },
-  {
-    "id": "coaches",
-    "name": "coaches",
-    "label": "Coach logos",
-    "required": false,
-    "locked": false,
-    "occurrence": {
-      "min": 1,
-      "max": 12,
-      "sorting_label_field": null,
-      "default": 4
-    },
-    "children": [
-      {
-        "id": "coaches.file",
-        "name": "file",
-        "label": "Theme file name (in images/coaches/)",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "coach-tom-ferry.png"
-      },
-      {
-        "id": "coaches.image",
-        "name": "image",
-        "label": "Logo image (optional: overrides the theme file)",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "show_loading": false,
-        "type": "image",
-        "display_width": null,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "id": "coaches.alt",
-        "name": "alt",
-        "label": "Coach name (alt text)",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "Coach"
-      }
-    ],
-    "tab": "CONTENT",
-    "expanded": false,
-    "group_occurrence_meta": null,
-    "type": "group",
-    "display_width": null,
-    "default": [
-      {
-        "file": "coach-tom-ferry.png",
-        "alt": "Tom Ferry"
-      },
-      {
-        "file": "coach-forward-coaching.png",
-        "alt": "Debbie De Grote, Forward Coaching"
-      },
-      {
-        "file": "coach-tom-ferry.png",
-        "alt": "Tom Ferry"
-      },
-      {
-        "file": "coach-forward-coaching.png",
-        "alt": "Debbie De Grote, Forward Coaching"
-      }
-    ]
-  },
-  {
-    "id": "rank",
-    "name": "rank",
-    "label": "Rating card: big rank",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "#1"
-  },
-  {
-    "id": "rank_title_line_1",
-    "name": "rank_title_line_1",
-    "label": "Rating card: title line 1",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Rated real estate"
-  },
-  {
-    "id": "rank_title_line_2",
-    "name": "rank_title_line_2",
-    "label": "Rating card: title line 2 (optional)",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "data provider on Google"
-  },
-  {
-    "id": "rating_text",
-    "name": "rating_text",
-    "label": "Rating card: stars line",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "4.9 Stars | 630+ Reviews"
-  },
-  {
-    "id": "rank_text",
-    "name": "rank_text",
-    "label": "Rating card: paragraph",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Rated higher on Google than any other provider in our market\u2014backed by hundreds of real estate professionals who rely on our accuracy daily."
-  },
-  {
-    "id": "rank_button_label",
-    "name": "rank_button_label",
-    "label": "Rating card: button label",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Get Started"
-  },
-  {
-    "id": "rank_button_link",
-    "name": "rank_button_link",
-    "label": "Rating card: button link",
-    "required": false,
-    "locked": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS"
-    ],
-    "show_advanced_rel_options": false,
-    "type": "link",
-    "display_width": null,
-    "default": {
-      "url": {
-        "type": "EXTERNAL",
-        "href": "#pricing",
-        "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
+  "children" : [ {
+    "id" : "stories.poster",
+    "name" : "poster",
+    "label" : "Video poster image (grey placeholder if empty)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
     }
+  }, {
+    "id" : "stories.video_url",
+    "name" : "video_url",
+    "label" : "Video embed URL (e.g. https://player.vimeo.com/video/123)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "stories.quote",
+    "name" : "quote",
+    "label" : "Quote",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Quote"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "quote" : "I've tried other seller lead data softwares but nothing comes close to Landvoice",
+    "video_url" : ""
+  }, {
+    "quote" : "Landvoice integrates seamlessly with the other apps. It's a no-brainer",
+    "video_url" : ""
+  }, {
+    "quote" : "I've tried other seller lead data softwares but nothing comes close to Landvoice",
+    "video_url" : ""
+  } ]
+}, {
+  "id" : "coaches_before",
+  "name" : "coaches_before",
+  "label" : "Coaches: before the highlight",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Trusted by the"
+}, {
+  "id" : "coaches_accent",
+  "name" : "coaches_accent",
+  "label" : "Coaches: highlight (blue)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "top coaches"
+}, {
+  "id" : "coaches_after",
+  "name" : "coaches_after",
+  "label" : "Coaches: after the highlight",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "in the industry"
+}, {
+  "id" : "coaches",
+  "name" : "coaches",
+  "label" : "Coach logos",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 12,
+    "sorting_label_field" : null,
+    "default" : 4
   },
-  {
-    "id": "cta_title",
-    "name": "cta_title",
-    "label": "Orange card: title",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Power your prospecting with the highest-rated data in real estate"
-  },
-  {
-    "id": "cta_text",
-    "name": "cta_text",
-    "label": "Orange card: paragraph",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Join thousands of top-producing agents who rely on Landvoice for unbeatable data quality, accurate phone numbers, and industry-leading Google reviews."
-  },
-  {
-    "id": "cta_button_label",
-    "name": "cta_button_label",
-    "label": "Orange card: button label",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Get Started"
-  },
-  {
-    "id": "cta_button_link",
-    "name": "cta_button_link",
-    "label": "Orange card: button link",
-    "required": false,
-    "locked": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS"
-    ],
-    "show_advanced_rel_options": false,
-    "type": "link",
-    "display_width": null,
-    "default": {
-      "url": {
-        "type": "EXTERNAL",
-        "href": "#pricing",
-        "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
+  "children" : [ {
+    "id" : "coaches.file",
+    "name" : "file",
+    "label" : "Theme file name (in images/coaches/)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "coach-tom-ferry.png"
+  }, {
+    "id" : "coaches.image",
+    "name" : "image",
+    "label" : "Logo image (optional: overrides the theme file)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
     }
-  },
-  {
-    "id": "ai_heading",
-    "name": "ai_heading",
-    "label": "AI row: heading",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "Ask your favorite AI about Landvoice"
-  },
-  {
-    "id": "ai_links",
-    "name": "ai_links",
-    "label": "AI links",
-    "required": false,
-    "locked": false,
-    "occurrence": {
-      "min": 1,
-      "max": 8,
-      "sorting_label_field": null,
-      "default": 5
+  }, {
+    "id" : "coaches.alt",
+    "name" : "alt",
+    "label" : "Coach name (alt text)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Coach"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "file" : "coach-tom-ferry.png",
+    "alt" : "Tom Ferry"
+  }, {
+    "file" : "coach-forward-coaching.png",
+    "alt" : "Debbie De Grote, Forward Coaching"
+  }, {
+    "file" : "coach-tom-ferry.png",
+    "alt" : "Tom Ferry"
+  }, {
+    "file" : "coach-forward-coaching.png",
+    "alt" : "Debbie De Grote, Forward Coaching"
+  } ]
+}, {
+  "id" : "rank",
+  "name" : "rank",
+  "label" : "Rating card: big rank",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "#1"
+}, {
+  "id" : "rank_title_line_1",
+  "name" : "rank_title_line_1",
+  "label" : "Rating card: title line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Rated real estate"
+}, {
+  "id" : "rank_title_line_2",
+  "name" : "rank_title_line_2",
+  "label" : "Rating card: title line 2 (optional)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "data provider on Google"
+}, {
+  "id" : "rating_text",
+  "name" : "rating_text",
+  "label" : "Rating card: stars line",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "4.9 Stars | 630+ Reviews"
+}, {
+  "id" : "rank_text",
+  "name" : "rank_text",
+  "label" : "Rating card: paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Rated higher on Google than any other provider in our market—backed by hundreds of real estate professionals who rely on our accuracy daily."
+}, {
+  "id" : "rank_button_label",
+  "name" : "rank_button_label",
+  "label" : "Rating card: button label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started"
+}, {
+  "id" : "rank_button_link",
+  "name" : "rank_button_link",
+  "label" : "Rating card: button link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "#pricing",
+      "content_id" : null
     },
-    "children": [
-      {
-        "id": "ai_links.file",
-        "name": "file",
-        "label": "Theme file name (in images/ai/)",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "ai-claude.png"
-      },
-      {
-        "id": "ai_links.image",
-        "name": "image",
-        "label": "Icon (optional: overrides the theme file)",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "show_loading": false,
-        "type": "image",
-        "display_width": null,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "id": "ai_links.aria",
-        "name": "aria",
-        "label": "Screen reader label",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null,
-        "default": "Ask Claude"
-      },
-      {
-        "id": "ai_links.link",
-        "name": "link",
-        "label": "Link",
-        "required": false,
-        "locked": false,
-        "supported_types": [
-          "EXTERNAL",
-          "CONTENT",
-          "FILE",
-          "EMAIL_ADDRESS"
-        ],
-        "show_advanced_rel_options": false,
-        "type": "link",
-        "display_width": null,
-        "default": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "#",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      }
-    ],
-    "tab": "CONTENT",
-    "expanded": false,
-    "group_occurrence_meta": null,
-    "type": "group",
-    "display_width": null,
-    "default": [
-      {
-        "file": "ai-claude.png",
-        "aria": "Ask Claude",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://claude.ai/new?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      },
-      {
-        "file": "ai-chatgpt.png",
-        "aria": "Ask ChatGPT",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://chatgpt.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      },
-      {
-        "file": "ai-gemini.png",
-        "aria": "Ask Gemini",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://gemini.google.com/app",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      },
-      {
-        "file": "ai-grok.png",
-        "aria": "Ask Grok",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://grok.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      },
-      {
-        "file": "ai-perplexity.png",
-        "aria": "Ask Perplexity",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://www.perplexity.ai/search?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      }
-    ]
-  },
-  {
-    "id": "ai_note",
-    "name": "ai_note",
-    "label": "AI row: note",
-    "required": false,
-    "locked": false,
-    "allow_new_line": false,
-    "type": "text",
-    "display_width": null,
-    "default": "You'll be redirected to the AI when you tap on one."
-  },
-  {
-    "id": "no_padding_top",
-    "name": "no_padding_top",
-    "label": "Remove top padding (set it to 0)",
-    "required": false,
-    "locked": false,
-    "display": "checkbox",
-    "type": "boolean",
-    "display_width": null,
-    "default": false
-  },
-  {
-    "id": "no_padding_bottom",
-    "name": "no_padding_bottom",
-    "label": "Remove bottom padding (set it to 0)",
-    "required": false,
-    "locked": false,
-    "display": "checkbox",
-    "type": "boolean",
-    "display_width": null,
-    "default": false
-  },
-  {
-    "id": "corners_top",
-    "name": "corners_top",
-    "label": "Top corners",
-    "required": false,
-    "locked": false,
-    "display": "select",
-    "choices": [
-      [
-        "default",
-        "Default (as designed)"
-      ],
-      [
-        "round",
-        "Rounded"
-      ],
-      [
-        "square",
-        "Square"
-      ]
-    ],
-    "multiple": false,
-    "reordering_enabled": true,
-    "preset": null,
-    "type": "choice",
-    "display_width": null,
-    "default": "default"
-  },
-  {
-    "id": "corners_bottom",
-    "name": "corners_bottom",
-    "label": "Bottom corners",
-    "required": false,
-    "locked": false,
-    "display": "select",
-    "choices": [
-      [
-        "default",
-        "Default (as designed)"
-      ],
-      [
-        "round",
-        "Rounded"
-      ],
-      [
-        "square",
-        "Square"
-      ]
-    ],
-    "multiple": false,
-    "reordering_enabled": true,
-    "preset": null,
-    "type": "choice",
-    "display_width": null,
-    "default": "default"
+    "open_in_new_tab" : false,
+    "no_follow" : false
   }
-]
+}, {
+  "id" : "cta_title",
+  "name" : "cta_title",
+  "label" : "Orange card: title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Power your prospecting with the highest-rated data in real estate"
+}, {
+  "id" : "cta_text",
+  "name" : "cta_text",
+  "label" : "Orange card: paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Join thousands of top-producing agents who rely on Landvoice for unbeatable data quality, accurate phone numbers, and industry-leading Google reviews."
+}, {
+  "id" : "cta_button_label",
+  "name" : "cta_button_label",
+  "label" : "Orange card: button label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started"
+}, {
+  "id" : "cta_button_link",
+  "name" : "cta_button_link",
+  "label" : "Orange card: button link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "#pricing",
+      "content_id" : null
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "ai_heading",
+  "name" : "ai_heading",
+  "label" : "AI row: heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Ask your favorite AI about Landvoice"
+}, {
+  "id" : "ai_links",
+  "name" : "ai_links",
+  "label" : "AI links",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 8,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "ai_links.file",
+    "name" : "file",
+    "label" : "Theme file name (in images/ai/)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "ai-claude.png"
+  }, {
+    "id" : "ai_links.image",
+    "name" : "image",
+    "label" : "Icon (optional: overrides the theme file)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "ai_links.aria",
+    "name" : "aria",
+    "label" : "Screen reader label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Ask Claude"
+  }, {
+    "id" : "ai_links.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "#",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "file" : "ai-claude.png",
+    "aria" : "Ask Claude",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://claude.ai/new?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "file" : "ai-chatgpt.png",
+    "aria" : "Ask ChatGPT",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://chatgpt.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "file" : "ai-gemini.png",
+    "aria" : "Ask Gemini",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://gemini.google.com/app",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "file" : "ai-grok.png",
+    "aria" : "Ask Grok",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://grok.com/?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "file" : "ai-perplexity.png",
+    "aria" : "Ask Perplexity",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.perplexity.ai/search?q=What+is+Landvoice+and+how+accurate+is+its+seller+data%3F",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "ai_note",
+  "name" : "ai_note",
+  "label" : "AI row: note",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "You'll be redirected to the AI when you tap on one."
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]
