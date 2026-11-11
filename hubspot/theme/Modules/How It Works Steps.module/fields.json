@@ -119,6 +119,16 @@
     "alt" : "Leads selected with checkboxes, ready to export"
   } ]
 }, {
+  "id" : "hide_images",
+  "name" : "hide_images",
+  "label" : "Hide the step images (text only)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
   "id" : "closer_line_1",
   "name" : "closer_line_1",
   "label" : "Closing line 1",
