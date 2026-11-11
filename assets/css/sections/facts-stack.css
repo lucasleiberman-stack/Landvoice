@@ -9,6 +9,8 @@
 
 /* ROW: the same open stats side by side in a row, text centred (use under a centred heading + paragraph). Stacks to one column on phones. */
 .lv-facts.lv-facts--row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 64px); margin-top: clamp(40px, 5vw, 72px); text-align: center; }
-.lv-facts--row .lv-fact__label { margin-inline: auto; max-width: 20ch; }
+.lv-facts--row .lv-fact__label { margin-inline: auto; max-width: none; font-size: clamp(.95rem, 1.2vw, 1.15rem); }   /* smaller so each label stays on one line */
+@media (min-width: 761px) { .lv-facts--row .lv-fact__label { white-space: nowrap; } }
 @media (max-width: 760px) { .lv-facts.lv-facts--row { grid-template-columns: 1fr; } }
-.lv-pg__center.lv-pg__center--mid { margin-inline: auto; }   /* centre the heading + paragraph block inside a plain container */
+.lv-pg__center.lv-pg__center--mid { margin-inline: auto; max-width: 66rem; }
+.lv-pg__center--mid .lv-pg__body { max-width: 66rem; text-wrap: balance; }   /* wide enough for two lines on desktop */   /* centre the heading + paragraph block inside a plain container */
