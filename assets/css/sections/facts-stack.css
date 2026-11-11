@@ -7,7 +7,8 @@
 .lv-facts--stack .lv-fact__label { margin-top: .5rem; max-width: none; font-size: clamp(1.15rem, 1.7vw, 1.5rem); }
 @media (min-width: 901px) { .lv-split--stats-left > .lv-facts { order: -1; } }
 
-/* VARIANT B (local preview): the whole block stacked, text on top and the stats in one column below, left-aligned with the text */
-.lv-pg__stack--b { max-width: 56rem; }
-.lv-facts.lv-facts--stack.lv-facts--stack-b { max-width: 56rem; margin-top: clamp(36px, 4.5vw, 64px); }
-
+/* ROW: the same open stats side by side in a row, text centred (use under a centred heading + paragraph). Stacks to one column on phones. */
+.lv-facts.lv-facts--row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 64px); margin-top: clamp(40px, 5vw, 72px); text-align: center; }
+.lv-facts--row .lv-fact__label { margin-inline: auto; max-width: 20ch; }
+@media (max-width: 760px) { .lv-facts.lv-facts--row { grid-template-columns: 1fr; } }
+.lv-pg__center.lv-pg__center--mid { margin-inline: auto; }   /* centre the heading + paragraph block inside a plain container */
