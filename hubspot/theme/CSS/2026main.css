@@ -1030,7 +1030,7 @@ div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }
 
 /* the offer: a hairline, the question, the price, the button */
 .lv-ccta .lv-ccta__offer { display: grid; justify-items: center; width: 100%; margin-top: clamp(40px, 5vw, 76px); padding-top: clamp(36px, 4.4vw, 64px); border-top: 1px solid var(--lv-hairline); }
-.lv-ccta .lv-ccta__question { color: var(--lv-fg); max-width: 24ch; }   /* also .lv-h2 */
+.lv-ccta .lv-ccta__question { color: var(--lv-fg); max-width: 26ch; }   /* an h3, type comes from .lv-h3 (the site's h3 style) */
 .lv-ccta .lv-ccta__price { margin-top: clamp(10px, 1.2vw, 18px); font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(4.2rem, 10vw, 9rem); letter-spacing: -.055em; line-height: .95; color: var(--lv-fg); font-variant-numeric: tabular-nums; }
 .lv-ccta .lv-ccta__price small { margin-left: .12em; font-size: .2em; font-weight: 400; letter-spacing: -.01em; color: var(--lv-fg-muted); }
 .lv-ccta .lv-ccta__actions { margin-top: clamp(24px, 3vw, 40px); }
