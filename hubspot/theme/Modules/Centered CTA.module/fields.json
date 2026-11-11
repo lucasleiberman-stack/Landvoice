@@ -37,15 +37,15 @@
       ],
       [
         "grid_center",
-        "Grid graphic, centre"
-      ],
-      [
-        "grid_flat",
-        "Grid graphic, centre, straight-on"
+        "Grid graphic, centre (tilted)"
       ],
       [
         "grid_around",
-        "Grid graphic, straight-on, around the text"
+        "Grid graphic, around the text (tilted, original)"
+      ],
+      [
+        "grid_around_flat",
+        "Grid graphic, around the text (straight-on)"
       ],
       [
         "grid_sides",
