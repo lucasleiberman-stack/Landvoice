@@ -1,5 +1,5 @@
 /* CENTERED CTA (HubSpot module "Centered CTA", one per product page): a statement + one paragraph, then the offer (question, price, button).
-   Works on a dark or light band (colours come from --lv-fg / --lv-fg-muted / --lv-hairline). Two faint logo rings sit behind the centre.
+   Works on a dark or light band (colours come from --lv-fg / --lv-fg-muted / --lv-hairline). Background graphic (module option): two faint logo rings, or the road-map grid on both sides.
    Every rule has 2+ classes so it wins whatever order HubSpot joins the section CSS in. */
 .lv-band.lv-ccta { overflow: hidden; text-align: center; }
 .lv-ccta .lv-ccta__inner { position: relative; z-index: 1; display: grid; justify-items: center; max-width: 64rem; margin-inline: auto; }
@@ -25,65 +25,20 @@
   .lv-ccta .lv-ccta__ring--b { width: 190vw; }
 }
 
-/* GRID GRAPHIC option (the road-map patch used on the hero bands): "center" = one big patch behind the content, fading out to every edge;
-   "sides" = a patch on the left and one on the right, fading toward the content. The picture comes from --lv-road (set inline by the module / page),
-   light bands blend it with `darken` (base.html), dark bands show it as a faint light version. */
-.lv-ccta .lv-gridplane__patch--c,
+/* GRID GRAPHIC, BOTH SIDES (the road-map patch used on the hero bands): a patch on the left and a mirrored one on the right, fading toward the content.
+   The picture comes from --lv-road (set inline by the module); light bands blend it with `darken` (base.html inline style), dark bands show an inverted, faint version.
+   The picture is drawn at 155% of each patch and pinned to the outer edge, so the blocks are bigger; higher % = more zoomed in. */
 .lv-ccta .lv-gridplane__patch--sl,
-.lv-ccta .lv-gridplane__patch--sr { aspect-ratio: 823 / 598; }
-.lv-ccta .lv-gridplane__patch--c { left: 50%; top: 50%; --lv-patch: min(1500px, 120vw); transform: translate(-50%, -50%);
-  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.85) 28%, rgba(0,0,0,.35) 62%, transparent 100%);
-          mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.85) 28%, rgba(0,0,0,.35) 62%, transparent 100%); }
-.lv-ccta .lv-gridplane__patch--sl { left: 0; top: 50%; --lv-patch: clamp(320px, 36vw, 700px); transform: translateY(-50%);
+.lv-ccta .lv-gridplane__patch--sr { aspect-ratio: 823 / 598; top: 50%; --lv-patch: clamp(320px, 36vw, 700px); transform: translateY(-50%); }
+.lv-ccta .lv-gridplane__patch--sl { left: 0;
   -webkit-mask-image: radial-gradient(ellipse 100% 62% at 0 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%);
           mask-image: radial-gradient(ellipse 100% 62% at 0 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%); }
-.lv-ccta .lv-gridplane__patch--sr { right: 0; top: 50%; --lv-patch: clamp(320px, 36vw, 700px); transform: translateY(-50%);
+.lv-ccta .lv-gridplane__patch--sr { right: 0;
   -webkit-mask-image: radial-gradient(ellipse 100% 62% at 100% 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%);
           mask-image: radial-gradient(ellipse 100% 62% at 100% 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%); }
 .lv-ccta .lv-gridplane__patch--sr::before { transform: scaleX(-1); }
 /* dark band: the picture is beige blocks with slightly darker streets, so it is inverted and pushed to near-white streets, then blended in faintly */
 .lv-band--dark.lv-ccta .lv-gridplane__patch::before { background: var(--lv-road) center / 100% 100% no-repeat; filter: invert(1) brightness(6) contrast(2.2); mix-blend-mode: screen; opacity: .22; }
-.lv-band--dark.lv-ccta .lv-gridplane__patch--c::before { opacity: .26; }
-@media (max-width: 760px) {
-  .lv-ccta .lv-gridplane__patch--sl, .lv-ccta .lv-gridplane__patch--sr { --lv-patch: 70vw; }
-  .lv-ccta .lv-gridplane__patch--c { --lv-patch: 190vw; }
-}
-
-/* GRID AROUND THE TEXT, in the original road-map style. The grid fills the band and fades OUT behind the copy, so it shows in the rest of the background.
-   --r  = the original road-patch picture itself (tilted, blocks grow toward the bottom), light band `darken` like base.html, dark band the faint light version.
-   --p  = the same picture style seen straight on: identical colours (#EEECE7 blocks on #F1F0ED roads, #E3E0D9 3.6 outline), rounded corners and soft edge. */
-.lv-band.lv-ccta .lv-gridplane__patch--r,
-.lv-band.lv-ccta .lv-gridplane__patch--p { --blk: clamp(96px, 8.4vw, 150px); inset: 0; width: auto; height: auto; aspect-ratio: auto; transform: none;
-  -webkit-mask-image: radial-gradient(ellipse 64% 62% at 50% 50%, transparent 0, transparent 56%, rgba(0,0,0,.6) 82%, #000 100%);
-          mask-image: radial-gradient(ellipse 64% 62% at 50% 50%, transparent 0, transparent 56%, rgba(0,0,0,.6) 82%, #000 100%); }
-.lv-band.lv-ccta .lv-gridplane__patch--r::before { inset: 0; transform: none; filter: none; background: var(--lv-road) center / 98% 98% no-repeat, var(--lv-road) center / 98% 98% no-repeat;   /* drawn twice: the picture fades at its own edges, this keeps the margins readable */ mix-blend-mode: darken; opacity: 1; }   /* % of the band: lower = zoomed out (blocks smaller). The picture fades at its own edges, so below ~105% the outer margin gets fainter */
-.lv-band.lv-ccta .lv-gridplane__patch--p::before { inset: 0; transform: none; filter: none; mix-blend-mode: darken; opacity: 1;
-  background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='120'%3E%3Crect%20width='120'%20height='120'%20fill='%23F1F0ED'/%3E%3Crect%20x='8'%20y='8'%20width='104'%20height='104'%20rx='30'%20fill='%23EEECE7'%20stroke='%23E3E0D9'%20stroke-width='3.6'/%3E%3C/svg%3E") center / var(--blk) var(--blk) repeat; }
-.lv-band--dark.lv-ccta .lv-gridplane__patch--r::before,
-.lv-band--dark.lv-ccta .lv-gridplane__patch--p::before { mix-blend-mode: normal; opacity: .2; }
-@media (max-width: 760px) { .lv-band.lv-ccta .lv-gridplane__patch--p { --blk: 72px; } }
-
-/* GRID, BOTH SIDES: zoomed in. The picture is drawn larger than the patch and pinned to the outer edge, so the blocks are bigger and the cut-off falls toward the text
-   (where the mask has already faded it out). Higher % = more zoomed in. (The right patch is mirrored, so the same position puts it on the outer right.) */
 .lv-band.lv-ccta .lv-gridplane__patch--sl::before,
-.lv-band.lv-ccta .lv-gridplane__patch--sr::before { background-size: 155% 155%; background-position: 0 50%; }
-
-/* GRID, BOTH SIDES: a thin blue line runs around single blocks of the grid, one after another, so the band has quiet movement.
-   The overlay <svg class="lv-ccta__hl"> uses the same box as the picture (viewBox 1000x727 = the road-patch picture, stretched like the background at 155%),
-   so each <path> sits exactly on one block (traced from the picture). Each block lights up for a few seconds in its own phase, then rests. */
-.lv-ccta .lv-gridplane__patch--sl > .lv-ccta__hl,
-.lv-ccta .lv-gridplane__patch--sr > .lv-ccta__hl { position: absolute; top: -27.5%; width: 155%; height: 155%; overflow: visible; pointer-events: none; }
-.lv-ccta .lv-gridplane__patch--sl > .lv-ccta__hl { left: 0; }
-.lv-ccta .lv-gridplane__patch--sr > .lv-ccta__hl { right: 0; transform: scaleX(-1); }
-.lv-ccta .lv-ccta__hl path { fill: rgba(10, 102, 255, .045); stroke: var(--lv-blue); stroke-width: 1.6px; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round;
-  stroke-dasharray: .3 .7; filter: drop-shadow(0 0 3px rgba(10, 102, 255, .5)); opacity: 0; animation: lv-ccta-trace 9s linear infinite; animation-delay: var(--d, 0s); }
-.lv-ccta .lv-gridplane__patch--sr > .lv-ccta__hl path { animation-delay: calc(var(--d, 0s) - 4.5s); }
-.lv-band--dark.lv-ccta .lv-ccta__hl path { fill: rgba(106, 163, 255, .06); stroke: var(--lv-blue-on-dark); filter: drop-shadow(0 0 3px rgba(106, 163, 255, .5)); }
-@keyframes lv-ccta-trace {
-  0%   { opacity: 0;   stroke-dashoffset: 1; }
-  8%   { opacity: .85; }
-  38%  { opacity: .85; }
-  48%  { opacity: 0;   stroke-dashoffset: -.3; }
-  100% { opacity: 0;   stroke-dashoffset: -.3; }
-}
-@media (prefers-reduced-motion: reduce) { .lv-ccta .lv-ccta__hl path { animation: none; opacity: 0; } }
+.lv-band.lv-ccta .lv-gridplane__patch--sr::before { background-size: 155% 155%; background-position: 0 50%; }   /* after the dark rule above so it wins on both themes */
+@media (max-width: 760px) { .lv-ccta .lv-gridplane__patch--sl, .lv-ccta .lv-gridplane__patch--sr { --lv-patch: 70vw; } }

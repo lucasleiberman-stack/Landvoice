@@ -1016,3 +1016,49 @@ div.lv-band.lv-pad-bottom-0 > section.lv-section--tight { padding-bottom: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-lm { padding-bottom: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-services { padding-bottom: 0; }
 div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }
+
+/* ===== CENTERED CTA (module "Centered CTA") ===== */
+/* CENTERED CTA (HubSpot module "Centered CTA", one per product page): a statement + one paragraph, then the offer (question, price, button).
+   Works on a dark or light band (colours come from --lv-fg / --lv-fg-muted / --lv-hairline). Background graphic (module option): two faint logo rings, or the road-map grid on both sides.
+   Every rule has 2+ classes so it wins whatever order HubSpot joins the section CSS in. */
+.lv-band.lv-ccta { overflow: hidden; text-align: center; }
+.lv-ccta .lv-ccta__inner { position: relative; z-index: 1; display: grid; justify-items: center; max-width: 64rem; margin-inline: auto; }
+
+/* the statement */
+.lv-ccta .lv-ccta__statement { font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(2.1rem, 4.4vw, 4.4rem); letter-spacing: -.04em; line-height: 1.05; text-wrap: balance; color: var(--lv-fg); max-width: 20ch; }
+.lv-ccta .lv-ccta__text { margin-top: clamp(20px, 2.2vw, 32px); font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); line-height: 1.65; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 46rem; text-wrap: pretty; }
+
+/* the offer: a hairline, the question, the price, the button */
+.lv-ccta .lv-ccta__offer { display: grid; justify-items: center; width: 100%; margin-top: clamp(40px, 5vw, 76px); padding-top: clamp(36px, 4.4vw, 64px); border-top: 1px solid var(--lv-hairline); }
+.lv-ccta .lv-ccta__question { font-family: var(--lv-font-body); font-weight: 500; font-size: clamp(1.05rem, 1.35vw, 1.3rem); letter-spacing: var(--lv-ls-sub); line-height: 1.3; color: var(--lv-fg-muted); max-width: 40ch; text-wrap: balance; }
+.lv-ccta .lv-ccta__price { margin-top: clamp(10px, 1.2vw, 18px); font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(4.2rem, 10vw, 9rem); letter-spacing: -.055em; line-height: .95; color: var(--lv-fg); font-variant-numeric: tabular-nums; }
+.lv-ccta .lv-ccta__price small { margin-left: .12em; font-size: .2em; font-weight: 400; letter-spacing: -.01em; color: var(--lv-fg-muted); }
+.lv-ccta .lv-ccta__actions { margin-top: clamp(24px, 3vw, 40px); }
+
+/* two faint rings (the logo's circles) centred behind the content */
+.lv-ccta .lv-ccta__ring { position: absolute; left: 50%; top: 50%; z-index: 0; aspect-ratio: 1; border-radius: 50%; border: 1px solid var(--lv-hairline); transform: translate(-50%, -50%); pointer-events: none; }
+.lv-ccta .lv-ccta__ring--a { width: min(62vw, 880px); opacity: .9; }
+.lv-ccta .lv-ccta__ring--b { width: min(96vw, 1400px); opacity: .5; }
+
+@media (max-width: 700px) {
+  .lv-ccta .lv-ccta__ring--a { width: 120vw; }
+  .lv-ccta .lv-ccta__ring--b { width: 190vw; }
+}
+
+/* GRID GRAPHIC, BOTH SIDES (the road-map patch used on the hero bands): a patch on the left and a mirrored one on the right, fading toward the content.
+   The picture comes from --lv-road (set inline by the module); light bands blend it with `darken` (base.html inline style), dark bands show an inverted, faint version.
+   The picture is drawn at 155% of each patch and pinned to the outer edge, so the blocks are bigger; higher % = more zoomed in. */
+.lv-ccta .lv-gridplane__patch--sl,
+.lv-ccta .lv-gridplane__patch--sr { aspect-ratio: 823 / 598; top: 50%; --lv-patch: clamp(320px, 36vw, 700px); transform: translateY(-50%); }
+.lv-ccta .lv-gridplane__patch--sl { left: 0;
+  -webkit-mask-image: radial-gradient(ellipse 100% 62% at 0 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%);
+          mask-image: radial-gradient(ellipse 100% 62% at 0 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%); }
+.lv-ccta .lv-gridplane__patch--sr { right: 0;
+  -webkit-mask-image: radial-gradient(ellipse 100% 62% at 100% 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%);
+          mask-image: radial-gradient(ellipse 100% 62% at 100% 50%, #000 0, rgba(0,0,0,.75) 36%, transparent 100%); }
+.lv-ccta .lv-gridplane__patch--sr::before { transform: scaleX(-1); }
+/* dark band: the picture is beige blocks with slightly darker streets, so it is inverted and pushed to near-white streets, then blended in faintly */
+.lv-band--dark.lv-ccta .lv-gridplane__patch::before { background: var(--lv-road) center / 100% 100% no-repeat; filter: invert(1) brightness(6) contrast(2.2); mix-blend-mode: screen; opacity: .22; }
+.lv-band.lv-ccta .lv-gridplane__patch--sl::before,
+.lv-band.lv-ccta .lv-gridplane__patch--sr::before { background-size: 155% 155%; background-position: 0 50%; }   /* after the dark rule above so it wins on both themes */
+@media (max-width: 760px) { .lv-ccta .lv-gridplane__patch--sl, .lv-ccta .lv-gridplane__patch--sr { --lv-patch: 70vw; } }
