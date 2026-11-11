@@ -88,6 +88,20 @@
     "no_follow" : false
   }
 }, {
+  "id" : "button_style",
+  "name" : "button_style",
+  "label" : "Button colour",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "blue", "Blue" ], [ "black", "Black" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "black"
+}, {
   "id" : "no_padding_top",
   "name" : "no_padding_top",
   "label" : "Remove top padding (set it to 0)",

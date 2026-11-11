@@ -42,3 +42,6 @@
 .lv-band.lv-ccta .lv-gridplane__patch--sl::before,
 .lv-band.lv-ccta .lv-gridplane__patch--sr::before { background-size: 155% 155%; background-position: 0 50%; }   /* after the dark rule above so it wins on both themes */
 @media (max-width: 760px) { .lv-ccta .lv-gridplane__patch--sl, .lv-ccta .lv-gridplane__patch--sr { --lv-patch: 70vw; } }
+
+/* Centered CTA, dark theme: the "black" button would disappear into the band, so it shows as a light button with dark text */
+.lv-band--dark.lv-ccta .lv-btn--dark { --btn-a: #D9D6CF; --btn-b: #fff; color: var(--lv-ink); }

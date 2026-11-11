@@ -10,7 +10,7 @@
     <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
       {% if module.price_heading %}<h3 class="lv-h3 lv-ccta__question">{{ module.price_heading }}</h3>{% endif %}
       {% if module.price_amount %}<p class="lv-ccta__price">{{ module.price_amount }}{% if module.price_suffix %} <small>{{ module.price_suffix }}</small>{% endif %}</p>{% endif %}
-      {% if module.button_label %}<div class="lv-actions lv-ccta__actions"><a class="lv-btn" href="{{ module.button_link.url.href }}"{% if module.button_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a></div>{% endif %}
+      {% if module.button_label %}<div class="lv-actions lv-ccta__actions"><a class="lv-btn{% if module.button_style == 'black' %} lv-btn--dark{% endif %}" href="{{ module.button_link.url.href }}"{% if module.button_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a></div>{% endif %}
     </div>
   </div>
 </section>

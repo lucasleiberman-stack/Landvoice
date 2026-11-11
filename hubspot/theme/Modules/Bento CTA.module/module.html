@@ -9,7 +9,7 @@
       {% if module.price_heading %}<h2 class="lv-h2 lv-bcta__h">{{ module.price_heading }}</h2>{% endif %}
       {% if module.price_text %}<p class="lv-bcta__text">{{ module.price_text }}</p>{% endif %}
       {% if module.price_amount %}<p class="lv-bcta__price">{{ module.price_amount }}{% if module.price_suffix %} <small>{{ module.price_suffix }}</small>{% endif %}</p>{% endif %}
-      {% if module.button_label %}<div class="lv-actions lv-bcta__actions"><a class="lv-btn lv-btn--dark" href="{{ module.button_link.url.href }}"{% if module.button_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a></div>{% endif %}
+      {% if module.button_label %}<div class="lv-actions lv-bcta__actions"><a class="lv-btn{% if module.button_style != 'blue' %} lv-btn--dark{% endif %}" href="{{ module.button_link.url.href }}"{% if module.button_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a></div>{% endif %}
     </div>
   </div>
 </section>

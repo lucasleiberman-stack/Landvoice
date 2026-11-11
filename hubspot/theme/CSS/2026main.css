@@ -1085,3 +1085,6 @@ div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }
   .lv-bcta .lv-bcta__grid { grid-template-columns: 1fr; }
   .lv-bcta .lv-bcta__tile { min-height: 0; }
 }
+
+/* Centered CTA, dark theme: the "black" button would disappear into the band, so it shows as a light button with dark text */
+.lv-band--dark.lv-ccta .lv-btn--dark { --btn-a: #D9D6CF; --btn-b: #fff; color: var(--lv-ink); }
