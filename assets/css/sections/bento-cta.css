@@ -1,0 +1,21 @@
+/* BENTO CTA (HubSpot module "Bento CTA"): two tiles side by side. Left (ink): the statement + one paragraph. Right (paper): the offer: question, a paragraph, the price, one button.
+   Thin gaps, edge to edge, like the product-page bento. One paragraph style for both tiles. Every rule has 2+ classes so it wins whatever order HubSpot joins the CSS in. */
+.lv-band.lv-bcta { border-radius: 0; padding-block: clamp(10px, .8vw, 14px); padding-inline: clamp(10px, .8vw, 14px); }
+.lv-bcta .lv-bcta__grid { --lv-bcta-gap: clamp(10px, .8vw, 14px); --lv-bcta-p: clamp(1.02rem, 1.15vw, 1.25rem); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--lv-bcta-gap); }
+.lv-bcta .lv-bcta__tile { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1rem; min-width: 0; min-height: clamp(380px, 28vw, 520px);
+  padding: clamp(40px, 4.4vw, 84px) clamp(24px, 3vw, 56px); border-radius: clamp(12px, 1.2vw, 20px); }
+.lv-bcta .lv-bcta__tile--ink { --lv-fg: var(--lv-paper); --lv-fg-muted: #A9B1BE; background: var(--lv-ink); color: var(--lv-fg); }
+.lv-bcta .lv-bcta__tile--paper { --lv-fg: var(--lv-ink); --lv-fg-muted: #454D5B; background: var(--lv-paper-2); color: var(--lv-fg); }
+
+.lv-bcta .lv-bcta__h { font-family: var(--lv-font-display); font-weight: 600; letter-spacing: -.04em; line-height: 1.06; text-wrap: balance; color: var(--lv-fg); }
+.lv-bcta .lv-bcta__tile--ink .lv-bcta__h { font-size: clamp(2rem, 3.1vw, 3.5rem); max-width: 18ch; }
+.lv-bcta .lv-bcta__tile--paper .lv-bcta__h { font-size: clamp(1.6rem, 2.2vw, 2.5rem); max-width: 22ch; }
+.lv-bcta .lv-bcta__text { margin: 0; font-family: var(--lv-font-body); font-size: var(--lv-bcta-p); font-weight: 400; line-height: 1.6; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 54ch; text-wrap: pretty; }
+.lv-bcta .lv-bcta__price { margin: .4rem 0 0; font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(3.6rem, 6.4vw, 6.4rem); letter-spacing: -.055em; line-height: .95; color: var(--lv-fg); font-variant-numeric: tabular-nums; }
+.lv-bcta .lv-bcta__price small { margin-left: .14em; font-size: .24em; font-weight: 400; letter-spacing: -.01em; color: var(--lv-fg-muted); }
+.lv-bcta .lv-bcta__actions { margin-top: .6rem; }
+
+@media (max-width: 900px) {
+  .lv-bcta .lv-bcta__grid { grid-template-columns: 1fr; }
+  .lv-bcta .lv-bcta__tile { min-height: 0; }
+}

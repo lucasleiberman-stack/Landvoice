@@ -1,0 +1,13 @@
+{
+  "label": "Bento CTA",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Two tiles side by side: a dark statement tile on the left, the pricing offer (question, paragraph, price, button) on the right.",
+  "host_template_types": ["PAGE"],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
