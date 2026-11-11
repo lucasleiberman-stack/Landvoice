@@ -1,273 +1,350 @@
-[ {
-  "id" : "screen_image",
-  "name" : "screen_image",
-  "label" : "Tablet screenshot (video poster)",
-  "required" : false,
-  "locked" : false,
-  "responsive" : true,
-  "resizable" : true,
-  "show_loading" : false,
-  "type" : "image",
-  "display_width" : null,
-  "default" : {
-    "src" : "",
-    "alt" : "",
-    "loading" : "disabled"
-  }
-}, {
-  "id" : "video_url",
-  "name" : "video_url",
-  "label" : "Video embed URL (e.g. https://player.vimeo.com/video/123)",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : ""
-}, {
-  "id" : "play_label",
-  "name" : "play_label",
-  "label" : "Play button text",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Play video"
-}, {
-  "id" : "eyebrow",
-  "name" : "eyebrow",
-  "label" : "Eyebrow",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Unmatched seller data"
-}, {
-  "id" : "heading",
-  "name" : "heading",
-  "label" : "Heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "The Smarter Way for Real Estate Agents to Get More Listings."
-}, {
-  "id" : "lede",
-  "name" : "lede",
-  "label" : "Supporting paragraph",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "The agents who list more homes usually have one thing in common: they consistently talk to more motivated sellers. Landvoice helps you build a more predictable listing pipeline by giving you access to real estate seller data that is aligned with how top agents list more homes."
-}, {
-  "id" : "products",
-  "name" : "products",
-  "label" : "Products",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : 8,
-    "sorting_label_field" : null,
-    "default" : 4
+[
+  {
+    "id": "screen_image",
+    "name": "screen_image",
+    "label": "Tablet screenshot (video poster)",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "type": "image",
+    "display_width": null,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
   },
-  "children" : [ {
-    "id" : "products.icon",
-    "name" : "icon",
-    "label" : "Icon",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "expired", "Expired" ], [ "fsbo", "FSBO" ], [ "pre", "Pre-foreclosure" ], [ "nbhd", "Neighborhood" ], [ "frbo", "FRBO" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "expired"
-  }, {
-    "id" : "products.title",
-    "name" : "title",
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Product name"
-  }, {
-    "id" : "products.text",
-    "name" : "text",
-    "label" : "Description",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Description"
-  }, {
-    "id" : "products.button_label",
-    "name" : "button_label",
-    "label" : "Button text",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Learn More"
-  }, {
-    "id" : "products.link",
-    "name" : "link",
-    "label" : "Button link",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "display_width" : null,
-    "default" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#",
-        "content_id" : null
+  {
+    "id": "video_url",
+    "name": "video_url",
+    "label": "Video embed URL (e.g. https://player.vimeo.com/video/123)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": ""
+  },
+  {
+    "id": "play_label",
+    "name": "play_label",
+    "label": "Play button text",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Play video"
+  },
+  {
+    "id": "eyebrow",
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Unmatched seller data"
+  },
+  {
+    "id": "heading",
+    "name": "heading",
+    "label": "Heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "The smarter way for real estate agents to get more listings."
+  },
+  {
+    "id": "lede",
+    "name": "lede",
+    "label": "Supporting paragraph",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "The agents who list more homes usually have one thing in common: they consistently talk to more motivated sellers. Landvoice helps you build a more predictable listing pipeline by giving you access to real estate seller data that is aligned with how top agents list more homes."
+  },
+  {
+    "id": "products",
+    "name": "products",
+    "label": "Products",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "sorting_label_field": null,
+      "default": 4
+    },
+    "children": [
+      {
+        "id": "products.icon",
+        "name": "icon",
+        "label": "Icon",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          [
+            "expired",
+            "Expired"
+          ],
+          [
+            "fsbo",
+            "FSBO"
+          ],
+          [
+            "pre",
+            "Pre-foreclosure"
+          ],
+          [
+            "nbhd",
+            "Neighborhood"
+          ],
+          [
+            "frbo",
+            "FRBO"
+          ]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "preset": null,
+        "type": "choice",
+        "display_width": null,
+        "default": "expired"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "icon" : "expired",
-    "title" : "Expired Listings",
-    "text" : "Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.",
-    "button_label" : "Learn More",
-    "link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#expired",
-        "content_id" : null
+      {
+        "id": "products.title",
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Product name"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "icon" : "fsbo",
-    "title" : "FSBO Data",
-    "text" : "Owners selling on their own. Most eventually list with an agent - reach them before three competitors do. Updated every morning.",
-    "button_label" : "Learn More",
-    "link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#fsbo",
-        "content_id" : null
+      {
+        "id": "products.text",
+        "name": "text",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Description"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "icon" : "pre",
-    "title" : "Pre-Foreclosure & Distressed",
-    "text" : "Notice of Default, Lis Pendens, Notice of Trustee Sale, and bank-owned records from county filings. Owners on a deadline who need a real solution.",
-    "button_label" : "Learn More",
-    "link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#pre",
-        "content_id" : null
+      {
+        "id": "products.button_label",
+        "name": "button_label",
+        "label": "Button text",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Learn More"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "icon" : "nbhd",
-    "title" : "Neighborhood Search",
-    "text" : "Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.",
-    "button_label" : "Learn More",
-    "link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#nbhd",
-        "content_id" : null
+      {
+        "id": "products.link",
+        "name": "link",
+        "label": "Button link",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS"
+        ],
+        "show_advanced_rel_options": false,
+        "type": "link",
+        "display_width": null,
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "icon": "expired",
+        "title": "Expired Listings",
+        "text": "Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#expired",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  } ]
-}, {
-  "id" : "end_title",
-  "name" : "end_title",
-  "label" : "Last product: title",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "FRBO Data"
-}, {
-  "id" : "end_badge",
-  "name" : "end_badge",
-  "label" : "Last product: badge (leave empty to hide)",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Coming soon"
-}, {
-  "id" : "end_text",
-  "name" : "end_text",
-  "label" : "Last product: description",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Every day a rental sits vacant, the owner pays the mortgage out of pocket. FRBO leads put you in front of that owner while the pressure is still new."
-}, {
-  "id" : "no_padding_bottom",
-  "name" : "no_padding_bottom",
-  "label" : "Remove bottom padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "corners_top",
-  "name" : "corners_top",
-  "label" : "Top corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-}, {
-  "id" : "corners_bottom",
-  "name" : "corners_bottom",
-  "label" : "Bottom corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-} ]
+      {
+        "icon": "fsbo",
+        "title": "FSBO Data",
+        "text": "Owners selling on their own. Most eventually list with an agent - reach them before three competitors do. Updated every morning.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#fsbo",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "icon": "pre",
+        "title": "Pre-Foreclosure & Distressed",
+        "text": "Notice of Default, Lis Pendens, Notice of Trustee Sale, and bank-owned records from county filings. Owners on a deadline who need a real solution.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#pre",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "icon": "nbhd",
+        "title": "Neighborhood Search",
+        "text": "Homeowners who listed, didn't sell, and still want to move. Proven intent, actively evaluating a new agent. Delivered the morning they expire.",
+        "button_label": "Learn More",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#nbhd",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      }
+    ]
+  },
+  {
+    "id": "end_title",
+    "name": "end_title",
+    "label": "Last product: title",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "FRBO Data"
+  },
+  {
+    "id": "end_badge",
+    "name": "end_badge",
+    "label": "Last product: badge (leave empty to hide)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Coming soon"
+  },
+  {
+    "id": "end_text",
+    "name": "end_text",
+    "label": "Last product: description",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Every day a rental sits vacant, the owner pays the mortgage out of pocket. FRBO leads put you in front of that owner while the pressure is still new."
+  },
+  {
+    "id": "no_padding_bottom",
+    "name": "no_padding_bottom",
+    "label": "Remove bottom padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "corners_top",
+    "name": "corners_top",
+    "label": "Top corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (as designed)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  },
+  {
+    "id": "corners_bottom",
+    "name": "corners_bottom",
+    "label": "Bottom corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (as designed)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  }
+]

@@ -1,138 +1,187 @@
-[ {
-  "id" : "statement_heading",
-  "name" : "statement_heading",
-  "label" : "Left tile: heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Does Prospecting Expired Listings Still Work in Today's Market?"
-}, {
-  "id" : "statement_text",
-  "name" : "statement_text",
-  "label" : "Left tile: paragraph",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads."
-}, {
-  "id" : "price_heading",
-  "name" : "price_heading",
-  "label" : "Right tile: heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "How Much Does Landvoice Expired Listing Data Cost?"
-}, {
-  "id" : "price_text",
-  "name" : "price_text",
-  "label" : "Right tile: paragraph under the heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "A 12 month database of expired listings, with status updates every 15 minutes and up to four ranked phone numbers for each owner."
-}, {
-  "id" : "price_amount",
-  "name" : "price_amount",
-  "label" : "Price",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "$60"
-}, {
-  "id" : "price_suffix",
-  "name" : "price_suffix",
-  "label" : "Price suffix",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "per month"
-}, {
-  "id" : "button_label",
-  "name" : "button_label",
-  "label" : "Button label",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Sign up now"
-}, {
-  "id" : "button_link",
-  "name" : "button_link",
-  "label" : "Button link",
-  "required" : false,
-  "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
-  "show_advanced_rel_options" : false,
-  "type" : "link",
-  "display_width" : null,
-  "default" : {
-    "url" : {
-      "content_id" : null,
-      "href" : "#checkout",
-      "type" : "EXTERNAL"
-    },
-    "open_in_new_tab" : false,
-    "no_follow" : false
+[
+  {
+    "id": "statement_heading",
+    "name": "statement_heading",
+    "label": "Left tile: heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Does prospecting expired listings still work in today's market?"
+  },
+  {
+    "id": "statement_text",
+    "name": "statement_text",
+    "label": "Left tile: paragraph",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Expired listings continue to be one of the most effective and powerful ways to list more homes. Top performing agents and teams experience the best ROI by working with Expired leads."
+  },
+  {
+    "id": "price_heading",
+    "name": "price_heading",
+    "label": "Right tile: heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "How much does Landvoice expired listing data cost?"
+  },
+  {
+    "id": "price_text",
+    "name": "price_text",
+    "label": "Right tile: paragraph under the heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "A 12 month database of expired listings, with status updates every 15 minutes and up to four ranked phone numbers for each owner."
+  },
+  {
+    "id": "price_amount",
+    "name": "price_amount",
+    "label": "Price",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "$60"
+  },
+  {
+    "id": "price_suffix",
+    "name": "price_suffix",
+    "label": "Price suffix",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "per month"
+  },
+  {
+    "id": "button_label",
+    "name": "button_label",
+    "label": "Button label",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Sign up now"
+  },
+  {
+    "id": "button_link",
+    "name": "button_link",
+    "label": "Button link",
+    "required": false,
+    "locked": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS",
+      "BLOG",
+      "CALL_TO_ACTION",
+      "PHONE_NUMBER",
+      "WHATSAPP_NUMBER",
+      "PAYMENT"
+    ],
+    "show_advanced_rel_options": false,
+    "type": "link",
+    "display_width": null,
+    "default": {
+      "url": {
+        "content_id": null,
+        "href": "#checkout",
+        "type": "EXTERNAL"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "no_padding_top",
+    "name": "no_padding_top",
+    "label": "Remove top padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "no_padding_bottom",
+    "name": "no_padding_bottom",
+    "label": "Remove bottom padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "corners_top",
+    "name": "corners_top",
+    "label": "Top corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (light bands rounded, dark bands square)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  },
+  {
+    "id": "corners_bottom",
+    "name": "corners_bottom",
+    "label": "Bottom corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (light bands rounded, dark bands square)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
   }
-}, {
-  "id" : "no_padding_top",
-  "name" : "no_padding_top",
-  "label" : "Remove top padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "no_padding_bottom",
-  "name" : "no_padding_bottom",
-  "label" : "Remove bottom padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "corners_top",
-  "name" : "corners_top",
-  "label" : "Top corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-}, {
-  "id" : "corners_bottom",
-  "name" : "corners_bottom",
-  "label" : "Bottom corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-} ]
+]

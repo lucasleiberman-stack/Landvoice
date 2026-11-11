@@ -18,6 +18,7 @@ All values live in `assets/css/00-tokens.css`. Change a token, never hard-code a
 - Sub paragraphs (`lv-lede`, `lv-pg__sub`, `lv-pg__body`) and pills (`lv-tag`, `lv-pill`) all use `letter-spacing: var(--lv-ls-sub)`. Change the token, never type -0.3px in a rule.
 - Headings use `text-wrap: balance`. A heading's tag and look are independent: keep the right tag (one `h1` per page, sections `h2`, hero sub-paragraph may be an `h3` carrying `lv-lede`) and put the look on the class.
 - Copy is sentence case. If supplied copy has random Capital Words, normalise and flag it; fix obvious typos.
+- **Capitalisation rule (all headings H1-H3, buttons, nav, pills, step/card titles, FAQ questions):** sentence case. Capitalise only the first word, brand/product names (Landvoice, Data Genie, Inked Cards, Call Capture, Landvoice Lead Manager), named things (Do Not Call registry) and acronyms (FSBO, FRBO, MLS, DNC, CCPA, CRM). A heading split over two lines continues in lowercase ("Seamless prospecting built / for your daily routine"). Eyebrows are written in sentence case; CSS uppercases them. Product-menu items keep their formal names (Expired Listings, FSBO Data, Neighborhood Search).
 
 ## Bands (full-width blocks) and padding
 - `lv-band lv-band--light` (paper `#F1F0ED`, rounded corners) / `lv-band lv-band--dark` (ink `#0D1117`, flat). Text colours come from `--lv-fg`, `--lv-fg-muted`, `--lv-hairline`, `--lv-link`, so components work on either.

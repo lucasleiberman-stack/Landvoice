@@ -1,241 +1,294 @@
-[ {
-  "id" : "eyebrow",
-  "name" : "eyebrow",
-  "label" : "Eyebrow",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Add-ons"
-}, {
-  "id" : "headline_line_1",
-  "name" : "headline_line_1",
-  "label" : "Headline, line 1",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "More Than Just Data."
-}, {
-  "id" : "headline_line_2",
-  "name" : "headline_line_2",
-  "label" : "Headline, line 2 (optional)",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Add To Your Tool Kit."
-}, {
-  "id" : "cards",
-  "name" : "cards",
-  "label" : "Add-on cards",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : 10,
-    "sorting_label_field" : null,
-    "default" : 3
+[
+  {
+    "id": "eyebrow",
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Add-ons"
   },
-  "children" : [ {
-    "id" : "cards.title",
-    "name" : "title",
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Add-on name"
-  }, {
-    "id" : "cards.tags",
-    "name" : "tags",
-    "label" : "Tags (separate with commas)",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Tag one, Tag two, Tag three, Tag four"
-  }, {
-    "id" : "cards.text",
-    "name" : "text",
-    "label" : "Description",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Description"
-  }, {
-    "id" : "cards.button_label",
-    "name" : "button_label",
-    "label" : "Button label",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Get Started"
-  }, {
-    "id" : "cards.button_link",
-    "name" : "button_link",
-    "label" : "Button link",
-    "required" : false,
-    "locked" : false,
-    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
-    "show_advanced_rel_options" : false,
-    "type" : "link",
-    "display_width" : null,
-    "default" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#",
-        "content_id" : null
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    }
-  }, {
-    "id" : "cards.file",
-    "name" : "file",
-    "label" : "Theme image file name (in images/addons/, optional)",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : ""
-  }, {
-    "id" : "cards.image",
-    "name" : "image",
-    "label" : "Image (optional: overrides the theme file)",
-    "required" : false,
-    "locked" : false,
-    "responsive" : true,
-    "resizable" : true,
-    "show_loading" : false,
-    "type" : "image",
-    "display_width" : null,
-    "default" : {
-      "src" : "",
-      "alt" : "",
-      "loading" : "disabled"
-    }
-  }, {
-    "id" : "cards.alt",
-    "name" : "alt",
-    "label" : "Image description (alt text)",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : ""
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "title" : "Inked Cards",
-    "tags" : "Automated, Hand-written style, On-demand fulfillment, Unlimited",
-    "text" : "Bypass the crowded email inbox entirely. Launch high-converting outreach with custom marketing assets designed to land right on the seller's kitchen table and force them to take notice.",
-    "button_label" : "Get Started",
-    "button_link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#inked",
-        "content_id" : null
-      },
-      "open_in_new_tab" : false,
-      "no_follow" : false
+  {
+    "id": "headline_line_1",
+    "name": "headline_line_1",
+    "label": "Headline, line 1",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "More than just data."
+  },
+  {
+    "id": "headline_line_2",
+    "name": "headline_line_2",
+    "label": "Headline, line 2 (optional)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Add to your tool kit."
+  },
+  {
+    "id": "cards",
+    "name": "cards",
+    "label": "Add-on cards",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "sorting_label_field": null,
+      "default": 3
     },
-    "file" : "addon-inked-cards.png",
-    "alt" : "Handwritten-style mailer card beside a printed postcard reading This market is still hot"
-  }, {
-    "title" : "Call Capture",
-    "tags" : "Lead routing, 24/7 tracking, Toll-free numbers, Logging",
-    "text" : "Automatically captures and logs the caller ID of every lead who dials your sign riders or toll-free numbers, ensuring you never miss a prospective seller.",
-    "button_label" : "Get Started",
-    "button_link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#capture",
-        "content_id" : null
+    "children": [
+      {
+        "id": "cards.title",
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Add-on name"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    },
-    "file" : "addon-call-capture.png",
-    "alt" : "Call Capture dashboard with a call log shown on a laptop, tablet and phone"
-  }, {
-    "title" : "Data Genie",
-    "tags" : "Skip tracing, Nationwide data, Lead enrichment, Verified",
-    "text" : "Get emails, phone numbers and addresses of incomplete leads throughout the nation.",
-    "button_label" : "Get Started",
-    "button_link" : {
-      "url" : {
-        "type" : "EXTERNAL",
-        "href" : "#genie",
-        "content_id" : null
+      {
+        "id": "cards.tags",
+        "name": "tags",
+        "label": "Tags (separate with commas)",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Tag one, Tag two, Tag three, Tag four"
       },
-      "open_in_new_tab" : false,
-      "no_follow" : false
-    },
-    "file" : "",
-    "alt" : ""
-  } ]
-}, {
-  "id" : "no_padding_top",
-  "name" : "no_padding_top",
-  "label" : "Remove top padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "no_padding_bottom",
-  "name" : "no_padding_bottom",
-  "label" : "Remove bottom padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "corners_top",
-  "name" : "corners_top",
-  "label" : "Top corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-}, {
-  "id" : "corners_bottom",
-  "name" : "corners_bottom",
-  "label" : "Bottom corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-} ]
+      {
+        "id": "cards.text",
+        "name": "text",
+        "label": "Description",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Description"
+      },
+      {
+        "id": "cards.button_label",
+        "name": "button_label",
+        "label": "Button label",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Get Started"
+      },
+      {
+        "id": "cards.button_link",
+        "name": "button_link",
+        "label": "Button link",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS"
+        ],
+        "show_advanced_rel_options": false,
+        "type": "link",
+        "display_width": null,
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        }
+      },
+      {
+        "id": "cards.file",
+        "name": "file",
+        "label": "Theme image file name (in images/addons/, optional)",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "cards.image",
+        "name": "image",
+        "label": "Image (optional: overrides the theme file)",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "src": "",
+          "alt": "",
+          "loading": "disabled"
+        }
+      },
+      {
+        "id": "cards.alt",
+        "name": "alt",
+        "label": "Image description (alt text)",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": ""
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "title": "Inked Cards",
+        "tags": "Automated, Hand-written style, On-demand fulfillment, Unlimited",
+        "text": "Bypass the crowded email inbox entirely. Launch high-converting outreach with custom marketing assets designed to land right on the seller's kitchen table and force them to take notice.",
+        "button_label": "Get Started",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#inked",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        "file": "addon-inked-cards.png",
+        "alt": "Handwritten-style mailer card beside a printed postcard reading This market is still hot"
+      },
+      {
+        "title": "Call Capture",
+        "tags": "Lead routing, 24/7 tracking, Toll-free numbers, Logging",
+        "text": "Automatically captures and logs the caller ID of every lead who dials your sign riders or toll-free numbers, ensuring you never miss a prospective seller.",
+        "button_label": "Get Started",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#capture",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        "file": "addon-call-capture.png",
+        "alt": "Call Capture dashboard with a call log shown on a laptop, tablet and phone"
+      },
+      {
+        "title": "Data Genie",
+        "tags": "Skip tracing, Nationwide data, Lead enrichment, Verified",
+        "text": "Get emails, phone numbers and addresses of incomplete leads throughout the nation.",
+        "button_label": "Get Started",
+        "button_link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#genie",
+            "content_id": null
+          },
+          "open_in_new_tab": false,
+          "no_follow": false
+        },
+        "file": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "id": "no_padding_top",
+    "name": "no_padding_top",
+    "label": "Remove top padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "no_padding_bottom",
+    "name": "no_padding_bottom",
+    "label": "Remove bottom padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "corners_top",
+    "name": "corners_top",
+    "label": "Top corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (as designed)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  },
+  {
+    "id": "corners_bottom",
+    "name": "corners_bottom",
+    "label": "Bottom corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (as designed)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  }
+]

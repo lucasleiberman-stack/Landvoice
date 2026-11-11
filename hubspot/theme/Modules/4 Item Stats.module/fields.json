@@ -1,198 +1,255 @@
-[ {
-  "id" : "eyebrow",
-  "name" : "eyebrow",
-  "label" : "Eyebrow",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Longevity"
-}, {
-  "id" : "heading",
-  "name" : "heading",
-  "label" : "Heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "No One Has Been Doing This Longer."
-}, {
-  "id" : "paragraphs",
-  "name" : "paragraphs",
-  "label" : "Paragraphs",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : 6,
-    "sorting_label_field" : null,
-    "default" : 3
+[
+  {
+    "id": "eyebrow",
+    "name": "eyebrow",
+    "label": "Eyebrow",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Longevity"
   },
-  "children" : [ {
-    "id" : "paragraphs.text",
-    "name" : "text",
-    "label" : "Paragraph",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Paragraph"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "text" : "Landvoice was founded in 1991 - before the modern MLS, before online listing portals, before the iPhone, and before every other seller data provider in this industry existed. The first FSBO lists were built by hand from newspaper classifieds and faxed to agents. Delivery moved to email, then CD-ROM, then to the cloud platform agents use today."
-  }, {
-    "text" : "Thirty-five years later, we're still doing the same job: finding homeowners who need to sell now and verifying how to reach them."
-  }, {
-    "text" : "That history isn't nostalgia - it's the entire reason our data is more accurate. Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
-  } ]
-}, {
-  "id" : "button_label",
-  "name" : "button_label",
-  "label" : "Button label",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Get Started"
-}, {
-  "id" : "button_link",
-  "name" : "button_link",
-  "label" : "Button link",
-  "required" : false,
-  "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
-  "show_advanced_rel_options" : false,
-  "type" : "link",
-  "display_width" : null,
-  "default" : {
-    "url" : {
-      "type" : "EXTERNAL",
-      "href" : "#pricing",
-      "content_id" : null
+  {
+    "id": "heading",
+    "name": "heading",
+    "label": "Heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "No one has been doing this longer."
+  },
+  {
+    "id": "paragraphs",
+    "name": "paragraphs",
+    "label": "Paragraphs",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "sorting_label_field": null,
+      "default": 3
     },
-    "open_in_new_tab" : false,
-    "no_follow" : false
-  }
-}, {
-  "id" : "stats",
-  "name" : "stats",
-  "label" : "Stats (4 shown in a 2 x 2 grid)",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : 1,
-    "max" : 8,
-    "sorting_label_field" : null,
-    "default" : 4
+    "children": [
+      {
+        "id": "paragraphs.text",
+        "name": "text",
+        "label": "Paragraph",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Paragraph"
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "text": "Landvoice was founded in 1991 - before the modern MLS, before online listing portals, before the iPhone, and before every other seller data provider in this industry existed. The first FSBO lists were built by hand from newspaper classifieds and faxed to agents. Delivery moved to email, then CD-ROM, then to the cloud platform agents use today."
+      },
+      {
+        "text": "Thirty-five years later, we're still doing the same job: finding homeowners who need to sell now and verifying how to reach them."
+      },
+      {
+        "text": "That history isn't nostalgia - it's the entire reason our data is more accurate. Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
+      }
+    ]
   },
-  "children" : [ {
-    "id" : "stats.caption",
-    "name" : "caption",
-    "label" : "Small heading",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "Caption"
-  }, {
-    "id" : "stats.value",
-    "name" : "value",
-    "label" : "Big number",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : "0"
-  }, {
-    "id" : "stats.note",
-    "name" : "note",
-    "label" : "Note under the number (optional)",
-    "required" : false,
-    "locked" : false,
-    "allow_new_line" : false,
-    "type" : "text",
-    "display_width" : null,
-    "default" : ""
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "group_occurrence_meta" : null,
-  "type" : "group",
-  "display_width" : null,
-  "default" : [ {
-    "caption" : "Founded in",
-    "value" : "1991",
-    "note" : ""
-  }, {
-    "caption" : "Years In Business",
-    "value" : "35+",
-    "note" : ""
-  }, {
-    "caption" : "Markets Covered",
-    "value" : "3.3K",
-    "note" : "Counties across US & Canada"
-  }, {
-    "caption" : "Clients Helped",
-    "value" : "5M",
-    "note" : ""
-  } ]
-}, {
-  "id" : "no_padding_top",
-  "name" : "no_padding_top",
-  "label" : "Remove top padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "no_padding_bottom",
-  "name" : "no_padding_bottom",
-  "label" : "Remove bottom padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "corners_top",
-  "name" : "corners_top",
-  "label" : "Top corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-}, {
-  "id" : "corners_bottom",
-  "name" : "corners_bottom",
-  "label" : "Bottom corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (light bands rounded, dark bands square)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-} ]
+  {
+    "id": "button_label",
+    "name": "button_label",
+    "label": "Button label",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Get Started"
+  },
+  {
+    "id": "button_link",
+    "name": "button_link",
+    "label": "Button link",
+    "required": false,
+    "locked": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "show_advanced_rel_options": false,
+    "type": "link",
+    "display_width": null,
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "stats",
+    "name": "stats",
+    "label": "Stats (4 shown in a 2 x 2 grid)",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "sorting_label_field": null,
+      "default": 4
+    },
+    "children": [
+      {
+        "id": "stats.caption",
+        "name": "caption",
+        "label": "Small heading",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Caption"
+      },
+      {
+        "id": "stats.value",
+        "name": "value",
+        "label": "Big number",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "0"
+      },
+      {
+        "id": "stats.note",
+        "name": "note",
+        "label": "Note under the number (optional)",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": ""
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "caption": "Founded in",
+        "value": "1991",
+        "note": ""
+      },
+      {
+        "caption": "Years In Business",
+        "value": "35+",
+        "note": ""
+      },
+      {
+        "caption": "Markets Covered",
+        "value": "3.3K",
+        "note": "Counties across US & Canada"
+      },
+      {
+        "caption": "Clients Helped",
+        "value": "5M",
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": "no_padding_top",
+    "name": "no_padding_top",
+    "label": "Remove top padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "no_padding_bottom",
+    "name": "no_padding_bottom",
+    "label": "Remove bottom padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "corners_top",
+    "name": "corners_top",
+    "label": "Top corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (light bands rounded, dark bands square)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  },
+  {
+    "id": "corners_bottom",
+    "name": "corners_bottom",
+    "label": "Bottom corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (light bands rounded, dark bands square)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  }
+]

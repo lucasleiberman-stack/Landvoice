@@ -1,259 +1,318 @@
-[ {
-  "id" : "eyebrow",
-  "name" : "eyebrow",
-  "label" : "Top eyebrow",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Integrations"
-}, {
-  "id" : "heading",
-  "name" : "heading",
-  "label" : "Top heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "The Most Accurate Data, Inside the CRM You Already Use."
-}, {
-  "id" : "lede",
-  "name" : "lede",
-  "label" : "Top paragraph",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
-}, {
-  "id" : "subheading",
-  "name" : "subheading",
-  "label" : "Left block: heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Works with the CRMs and Dialers agents actually use"
-}, {
-  "id" : "subbody",
-  "name" : "subbody",
-  "label" : "Left block: paragraph",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
-}, {
-  "id" : "cluster_image",
-  "name" : "cluster_image",
-  "label" : "Logo cluster image (leave empty for the default)",
-  "required" : false,
-  "locked" : false,
-  "responsive" : true,
-  "resizable" : true,
-  "show_loading" : false,
-  "type" : "image",
-  "display_width" : null,
-  "default" : {
-    "src" : "",
-    "alt" : "",
-    "loading" : "disabled"
+[
+  {
+    "id": "eyebrow",
+    "name": "eyebrow",
+    "label": "Top eyebrow",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Integrations"
+  },
+  {
+    "id": "heading",
+    "name": "heading",
+    "label": "Top heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "The most accurate data, inside the CRM you already use."
+  },
+  {
+    "id": "lede",
+    "name": "lede",
+    "label": "Top paragraph",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
+  },
+  {
+    "id": "subheading",
+    "name": "subheading",
+    "label": "Left block: heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Works with the CRMs and dialers agents actually use"
+  },
+  {
+    "id": "subbody",
+    "name": "subbody",
+    "label": "Left block: paragraph",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
+  },
+  {
+    "id": "cluster_image",
+    "name": "cluster_image",
+    "label": "Logo cluster image (leave empty for the default)",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "type": "image",
+    "display_width": null,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "id": "cluster_alt",
+    "name": "cluster_alt",
+    "label": "Logo cluster description (alt text, used with the default image)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Landvoice integrates with Brivity, Lofty, Follow Up Boss, BoldTrail, Wise Agent, HighLevel and MOJO, with CINC, BoomTown, reside, Sierra Interactive, SureSend and more coming soon."
+  },
+  {
+    "id": "else_eyebrow",
+    "name": "else_eyebrow",
+    "label": "Bottom eyebrow",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Integrations"
+  },
+  {
+    "id": "else_heading",
+    "name": "else_heading",
+    "label": "Bottom heading",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "And everything else."
+  },
+  {
+    "id": "else_lede",
+    "name": "else_lede",
+    "label": "Bottom paragraph",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
+  },
+  {
+    "id": "else_image",
+    "name": "else_image",
+    "label": "API / CSV image (leave empty for the default)",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": false,
+    "type": "image",
+    "display_width": null,
+    "default": {
+      "src": "",
+      "alt": "",
+      "loading": "disabled"
+    }
+  },
+  {
+    "id": "else_alt",
+    "name": "else_alt",
+    "label": "API / CSV description (alt text, used with the default image)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Connect through an API integration or a CSV import."
+  },
+  {
+    "id": "closer_line_1",
+    "name": "closer_line_1",
+    "label": "Closing line 1",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Your brokerage CRM stays your CRM."
+  },
+  {
+    "id": "closer_line_2",
+    "name": "closer_line_2",
+    "label": "Closing line 2 (optional)",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Landvoice just fills it with better data."
+  },
+  {
+    "id": "button_1_label",
+    "name": "button_1_label",
+    "label": "Button 1 label",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Integrations"
+  },
+  {
+    "id": "button_1_link",
+    "name": "button_1_link",
+    "label": "Button 1 link",
+    "required": false,
+    "locked": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "show_advanced_rel_options": false,
+    "type": "link",
+    "display_width": null,
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#integrations",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "button_2_label",
+    "name": "button_2_label",
+    "label": "Button 2 label",
+    "required": false,
+    "locked": false,
+    "allow_new_line": false,
+    "type": "text",
+    "display_width": null,
+    "default": "Get Started"
+  },
+  {
+    "id": "button_2_link",
+    "name": "button_2_link",
+    "label": "Button 2 link",
+    "required": false,
+    "locked": false,
+    "supported_types": [
+      "EXTERNAL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS"
+    ],
+    "show_advanced_rel_options": false,
+    "type": "link",
+    "display_width": null,
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "#pricing",
+        "content_id": null
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  },
+  {
+    "id": "no_padding_top",
+    "name": "no_padding_top",
+    "label": "Remove top padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "no_padding_bottom",
+    "name": "no_padding_bottom",
+    "label": "Remove bottom padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "corners_top",
+    "name": "corners_top",
+    "label": "Top corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (as designed)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  },
+  {
+    "id": "corners_bottom",
+    "name": "corners_bottom",
+    "label": "Bottom corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (as designed)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
   }
-}, {
-  "id" : "cluster_alt",
-  "name" : "cluster_alt",
-  "label" : "Logo cluster description (alt text, used with the default image)",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Landvoice integrates with Brivity, Lofty, Follow Up Boss, BoldTrail, Wise Agent, HighLevel and MOJO, with CINC, BoomTown, reside, Sierra Interactive, SureSend and more coming soon."
-}, {
-  "id" : "else_eyebrow",
-  "name" : "else_eyebrow",
-  "label" : "Bottom eyebrow",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Integrations"
-}, {
-  "id" : "else_heading",
-  "name" : "else_heading",
-  "label" : "Bottom heading",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "And Everything Else."
-}, {
-  "id" : "else_lede",
-  "name" : "else_lede",
-  "label" : "Bottom paragraph",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Filter your data in Landvoice Lead Manager, export it, and it lands clean in the CRM you already run your business on - no hand-mapping columns, no reformatting, no duplicate records."
-}, {
-  "id" : "else_image",
-  "name" : "else_image",
-  "label" : "API / CSV image (leave empty for the default)",
-  "required" : false,
-  "locked" : false,
-  "responsive" : true,
-  "resizable" : true,
-  "show_loading" : false,
-  "type" : "image",
-  "display_width" : null,
-  "default" : {
-    "src" : "",
-    "alt" : "",
-    "loading" : "disabled"
-  }
-}, {
-  "id" : "else_alt",
-  "name" : "else_alt",
-  "label" : "API / CSV description (alt text, used with the default image)",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Connect through an API integration or a CSV import."
-}, {
-  "id" : "closer_line_1",
-  "name" : "closer_line_1",
-  "label" : "Closing line 1",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Your brokerage CRM stays your CRM."
-}, {
-  "id" : "closer_line_2",
-  "name" : "closer_line_2",
-  "label" : "Closing line 2 (optional)",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Landvoice just fills it with better data."
-}, {
-  "id" : "button_1_label",
-  "name" : "button_1_label",
-  "label" : "Button 1 label",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Integrations"
-}, {
-  "id" : "button_1_link",
-  "name" : "button_1_link",
-  "label" : "Button 1 link",
-  "required" : false,
-  "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
-  "show_advanced_rel_options" : false,
-  "type" : "link",
-  "display_width" : null,
-  "default" : {
-    "url" : {
-      "type" : "EXTERNAL",
-      "href" : "#integrations",
-      "content_id" : null
-    },
-    "open_in_new_tab" : false,
-    "no_follow" : false
-  }
-}, {
-  "id" : "button_2_label",
-  "name" : "button_2_label",
-  "label" : "Button 2 label",
-  "required" : false,
-  "locked" : false,
-  "allow_new_line" : false,
-  "type" : "text",
-  "display_width" : null,
-  "default" : "Get Started"
-}, {
-  "id" : "button_2_link",
-  "name" : "button_2_link",
-  "label" : "Button 2 link",
-  "required" : false,
-  "locked" : false,
-  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
-  "show_advanced_rel_options" : false,
-  "type" : "link",
-  "display_width" : null,
-  "default" : {
-    "url" : {
-      "type" : "EXTERNAL",
-      "href" : "#pricing",
-      "content_id" : null
-    },
-    "open_in_new_tab" : false,
-    "no_follow" : false
-  }
-}, {
-  "id" : "no_padding_top",
-  "name" : "no_padding_top",
-  "label" : "Remove top padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "no_padding_bottom",
-  "name" : "no_padding_bottom",
-  "label" : "Remove bottom padding (set it to 0)",
-  "required" : false,
-  "locked" : false,
-  "display" : "checkbox",
-  "type" : "boolean",
-  "display_width" : null,
-  "default" : false
-}, {
-  "id" : "corners_top",
-  "name" : "corners_top",
-  "label" : "Top corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-}, {
-  "id" : "corners_bottom",
-  "name" : "corners_bottom",
-  "label" : "Bottom corners",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "default"
-} ]
+]
