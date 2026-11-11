@@ -194,6 +194,13 @@ h2 { font-size: var(--lv-fs-h2); }
 .lv-btn--sm .lv-btn__icon { font-size: 1.1rem; }
 .lv-btn--sm .lv-btn__label { min-height: 2.5rem; padding: 0 1rem; }
 @media (min-width: 1798px) { .lv-btn:not(.lv-btn--sm) { font-size: 1.125rem; } }   /* 18px on large screens; the small header button stays put */
+/* NO ARROWS + LARGER TEXT: every button except the one in the header nav loses its arrow box and gets bigger text (19px, 20px on large screens).
+   The header "Buy Now" keeps its arrow and small size. With no arrow box the dark wipe on hover covers the whole button. */
+.lv-btn:not(.lv-header .lv-btn) { --btn-icon-w: 0px; font-size: 1.1875rem; }
+.lv-btn:not(.lv-header .lv-btn) .lv-btn__icon { display: none; }
+.lv-btn:not(.lv-header .lv-btn) .lv-btn__label { min-height: 3.3rem; padding: 0 1.7rem; }
+.lv-btn--block:not(.lv-header .lv-btn) .lv-btn__label { justify-content: center; }
+@media (min-width: 1798px) { .lv-btn:not(.lv-header .lv-btn) { font-size: 1.25rem; } }
 .lv-btn--block { display: flex; width: 100%; }
 .lv-btn--block .lv-btn__label { flex: 1; }
 .lv-actions { display: flex; flex-wrap: wrap; gap: .9rem; }
