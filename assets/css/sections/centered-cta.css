@@ -62,3 +62,8 @@
 .lv-band--dark.lv-ccta .lv-gridplane__patch--r::before,
 .lv-band--dark.lv-ccta .lv-gridplane__patch--p::before { mix-blend-mode: normal; opacity: .2; }
 @media (max-width: 760px) { .lv-band.lv-ccta .lv-gridplane__patch--p { --blk: 72px; } }
+
+/* GRID, BOTH SIDES: zoomed in. The picture is drawn larger than the patch and pinned to the outer edge, so the blocks are bigger and the cut-off falls toward the text
+   (where the mask has already faded it out). Higher % = more zoomed in. (The right patch is mirrored, so the same position puts it on the outer right.) */
+.lv-band.lv-ccta .lv-gridplane__patch--sl::before,
+.lv-band.lv-ccta .lv-gridplane__patch--sr::before { background-size: 155% 155%; background-position: 0 50%; }
