@@ -6,3 +6,8 @@
 .lv-facts--stack .lv-fact__value { font-size: clamp(3.2rem, 5.2vw, 5.4rem); color: var(--lv-fg); }
 .lv-facts--stack .lv-fact__label { margin-top: .5rem; max-width: none; font-size: clamp(1.15rem, 1.7vw, 1.5rem); }
 @media (min-width: 901px) { .lv-split--stats-left > .lv-facts { order: -1; } }
+
+/* VARIANT B (local preview): the whole block stacked, text on top and the stats in one column below, left-aligned with the text */
+.lv-pg__stack--b { max-width: 56rem; }
+.lv-facts.lv-facts--stack.lv-facts--stack-b { max-width: 56rem; margin-top: clamp(36px, 4.5vw, 64px); }
+
