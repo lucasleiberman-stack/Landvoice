@@ -1,0 +1,64 @@
+/* BENTO (experiment, expired-listings-bento.html): the product page's content sections as one grid of tiles.
+   6-column grid; each tile sets its own span. Tiles are white on the light band; --ink = dark tile, --blue = price tile.
+   Text colours come from --lv-fg / --lv-fg-muted so the shared components (pills, facts, timeline) work on either. */
+.lv-bento { --lv-bento-gap: clamp(14px, 1.6vw, 24px); --lv-bento-pad: clamp(24px, 2.8vw, 44px);
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--lv-bento-gap); }
+.lv-bento__tile { position: relative; display: flex; flex-direction: column; gap: 1.1rem; min-width: 0; padding: var(--lv-bento-pad); border-radius: 28px; overflow: hidden;
+  --lv-fg: var(--lv-ink); --lv-fg-muted: #4A5260; --lv-hairline: rgba(13,17,23,.14); background: #fff; color: var(--lv-fg); }
+.lv-bento__tile--ink { --lv-fg: var(--lv-paper); --lv-fg-muted: #A9B1BE; --lv-hairline: rgba(255,255,255,.16); --lv-link: var(--lv-blue-on-dark); background: var(--lv-ink); }
+.lv-bento__tile--blue { --lv-fg: #fff; --lv-fg-muted: rgba(255,255,255,.82); background: var(--lv-blue); }
+
+/* spans (desktop) */
+.lv-bento__tile--data { grid-column: span 4; grid-row: span 2; }
+.lv-bento__tile--phones { grid-column: span 2; grid-row: span 2; }
+.lv-bento__tile--old, .lv-bento__tile--why { grid-column: span 3; }
+.lv-bento__tile--steps { grid-column: span 3; grid-row: span 2; }
+.lv-bento__tile--works, .lv-bento__tile--compare { grid-column: span 3; }
+.lv-bento__tile--price { grid-column: span 6; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem 3rem; }
+
+/* tile type: smaller than a section heading, same family and spacing as the rest of the site */
+.lv-bento__h { font-family: var(--lv-font-display); font-weight: 600; letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; color: var(--lv-fg);
+  font-size: clamp(1.6rem, 2.35vw, 2.4rem); }
+.lv-bento__sub, .lv-bento__body { font-family: var(--lv-font-body); font-size: clamp(.98rem, 1.1vw, 1.12rem); line-height: 1.6; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 60ch; }
+.lv-bento__tile .lv-tags { margin-top: .4rem; gap: .5rem; }
+.lv-bento__tile .lv-tag { font-size: clamp(.8rem, 1vw, 1rem); padding: .45em 1em; }
+.lv-bento__tile .lv-pills { margin-bottom: 1rem; }
+.lv-bento__tile .lv-pill { font-size: .95em; }
+
+/* data tile: copy on top, the rotating record mock fills the rest */
+.lv-bento__tile--data .lv-mock { margin-top: auto; aspect-ratio: 16 / 11; border-radius: 18px; }
+.lv-bento__tile--data .lv-bento__copy { display: grid; gap: 1rem; }
+
+/* phones tile: the ranked contacts from the record, shown at a readable size */
+.lv-bento__phones { container-type: normal; margin-top: auto; font-size: clamp(14px, 1.15vw, 17px); line-height: 1.25; color: #1B2230; padding: 1.1em; border-radius: 18px; background: var(--lv-paper); }
+.lv-bento__phones .lv-rec__contacts { gap: .7em; }
+.lv-bento__phones .lv-rec__contact { background: #fff; }
+.lv-bento__phones .lv-rec__cwho span { white-space: nowrap; }
+.lv-bento__phones { padding: .9em; }
+
+/* old expireds: three stats stacked, big numbers */
+.lv-bento__tile--old .lv-facts { margin-top: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; text-align: left; }
+.lv-bento__tile--old .lv-fact { padding: 0; border: 0; }
+.lv-bento__tile--old .lv-fact__value { font-size: clamp(2.4rem, 4vw, 4rem); color: var(--lv-fg); }
+.lv-bento__tile--old .lv-fact__label { margin-top: .4rem; max-width: none; white-space: normal; font-size: clamp(.8rem, .95vw, .95rem); line-height: 1.35; color: var(--lv-fg-muted); }
+
+/* steps: the vertical timeline, compact, left aligned in the tile */
+.lv-bento__tile--steps .lv-timeline { margin: 1rem 0 0; max-width: none; --lv-tl-dot: 56px; --lv-tl-gap: clamp(28px, 3vw, 44px); }
+.lv-bento__tile--steps .lv-timeline__title { font-size: clamp(1.15rem, 1.5vw, 1.5rem); max-width: 26ch; }
+
+/* price tile */
+.lv-bento__price { font-family: var(--lv-font-display); font-weight: 600; font-size: clamp(3rem, 5.4vw, 5.2rem); letter-spacing: -.05em; line-height: 1; color: #fff; }
+.lv-bento__price small { font-size: .36em; font-weight: 400; letter-spacing: 0; margin-left: .3em; }
+.lv-bento__tile--price .lv-bento__h { color: #fff; max-width: 22ch; }
+.lv-bento__tile--price .lv-btn { background: #fff; color: var(--lv-ink); }
+
+@media (max-width: 1100px) {
+  .lv-bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lv-bento__tile--data, .lv-bento__tile--price { grid-column: span 2; grid-row: auto; }
+  .lv-bento__tile--phones, .lv-bento__tile--old, .lv-bento__tile--why, .lv-bento__tile--steps, .lv-bento__tile--works, .lv-bento__tile--compare { grid-column: span 1; grid-row: auto; }
+}
+@media (max-width: 700px) {
+  .lv-bento { grid-template-columns: 1fr; }
+  .lv-bento__tile--phones, .lv-bento__tile--old, .lv-bento__tile--why, .lv-bento__tile--steps, .lv-bento__tile--works, .lv-bento__tile--compare, .lv-bento__tile--data, .lv-bento__tile--price { grid-column: auto; }
+  .lv-bento__tile--old .lv-facts { grid-template-columns: 1fr; }
+}
