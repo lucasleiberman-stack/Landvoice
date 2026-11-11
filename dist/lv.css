@@ -269,6 +269,20 @@ section.lv-band.lv-corner-top-round { border-top-left-radius: var(--lv-radius-ba
 section.lv-band.lv-corner-top-square { border-top-left-radius: 0; border-top-right-radius: 0; }
 section.lv-band.lv-corner-bottom-round { border-bottom-left-radius: var(--lv-radius-band); border-bottom-right-radius: var(--lv-radius-band); }
 section.lv-band.lv-corner-bottom-square { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+/* BAND OPTIONS for the homepage modules that wrap their sections in a <div class="lv-band"> (Homepage Stats, Product Showcase, Lead Manager, Success Stories, Brand Slider).
+   Corners work on the div; the padding of these blocks lives on the inner section, so the rules target it. */
+div.lv-band.lv-corner-top-round { border-top-left-radius: var(--lv-radius-band); border-top-right-radius: var(--lv-radius-band); }
+div.lv-band.lv-corner-top-square { border-top-left-radius: 0; border-top-right-radius: 0; }
+div.lv-band.lv-corner-bottom-round { border-bottom-left-radius: var(--lv-radius-band); border-bottom-right-radius: var(--lv-radius-band); }
+div.lv-band.lv-corner-bottom-square { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+div.lv-band.lv-pad-top-0 > .lv-trust { padding-top: 0; }
+div.lv-band.lv-pad-bottom-0 > .lv-trust { padding-bottom: 0; }
+div.lv-band.lv-pad-top-0 > section.lv-stories { padding-top: 0; }
+div.lv-band.lv-pad-bottom-0 > section.lv-section--tight { padding-bottom: 0; }
+div.lv-band.lv-pad-bottom-0 > section.lv-lm { padding-bottom: 0; }
+div.lv-band.lv-pad-bottom-0 > section.lv-services { padding-bottom: 0; }
+div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }
 /* FACTS, STACKED: the big-number stats in one column, for a split block where the stats sit opposite the text instead of an image.
    Each stat is open (no card): the big number in the band's text colour, its label under it, and a thin divider line below. Used with .lv-split.lv-split--center;
    .lv-split--stats-left puts the stats on the left on wide screens. */
@@ -659,7 +673,7 @@ html:not(.no-js) .lv-housemap[data-lv-draw]:not(.is-drawn) .lv-pcard { opacity: 
 .lv-else__closer { font-family: var(--lv-font-display); font-size: var(--lv-fs-h3); font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
 @media (max-width: 900px) { .lv-integrations__main { grid-template-columns: 1fr; } }
 /* LEAD MANAGER: intro + full-bleed carousel of feature cards. JS: lv-carousel.js */
-.lv-lm { padding-top: 0; }
+/* top padding = standard lv-section; removed via the module option (band-options.css) */
 .lv-lm__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(36px, 5vw, 64px); }
 .lv-lm__intro { display: grid; gap: 1.4rem; max-width: 62rem; }
 .lv-lm__actions { margin-top: clamp(32px, 4vw, 56px); }
@@ -881,6 +895,13 @@ html:not(.no-js) .lv-timeline[data-lv-draw]:not(.is-drawn) .lv-timeline__item::a
 .lv-rec.is-live .lv-rec__spot { opacity: 1; }
 .lv-rec__spot { z-index: 3; }
 .lv-rec__stage { z-index: 1; }
+
+/* targets shrink to their content so the spotlight hugs the element, not the whole column/cell */
+.lv-rec__oname, .lv-rec__email, .lv-rec__soc { width: fit-content; max-width: 100%; }
+.lv-rec__meta > [data-lv-rec-target] { justify-self: start; }
+
+/* less air between the paragraph and the pills (was the grid gap + 1.8rem) */
+.lv-rec-showcase .lv-pg__stack .lv-tags { margin-top: 0; }
 
 /* the pills: the active one turns solid blue */
 [data-lv-rec-pill] { cursor: pointer; transition: background .35s ease, color .35s ease; }

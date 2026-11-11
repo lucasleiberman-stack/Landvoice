@@ -54,6 +54,13 @@
 .lv-rec__spot { z-index: 3; }
 .lv-rec__stage { z-index: 1; }
 
+/* targets shrink to their content so the spotlight hugs the element, not the whole column/cell */
+.lv-rec__oname, .lv-rec__email, .lv-rec__soc { width: fit-content; max-width: 100%; }
+.lv-rec__meta > [data-lv-rec-target] { justify-self: start; }
+
+/* less air between the paragraph and the pills (was the grid gap + 1.8rem) */
+.lv-rec-showcase .lv-pg__stack .lv-tags { margin-top: 0; }
+
 /* the pills: the active one turns solid blue */
 [data-lv-rec-pill] { cursor: pointer; transition: background .35s ease, color .35s ease; }
 [data-lv-rec-pill].is-active { background: var(--lv-blue); color: #fff; }

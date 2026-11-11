@@ -18,8 +18,9 @@ LV.ready(function () {
       var key = pills[i].getAttribute('data-lv-rec-pill'), target = LV.$('[data-lv-rec-target="' + key + '"]', stage);
       pills.forEach(function (p, j) { p.classList.toggle('is-active', j === i); });
       if (!target) return;
-      var g = geo(target), pad = 10, vw = frame.clientWidth, vh = frame.clientHeight, L = stage.offsetLeft, T = stage.offsetTop;   // L/T = where the stage sits in the frame
-      var z = Math.max(1, Math.min(vw * .72 / (g.w + 2 * pad), vh * .62 / (g.h + 2 * pad), 3.4));
+      var g = geo(target), vw = frame.clientWidth, vh = frame.clientHeight, L = stage.offsetLeft, T = stage.offsetTop;   // L/T = where the stage sits in the frame
+      var z = Math.max(1, Math.min(vw * .72 / (g.w + 6), vh * .62 / (g.h + 6), 3.4));
+      var pad = 7 / z;   // the gap between ring and element is a fixed ~7px on screen at every zoom (a stage-unit pad would grow with the zoom)
       var cx = g.x + g.w / 2, cy = g.y + g.h / 2;
       stage.style.setProperty('--z', z);
       stage.style.transform = 'translate(' + (vw / 2 - L - z * cx) + 'px,' + (vh / 2 - T - z * cy) + 'px) scale(' + z + ')';
