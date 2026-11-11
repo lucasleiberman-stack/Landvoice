@@ -1,0 +1,13 @@
+{
+  "label": "Centered CTA",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "Centered closing block for product pages: statement + paragraph, then the offer (question, price, button). Dark or light.",
+  "host_template_types": ["PAGE"],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
