@@ -10,8 +10,8 @@ All values live in `assets/css/00-tokens.css`. Change a token, never hard-code a
 ## Type scale (global classes in `01-base.css`)
 | Class | Size token | Weight | Letter spacing | Line height |
 |---|---|---|---|---|
-| `lv-h1` | `--lv-fs-h1` clamp(2.4rem, max(min(4.6vw, 54px), calc(54px + (100vw - 1728px) * .01271)), 60px) | 600 | -.04em | 1.05 |
-| `lv-h2` | `--lv-fs-h2` clamp(2rem, max(min(3.9vw, 47px), calc(47px + (100vw - 1728px) * .010593)), 52px), every h2 | 600 | -.035em | 1.05 |
+| `lv-h1` | `--lv-fs-h1`: 54px at 1728px, easing back to 60px at 2200px+ (4.6vw below ~1174px; min 2.4rem) | 600 | -.04em | 1.05 |
+| `lv-h2` | `--lv-fs-h2`: 47px at 1728px, easing back to 52px at 2200px+ (3.9vw below ~1205px; min 2rem), every h2 | 600 | -.035em | 1.05 |
 | `lv-h3` | `--lv-fs-h3` clamp(1.35rem, 2vw, 1.9rem) | 600 | -.025em | 1.15 |
 | `lv-lede` (sub paragraph) | `--lv-fs-lede` clamp(1.05rem, 1.3vw, 1.2rem) | 400 | **`--lv-ls-sub` = -0.3px** | 1.65, muted colour |
 | `lv-eyebrow` | `--lv-fs-eyebrow` .8rem, mono, uppercase | 400 | .08em | |
@@ -47,7 +47,7 @@ All values live in `assets/css/00-tokens.css`. Change a token, never hard-code a
 - `lv-tag` (in `<ul class="lv-tags">`): pale-blue fill `rgba(106,163,255,.1)`, 1px blue outline, blue text, DM Sans, `--lv-ls-sub`. Product pages enlarge them (`.lv-pg__stack .lv-tag`, 1.5px border, clamp(.88rem, 1.52vw, 1.36rem), weight 500).
 - `lv-pill`: the same look, inline inside a paragraph (e.g. the three highlighted reasons in "Why listings expire"). On dark bands it switches to `--lv-blue-on-dark`.
 - Orange "coming soon" pill: `.lv-services__soon` (DM Sans, lowercase, 600, `--lv-orange` fill).
-- Buttons: `lv-btn` = 50px tall, 17px, Schibsted Grotesk 500, blue with a darker arrow square that wipes on hover; `lv-btn--dark` black; `lv-btn--sm` (40px) only in the header "Buy Now" and add-on cards. All buttons use the display font.
+- Buttons: `lv-btn` has **no arrow** (the `.lv-btn__icon` span is still in the markup but hidden) and is 19px (20px at 1798px+), ~53px tall, Schibsted Grotesk 500, blue (`lv-btn--dark` black) with a darker wipe across the whole button on hover. **Exception: the header "Buy Now"** (`.lv-header .lv-btn`, `lv-btn--sm`) keeps its arrow and 15px size. Rule lives in `03-components.css` ("NO ARROWS + LARGER TEXT").
 
 ## Header / nav / footer
 - Header is a sticky bar. After ~40px of scroll JS adds `.is-stuck`: it floats 10px from the top, inset from the sides (`clamp(10px, 2.2vw, 36px)`), 12px radius, light shadow, eased over .5s. `--lv-header-h` (79px) is what sticky stages pin under.
@@ -55,7 +55,7 @@ All values live in `assets/css/00-tokens.css`. Change a token, never hard-code a
 - Footer: brand/contact column (address, phones, Terms | Privacy, six social icons, copyright) + two link columns, faint logo rings behind. Social + Blog/Help/CCPA/Terms/Privacy links are `#` placeholders. The header and footer markup is **duplicated** in `index.html` and `expired-listings.html`: change both.
 
 ## Homepage specifics
-- **Hero map**: `hero-map-clean.png` + live SVG circle (`.lv-circle`): dotted ring sweeps in (0.2s to 1.3s), tint fades up, then all 5 pins (dot + ray + one-line pill: Pre-foreclosure blue, FSBO orange, Distressed purple, Expired green, FRBO pink) land together at 1.3s (`--start`, `--step` = 0 on `.lv-props`; pills finish ~2.65s). 1s later (3.7s, `--lv-leads-start`) the leads list (`sections/hero-leads.css`, `js/75-leads.js`: one bubble per lead, runs to the bottom of the hero and fades out) animates in and the circle + pins blur (5px). Pill geometry is in 525x414 map units via `--dx/--dy`.
+- **Hero map (v3, see HUBSPOT.md for versions)**: `hero-map-clean.png` + live SVG circle. Timeline: ring draws (0.2-1.3s) -> the whole map layers (image, circle, markers) scale to 76% toward the map's RIGHT edge (1.45s, 1s long) -> at 2.65s the lead list appears on the LEFT of the circle (`hero-leads-follow.css`, `76-leads-slider.js` mode `data-lv-leads-follow`): 3.5 leads visible, highlighted lead centred, top/bottom fade out, endless loop (copies before/after, snap back unseen) -> every 2.8s the highlight steps on and ONE glass way-point marker (list tag colours, address slides out) pops onto the map. Marker positions are SVG `.lv-pin` groups in the markup (kept as no-JS fallback; JS draws the HTML markers). Reduced motion = static.
 - **Logo slider** (`data-lv-marquee`): 14 white logos in `assets/img/brokerages/`, each with its own height class `.lv-logo-img--name` in `sections/trust.css`; ERA and Realty ONE Group are greyscale via CSS filter. The marquee JS repeats items until half the track is wider than the strip, so it loops seamlessly on any width.
 - **Services road**: wide container, `--lv-arm` clamp(200px, 20vw, 300px), so all four blurbs wrap to the same number of lines on desktop.
 - AI icons row, integrations image (`integrations-cluster-v2.webp`), Lead Manager card images (`lm-filters-v2.png`, `lm-dnc-v2.png`), add-on images, FAQ (22 answers) are all in `index.html`.
@@ -79,3 +79,16 @@ Reusable pieces: `lv-split` (2 columns), `lv-pg__center` (centred stack), `lv-pg
 - Images: give replaced images a new filename (`name-v2.png`) so browsers don't serve the old one, then `git rm` the old file. `assets/img/` is read-denied in `.claude/settings.json` (copy/edit by shell is fine). Logos on dark bands must be white on transparent: `python3 -I tools/whiten.py in.png out.png` (SVGs used as-is); `sips` (built into macOS) crops/converts.
 - Check changes in the preview by measuring computed styles (`getComputedStyle`) and screenshots; for reveal-on-scroll items add class `is-in`; pause hero animations with `document.getAnimations()` and set `currentTime`.
 - Ask before downloading anything; logos/trademarks come from the user or official brand pages.
+
+## Additions in the HubSpot phase (keep consistent)
+- **Band style options** (reusable modules only): `lv-pad-top-0`, `lv-pad-bottom-0`, `lv-corner-top|bottom-round|square` on `section.lv-band` (`band-options.css`). Default corners: light bands rounded (`--lv-radius-band`), dark bands square.
+- **Stats** (`facts-stack.css`): open style, no cards: big number in `--lv-fg`, label under it, 1px `--lv-hairline` divider. `lv-facts--row` = centred row (labels one line, 3 columns, 1 on phones) under a centred `lv-pg__center lv-pg__center--mid` heading + paragraph (two lines). `lv-facts--stack` = single column.
+- **Steps (how it works)**: `.lv-step__text` max-width `min(38rem, 85%)` of its column.
+- **Product hero blocks**: `lv-pg-hero` (padding 64-140px) split; `Bleed Hero Split` image runs off the right edge (52vw, right-aligned); "mockup" images use the show-whole-image mode (object-fit contain, no frame). Heading tag option h1/h2: the class follows the tag (`lv-h1` / `lv-h2`), never use h1 more than once a page.
+- **Corner map graphic**: `.lv-gridplane` + one `.lv-gridplane__patch--tl|tr|bl|br` as the band's first child (road-patch-v4.svg from base.html, `mix-blend-mode: darken` on light; faint light version on dark); mirrors: tr none, tl scaleY(-1), bl scale(-1,-1), br scaleX(-1).
+- **Record mock** (`record.css`): em-sized look-alike of the app's expired-lead row with Star Wars dummy data; JS rotates pills, zooms the stage with a transform, a spotlight ring (thickness 1.25px on screen via `--z`) marks the target; pill order = Name, Phone numbers, Email, Social media links, Current status, Price, Days on market.
+- **Social icons** (LinkedIn, Facebook, Instagram, YouTube): the user's SVG paths, one colour (`currentColor`), dark ink (`--lv-ink`) on light UI, white on dark.
+- **Testimonial**: theme dark/light; headshot left/right (mirror: text box hugs the photo with the same gap, quote mark mirrored and moved).
+- **Pricing**: billing tabs `data-lv-billing` / `data-period` on `.lv-plans` (JS `85-billing.js`); plans carry `lv-plan__amt--monthly|quarterly|annual` spans; the "save" line shows on the annual tab only.
+- **Placeholder data**: Star Wars (Leia Organa, Mos Eisley TA 9900x, (415) 555-01xx). Never real people or numbers.
+

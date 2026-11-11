@@ -1,3 +1,5 @@
+> **Note (HubSpot phase):** the WordPress steps below are superseded. The site is being built as a HubSpot theme; see `HUBSPOT.md` (workflow, modules, rules) and `STATUS.md` (what is done / next). The JS hook table and the placeholder list below are still current.
+
 # Landvoice homepage: prototype
 
 > Design rules (type, bands, padding, hero, pills, buttons) live in `STYLE-GUIDE.md`; session handoff in `STATUS.md`.

@@ -1,38 +1,35 @@
 # Status (handoff between sessions)
 
-Workflow: new session per section/task. Start oriented from this file and `STYLE-GUIDE.md` (both load automatically; optionally `/section <name>`). Finish with `/wrap`, then the user pushes. Dev server: `python3 serve.py`.
+Workflow: new session per task. Start oriented from this file, `HUBSPOT.md` and `STYLE-GUIDE.md` (all load automatically). Finish with `/wrap` (or just commit): commit locally, **never push** (the user pushes). Dev server: Bash `python3 serve.py 8000` in the background (the preview launcher is broken).
 
 ## Current focus
-Homepage and the Expired Listings product page are built; remaining work is filling placeholders, the pricing additions, and building the other product pages from the Expired template.
+Building the new site as a HubSpot theme (see `HUBSPOT.md` for the workflow and rules). Homepage + Expired Listings page prototype exist locally; most homepage sections and several reusable product-page modules are already uploaded as HubSpot modules.
 
-## Done so far (high level)
-- Git + GitHub set up (user pushes; many local commits are NOT pushed yet, so remind them to `git push`)
-- Homepage: hero with live SVG circle + dot/ray pins, 14-logo slider, Products mega menu, floating pill header, services road, Lead Manager cards (new filters + DNC images), add-ons carousel (Inked Cards, Call Capture, Data Genie), integrations image, FAQ (22 answers), AI icons, redesigned footer with 6 social icons
-- Expired Listings page (`expired-listings.html`): full template built, bands alternate light/dark, shared hero styles
-- Design system documented in `STYLE-GUIDE.md`; tokens for padding (`--lv-section-y`) and sub-paragraph/pill letter spacing (`--lv-ls-sub`)
+## Done (high level)
+- HubSpot theme "Landvoice - 2026 Redesign": base.html (header/footer/fonts/sprite), shared CSS/JS, one module per homepage section, reusable product-page modules (see HUBSPOT.md for the list and which have style options).
+- Home hero v3 on HubSpot: ring draws, whole map zooms out toward the right, list of 6 leads on the LEFT of the circle (3.5 visible, highlighted lead centred, top/bottom fade, endless loop), one glass way-point marker at a time with an address slide-out. Older versions kept as git tags `hero-list-v1-hubspot`, `hero-slider-v2-glass-markers`, `og-hero-animation-hubspot`.
+- Pricing: Monthly / Quarterly / Annually tabs (prices from landvoice.com/pricing) in the Pricing Plans module.
+- Expired page (local): hero, house-map graphic with property card (`housemap.css`), rotating-pill record mock (`record.css`, `90-record.js`; also a HubSpot module), stats block (centred row), etc.
+- Site-wide: buttons have no arrow and larger text except the header "Buy Now"; H1/H2 sizes reduced (54/47px at 1728px, back to 60/52px at 2200px+); "how it works" descriptions 85% width.
+- Phone-size record mockup SVG for Figma (`mockups/phone-expired-record.svg`), for-sale sign prop (`mockups/for-sale-sign/`).
+
+## Local-only (NOT in HubSpot, wait for the user's go-ahead)
+- Hero: blue glow behind the list + whiter list glass (`hero-leads-follow.css`, bottom).
+- `expired-listings.html`: territory map + house photo + property card block (`housemap.css`) and everything else on that page. A "module" for the house-map block does not exist yet (offered).
 
 ## Next up
-- Build the other product pages (FSBO, Pre-Foreclosure & Distressed, Neighborhood Search, FRBO later) by copying `expired-listings.html`; then link them from the Products mega menu (`data-lv-mega` in both pages' headers) and footer links
-- Expired page needs: hero image, 18 FAQ questions + answers, checkout link (`#checkout-expired`), mockup screenshots in the `lv-mock` frames
-- Enable GitHub Pages for a live preview
-- Homepage FAQ: fill the orange bracketed values ([X]% phone match rate, $[X] price, CRM/dialer names); confirm flagged `TODO copy`
-- Replace remaining placeholders listed in README.md (screenshots, stats, headshots, video URLs)
+- Ask what the user wants next; likely: push the hero glow to HubSpot if approved, make the house-map block a module, add the 4 style options to more modules if asked (see HUBSPOT.md "one-offs"), build FSBO / Pre-Foreclosure / Neighborhood Search pages, home page template, header/footer modules.
+- Stats module is named "Split Block Stats" but is now a centred row: rename if the user wants.
+- Pricing page: add Essential plan if wanted; fix saved Pro/Elite save text on the page.
+- Replace placeholders (see README.md): hero image for expired page, FAQ answers (18 questions), checkout links, testimonial photos, footer/social URLs, Data Genie picture, pricing billing prices already filled.
 
 ## Backlog (from the user)
-- [ ] Coaches strip: add MFO (Mike Ferry Organization), then "all of REDX" for coaches. NEEDS CLARIFYING: which coaches/logos does "all of REDX" mean?
-- [ ] New picture for the Data Genie add-on card (placeholder now)
-- [ ] Pricing: Build Your Own plan: list the products and mention "build your bundle" (replace the `Add on: (list needed)` placeholder)
-- [ ] Pricing: Monthly / Quarterly / Annual billing tab. NEEDS monthly and quarterly prices per plan
-- [ ] Team statement below pricing (like REDX). NEEDS copy and maybe a photo
-- [ ] Footer: real profile URLs for Facebook, YouTube, LinkedIn, Instagram, TikTok, X (all `#` now); also Blog, Help, CCPA, Terms, Privacy links
-
-## Hero animation versions (HubSpot)
-- **Current** (`Home Hero` module): faster ring, all pins land together, then 1s later the leads list (bubbles with glass blur behind, last bubble fades) fills in. Code: `assets/css/sections/hero.css`, `hero-leads.css`, `assets/js/75-leads.js`; module in `hubspot/theme/Modules/Home Hero.module`.
-- **OG** (`OG HERO ANIMATION HUBSPOT` module): the original hero (no leads list, slower ring, pins one after another). Its own copy of the old timing is in that module's `module.css`. Also tagged in git: `og-hero-animation-hubspot`.
+- [ ] Coaches strip: add MFO, then "all of REDX" (NEEDS CLARIFYING)
+- [ ] Team statement below pricing (NEEDS copy/photo)
+- [ ] Footer: real profile URLs + Blog, Help, CCPA, Terms, Privacy links
 
 ## Gotchas
-- Header and footer markup is duplicated in `index.html` and `expired-listings.html`; edit both (or build a shared include when moving to WordPress).
-- Hero map circle is live SVG over `hero-map-clean.png` (old baked circle removed; one street label, Fulton St, slightly blemished). Pill positions use map units (`--dx`/`--dy`).
-- FRBO is "coming soon" (orange pill under its title); delete that line when it launches.
-- `dist/` is generated by `./bundle.sh`; edit source files only. `assets/img/` is read-denied for the assistant (copy/convert via shell is fine).
-- A look that seems wrong is often a cached stylesheet: hard refresh.
+- Header/footer markup is duplicated in `index.html`, `expired-listings.html` and `hubspot/theme/Templates/base.html`; change all three.
+- `dist/` is generated by `./bundle.sh`; edit sources only. HubSpot CSS/JS are patched from the fetched remote copy, never rebuilt (HUBSPOT.md).
+- A look that seems wrong is often a cached stylesheet: hard refresh. The in-app browser pane doesn't run animations on its own (see HUBSPOT.md).
+- Copy: sentence case, flag odd capitals; placeholder data uses Star Wars names (Leia Organa, Mos Eisley, 555-01xx phone numbers).
