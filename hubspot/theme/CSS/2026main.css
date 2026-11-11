@@ -1088,3 +1088,7 @@ div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }
 
 /* Centered CTA, dark theme: the "black" button would disappear into the band, so it shows as a light button with dark text */
 .lv-band--dark.lv-ccta .lv-btn--dark { --btn-a: #D9D6CF; --btn-b: #fff; color: var(--lv-ink); }
+
+/* only a button under the statement (no price question, no price): no hairline and no extra padding, just a normal gap */
+.lv-ccta .lv-ccta__offer--bare { margin-top: clamp(28px, 3vw, 44px); padding-top: 0; border-top: 0; }
+.lv-ccta .lv-ccta__offer--bare .lv-ccta__actions { margin-top: 0; }
