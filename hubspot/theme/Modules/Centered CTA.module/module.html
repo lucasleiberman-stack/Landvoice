@@ -5,10 +5,10 @@
   {% elif gfx == 'rings' %}<span class="lv-ccta__ring lv-ccta__ring--a" aria-hidden="true"></span>
   <span class="lv-ccta__ring lv-ccta__ring--b" aria-hidden="true"></span>{% endif %}
   <div class="lv-container lv-ccta__inner">
-    <h2 class="lv-ccta__statement" id="ccta-title" data-lv-reveal>{{ module.statement_heading }}</h2>
+    <h2 class="lv-h2 lv-ccta__statement" id="ccta-title" data-lv-reveal>{{ module.statement_heading }}</h2>
     {% if module.statement_text %}<p class="lv-ccta__text" data-lv-reveal style="--lv-delay:.08s">{{ module.statement_text }}</p>{% endif %}
     <div class="lv-ccta__offer" data-lv-reveal style="--lv-delay:.12s">
-      {% if module.price_heading %}<h2 class="lv-ccta__question">{{ module.price_heading }}</h2>{% endif %}
+      {% if module.price_heading %}<h2 class="lv-h2 lv-ccta__question">{{ module.price_heading }}</h2>{% endif %}
       {% if module.price_amount %}<p class="lv-ccta__price">{{ module.price_amount }}{% if module.price_suffix %} <small>{{ module.price_suffix }}</small>{% endif %}</p>{% endif %}
       {% if module.button_label %}<div class="lv-actions lv-ccta__actions"><a class="lv-btn" href="{{ module.button_link.url.href }}"{% if module.button_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a></div>{% endif %}
     </div>

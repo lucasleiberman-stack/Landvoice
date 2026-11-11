@@ -2,11 +2,11 @@
 <section class="lv-band lv-band--light lv-bcta{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="bcta-title">
   <div class="lv-bcta__grid">
     <div class="lv-bcta__tile lv-bcta__tile--ink" data-lv-reveal>
-      <h2 class="lv-bcta__h" id="bcta-title">{{ module.statement_heading }}</h2>
+      <h2 class="lv-h2 lv-bcta__h" id="bcta-title">{{ module.statement_heading }}</h2>
       {% if module.statement_text %}<p class="lv-bcta__text">{{ module.statement_text }}</p>{% endif %}
     </div>
     <div class="lv-bcta__tile lv-bcta__tile--paper" data-lv-reveal style="--lv-delay:.08s">
-      {% if module.price_heading %}<h2 class="lv-bcta__h">{{ module.price_heading }}</h2>{% endif %}
+      {% if module.price_heading %}<h2 class="lv-h2 lv-bcta__h">{{ module.price_heading }}</h2>{% endif %}
       {% if module.price_text %}<p class="lv-bcta__text">{{ module.price_text }}</p>{% endif %}
       {% if module.price_amount %}<p class="lv-bcta__price">{{ module.price_amount }}{% if module.price_suffix %} <small>{{ module.price_suffix }}</small>{% endif %}</p>{% endif %}
       {% if module.button_label %}<div class="lv-actions lv-bcta__actions"><a class="lv-btn lv-btn--dark" href="{{ module.button_link.url.href }}"{% if module.button_link.open_in_new_tab %} target="_blank" rel="noopener"{% endif %}><span class="lv-btn__icon"><svg class="lv-icon"><use href="#lv-i-arrow-solid"/></svg></span><span class="lv-btn__label">{{ module.button_label }}</span></a></div>{% endif %}
