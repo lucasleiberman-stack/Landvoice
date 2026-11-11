@@ -579,7 +579,7 @@ a.lv-mega__link:hover, a.lv-mega__link:focus-visible { background: var(--lv-pape
 .lv-else__closer { font-family: var(--lv-font-display); font-size: var(--lv-fs-h3); font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
 @media (max-width: 900px) { .lv-integrations__main { grid-template-columns: 1fr; } }
 /* LEAD MANAGER: intro + full-bleed carousel of feature cards. JS: lv-carousel.js */
-.lv-lm { padding-top: 0; }
+/* top padding is now the standard lv-section one; "Remove top padding" in the module Style tab sets it to 0 (div.lv-band.lv-pad-top-0 > section.lv-lm, at the end of this file) */
 .lv-lm__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(36px, 5vw, 64px); }
 .lv-lm__intro { display: grid; gap: 1.4rem; max-width: 62rem; }
 .lv-lm__actions { margin-top: clamp(32px, 4vw, 56px); }
@@ -1008,3 +1008,4 @@ div.lv-band.lv-pad-top-0 > section.lv-stories { padding-top: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-section--tight { padding-bottom: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-lm { padding-bottom: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-services { padding-bottom: 0; }
+div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }

@@ -192,6 +192,16 @@
     "no_follow" : false
   }
 }, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
   "id" : "no_padding_bottom",
   "name" : "no_padding_bottom",
   "label" : "Remove bottom padding (set it to 0)",

@@ -20,3 +20,4 @@ div.lv-band.lv-pad-top-0 > section.lv-stories { padding-top: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-section--tight { padding-bottom: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-lm { padding-bottom: 0; }
 div.lv-band.lv-pad-bottom-0 > section.lv-services { padding-bottom: 0; }
+div.lv-band.lv-pad-top-0 > section.lv-lm { padding-top: 0; }
