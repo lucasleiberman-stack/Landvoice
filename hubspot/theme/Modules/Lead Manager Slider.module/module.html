@@ -1,5 +1,5 @@
 {# Light band: "Your data, organized" heading + slider of product graphics + two buttons. Square top corners so it joins the Product Showcase band above it. #}
-<div class="lv-band lv-band--light lv-band--flat-top">
+<div class="lv-band lv-band--light lv-band--flat-top{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}">
   
 
   <section class="lv-section lv-lm" data-lv-carousel aria-labelledby="lm-title">

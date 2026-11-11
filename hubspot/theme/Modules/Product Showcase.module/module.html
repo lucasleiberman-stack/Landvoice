@@ -1,5 +1,5 @@
 {# Light band: tablet (video) + "The Smarter Way" heading + the product road (products in rows of two) + the FRBO coming-soon end. Place it right after Homepage stats. #}
-<div class="lv-band lv-band--light lv-band--flat-bottom">
+<div class="lv-band lv-band--light lv-band--flat-bottom{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}">
   <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--br"></i></div>
 
   <div class="lv-showcase" id="demo">

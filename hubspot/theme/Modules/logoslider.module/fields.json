@@ -1,205 +1,214 @@
-[
-  {
-    "name": "trust_before",
-    "label": "Trust heading: before the number",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Trusted by"
+[ {
+  "id" : "trust_before",
+  "name" : "trust_before",
+  "label" : "Trust heading: before the number",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Trusted by"
+}, {
+  "id" : "trust_accent",
+  "name" : "trust_accent",
+  "label" : "Trust heading: highlighted number (blue)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "200k"
+}, {
+  "id" : "trust_after",
+  "name" : "trust_after",
+  "label" : "Trust heading: after the number",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "agents across the industry"
+}, {
+  "id" : "logos_label",
+  "name" : "logos_label",
+  "label" : "Logo strip description (for screen readers)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Brokerages that use Landvoice"
+}, {
+  "id" : "logos",
+  "name" : "logos",
+  "label" : "Brokerage logos",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 30,
+    "sorting_label_field" : null,
+    "default" : 14
   },
-  {
-    "name": "trust_accent",
-    "label": "Trust heading: highlighted number (blue)",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "200k"
-  },
-  {
-    "name": "trust_after",
-    "label": "Trust heading: after the number",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "agents across the industry"
-  },
-  {
-    "name": "logos_label",
-    "label": "Logo strip description (for screen readers)",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Brokerages that use Landvoice"
-  },
-  {
-    "name": "logos",
-    "label": "Brokerage logos",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 30,
-      "default": 14
-    },
-    "children": [
-      {
-        "name": "file",
-        "label": "Theme file name (in images/brokerages/)",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "brokerage-1.png"
-      },
-      {
-        "name": "image",
-        "label": "Logo image (optional: overrides the theme file)",
-        "type": "image",
-        "required": false,
-        "locked": false,
-        "responsive": false,
-        "resizable": false,
-        "show_loading": false,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "name": "alt",
-        "label": "Logo name (alt text)",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Brokerage"
-      },
-      {
-        "name": "style",
-        "label": "Logo size style",
-        "type": "choice",
-        "required": false,
-        "locked": false,
-        "display": "select",
-        "multiple": false,
-        "choices": [
-          [
-            "",
-            "Default size"
-          ],
-          [
-            "kw",
-            "kw"
-          ],
-          [
-            "remax",
-            "remax"
-          ],
-          [
-            "century",
-            "century"
-          ],
-          [
-            "compass",
-            "compass"
-          ],
-          [
-            "sothebys",
-            "sothebys"
-          ],
-          [
-            "hanna",
-            "hanna"
-          ],
-          [
-            "redfin",
-            "redfin"
-          ],
-          [
-            "elliman",
-            "elliman"
-          ],
-          [
-            "rog",
-            "rog"
-          ],
-          [
-            "era",
-            "era"
-          ]
-        ],
-        "default": ""
-      }
-    ],
-    "default": [
-      {
-        "file": "brokerage-1.png",
-        "alt": "Berkshire Hathaway HomeServices",
-        "style": ""
-      },
-      {
-        "file": "brokerage-2.png",
-        "alt": "EXIT Realty",
-        "style": ""
-      },
-      {
-        "file": "brokerage-3.png",
-        "alt": "eXp Realty",
-        "style": ""
-      },
-      {
-        "file": "brokerage-4.png",
-        "alt": "Coldwell Banker",
-        "style": ""
-      },
-      {
-        "file": "keller-williams.png",
-        "alt": "Keller Williams",
-        "style": "kw"
-      },
-      {
-        "file": "remax.png",
-        "alt": "RE/MAX",
-        "style": "remax"
-      },
-      {
-        "file": "century-21.png",
-        "alt": "Century 21",
-        "style": "century"
-      },
-      {
-        "file": "compass.png",
-        "alt": "Compass",
-        "style": "compass"
-      },
-      {
-        "file": "sothebys.svg",
-        "alt": "Sotheby’s International Realty",
-        "style": "sothebys"
-      },
-      {
-        "file": "howard-hanna.png",
-        "alt": "Howard Hanna Real Estate Services",
-        "style": "hanna"
-      },
-      {
-        "file": "redfin.png",
-        "alt": "Redfin, powered by Rocket",
-        "style": "redfin"
-      },
-      {
-        "file": "douglas-elliman.png",
-        "alt": "Douglas Elliman",
-        "style": "elliman"
-      },
-      {
-        "file": "realty-one-group.svg",
-        "alt": "Realty ONE Group",
-        "style": "rog"
-      },
-      {
-        "file": "era.svg",
-        "alt": "ERA Real Estate",
-        "style": "era"
-      }
-    ]
-  }
-]
+  "children" : [ {
+    "id" : "logos.file",
+    "name" : "file",
+    "label" : "Theme file name (in images/brokerages/)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "brokerage-1.png"
+  }, {
+    "id" : "logos.image",
+    "name" : "image",
+    "label" : "Logo image (optional: overrides the theme file)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "logos.alt",
+    "name" : "alt",
+    "label" : "Logo name (alt text)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Brokerage"
+  }, {
+    "id" : "logos.style",
+    "name" : "style",
+    "label" : "Logo size style",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "", "Default size" ], [ "kw", "kw" ], [ "remax", "remax" ], [ "century", "century" ], [ "compass", "compass" ], [ "sothebys", "sothebys" ], [ "hanna", "hanna" ], [ "redfin", "redfin" ], [ "elliman", "elliman" ], [ "rog", "rog" ], [ "era", "era" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "file" : "brokerage-1.png",
+    "alt" : "Berkshire Hathaway HomeServices",
+    "style" : ""
+  }, {
+    "file" : "brokerage-2.png",
+    "alt" : "EXIT Realty",
+    "style" : ""
+  }, {
+    "file" : "brokerage-3.png",
+    "alt" : "eXp Realty",
+    "style" : ""
+  }, {
+    "file" : "brokerage-4.png",
+    "alt" : "Coldwell Banker",
+    "style" : ""
+  }, {
+    "file" : "keller-williams.png",
+    "alt" : "Keller Williams",
+    "style" : "kw"
+  }, {
+    "file" : "remax.png",
+    "alt" : "RE/MAX",
+    "style" : "remax"
+  }, {
+    "file" : "century-21.png",
+    "alt" : "Century 21",
+    "style" : "century"
+  }, {
+    "file" : "compass.png",
+    "alt" : "Compass",
+    "style" : "compass"
+  }, {
+    "file" : "sothebys.svg",
+    "alt" : "Sotheby’s International Realty",
+    "style" : "sothebys"
+  }, {
+    "file" : "howard-hanna.png",
+    "alt" : "Howard Hanna Real Estate Services",
+    "style" : "hanna"
+  }, {
+    "file" : "redfin.png",
+    "alt" : "Redfin, powered by Rocket",
+    "style" : "redfin"
+  }, {
+    "file" : "douglas-elliman.png",
+    "alt" : "Douglas Elliman",
+    "style" : "elliman"
+  }, {
+    "file" : "realty-one-group.svg",
+    "alt" : "Realty ONE Group",
+    "style" : "rog"
+  }, {
+    "file" : "era.svg",
+    "alt" : "ERA Real Estate",
+    "style" : "era"
+  } ]
+}, {
+  "id" : "no_padding_top",
+  "name" : "no_padding_top",
+  "label" : "Remove top padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]

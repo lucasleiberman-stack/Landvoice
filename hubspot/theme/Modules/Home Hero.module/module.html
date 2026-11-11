@@ -1,6 +1,6 @@
 {# Hero: text, buttons, map image and the leads list are editable (the list shows the first 6 leads, one per map marker, in order; each marker takes its colour and street from its lead); the animated circle and pins are fixed markup. The original version is kept as the module "OG HERO ANIMATION HUBSPOT". #}
 {% set map_src = module.map_image.src or get_asset_url('../../images/hero-map-clean.png') %}
-<section class="lv-band lv-band--light lv-band--flat-top lv-hero" aria-labelledby="hero-title">
+<section class="lv-band lv-band--light lv-band--flat-top lv-hero{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="hero-title">
   <div class="lv-hero__stage">
     <div class="lv-hero__copy lv-herocopy">
       <p class="lv-eyebrow" data-lv-reveal>{{ module.eyebrow }} <span class="lv-accent">{{ module.eyebrow_accent }}</span></p>

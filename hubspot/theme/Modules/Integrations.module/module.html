@@ -1,7 +1,7 @@
 {# Light band: CRM integrations (logo cluster) + "And everything else" (API / CSV). Place after the Testimonial Slider (dark). #}
 {% set cluster_src = module.cluster_image.src or get_asset_url('/Landvoice - 2026 Redesign/images/integrations/integrations-cluster-v2.png') %}
 {% set else_src = module.else_image.src or get_asset_url('/Landvoice - 2026 Redesign/images/integrations/integrations-else.png') %}
-<section class="lv-band lv-band--light lv-section" aria-labelledby="int-title">
+<section class="lv-band lv-band--light lv-section{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="int-title">
   <div class="lv-gridplane" aria-hidden="true"><i class="lv-gridplane__patch lv-gridplane__patch--tl"></i></div>
   <div class="lv-container">
     <header class="lv-integrations__head" data-lv-reveal>

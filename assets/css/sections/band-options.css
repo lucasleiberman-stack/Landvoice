@@ -7,3 +7,16 @@ section.lv-band.lv-corner-top-round { border-top-left-radius: var(--lv-radius-ba
 section.lv-band.lv-corner-top-square { border-top-left-radius: 0; border-top-right-radius: 0; }
 section.lv-band.lv-corner-bottom-round { border-bottom-left-radius: var(--lv-radius-band); border-bottom-right-radius: var(--lv-radius-band); }
 section.lv-band.lv-corner-bottom-square { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+
+/* BAND OPTIONS for the homepage modules that wrap their sections in a <div class="lv-band"> (Homepage Stats, Product Showcase, Lead Manager, Success Stories, Brand Slider).
+   Corners work on the div; the padding of these blocks lives on the inner section, so the rules target it. */
+div.lv-band.lv-corner-top-round { border-top-left-radius: var(--lv-radius-band); border-top-right-radius: var(--lv-radius-band); }
+div.lv-band.lv-corner-top-square { border-top-left-radius: 0; border-top-right-radius: 0; }
+div.lv-band.lv-corner-bottom-round { border-bottom-left-radius: var(--lv-radius-band); border-bottom-right-radius: var(--lv-radius-band); }
+div.lv-band.lv-corner-bottom-square { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+div.lv-band.lv-pad-top-0 > .lv-trust { padding-top: 0; }
+div.lv-band.lv-pad-bottom-0 > .lv-trust { padding-bottom: 0; }
+div.lv-band.lv-pad-top-0 > section.lv-stories { padding-top: 0; }
+div.lv-band.lv-pad-bottom-0 > section.lv-section--tight { padding-bottom: 0; }
+div.lv-band.lv-pad-bottom-0 > section.lv-lm { padding-bottom: 0; }
+div.lv-band.lv-pad-bottom-0 > section.lv-services { padding-bottom: 0; }

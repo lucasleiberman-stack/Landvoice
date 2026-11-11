@@ -1,5 +1,5 @@
 {# Light band: video success stories slider, "trusted by top coaches" logo strip, two proof cards (Google rating + call to action), and the "ask your favourite AI" row. #}
-<div class="lv-band lv-band--light">
+<div class="lv-band lv-band--light{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}">
   
 
   <section class="lv-section lv-stories" id="training" data-lv-carousel data-lv-carousel-start="center" aria-labelledby="stories-title">

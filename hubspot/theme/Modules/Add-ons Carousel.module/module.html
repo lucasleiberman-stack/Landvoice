@@ -1,5 +1,5 @@
 {# Dark band: add-on cards in a slider (prev/next arrows). Each card has tags, text, a small button and a picture. #}
-<section class="lv-band lv-band--dark lv-section" id="addons" data-lv-carousel aria-labelledby="addons-title">
+<section class="lv-band lv-band--dark lv-section{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" id="addons" data-lv-carousel aria-labelledby="addons-title">
   <div class="lv-container lv-addons__head">
     <div data-lv-reveal>
       <p class="lv-eyebrow">{{ module.eyebrow }}</p>

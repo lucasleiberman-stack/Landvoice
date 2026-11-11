@@ -1,84 +1,127 @@
-[
-  {
-    "name": "eyebrow",
-    "label": "Eyebrow",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Who we are"
+[ {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Who we are"
+}, {
+  "id" : "headline_line_1",
+  "name" : "headline_line_1",
+  "label" : "Headline, line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "The Longest Operating"
+}, {
+  "id" : "headline_line_2",
+  "name" : "headline_line_2",
+  "label" : "Headline, line 2",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Seller Data Provider"
+}, {
+  "id" : "headline_line_3",
+  "name" : "headline_line_3",
+  "label" : "Headline, line 3",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "in Real Estate."
+}, {
+  "id" : "lead",
+  "name" : "lead",
+  "label" : "Lead paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
+}, {
+  "id" : "stats",
+  "name" : "stats",
+  "label" : "Stats",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 3
   },
-  {
-    "name": "headline_line_1",
-    "label": "Headline, line 1",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "The Longest Operating"
-  },
-  {
-    "name": "headline_line_2",
-    "label": "Headline, line 2",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Seller Data Provider"
-  },
-  {
-    "name": "headline_line_3",
-    "label": "Headline, line 3",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "in Real Estate."
-  },
-  {
-    "name": "lead",
-    "label": "Lead paragraph",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Landvoice has delivered seller records to [X]+ agents through [X] housing cycles, two market crashes, and every structural change in how Americans buy and sell homes. A dataset that has corrected itself daily for 35 years cannot be replicated."
-  },
-  {
-    "name": "stats",
-    "label": "Stats",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 6,
-      "default": 3
-    },
-    "children": [
-      {
-        "name": "value",
-        "label": "Number",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "35+"
-      },
-      {
-        "name": "caption",
-        "label": "Caption",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Years Delivering High Intent Leads"
-      }
-    ],
-    "default": [
-      {
-        "value": "35+",
-        "caption": "Years Delivering High Intent Leads"
-      },
-      {
-        "value": "#1",
-        "caption": "Accuracy with Leads Provided In The Industry"
-      },
-      {
-        "value": "155M",
-        "caption": "Homeowner Records Delivered"
-      }
-    ]
-  }
-]
+  "children" : [ {
+    "id" : "stats.value",
+    "name" : "value",
+    "label" : "Number",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "35+"
+  }, {
+    "id" : "stats.caption",
+    "name" : "caption",
+    "label" : "Caption",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Years Delivering High Intent Leads"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "value" : "35+",
+    "caption" : "Years Delivering High Intent Leads"
+  }, {
+    "value" : "#1",
+    "caption" : "Accuracy with Leads Provided In The Industry"
+  }, {
+    "value" : "155M",
+    "caption" : "Homeowner Records Delivered"
+  } ]
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]

@@ -1,177 +1,232 @@
-[
-  {
-    "name": "eyebrow",
-    "label": "Eyebrow",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Unmatched seller data"
+[ {
+  "id" : "eyebrow",
+  "name" : "eyebrow",
+  "label" : "Eyebrow",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Unmatched seller data"
+}, {
+  "id" : "headline_line_1",
+  "name" : "headline_line_1",
+  "label" : "Headline, line 1",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Your Data, Organized Your Way."
+}, {
+  "id" : "headline_line_2",
+  "name" : "headline_line_2",
+  "label" : "Headline, line 2 (optional)",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Landvoice Lead Manager."
+}, {
+  "id" : "lede",
+  "name" : "lede",
+  "label" : "Supporting paragraph",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Most providers deliver seller data one of two ways: a raw CSV you have to sort, de-dupe, and babysit - or a locked platform that decides what you're allowed to see. Landvoice Lead Manager is a workspace with one purpose: turning verified seller records into the contact list you actually want to connect with."
+}, {
+  "id" : "slides",
+  "name" : "slides",
+  "label" : "Slides",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : 4
   },
-  {
-    "name": "headline_line_1",
-    "label": "Headline, line 1",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Your Data, Organized Your Way."
-  },
-  {
-    "name": "headline_line_2",
-    "label": "Headline, line 2 (optional)",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Landvoice Lead Manager."
-  },
-  {
-    "name": "lede",
-    "label": "Supporting paragraph",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Most providers deliver seller data one of two ways: a raw CSV you have to sort, de-dupe, and babysit - or a locked platform that decides what you're allowed to see. Landvoice Lead Manager is a workspace with one purpose: turning verified seller records into the contact list you actually want to connect with."
-  },
-  {
-    "name": "slides",
-    "label": "Slides",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 10,
-      "default": 4
+  "children" : [ {
+    "id" : "slides.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Slide title"
+  }, {
+    "id" : "slides.text",
+    "name" : "text",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Description"
+  }, {
+    "id" : "slides.file",
+    "name" : "file",
+    "label" : "Theme image file name (in images/lead-manager/)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "lm-filters-v2.png"
+  }, {
+    "id" : "slides.image",
+    "name" : "image",
+    "label" : "Slide image (optional: overrides the theme file)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : "",
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "slides.alt",
+    "name" : "alt",
+    "label" : "Image description (alt text)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Screenshot"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "title" : "Filter on your terms",
+    "text" : "Organize records by Date Expired, price range, days on market, neighborhood, property type, or lead source. Build the list that matches how you prospect.",
+    "file" : "lm-filters-v2.png",
+    "alt" : "Lead Manager showing active filters (Expired, Canceled, Withdrawn) above a lead list"
+  }, {
+    "title" : "Mark, tag, and take notes",
+    "text" : "Organize records by Date Expired, price range, days on market, neighborhood, property type, or lead source. Build the list that matches how you prospect.",
+    "file" : "lm-tags.png",
+    "alt" : "Lead Manager showing an Add Tag button and a row of tags such as Attempt1, EmailSent and Contacted"
+  }, {
+    "title" : "Maintain your own do-not-call list",
+    "text" : "Copy needed.",
+    "file" : "lm-dnc-v2.png",
+    "alt" : "A do-not-call list of contacts, each number marked DNC with a red toggle and a call button"
+  }, {
+    "title" : "Export clean, anytime",
+    "text" : "Copy needed.",
+    "file" : "export-list.png",
+    "alt" : "A list of expired and withdrawn leads with checkboxes selecting which to export"
+  } ]
+}, {
+  "id" : "button_1_label",
+  "name" : "button_1_label",
+  "label" : "Button 1 label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get Started"
+}, {
+  "id" : "button_1_link",
+  "name" : "button_1_link",
+  "label" : "Button 1 link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "#pricing",
+      "content_id" : null
     },
-    "children": [
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Slide title"
-      },
-      {
-        "name": "text",
-        "label": "Description",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Description"
-      },
-      {
-        "name": "file",
-        "label": "Theme image file name (in images/lead-manager/)",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "lm-filters-v2.png"
-      },
-      {
-        "name": "image",
-        "label": "Slide image (optional: overrides the theme file)",
-        "type": "image",
-        "required": false,
-        "locked": false,
-        "responsive": true,
-        "resizable": true,
-        "show_loading": false,
-        "default": {
-          "src": "",
-          "alt": "",
-          "loading": "disabled"
-        }
-      },
-      {
-        "name": "alt",
-        "label": "Image description (alt text)",
-        "type": "text",
-        "required": false,
-        "locked": false,
-        "default": "Screenshot"
-      }
-    ],
-    "default": [
-      {
-        "title": "Filter on your terms",
-        "text": "Organize records by Date Expired, price range, days on market, neighborhood, property type, or lead source. Build the list that matches how you prospect.",
-        "file": "lm-filters-v2.png",
-        "alt": "Lead Manager showing active filters (Expired, Canceled, Withdrawn) above a lead list"
-      },
-      {
-        "title": "Mark, tag, and take notes",
-        "text": "Organize records by Date Expired, price range, days on market, neighborhood, property type, or lead source. Build the list that matches how you prospect.",
-        "file": "lm-tags.png",
-        "alt": "Lead Manager showing an Add Tag button and a row of tags such as Attempt1, EmailSent and Contacted"
-      },
-      {
-        "title": "Maintain your own do-not-call list",
-        "text": "Copy needed.",
-        "file": "lm-dnc-v2.png",
-        "alt": "A do-not-call list of contacts, each number marked DNC with a red toggle and a call button"
-      },
-      {
-        "title": "Export clean, anytime",
-        "text": "Copy needed.",
-        "file": "export-list.png",
-        "alt": "A list of expired and withdrawn leads with checkboxes selecting which to export"
-      }
-    ]
-  },
-  {
-    "name": "button_1_label",
-    "label": "Button 1 label",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Get Started"
-  },
-  {
-    "name": "button_1_link",
-    "label": "Button 1 link",
-    "type": "link",
-    "required": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS"
-    ],
-    "default": {
-      "url": {
-        "type": "EXTERNAL",
-        "href": "#pricing",
-        "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-    }
-  },
-  {
-    "name": "button_2_label",
-    "label": "Button 2 label",
-    "type": "text",
-    "required": false,
-    "locked": false,
-    "default": "Live Demo"
-  },
-  {
-    "name": "button_2_link",
-    "label": "Button 2 link",
-    "type": "link",
-    "required": false,
-    "supported_types": [
-      "EXTERNAL",
-      "CONTENT",
-      "FILE",
-      "EMAIL_ADDRESS"
-    ],
-    "default": {
-      "url": {
-        "type": "EXTERNAL",
-        "href": "#demo",
-        "content_id": null
-      },
-      "open_in_new_tab": false,
-      "no_follow": false
-    }
+    "open_in_new_tab" : false,
+    "no_follow" : false
   }
-]
+}, {
+  "id" : "button_2_label",
+  "name" : "button_2_label",
+  "label" : "Button 2 label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Live Demo"
+}, {
+  "id" : "button_2_link",
+  "name" : "button_2_link",
+  "label" : "Button 2 link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "#demo",
+      "content_id" : null
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "no_padding_bottom",
+  "name" : "no_padding_bottom",
+  "label" : "Remove bottom padding (set it to 0)",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "corners_top",
+  "name" : "corners_top",
+  "label" : "Top corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+}, {
+  "id" : "corners_bottom",
+  "name" : "corners_bottom",
+  "label" : "Bottom corners",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default (as designed)" ], [ "round", "Rounded" ], [ "square", "Square" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "default"
+} ]

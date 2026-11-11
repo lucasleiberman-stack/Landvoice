@@ -1,5 +1,5 @@
 {# Dark band: "Who we are" sticky scroll story with stats. Must come before the tablet section (it stops scrolling at .lv-device). #}
-<div class="lv-band lv-band--dark lv-band--before-device">
+<div class="lv-band lv-band--dark lv-band--before-device{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}">
   <section class="lv-who" data-lv-story data-lv-story-speed="1.1" data-lv-story-until=".lv-device" data-lv-story-gap="0.45" aria-labelledby="who-title">
     <div class="lv-who__sticky" data-lv-story-sticky>
       <div class="lv-container lv-who__grid">

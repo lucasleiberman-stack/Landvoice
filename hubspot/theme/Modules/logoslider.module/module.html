@@ -1,5 +1,5 @@
 {# Dark band: "Trusted by" heading + scrolling logo strip. Sits directly above the Who We Are module (two dark bands merge). #}
-<div class="lv-band lv-band--dark">
+<div class="lv-band lv-band--dark{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}">
   <section class="lv-trust" aria-labelledby="trust-title">
     <h3 class="lv-trust__title" id="trust-title">{{ module.trust_before }} <span class="lv-accent">{{ module.trust_accent }}</span> {{ module.trust_after }}</h3>
     <div class="lv-marquee" aria-label="{{ module.logos_label }}">
