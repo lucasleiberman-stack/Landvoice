@@ -54,8 +54,19 @@
 .lv-band.lv-ccta .lv-gridplane__patch--f { --blk: clamp(84px, 7.4vw, 128px); left: 50%; top: 50%; --lv-patch: min(1800px, 135vw); aspect-ratio: 16 / 9; transform: translate(-50%, -50%);
   -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.8) 30%, rgba(0,0,0,.3) 64%, transparent 100%);
           mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 0, rgba(0,0,0,.8) 30%, rgba(0,0,0,.3) 64%, transparent 100%); }
-.lv-band.lv-ccta .lv-gridplane__patch--f::before { inset: 0; transform: none; filter: none; mix-blend-mode: normal; background: var(--lv-fg); opacity: .075;
+.lv-band.lv-ccta .lv-gridplane__patch--f::before,
+.lv-band.lv-ccta .lv-gridplane__patch--o::before { inset: 0; transform: none; filter: none; mix-blend-mode: normal; background: var(--lv-fg); opacity: .075;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect x='7' y='7' width='106' height='106' rx='26'/%3E%3C/svg%3E") center / var(--blk) var(--blk) repeat;
           mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect x='7' y='7' width='106' height='106' rx='26'/%3E%3C/svg%3E") center / var(--blk) var(--blk) repeat; }
-.lv-band--dark.lv-ccta .lv-gridplane__patch--f::before { background: var(--lv-fg); filter: none; mix-blend-mode: normal; opacity: .1; }
+.lv-band--dark.lv-ccta .lv-gridplane__patch--f::before,
+.lv-band--dark.lv-ccta .lv-gridplane__patch--o::before { background: var(--lv-fg); filter: none; mix-blend-mode: normal; opacity: .1; }
 @media (max-width: 760px) { .lv-band.lv-ccta .lv-gridplane__patch--f { --blk: 64px; --lv-patch: 220vw; } }
+
+/* GRID, AROUND THE TEXT (option "Grid graphic, straight-on, around the text"): the inverse: the grid fills the whole band and fades OUT behind the text,
+   so it shows in the rest of the background (edges and corners) and the copy sits on clean ground. */
+.lv-band.lv-ccta .lv-gridplane__patch--o { --blk: clamp(84px, 7.4vw, 128px); inset: 0; width: auto; height: auto; aspect-ratio: auto; transform: none;
+  -webkit-mask-image: radial-gradient(ellipse 64% 62% at 50% 50%, transparent 0, transparent 56%, rgba(0,0,0,.55) 82%, #000 100%);
+          mask-image: radial-gradient(ellipse 64% 62% at 50% 50%, transparent 0, transparent 56%, rgba(0,0,0,.55) 82%, #000 100%); }
+.lv-band.lv-ccta .lv-gridplane__patch--o::before { opacity: .1; }
+.lv-band--dark.lv-ccta .lv-gridplane__patch--o::before { opacity: .13; }
+@media (max-width: 760px) { .lv-band.lv-ccta .lv-gridplane__patch--o { --blk: 64px; } }

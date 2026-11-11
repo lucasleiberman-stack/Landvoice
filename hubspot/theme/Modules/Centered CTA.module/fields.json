@@ -44,6 +44,10 @@
         "Grid graphic, centre, straight-on"
       ],
       [
+        "grid_around",
+        "Grid graphic, straight-on, around the text"
+      ],
+      [
         "grid_sides",
         "Grid graphic, both sides"
       ],
