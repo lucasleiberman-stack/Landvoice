@@ -1,0 +1,47 @@
+/* BENTO, FULL-WIDTH VARIANT (experiment, expired-listings-bento-full.html). Loaded after bento.css; every rule has 3 classes so it wins on file order.
+   Edge-to-edge 12-column grid with a thin gap, tiles side by side instead of stacked so the page is shorter:
+   row 1  data (8) + phones (4)    row 2  old (4) + why (8)    row 3  steps (8) + works (4)    row 4  compare (8) + price (4) */
+.lv-band.lv-bento-band--full { padding-block: clamp(10px, 1vw, 16px); }
+.lv-bento-band--full .lv-bento-wrap { max-width: none; padding-inline: clamp(10px, 1vw, 16px); }
+.lv-bento-wrap .lv-bento.lv-bento--full { --lv-bento-gap: clamp(10px, 1vw, 16px); --lv-bento-pad: clamp(24px, 2.8vw, 56px); grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.lv-bento--full .lv-bento__tile { border-radius: clamp(20px, 2vw, 32px); }
+.lv-bento--full .lv-bento__tile--tint { --lv-fg-muted: #3B4558; --lv-hairline: rgba(13,17,23,.14); background: var(--lv-blue-soft); }
+
+/* spans */
+.lv-bento--full .lv-bento__tile.lv-bento__tile--data { grid-column: span 8; grid-row: auto; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--phones { grid-column: span 4; grid-row: auto; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--old { grid-column: span 4; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--why { grid-column: span 8; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--steps { grid-column: span 8; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--works { grid-column: span 4; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--compare { grid-column: span 8; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 56px); align-items: center; }
+.lv-bento--full .lv-bento__tile.lv-bento__tile--price { grid-column: span 4; flex-direction: column; align-items: flex-start; justify-content: center; flex-wrap: nowrap; gap: 1.2rem; }
+
+/* data tile: copy left, the record mock right (no longer stacked) */
+.lv-bento--full .lv-bento__tile.lv-bento__tile--data { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 2.6vw, 48px); align-items: center; }
+.lv-bento--full .lv-bento__tile--data .lv-mock { margin-top: 0; aspect-ratio: 16 / 11; }
+
+/* phones tile: text on top, photo bleeds off the bottom and sides */
+.lv-bento--full .lv-bento__tile--phones .lv-bento__img { width: calc(100% + 2 * var(--lv-bento-pad)); margin: auto calc(-1 * var(--lv-bento-pad)) calc(-1 * var(--lv-bento-pad)); }
+
+/* steps tile: three across, tighter */
+.lv-bento--full .lv-bento__steps { --gap: clamp(20px, 2.4vw, 44px); margin-top: clamp(16px, 2vw, 32px); }
+.lv-bento--full .lv-bento__tile--tint .lv-bento__num { background: #fff; }
+.lv-bento--full .lv-bento__tile--tint .lv-bento__text { color: var(--lv-fg-muted); }
+
+/* price tile: stacked */
+.lv-bento--full .lv-bento__tile--price .lv-bento__h { max-width: 24ch; font-size: clamp(1.5rem, 1.9vw, 2.1rem); }
+
+@media (max-width: 1280px) {
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--data, .lv-bento--full .lv-bento__tile.lv-bento__tile--why,
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--steps, .lv-bento--full .lv-bento__tile.lv-bento__tile--compare { grid-column: span 12; }
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--phones, .lv-bento--full .lv-bento__tile.lv-bento__tile--old,
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--works, .lv-bento--full .lv-bento__tile.lv-bento__tile--price { grid-column: span 6; }
+}
+@media (max-width: 760px) {
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--data, .lv-bento--full .lv-bento__tile.lv-bento__tile--why,
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--steps, .lv-bento--full .lv-bento__tile.lv-bento__tile--compare,
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--phones, .lv-bento--full .lv-bento__tile.lv-bento__tile--old,
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--works, .lv-bento--full .lv-bento__tile.lv-bento__tile--price { grid-column: span 12; }
+  .lv-bento--full .lv-bento__tile.lv-bento__tile--data, .lv-bento--full .lv-bento__tile.lv-bento__tile--compare { grid-template-columns: 1fr; }
+}
