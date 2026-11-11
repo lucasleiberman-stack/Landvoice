@@ -1,0 +1,19 @@
+{# Expired Listings FAQ: same block as the FAQ module, with the expired-listings questions as defaults. Light band: FAQ accordion in two columns (native details/summary, no JS). The list is split in half automatically. #}
+{% set half = (module.faqs|length + 1) // 2 %}
+<section class="lv-band lv-band--light lv-section{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" id="faq" aria-labelledby="faq-title">
+  <div class="lv-container lv-container--wide">
+    <h2 class="lv-h2 lv-center" id="faq-title" data-lv-reveal>{{ module.heading }}</h2>
+    <div class="lv-faq">
+      <ul class="lv-faq__col">
+        {% for item in module.faqs %}{% if loop.index <= half %}
+        <li><details class="lv-faq__item"><summary class="lv-faq__q">{{ item.question }}<span class="lv-faq__icon" aria-hidden="true"></span></summary><p class="lv-faq__a">{{ item.answer }}</p></details></li>
+        {% endif %}{% endfor %}
+      </ul>
+      <ul class="lv-faq__col">
+        {% for item in module.faqs %}{% if loop.index > half %}
+        <li><details class="lv-faq__item"><summary class="lv-faq__q">{{ item.question }}<span class="lv-faq__icon" aria-hidden="true"></span></summary><p class="lv-faq__a">{{ item.answer }}</p></details></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

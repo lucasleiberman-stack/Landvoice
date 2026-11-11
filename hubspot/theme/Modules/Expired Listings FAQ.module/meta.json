@@ -1,0 +1,15 @@
+{
+  "label": "Expired Listings FAQ",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "help_text": "FAQ accordion in two columns, pre-filled with the expired listings questions and answers (same block as the FAQ module).",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true
+}
