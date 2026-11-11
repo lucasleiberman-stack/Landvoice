@@ -67,3 +67,23 @@
    (where the mask has already faded it out). Higher % = more zoomed in. (The right patch is mirrored, so the same position puts it on the outer right.) */
 .lv-band.lv-ccta .lv-gridplane__patch--sl::before,
 .lv-band.lv-ccta .lv-gridplane__patch--sr::before { background-size: 155% 155%; background-position: 0 50%; }
+
+/* GRID, BOTH SIDES: a thin blue line runs around single blocks of the grid, one after another, so the band has quiet movement.
+   The overlay <svg class="lv-ccta__hl"> uses the same box as the picture (viewBox 1000x727 = the road-patch picture, stretched like the background at 155%),
+   so each <path> sits exactly on one block (traced from the picture). Each block lights up for a few seconds in its own phase, then rests. */
+.lv-ccta .lv-gridplane__patch--sl > .lv-ccta__hl,
+.lv-ccta .lv-gridplane__patch--sr > .lv-ccta__hl { position: absolute; top: -27.5%; width: 155%; height: 155%; overflow: visible; pointer-events: none; }
+.lv-ccta .lv-gridplane__patch--sl > .lv-ccta__hl { left: 0; }
+.lv-ccta .lv-gridplane__patch--sr > .lv-ccta__hl { right: 0; transform: scaleX(-1); }
+.lv-ccta .lv-ccta__hl path { fill: rgba(10, 102, 255, .045); stroke: var(--lv-blue); stroke-width: 1.6px; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round;
+  stroke-dasharray: .3 .7; filter: drop-shadow(0 0 3px rgba(10, 102, 255, .5)); opacity: 0; animation: lv-ccta-trace 9s linear infinite; animation-delay: var(--d, 0s); }
+.lv-ccta .lv-gridplane__patch--sr > .lv-ccta__hl path { animation-delay: calc(var(--d, 0s) - 4.5s); }
+.lv-band--dark.lv-ccta .lv-ccta__hl path { fill: rgba(106, 163, 255, .06); stroke: var(--lv-blue-on-dark); filter: drop-shadow(0 0 3px rgba(106, 163, 255, .5)); }
+@keyframes lv-ccta-trace {
+  0%   { opacity: 0;   stroke-dashoffset: 1; }
+  8%   { opacity: .85; }
+  38%  { opacity: .85; }
+  48%  { opacity: 0;   stroke-dashoffset: -.3; }
+  100% { opacity: 0;   stroke-dashoffset: -.3; }
+}
+@media (prefers-reduced-motion: reduce) { .lv-ccta .lv-ccta__hl path { animation: none; opacity: 0; } }
