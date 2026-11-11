@@ -13,20 +13,6 @@
   "display_width" : null,
   "default" : "dark"
 }, {
-  "id" : "stats_side",
-  "name" : "stats_side",
-  "label" : "Stats side",
-  "required" : false,
-  "locked" : false,
-  "display" : "select",
-  "choices" : [ [ "right", "Right (text left)" ], [ "left", "Left (text right)" ] ],
-  "multiple" : false,
-  "reordering_enabled" : true,
-  "preset" : null,
-  "type" : "choice",
-  "display_width" : null,
-  "default" : "right"
-}, {
   "id" : "heading_tag",
   "name" : "heading_tag",
   "label" : "Heading tag (h2 = a section heading; h1 = the page's main title, once per page)",

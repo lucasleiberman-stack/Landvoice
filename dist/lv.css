@@ -270,13 +270,13 @@ section.lv-band.lv-corner-bottom-square { border-bottom-left-radius: 0; border-b
 .lv-facts--stack .lv-fact__label { margin-top: .5rem; max-width: none; font-size: clamp(1.15rem, 1.7vw, 1.5rem); }
 @media (min-width: 901px) { .lv-split--stats-left > .lv-facts { order: -1; } }
 
-/* ROW: the same open stats side by side in a row, text centred (use under a centred heading + paragraph). Stacks to one column on phones. */
-.lv-facts.lv-facts--row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 4vw, 64px); margin-top: clamp(40px, 5vw, 72px); text-align: center; }
+/* ROW: the open stats side by side in a row (--lv-stats = how many, set inline), text centred, under a centred heading + paragraph. Stacks to one column on phones. */
+.lv-facts.lv-facts--row { grid-template-columns: repeat(var(--lv-stats, 3), minmax(0, 1fr)); gap: clamp(24px, 4vw, 64px); margin-top: clamp(40px, 5vw, 72px); text-align: center; }
 .lv-facts--row .lv-fact__label { margin-inline: auto; max-width: none; font-size: clamp(.95rem, 1.2vw, 1.15rem); }   /* smaller so each label stays on one line */
 @media (min-width: 761px) { .lv-facts--row .lv-fact__label { white-space: nowrap; } }
 @media (max-width: 760px) { .lv-facts.lv-facts--row { grid-template-columns: 1fr; } }
 .lv-pg__center.lv-pg__center--mid { margin-inline: auto; max-width: 66rem; }
-.lv-pg__center--mid .lv-pg__body { max-width: 66rem; text-wrap: balance; }   /* wide enough for two lines on desktop */   /* centre the heading + paragraph block inside a plain container */
+.lv-pg__center--mid .lv-pg__body { max-width: 66rem; text-wrap: balance; }   /* wide enough for two lines on desktop; the block itself is centred in its container */
 /* FAQ: two columns of native <details> accordions (no JS needed) */
 .lv-faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(40px, 6vw, 96px); margin-top: clamp(40px, 5vw, 72px); }
 .lv-faq__col { display: grid; align-content: start; }

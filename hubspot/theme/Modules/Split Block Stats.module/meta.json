@@ -3,7 +3,7 @@
   "css_assets": [],
   "external_js": [],
   "global": false,
-  "help_text": "Split block with big-number stat cards in place of an image: heading and paragraph on one side, up to four stats (a big value plus a label) on the other. Dark or light band, stats on the right or left. Set a number to e.g. 12, 15 or Daily.",
+  "help_text": "Centred stats block: heading and paragraph centred on top, up to four big-number stats side by side below with thin dividers (e.g. 12, 15, Daily). Dark or light band. Set each number and its label.",
   "host_template_types": [
     "PAGE"
   ],
