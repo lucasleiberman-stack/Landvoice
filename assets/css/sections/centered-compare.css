@@ -1,0 +1,23 @@
+/* CENTERED COMPARE (HubSpot module "Centered Compare"): one centred stack. Heading, one paragraph, then a two-row graphic of squares:
+   other providers = a few filled grey squares and the rest empty outlines (less contact information); Landvoice = every square filled, in blue.
+   The squares are illustrative (no figures). Dark or light band; colours come from --lv-fg / --lv-fg-muted / --lv-hairline. Every rule has 2+ classes. */
+.lv-band.lv-ccmp { text-align: center; }
+.lv-ccmp .lv-ccmp__inner { display: grid; justify-items: center; max-width: 64rem; margin-inline: auto; }
+.lv-ccmp .lv-ccmp__h { color: var(--lv-fg); max-width: 22ch; }   /* type comes from .lv-h2 (the site's h2 style) */
+.lv-ccmp .lv-ccmp__text { margin: clamp(18px, 2vw, 28px) 0 0; font-family: var(--lv-font-body); font-size: var(--lv-fs-lede); line-height: 1.65; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); max-width: 46rem; text-wrap: pretty; }
+
+/* the graphic */
+.lv-ccmp .lv-ccmp__graphic { --sq: clamp(14px, 3.4vw, 44px); --sq-gap: clamp(5px, .7vw, 9px); --sq-h: clamp(40px, 4.6vw, 68px); display: grid; gap: clamp(26px, 3vw, 44px); width: min(100%, 760px); margin-top: clamp(40px, 5vw, 76px); text-align: left; }
+.lv-ccmp .lv-ccmp__row { display: grid; gap: .7rem; }
+.lv-ccmp .lv-ccmp__label { margin: 0; font-family: var(--lv-font-body); font-size: .95rem; font-weight: 500; letter-spacing: var(--lv-ls-sub); color: var(--lv-fg-muted); }
+.lv-ccmp .lv-ccmp__row--lv .lv-ccmp__label { color: var(--lv-fg); }
+.lv-ccmp .lv-ccmp__squares { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--sq-gap); height: var(--sq-h); }
+.lv-ccmp .lv-ccmp__squares span { display: block; border-radius: 7px; }
+/* other providers: 4 filled (neutral), the rest empty outlines */
+.lv-ccmp .lv-ccmp__row--other .lv-ccmp__squares span { border: 1.5px solid var(--lv-hairline); background: transparent; }
+.lv-ccmp .lv-ccmp__row--other .lv-ccmp__squares span.is-on { border-color: transparent; background: var(--lv-fg-muted); opacity: calc(.35 + var(--i) * .08); }
+/* Landvoice: every square filled, blue, deepening toward the newest */
+.lv-ccmp .lv-ccmp__row--lv .lv-ccmp__squares span { background: var(--lv-blue); opacity: calc(.5 + var(--i) * .045); }
+.lv-band--dark.lv-ccmp .lv-ccmp__row--lv .lv-ccmp__squares span { background: var(--lv-blue-on-dark); }
+
+@media (max-width: 700px) { .lv-ccmp .lv-ccmp__squares span { border-radius: 5px; } }

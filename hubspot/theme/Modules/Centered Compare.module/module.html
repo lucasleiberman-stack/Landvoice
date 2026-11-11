@@ -1,0 +1,11 @@
+{# Centered Compare: one centred stack. Heading + paragraph, then a graphic of squares: other providers (a few filled, the rest empty) vs Landvoice (every square filled, blue). Illustrative, no figures. Styles: centered-compare.css. #}
+<section class="lv-band lv-band--{{ 'light' if module.theme == 'light' else 'dark' }} lv-section lv-ccmp{% if module.no_padding_top %} lv-pad-top-0{% endif %}{% if module.no_padding_bottom %} lv-pad-bottom-0{% endif %}{% if module.corners_top in ['round','square'] %} lv-corner-top-{{ module.corners_top }}{% endif %}{% if module.corners_bottom in ['round','square'] %} lv-corner-bottom-{{ module.corners_bottom }}{% endif %}" aria-labelledby="ccmp-title">
+  <div class="lv-container lv-ccmp__inner">
+    <h2 class="lv-h2 lv-ccmp__h" id="ccmp-title" data-lv-reveal>{{ module.heading }}</h2>
+    {% if module.text %}<p class="lv-ccmp__text" data-lv-reveal style="--lv-delay:.08s">{{ module.text }}</p>{% endif %}
+    <div class="lv-ccmp__graphic" aria-hidden="true" data-lv-reveal style="--lv-delay:.14s">
+      <div class="lv-ccmp__row lv-ccmp__row--other"><p class="lv-ccmp__label">{{ module.others_label }}</p><div class="lv-ccmp__squares"><span style="--i:0" class="is-on"></span><span style="--i:1" class="is-on"></span><span style="--i:2" class="is-on"></span><span style="--i:3" class="is-on"></span><span style="--i:4"></span><span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span><span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span></div></div>
+      <div class="lv-ccmp__row lv-ccmp__row--lv"><p class="lv-ccmp__label">{{ module.landvoice_label }}</p><div class="lv-ccmp__squares"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span><span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span></div></div>
+    </div>
+  </div>
+</section>

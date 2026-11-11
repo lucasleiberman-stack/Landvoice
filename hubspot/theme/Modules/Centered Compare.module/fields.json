@@ -1,0 +1,144 @@
+[
+  {
+    "id": "theme",
+    "name": "theme",
+    "label": "Theme",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "dark",
+        "Dark"
+      ],
+      [
+        "light",
+        "Light"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "dark"
+  },
+  {
+    "id": "heading",
+    "name": "heading",
+    "label": "Heading",
+    "required": false,
+    "locked": false,
+    "display_width": null,
+    "type": "text",
+    "default": "Landvoice compared with other expired data providers"
+  },
+  {
+    "id": "text",
+    "name": "text",
+    "label": "Paragraph",
+    "required": false,
+    "locked": false,
+    "display_width": null,
+    "type": "text",
+    "default": "Other expired providers append expired leads with much less contact information. Landvoice gives its customers a massive competitive advantage by providing higher quality phone numbers and contact information."
+  },
+  {
+    "id": "others_label",
+    "name": "others_label",
+    "label": "Label, other providers",
+    "required": false,
+    "locked": false,
+    "display_width": null,
+    "type": "text",
+    "default": "Other providers"
+  },
+  {
+    "id": "landvoice_label",
+    "name": "landvoice_label",
+    "label": "Label, Landvoice",
+    "required": false,
+    "locked": false,
+    "display_width": null,
+    "type": "text",
+    "default": "Landvoice"
+  },
+  {
+    "id": "no_padding_top",
+    "name": "no_padding_top",
+    "label": "Remove top padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "no_padding_bottom",
+    "name": "no_padding_bottom",
+    "label": "Remove bottom padding (set it to 0)",
+    "required": false,
+    "locked": false,
+    "display": "checkbox",
+    "type": "boolean",
+    "display_width": null,
+    "default": false
+  },
+  {
+    "id": "corners_top",
+    "name": "corners_top",
+    "label": "Top corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (light bands rounded, dark bands square)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  },
+  {
+    "id": "corners_bottom",
+    "name": "corners_bottom",
+    "label": "Bottom corners",
+    "required": false,
+    "locked": false,
+    "display": "select",
+    "choices": [
+      [
+        "default",
+        "Default (light bands rounded, dark bands square)"
+      ],
+      [
+        "round",
+        "Rounded"
+      ],
+      [
+        "square",
+        "Square"
+      ]
+    ],
+    "multiple": false,
+    "reordering_enabled": true,
+    "preset": null,
+    "type": "choice",
+    "display_width": null,
+    "default": "default"
+  }
+]
