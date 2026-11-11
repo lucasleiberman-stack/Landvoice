@@ -56,7 +56,7 @@
 .lv-band.lv-ccta .lv-gridplane__patch--p { --blk: clamp(96px, 8.4vw, 150px); inset: 0; width: auto; height: auto; aspect-ratio: auto; transform: none;
   -webkit-mask-image: radial-gradient(ellipse 64% 62% at 50% 50%, transparent 0, transparent 56%, rgba(0,0,0,.6) 82%, #000 100%);
           mask-image: radial-gradient(ellipse 64% 62% at 50% 50%, transparent 0, transparent 56%, rgba(0,0,0,.6) 82%, #000 100%); }
-.lv-band.lv-ccta .lv-gridplane__patch--r::before { inset: 0; transform: none; filter: none; background: var(--lv-road) center / 135% 135% no-repeat; mix-blend-mode: darken; opacity: 1; }   /* 135%: the picture fades to nothing at its own edges, keep that fade outside the band */
+.lv-band.lv-ccta .lv-gridplane__patch--r::before { inset: 0; transform: none; filter: none; background: var(--lv-road) center / 112% 112% no-repeat; mix-blend-mode: darken; opacity: 1; }   /* >100% so most of the picture's own soft edge falls outside the band; lower = zoomed out (blocks smaller) */
 .lv-band.lv-ccta .lv-gridplane__patch--p::before { inset: 0; transform: none; filter: none; mix-blend-mode: darken; opacity: 1;
   background: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='120'%3E%3Crect%20width='120'%20height='120'%20fill='%23F1F0ED'/%3E%3Crect%20x='8'%20y='8'%20width='104'%20height='104'%20rx='30'%20fill='%23EEECE7'%20stroke='%23E3E0D9'%20stroke-width='3.6'/%3E%3C/svg%3E") center / var(--blk) var(--blk) repeat; }
 .lv-band--dark.lv-ccta .lv-gridplane__patch--r::before,
